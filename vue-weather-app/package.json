@@ -1,0 +1,17 @@
+{
+  "name": "vue-weather-app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.0",
+    "sass": "^1.42.1",
+    "vite": "^2.5.10"
+  }
+}

@@ -1,0 +1,11 @@
+git clone https://github.com/StevanZivadinovic/React.js-and-Vue.js-projects/ --branch master --single-branch
+
+https://github.com/StevanZivadinovic/React.js-and-Vue.js-projects/ je url repozitorije cele
+
+--branch ti je kod, difoltni
+
+
+master je ime brench-a kojeg hoces da skines(cloniras)
+
+
+--single-branch isto difoltni kod

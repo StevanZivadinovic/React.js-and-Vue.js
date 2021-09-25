@@ -1,0 +1,14 @@
+Kada trazi post 8, kad instaliras preko Vue Cli
+
+<!-- Postupak instalacije tailwind-a
+1) npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+2) pravis u src/assets tailwind.css file, moze i drugacije da se zove i ubacujes u njega ono sto treba (@teilwind base; i tako dalje) 
+3) npx tailwindcss-cli@latest init -p (moze i bez -p ja mislim): ovo bi trebalo da napravi postcss.config.js i tailwind.config.js
+4) u main.js importujes tailwind.css
+U tailwind.config.js dodajes npr paletu boja, ako ne dodas imas dostupno samo 8,9 boja, pise na njihovom sajtu u delu za boje
+-->
+
+
+instalacija vite-a:
+
+npm init @vitejs/app, to pokrene ceo proces, posle samo pratis

@@ -1,0 +1,6 @@
+// importujes ovaj file u main.js, ovaj file je zaduzen zaglobalni stajling, App.vue stil se odnosi na sam App.vue (bar ja mislim), a 
+//stilovi u komponentama se odnose samo na komponente ako stavis <style scoped>, tj ako dodas ovaj scope properti
+
+body{
+    background-color: aqua;
+}

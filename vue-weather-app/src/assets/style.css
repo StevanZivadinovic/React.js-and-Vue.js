@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "montserrat", sans-serif;
+  }
+  /* #app {
+    
+    } */
+  main {
+    background-image: url("./cold-bg.jpg");
+    height: 100vh;
+    padding: 2.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+    width: 45%;
+    margin: 0 auto;
+    position: relative;
+  
+  }
+  .warm{
+    background-image: url("./warm-bg.jpg");
+
+  }
+  
+  .search-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(158, 68, 68, 0.3);
+    padding-top: 4rem;
+    
+  }
+  .search-bar {
+    display: block;
+    font-size: 2rem;
+    margin: 0 auto;
+    width: 90%;
+    border: none;
+    padding: 1rem;
+    border-radius: 0 1rem 0 1rem;
+    transition: .4s;
+    /* background: none; */
+  }
+  .search-bar:focus{
+      border-radius: 1rem 0 1rem 0;
+      border: none;
+      outline: none;
+  
+  }
+  .weather-box{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40%;
+    
+    
+  }
+  .weather-box .location{
+    font-size: 2.5rem;
+    text-shadow: .2rem .3rem rgb(0, 0, 0, .3);
+    color: rgb(255, 255, 254);
+    font-weight: 700;
+    padding-bottom: 1rem;
+    /* z-index: 100; */
+    z-index:100;
+
+  
+  
+  }
+  .weather-box .date{
+    font-size: 2rem;
+    text-shadow: .2rem .3rem rgb(0, 0, 0, .3);
+    color: white;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    font-style: italic;
+    z-index: 100;
+
+  }
+  
+  .weather-box .temperature{
+    
+    font-size: 6rem;
+    text-shadow: .2rem .3rem rgb(0, 0, 0, .3);
+    color: white;
+    font-weight: 900;
+    padding: 3.5rem 7rem;
+    background-color: rgba(115, 115, 223, 0.438);
+    border-radius: 1rem;
+    margin: 0 auto;
+    z-index: 100;
+
+    
+   
+  }
+  
+  .weather-box .weather{
+    font-size: 2rem;
+    text-shadow: .2rem .3rem rgb(0, 0, 0, .3);
+    color: white;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    font-style: italic;
+    z-index: 100;
+
+  }
