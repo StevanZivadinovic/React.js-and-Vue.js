@@ -41,3 +41,35 @@ Firebase sa vue.js
 4) dodas u isti fajl const firebaseApp = firebase.initializeApp(config);
 5) U isti fajl dodas i red import firestore from 'firebase/firestore'
 6) u isti fajl export default firebaseApp.firestore()
+7) u nekim verzijama dolazi do neke greske, pa treba dodati i:
+firebaseApp.firestore().settings({timestampsInSnapshots: true})
+
+/////////////////////////////
+add vue router za novi projekat
+https://codeburst.io/setting-up-a-router-on-vue-3-f15ad377eff6
+
+
+1) npm i vue-router@next
+2) napraviti fajl router.js u src folder i dodati:
+
+/////////////
+import { createWebHistory, createRouter } from 'vue-router';
+import Home from '@/views/Home.vue';
+
+const routes = [
+	{
+		path: '/',
+		name: 'Home',
+		component: Home,
+	},
+];
+
+const router = createRouter({
+	history: createWebHistory(),
+	routes,
+});
+
+export default router;
+///////////
+3) importovati router.js u main.js i dodati u zadnjem redu createApp(App).use(router).mount('#app') umesto createApp(App).mount('#app')
+4) unesi sad na primer <router-view /> ili <router-link> i proveri jel radi
