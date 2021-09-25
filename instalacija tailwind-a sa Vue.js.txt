@@ -7,6 +7,7 @@ Kada trazi post 8, kad instaliras preko Vue Cli
 4) u main.js importujes tailwind.css
 U tailwind.config.js dodajes npr paletu boja, ako ne dodas imas dostupno samo 8,9 boja, pise na njihovom sajtu u delu za boje
 -->
+sjsj
 
 
 instalacija vite-a:
