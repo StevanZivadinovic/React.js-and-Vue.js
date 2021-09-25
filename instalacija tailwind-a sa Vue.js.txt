@@ -27,3 +27,17 @@ Postupak instalacije tailwind-a preko vite-a:
 3) isto pravis u src/assets tailwind.css file, moze i drugacije da se zove i ubacujes u njega ono sto treba (@teilwind base; i tako dalje) 
 4) u main.js importujes tailwind.css
 5) na kraju pokreni ponovo projekat npm run dev
+
+
+
+
+/////////////////////////////
+
+Firebase sa vue.js
+
+1) npm install firebase --save
+2) pravis novi fajl, firebase fajl kome dodas config deo iz firebase-a, koji je poseban za svaki projekat
+3)U isti fajl dodas i red import firebase from 'firebase'
+4) dodas u isti fajl const firebaseApp = firebase.initializeApp(config);
+5) U isti fajl dodas i red import firestore from 'firebase/firestore'
+6) u isti fajl export default firebaseApp.firestore()
