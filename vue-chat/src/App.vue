@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/home">Klik</router-link>
+    <!-- <router-link to="/home">Klik</router-link> -->
     <router-view/>
   </div>
 </template>
