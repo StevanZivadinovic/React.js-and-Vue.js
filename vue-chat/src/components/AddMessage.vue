@@ -7,15 +7,18 @@
       </form>
       <!-- </div> -->
 </template>
-
 <script>
+import {db} from './../firebaseConfig.js'
 export default {
     props:['name'],
     message:null,
     timestamp:new Date(),
     methods:{
     addMessage:function(){
-        console.log(this.message, this.timestamp, this.name)
+        console.log(this.message, this.timestamp, this.name);
+      db.collection('messages').add({
+           mess:this.message
+       })
     }
 }
 }
