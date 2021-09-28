@@ -1,6 +1,9 @@
-import firebase from 'firebase/compat/app'//preko vezije 9.0.0 ovako unosis ova dva prva reda, ostalo mislim da je isto,
-//odnosno, kad unosis firebase funkcije(firestore, auth itd. kao i sam firebase)
+import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore';
+//preko vezije 9.0.0 ovako unosis ova dva prva reda, ostalo mislim da je isto,
+//odnosno, kad unosis firebase funkcije(firestore, auth itd. kao i sam firebase)
+// https://www.npmjs.com/package/firebase
+
 
 var firebaseConfig = {
     apiKey: "AIzaSyBPc8Ni1IWnJDQCwbcLIv0FuEdMRDGkyMg",
