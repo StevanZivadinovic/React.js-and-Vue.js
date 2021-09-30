@@ -83,3 +83,47 @@ export default router;
 ///////////
 3) importovati router.js u main.js i dodati u zadnjem redu createApp(App).use(router).mount('#app') umesto createApp(App).mount('#app')
 4) unesi sad na primer <router-view /> ili <router-link> i proveri jel radi
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+instalacija momenta - program za stilizovanje datuma
+npm install moment --save
+import moment from 'moment'
+
+
+////////////////////////////////////////////////////////////////////////////////
+skrolovanje u Vue.js
+npm install vue-chat-scroll --save
+import VueSmoothScroll from 'vue-chatscroll' u main.js
+createApp(App).use(VueSmoothScroll);
+U zeljeni div stavi v-chat-scroll
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

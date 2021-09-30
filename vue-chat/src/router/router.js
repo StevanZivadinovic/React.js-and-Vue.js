@@ -25,7 +25,8 @@ const routes = [
 
 const router = createRouter({
 	history: createWebHistory(),
-	routes,
+	routes
+	// mode:'history'//ukoni ti # tag iz url, ali nisam siguran da sam ga pravlino uneo
 });
 
 export default router;

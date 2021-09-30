@@ -20,9 +20,10 @@
     <p class="text-center text-red-600 text-base">{{feedback}}</p>
   </form>
   <!-- </div> -->
+
 </template>
 <script>
-import {db} from './../firebaseConfig.js'
+import db from './../firebaseConfig.js'
 export default {
     props:['name'],
 
@@ -37,11 +38,17 @@ export default {
     },
     methods:{
     addMessage:function(){
+     console.log(document.querySelector('.lista').scrollHeight)
+     document.querySelector('.lista').scrollTop = document.querySelector('.lista').scrollHeight
+   
+    document.querySelector('.lista').scrollTo(100,100)
         if(this.message){
 
             console.log(this.message, this.timestamp, this.name);
           db.collection('messages').add({
-               mess:this.message
+               mess:this.message,
+               timestamp:Date.now(),
+               name:this.name
            })
            this.message = null
            this.feedback = null
