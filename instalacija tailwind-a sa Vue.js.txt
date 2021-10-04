@@ -88,7 +88,6 @@ export default router;
 
 
 
-
 ///////////////////////////////////////////////////////////////////////////////
 instalacija momenta - program za stilizovanje datuma
 npm install moment --save
@@ -96,11 +95,19 @@ import moment from 'moment'
 
 
 ////////////////////////////////////////////////////////////////////////////////
-skrolovanje u Vue.js
-npm install vue-chat-scroll --save
-import VueSmoothScroll from 'vue-chatscroll' u main.js
-createApp(App).use(VueSmoothScroll);
-U zeljeni div stavi v-chat-scroll
+
+hosting za Vue.js
+
+1)kad uneses firebase init, u onom postupku kucas da hoces dist folder da bude glavni a ne public
+2) Configure as a single-page app (rewrite all urls to /index.html)? ? Yes 
+   ( as it’s a single page app however all of the routes would work as expected).
+3)File dist/index.html already exists. Overwrite? ? No 
+  (so that Firebase does not overwrite with default index.html file).
+4) npm run build
+5) firebase deploy
+
+izvor: https://softauthor.com/deploy-vue-js-app-on-firebase-hosting/
+
 
 
 
