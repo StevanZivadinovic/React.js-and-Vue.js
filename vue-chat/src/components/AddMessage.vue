@@ -38,10 +38,10 @@ export default {
     },
     methods:{
     addMessage:function(){
-     console.log(document.querySelector('.lista').scrollHeight)
-     document.querySelector('.lista').scrollTop = document.querySelector('.lista').scrollHeight
+     console.log(this.$refs, this.name);
+    //  document.querySelector('.lista').scrollTop = document.querySelector('.lista').scrollHeight
    
-    document.querySelector('.lista').scrollTo(100,100)
+    
         if(this.message){
 
             console.log(this.message, this.timestamp, this.name);

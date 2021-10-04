@@ -17,11 +17,12 @@
       <h2 class="text-center text-4xl text-green-600 pt-10">Ninja chat</h2>
 
       <div class="card flex h-80 w-full lista">
-        <ul class="w-full px-10 py-10 py-4 mt-4 overflow-y-auto">
+        <ul class="w-full px-10 py-10 py-4 mt-4 overflow-y-auto" ref="chatWindow">
           <li
             v-for="message in messages"
             :key="message.id"
             class="flex flex-col px-10 py-10 mb-2 bg-green-600 w-6/12 rounded"
+            
           >
             <div class="flex">
               <span class="px-2 text-xl text-white underline">{{ message.name }}</span>
@@ -32,9 +33,10 @@
           </li>
         </ul>
       </div>
-      <AddMessage :name="mojeIme" />
+      <AddMessage :name="mojeIme"/>
     </div>
   </div>
+  <button class="p-4 bg-green-400 text-center block mx-auto w-64 rounded" @click="showWindowUP">Go to the bottom of chat!</button>
 </template>
 
 <script>
@@ -46,7 +48,8 @@ export default {
   props: ["mojeIme"],
   data() {
     return {
-      messages: []
+      messages: [],
+    
       
     };
   },
@@ -54,10 +57,21 @@ export default {
   components: {
     AddMessage,
   },
+  methods:{
+
+    showWindowUP(){
+      console.log(this.$refs.chatWindow);
+            this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
+
+    }
+  }
+  ,
+ 
   created() {
+    
     //  document.querySelector(".lista").scrollIntoView()
         
-    console.log("haj");
+    
     let ref = db.collection("messages").orderBy('timestamp')
 
     ref.onSnapshot((snapshot) => {
