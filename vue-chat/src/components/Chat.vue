@@ -1,5 +1,6 @@
 <template>
   <div>
+  
     <div>Chat {{ mojeIme }}</div>
     <div
       class="
@@ -36,7 +37,7 @@
       <AddMessage :name="mojeIme"/>
     </div>
   </div>
-  <button class="p-4 bg-green-400 text-center block mx-auto w-64 rounded" @click="showWindowUP">Go to the bottom of chat!</button>
+  <button class="p-4 bg-green-400 text-center block mx-auto w-64 rounded" @click="showWindowUP" @mouseover="changeSetter">Go to the bottom of chat!: {{fullName?fullName:fullName1}}</button>
 </template>
 
 <script>
@@ -49,9 +50,20 @@ export default {
   data() {
     return {
       messages: [],
+      id:'ok',
+     author: {
+        name: 'John Doe',
+        books: ['Vue 2 - Advanced Guide',
+          'Vue 3 - Basic Guide',
+          'Vue 4 - The Mystery']
+      },
+      firstName:null,
+      lastName:null,
+      fullName1:'Pera peric'
     
       
-    };
+    
+    }
   },
   
   components: {
@@ -63,10 +75,29 @@ export default {
       console.log(this.$refs.chatWindow);
             this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
 
+    },
+    changeSetter(){
+      this.fullName = 'john doe'
+      // console.log(this.name, 'haj')
+    }
+  },
+ computed: {
+  fullName: {//ovde je zapravo definisana promenljiva fullName
+    // getter
+   get(){
+     console.log(this.name)
+     return this.lastName
+   },
+    
+    // setter
+    set(newValue) {
+      const names = newValue.split(' ')
+    // this.name = newValue
+      this.firstName = names[0]
+      this.lastName = names[names.length - 1]
     }
   }
-  ,
- 
+},
   created() {
     
     //  document.querySelector(".lista").scrollIntoView()

@@ -1,11 +1,9 @@
-Validating found git in: C:\Program Files\Git\cmd\git.exe
-Using git 2.33.0.windows.2 from C:\Program Files\Git\cmd\git.exe
-> git rev-parse --git-dir
-Open repository: d:\html\React.js-and-Vue.js
-> git status -z -u
-> git symbolic-ref --short HEAD
-> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
-> git check-ignore -v -z --stdin
-> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
-> git remote --verbose
-> git config --get commit.template
+array metode, neke samo:
+
+length property –> If you want to know the number of elements in an array, you can use the length property.
+prototype property –> If you want to add new properties and methods, you can use the prototype property.
+reverse method –> You can reverse the order of items in an array using a reverse method.
+sort method –> You can sort the items in an array using sort method.
+pop method –> You can remove the last item of an array using a pop method.
+shift method –> You can remove the first item of an array using shift method.
+push method –> You can add a value as the last item of the array.
