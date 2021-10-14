@@ -26,7 +26,7 @@ const LoginForm = () => {
   };
 
   const style={
-    width:'200px',
+    width:'20%',
     margin:'0 auto',
     height:'100vh'
   }
