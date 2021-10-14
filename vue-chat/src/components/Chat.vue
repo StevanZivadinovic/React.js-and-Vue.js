@@ -38,6 +38,7 @@
     </div>
   </div>
   <button class="p-4 bg-green-400 text-center block mx-auto w-64 rounded" @click="showWindowUP" @mouseover="changeSetter">Go to the bottom of chat!: {{fullName?fullName:fullName1}}</button>
+
 </template>
 
 <script>
@@ -60,6 +61,7 @@ export default {
       firstName:null,
       lastName:null,
       fullName1:'Pera peric'
+     
     
       
     
@@ -70,6 +72,9 @@ export default {
     AddMessage,
   },
   methods:{
+     even(numbers) {
+    return numbers.filter(number => number % 2 === 0)
+  },
 
     showWindowUP(){
       console.log(this.$refs.chatWindow);
@@ -85,8 +90,8 @@ export default {
   fullName: {//ovde je zapravo definisana promenljiva fullName
     // getter
    get(){
-     console.log(this.name)
-     return this.lastName
+     console.log(this.firstName)
+     return this.firstName +' '+this.lastName;
    },
     
     // setter
