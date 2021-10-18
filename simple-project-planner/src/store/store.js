@@ -20,6 +20,21 @@ const store = createStore({
            })
            return saleProducts1;
         }
+  },
+  mutations:{
+      reducePrice:(state,payload)=>{
+          state.products.forEach(product=>{
+              console.log(product.price)
+              product.price-=payload;
+          })
+      }
+  },
+  actions:{
+      reducePrice1:(context, payload)=>{//context je promenlkjiva koja ide uz akcije
+          setTimeout(()=>{
+              context.commit('reducePrice', payload);//ovde je pozvana mutacija da se izvrsi
+          },2000)
+      }
   }
 });
 
