@@ -109,6 +109,24 @@ hosting za Vue.js
 izvor: https://softauthor.com/deploy-vue-js-app-on-firebase-hosting/
 
 
+//////////////////////////////////////////////////////////////////////////////
+Instalacija Vuex-a
+
+npm install vuex --save
+pravis novi folder store i u njemu fajl store.js
+u tom fajlu kucas:
+1) import { createStore } from 'vuex'
+2)const store = createStore({
+  state: {
+    
+  },
+getters:{
+
+});
+3)export default store;
+4) imporujes fajl u main.js: import  store  from './store/store'
+5) u main.js povezujes createApp(App).use(store).mount('#app');, ovo mount je vec bilo dodajes samo ovo use(store)
+
 
 
 

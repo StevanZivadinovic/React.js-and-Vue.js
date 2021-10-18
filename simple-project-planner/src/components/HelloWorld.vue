@@ -5,6 +5,12 @@
         {{ podatak }}
       </li>
     </ul>
+
+     <ul class="lista" ref="listItemProducts">
+      <li v-for="product in saleProducts" :key="product.name" @click="ukloni">
+        {{ product.name }}: ${{product.price}}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -24,6 +30,15 @@ export default {
      })
     },
   },
+
+  computed:{
+    products(){
+      return this.$store.state.products
+    },
+    saleProducts(){
+      return this.$store.getters.saleProducts
+    }
+  }
 };
 </script>
 

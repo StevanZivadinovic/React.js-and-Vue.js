@@ -2,11 +2,11 @@
   <div>
     <form action="" @submit.prevent='submitObligation'>
       <input type="text" v-model="todoText" ref="todoInput" @keyup="unosPrograma">
-      <button >Submit</button>
+    
     </form>
     
   </div>
-  <HelloWord :podaci = 'listOdData'></HelloWord>
+  <HelloWord :podaci = 'listOdData' ></HelloWord>
 </template>
 
 <script>
@@ -19,6 +19,7 @@ data(){
   return{
     listOdData:[],
     todoText:'html'
+    
   }
 },
 methods:{
