@@ -9,6 +9,10 @@ const store = createStore({
       { name: "Green Shells", price: 60 },
       { name: "Red Shells", price: 80 },
     ],
+
+    Bogoslovija:{
+        
+    }
   },
   getters:{
        saleProducts: state=>{

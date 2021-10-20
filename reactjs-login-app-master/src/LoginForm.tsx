@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import './api/index';
+import Axios from "axios";
+
+
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -7,22 +11,40 @@ const LoginForm = () => {
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch("http://localhost:3000/login", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        username: username,
-        password: password,
-      }),
-    }).then((response) => {
-      if (response.ok) {
-        alert("Success!");
-      } else {
-        alert("Failed!");
-      }
-    });
+    console.log(username, password)
+    console.log(Axios, 'a')
+    Axios.post('login', { username: username, password: password })
+    .then((response) => {
+      console.log(response)
+        if (response) {
+            alert("Success!");
+        } else {
+            alert("Failed!");
+        }
+    }).catch(err=>{
+      console.log(err)
+    })
+
+   
+
+    // fetch("http://localhost:3000/login", {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     username: username,
+    //     password: password,
+    //   }),
+    // }).then((response) => {
+    //   if (response.ok) {
+    //     alert("Success!");
+    //   } else {
+    //     alert("Failed!");
+    //   }
+    // });
+
+  
   };
 
   const style={
