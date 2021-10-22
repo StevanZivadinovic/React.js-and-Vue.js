@@ -7,9 +7,9 @@
     </ul>
 
      <ul class="lista" ref="listItemProducts">
-      <li v-for="product in saleProducts" :key="product.name" @click="ukloni">
+      <!-- <li v-for="product in saleProducts" :key="product.name" @click="ukloni">
         {{ product.name }}: ${{product.price}}
-      </li>
+      </li> -->
     </ul>
     <button @click='reducePrice1(2)' @mouseover="metod">reducePrice</button>
   </div>
@@ -39,7 +39,7 @@ export default {
       return this.$store.state.products
     },
    ...mapGetters([
-     'saleProducts'
+    //  'saleProducts'
    ])
     // saleProducts(){
     //   return this.$store.getters.saleProducts
@@ -50,7 +50,7 @@ export default {
   methods:{
 
     metod(){
-      console.log(this.$store.state.products, this.$store.getters )
+      console.log(this.$store.state, this.$store.getters )
     },
     // reducePrice(payload){//kad se ubaci mapActions ne treba nista od ovog zakomentarisanog
     // console.log(this.$store)
@@ -60,7 +60,7 @@ export default {
     // }
     //ne treba bubel da se koristi da bi radio spread operator
      ...mapActions([
-      'reducePrice1'
+      // 'reducePrice1'
     ])
   }
 };
