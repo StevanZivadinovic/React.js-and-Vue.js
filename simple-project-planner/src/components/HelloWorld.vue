@@ -11,7 +11,7 @@
         {{ product.name }}: ${{product.price}}
       </li>
     </ul>
-    <button @click='reducePrice1(4)'>reducePrice</button>
+    <button @click='reducePrice1(2)' @mouseover="metod">reducePrice</button>
   </div>
 </template>
 
@@ -48,9 +48,14 @@ export default {
   ,
   //https://www.youtube.com/watch?v=SaBnaGu7cP8&ab_channel=TheNetNinja
   methods:{
+
+    metod(){
+      console.log(this.$store.state.products, this.$store.getters )
+    },
     // reducePrice(payload){//kad se ubaci mapActions ne treba nista od ovog zakomentarisanog
-    //   // return this.$store.commit('reducePrice')//kad nemas actions ovako pozivas mutaciju
-    //   // return this.$store.dispatch('reducePrice1', payload)//ovako pozivas akciju, isto se zove kao mutacija, a preko akcije pozvana je mutacija
+    // console.log(this.$store)
+    //   return this.$store.commit('reducePrice')//kad nemas actions ovako pozivas mutaciju
+    //   return this.$store.dispatch('reducePrice1', payload)//ovako pozivas akciju, isto se zove kao mutacija, a preko akcije pozvana je mutacija
    
     // }
     //ne treba bubel da se koristi da bi radio spread operator

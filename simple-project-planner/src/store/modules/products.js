@@ -1,8 +1,7 @@
-
 import { createStore } from 'vuex';
-
-const store = createStore({
-  state: {
+// const products = createStore
+export default {
+state: {
     products: [
       { name: "Banana Skin", price: 20 },
       { name: "Shiny Star", price: 40 },
@@ -27,6 +26,7 @@ const store = createStore({
   },
   mutations:{
       reducePrice:(state,payload)=>{
+        //   console.log(mutations)
           state.products.forEach(product=>{
               console.log(product.price)
               product.price-=payload;
@@ -40,6 +40,7 @@ const store = createStore({
           },2000)
       }
   }
-});
 
-export default store;
+};
+
+// export default {products}

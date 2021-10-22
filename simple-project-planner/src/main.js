@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import  store  from './store/store'
+import  store  from './store/index'
 
 createApp(App).use(store).mount('#app');
 // createApp(App).mount(store)
