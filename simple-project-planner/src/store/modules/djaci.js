@@ -6,11 +6,7 @@ export default {
           { name: "Pera", surname: 'Peric' },
           { name: "Pera", surname: 'Peric' },
           { name: "Pera", surname: 'Peric' },
-        ],
-    
-        Bogoslovija:{
-            
-        }
+        ]
       },
       getters:{
         

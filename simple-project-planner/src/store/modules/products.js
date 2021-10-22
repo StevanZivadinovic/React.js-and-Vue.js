@@ -5,11 +5,7 @@ export default {
           { name: "Shiny Star", price: 40 },
           { name: "Green Shells", price: 60 },
           { name: "Red Shells", price: 80 },
-        ],
-    
-        Bogoslovija:{
-            
-        }
+        ]
       },
       getters:{
            saleProducts: state=>{

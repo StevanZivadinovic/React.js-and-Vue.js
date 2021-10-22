@@ -1,16 +1,12 @@
 
 export default {
     state: {
-        bogoslovije: [
-          { name: "Karlovacka", price: 20 },
-          { name: "Niška", price: 40 },
-          { name: "Cetinjska", price: 60 },
-          { name: "Prizrenska", price: 80 },
-        ],
-    
-        Bogoslovija:{
-            
-        }
+        eparhije: [
+          { name: "Niska", price: 20 },
+          { name: "Banatska", price: 40 },
+          { name: "Parkracko-slavonska", price: 60 },
+          { name: "Rasko-prizrenska", price: 80 },
+        ]
       },
       getters:{
         
