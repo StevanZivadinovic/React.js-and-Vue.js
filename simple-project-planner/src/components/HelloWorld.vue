@@ -6,10 +6,11 @@
       </li>
     </ul>
 
-     <ul class="lista" ref="listItemProducts">
-      <!-- <li v-for="product in saleProducts" :key="product.name" @click="ukloni">
-        {{ product.name }}: ${{product.price}}
-      </li> -->
+    <p>seminary</p>
+    <ul class="lista" ref="listItemProducts">
+      <li v-for="seminary in getSeminary" :key="seminary.name" @click="ukloni">
+        {{ seminary.name }}
+      </li>
     </ul>
     <button @click='reducePrice1(2)' @mouseover="metod">reducePrice</button>
   </div>
@@ -39,7 +40,7 @@ export default {
       return this.$store.state.products
     },
    ...mapGetters([
-    //  'saleProducts'
+    "getDiocese", "getSeminary"
    ])
     // saleProducts(){
     //   return this.$store.getters.saleProducts

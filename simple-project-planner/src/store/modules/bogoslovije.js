@@ -9,7 +9,14 @@ state: {
     ]
   },
   getters:{
-    
+    getSeminary: state=>{
+      var Seminary = state.bogoslovije.map(eparhija=>{
+          return {
+              name:'**'+eparhija.name+'**'
+          }
+      })
+      return Seminary;
+   }
   },
   mutations:{
    
