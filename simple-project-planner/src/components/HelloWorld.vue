@@ -40,7 +40,7 @@
       <div>
         <p>Razred:</p>
         <select @change='getClass($event)'>
-          <option value="1">1</option>
+          <option value='1'>1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -49,7 +49,7 @@
       </div>
       <div>
         <p>Status:</p>
-        <select @change='getSkGodina($event)'>
+        <select @change='getStatus($event)'>
           <option value="redovan">redovan</option>
           <option value="neredovan">neredovan</option>
         </select>
@@ -61,8 +61,8 @@
           <option value="2013/2014">2013/2014</option>
           <option value="2014/2015">2014/2015</option>
           <option value="2015/2016">2015/2016</option>
-          <option value="2015/2016">2015/2016</option>
           <option value="2016/2017">2016/2017</option>
+          <option value="2017/2018">2017/2018</option>
         </select>
       </div>
     </div>
@@ -93,7 +93,8 @@ export default {
         seminary:'Karlovacka',
         nameOfStudent:'',
         schoolYear:'2013/2014',
-        class:'1'
+        class:'1',
+        status:'redovan'
 
       }
     };
@@ -133,7 +134,10 @@ export default {
       this.filter.nameOfStudent = e.target.value;
     },
     getClass(e){
-      this.filter.class = e.target.class;
+      this.filter.class = e.target.value;
+    },
+    getStatus(e){
+      this.filter.status = e.target.value
     },
      getData(e){
        console.log(this.filter.schoolYear)
