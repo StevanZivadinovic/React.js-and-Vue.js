@@ -41,8 +41,9 @@ export default {
           //         // name:'**'+eparhija.name+'**'
           //     }
           // })
-          // return Diocese;
-          console.log(state.eparhije.byId[1])
+          let diocese = state.eparhije.byId
+          console.log(diocese)
+          return diocese;
        }
       },
       mutations:{
