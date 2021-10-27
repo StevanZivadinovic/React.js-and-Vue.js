@@ -127,7 +127,9 @@ getters:{
 4) imporujes fajl u main.js: import  store  from './store/store'
 5) u main.js povezujes createApp(App).use(store).mount('#app');, ovo mount je vec bilo dodajes samo ovo use(store)
 
-
+//////////////////////////////
+JSON server
+pozivas json fajl preko: json-server --watch data/db.json, data/db.json je putanja do file-a.
 
 
 

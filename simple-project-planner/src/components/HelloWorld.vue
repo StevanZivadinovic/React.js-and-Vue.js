@@ -76,7 +76,7 @@
       </li>
     </ul>-->
     <!-- <button @mouseover="metod">Filter</button>  -->
-    <button @click="getData($event)">Get data in console</button>
+    <button @click="getData($event)" @mouseover="getDataJSON">Get data in console</button>
   </div>
 </template>
 
@@ -155,6 +155,7 @@ export default {
     // }
     //ne treba bubel da se koristi da bi radio spread operator
     ...mapActions([
+      'getDataJSON'
       // 'reducePrice1'
     ]),
   },

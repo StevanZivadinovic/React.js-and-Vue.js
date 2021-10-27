@@ -1,4 +1,4 @@
-
+import axios from "axios";
 export default {
     state: {
         eparhije: { 
@@ -50,6 +50,13 @@ export default {
        
       },
       actions:{
+        getDataJSON:()=>{
+//db/data/eparhije/byId',{params: 1}
+          axios.get('./../../data/db.json/')
+          .then(data=>{
+            console.log(data.data)
+          })
+        }
        
       }
     
