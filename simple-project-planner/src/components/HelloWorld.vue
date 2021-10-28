@@ -1,5 +1,6 @@
 <template>
   <div class="todoList">
+    <div style="background-color:red" ref="ispis">djfhdkjfhk</div>
     <h1>Izabri parametre pretrage:</h1>
     <div class="parametri" style="display: flex">
       <div>
@@ -45,6 +46,7 @@
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
+          
         </select>
       </div>
       <div>

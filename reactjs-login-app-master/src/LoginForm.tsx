@@ -9,12 +9,35 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const passwordValidation = ()=>{
+
+  }
+
+  const passwordInput=(e: React.ChangeEvent<HTMLInputElement>)=>{
+    setPassword(e.target.value);
+    passwordValidation();
+    
+  }
+
+
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(username, password)
-    console.log(Axios, 'a')
-    Axios.post('login', { username: username, password: password })
-    .then((response) => {
+    
+
+    const params = JSON.stringify({
+
+      "username": username,
+      
+      "password": password,
+      
+      });
+      const url = 'http://localhost:3001/login'
+      const url1 = 'https://jsonplaceholder.typicode.com/todos'
+
+      
+     
+    Axios.post('',params).then((response) => {
       console.log(response)
         if (response) {
             alert("Success!");
@@ -27,7 +50,7 @@ const LoginForm = () => {
 
    
 
-    // fetch("http://localhost:3000/login", {
+    // fetch("http://localhost:3001/login", {
     //   headers: {
     //     "Content-Type": "application/json",
     //   },
@@ -62,6 +85,7 @@ const LoginForm = () => {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          // pattern={}
         />
       </FormGroup>
       <FormGroup>
@@ -69,7 +93,8 @@ const LoginForm = () => {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={passwordInput}
+          
         />
       </FormGroup>
 

@@ -1,9 +1,10 @@
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = 3000;
+const port = 3001;
 
 const loginResponse = {
   token: "9157bc44-2230-4831-a2b4-646ba039c03b",
@@ -15,7 +16,7 @@ const userResponse = {
   lastName: "Doe",
 };
 
-app.post("http://localhost:3000/login", (req, res) => {
+app.post("http://localhost:3001/login", (req, res) => {
   try {
     if (!req.body.username || !req.body.password) {
       return res.status(400).send("Wrong data");

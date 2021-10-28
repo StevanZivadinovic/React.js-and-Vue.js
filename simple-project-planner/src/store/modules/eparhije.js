@@ -51,10 +51,11 @@ export default {
       },
       actions:{
         getDataJSON:()=>{
-//db/data/eparhije/byId',{params: 1}
+          //db/data/eparhije/byId',{params: 1}
+          //,{params: {'db':'eparhije'}}
           axios.get('./../../data/db.json/')
           .then(data=>{
-            console.log(data.data)
+            console.log(data)
           })
         }
        
