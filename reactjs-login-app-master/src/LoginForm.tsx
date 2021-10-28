@@ -9,22 +9,18 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const passwordValidation = ()=>{
+  
 
-  }
-
-  const passwordInput=(e: React.ChangeEvent<HTMLInputElement>)=>{
-    setPassword(e.target.value);
-    passwordValidation();
-    
-  }
 
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(username, password)
-    
-
+    let patternPassword = new RegExp("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$");
+    if(patternPassword.test(username)){console.log('haj')}
+    else{
+      console.log('password is incorect')
+    }
     const params = JSON.stringify({
 
       "username": username,
@@ -93,7 +89,7 @@ const LoginForm = () => {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={passwordInput}
+          onChange={(e)=> setPassword(e.target.value)}
           
         />
       </FormGroup>
