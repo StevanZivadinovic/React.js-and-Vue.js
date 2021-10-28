@@ -40,7 +40,7 @@ const LoginForm = () => {
           if (response) {
               alert("Success!");
 
-             <Redirect to='/'  />
+              console.log(useHistory)
           } else {
               alert("Failed!");
           }
