@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import './App.css';
 
 import {
   BrowserRouter as Router, Switch, Route, Link, Redirect
 } from "react-router-dom";
-
-function App() {
+interface AppProps {
+  redirectPropApp ?: React.ReactNode
+}
+//React.ReactNode, ovo kucas kad hoces da prop prihvata bilo koji tip podataka
+function App(props: AppProps) {
+  const [redirectPropApp, setRedirectProp] =  useState<AppProps['redirectPropApp']>('ovo je doslo iz app');
+  console.log(redirectPropApp)
   return (
     <div className="App">
       <Router>
         <Switch>
       <Route path="/login">
-      <LoginForm/>
+      <LoginForm redirectPropApp={redirectPropApp}/>
       </Route>
       <Route path='/'/>
         </Switch>
@@ -28,6 +33,10 @@ function App() {
                     )
                 }}
               />
+
+                {/* <Route exact path="/login">
+                {true ? <Redirect to="/dashboard" /> :''}
+              </Route> */}
       </Router>
     </div>
   );
