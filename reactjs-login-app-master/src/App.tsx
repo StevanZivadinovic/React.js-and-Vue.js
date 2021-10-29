@@ -12,8 +12,9 @@ function App() {
       <Router>
         <Switch>
       <Route path="/login">
-      <LoginForm />
+      <LoginForm/>
       </Route>
+      <Route path='/'/>
         </Switch>
 
         <Route
