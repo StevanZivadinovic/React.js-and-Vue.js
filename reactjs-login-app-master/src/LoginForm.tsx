@@ -21,15 +21,15 @@ function LoginForm (props:propsMoje){
   const [password, setPassword] = useState("");
   
   const [moje, setMoje] = useState<propsMoje['moje']>('111');
-  const [redirectPropApp, setRedirectProp] = useState<propsMoje['redirectPropApp']>();
+  // const [redirectPropApp, setRedirectProp] = useState<propsMoje['redirectPropApp']>();
   
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log(redirectPropApp, moje, props)
+    // console.log(redirectPropApp, moje, props)
     e.preventDefault();
     console.log(username, password);
     let patternPassword = new RegExp("^[a-z0-9_-]{3,16}$");
     let patternUsername = new RegExp("^[a-z0-9_-]{3,16}$");
-    console.log(patternPassword.test(username), patternUsername.test(username));
+    // console.log(patternPassword.test(username), patternUsername.test(username));
     if (patternPassword.test(password) && patternUsername.test(username)) {
       const params = JSON.stringify({
         username: username,
@@ -44,8 +44,9 @@ function LoginForm (props:propsMoje){
           console.log(response);
           if (response) {
             alert("Success!");
-            setRedirectProp('true')
-            console.log(redirectPropApp)
+            // setRedirectProp('true')
+            
+          //  props.redirectPropApp()
             // setRedirect(true)
             // useHistory().push('/')
             

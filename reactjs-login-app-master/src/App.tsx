@@ -6,11 +6,15 @@ import {
   BrowserRouter as Router, Switch, Route, Link, Redirect
 } from "react-router-dom";
 interface AppProps {
-  redirectPropApp ?: React.ReactNode
+  redirectPropApp ?: React.ReactNode,
+
 }
 //React.ReactNode, ovo kucas kad hoces da prop prihvata bilo koji tip podataka
 function App(props: AppProps) {
-  const [redirectPropApp, setRedirectProp] =  useState<AppProps['redirectPropApp']>('ovo je doslo iz app');
+  // const [redirectPropApp, setRedirectProp] =  useState<AppProps['redirectPropApp']>('ovo je doslo iz app');
+  const  redirectPropApp=function(arg:boolean) {
+    console.log(arg)
+  }
   console.log(redirectPropApp)
   return (
     <div className="App">
