@@ -1,0 +1,41 @@
+//router 4
+
+import { createRouter, createWebHashHistory } from 'vue-router'
+import About from './../views/About.vue';
+import Home from './../views/Home.vue';
+import Dashboard from './../views/dashboard.vue'
+
+const routes = [
+
+  {
+
+    path: '/',
+    name: 'dashboard',
+    component: Dashboard
+  },
+  {
+
+
+   
+    path: '/about',
+    name: 'about',
+    component: About
+  }
+  ,
+  {
+   
+    path: '/home',
+    name: 'home',
+    component: Home
+  }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
+  // scrollBehavior (to, from, savedPosition) {
+  //   return savedPosition || { top: 0 }
+  // }
+})
+
+export default router

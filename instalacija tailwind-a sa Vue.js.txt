@@ -20,6 +20,10 @@ https://tailwindcss.com/docs/guides/vue-3-vite, izvor
 1) npm init vite my-project, my-project je naziv, sam ga odredjujes
 2)npm install
 
+postupak instalacije sass-a:
+npm install -D sass
+
+nakon toga samo napravis fajl i importujes ga gde hoces
 
 Postupak instalacije tailwind-a preko vite-a:
 1) npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
