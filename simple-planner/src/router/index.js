@@ -27,6 +27,11 @@ const routes = [
     path: '/home',
     name: 'home',
     component: Home
+  },
+
+  {
+    path:'/home-app',
+    redirect:'/moji'
   }
 ]
 
