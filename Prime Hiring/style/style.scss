@@ -1,0 +1,482 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+%button-style {
+  align-self: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  transition: 0.2s all ease;
+  outline: none;
+  border: none;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+@mixin smallerScreen {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(88, 100, 96);
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+
+  .mainTitle {
+    color: red;
+    margin: 3rem auto;
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.55rem;
+    //shothand:
+    //animation: mainTitle 3.5s infinite;
+    //
+    animation-name: mainTitle;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    // animation-delay: 0.2s;
+    // animation-timing-function: ease-out;
+
+    @include mobile() {
+      font-size: 1rem;
+      letter-spacing: .5rem;
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    height: 8vh;
+    padding: 2rem 0;
+
+    .customerNav {
+      @include mobile() {
+        display: flex;
+        flex-direction: column;
+        
+      }
+      #addDeveloper,
+      #btnShowDeveloper {
+        padding: 0.5rem 2rem;
+        border-radius: 0.1rem;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        
+        font-family: "Poppins", sans-serif;
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            lightcoral,
+            rgb(190, 46, 46)
+          );
+        }
+
+        @include mobile() {
+          margin-bottom: 0.1rem;
+        }
+      }
+    }
+  }
+  .searchMain {
+    display: flex;
+    justify-content: center;
+    height: 8vh;
+    margin: 2rem auto;
+
+    @include mobile() {
+      font-size: 0.5rem;
+      flex-direction: column;
+      width: 90%;
+      margin: 5rem auto 2rem auto;
+    }
+
+    span {
+      //da bi radio pokretni border morao sam da input obuhvatim span-om, posto ::after ne moze da
+      //se primeni nad input-om;
+      width: 25%;
+      position: relative;
+      transition: 0.5s ease;
+      display: none;
+      @include mobile() {
+        font-size: 0.5rem;
+        flex-direction: column;
+        width: 100%;
+        margin: 0rem auto 0.5rem auto;
+
+
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0%;
+        height: 0.1rem;
+        width: 10%;
+        visibility: visible;
+        background-color: rgba(#c75a5a, .8);
+        transition: 0.5s ease all;
+
+        // @include mobile() {
+        //  visibility: hidden;
+          
+  
+        // }
+      }
+      &:hover::after {
+        width: 100%;
+        visibility: visible;
+      }
+
+      input {
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        // border-bottom: 1px solid rgba(lightcoral, 0.3);
+        font-family: "Poppins", sans-serif;
+        width: 100%;
+        outline: none;
+        color: rgba(white, 0.8);
+
+        &::placeholder {
+          color: rgba(white, 0.8);
+
+          @include mobile() {
+            text-align: center;
+    
+          }
+        }
+      }
+    }
+
+    button {
+      padding: 0.5rem 2rem;
+      transition: 0.2s all ease;
+      outline: none;
+      border: none;
+      border-radius: 0.1rem;
+      box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+      font-family: "Poppins", sans-serif;
+
+      // transform: translateY(-0.0rem);
+      &:hover {
+        background-image: linear-gradient(
+          to right,
+          lightcoral,
+          rgb(190, 46, 46)
+        );
+
+        cursor: pointer;
+        // transform: skewY(1deg) skewX(5deg) scale(1.1) translateY(-0.5rem);
+      }
+    }
+  }
+
+  .addDeveloper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    margin: -3rem auto 0 auto;
+    outline: 1rem solid rgba(#c75a5a, .8);
+    border-radius: 0.3rem;
+    input {
+      font-family: "Poppins", sans-serif;
+    }
+    #submitAddDeveloper,
+    #submitUpdateDeveloper,
+    .x {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .x {
+      position: absolute;
+      right: -0.6rem;
+      top: -0.6rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  }
+  .listShowDeveloper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    // border-bottom: 0.2rem solid lightcoral;
+    color: white;
+    font-size: 1.4rem;
+    background-color: rgba(lightcoral, 0.15);
+    margin-bottom: 0.3rem;
+    border-radius: 1rem;
+
+    @include smallerScreen() {
+      font-size: 0.9rem;
+    }
+    
+    @include mobile() {
+      
+      padding-bottom: .5rem;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto 0.3rem auto;
+      font-size: .7rem;
+    }
+
+    img {
+      border-top-left-radius: 1rem;
+      border-bottom-right-radius: 1.5rem;
+      box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.5);
+
+      @include mobile() {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 0.2rem !important;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+      }
+    }
+
+    li {
+      .mainData {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+
+       
+
+        .firstMain,
+        .secondMain {
+          background-color: rgba(88, 100, 96, 0.1);
+          height: 100%;
+          width: 50%;
+          text-align: center;
+          align-self: center;
+
+          
+          div {
+         
+            text-align: center;
+            align-self: center;
+          }
+        }
+      }
+    }
+
+    div {
+      align-self: center;
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+
+      @include mobile() {
+        width: 100%;
+      }
+
+      .dugmeDelete,
+      .dugmeUpdate,
+      .btnHire {
+        width: 80%;
+        align-self: center;
+        padding: 0.5rem 2rem;
+        transition: 0.2s all ease;
+        outline: none;
+        border: none;
+        margin-bottom: 0.2rem;
+        font-family: "Poppins", sans-serif;
+
+        &:hover {
+          background-image: linear-gradient(
+            to right,
+            lightcoral,
+            rgb(190, 46, 46)
+          ) !important;
+          cursor: pointer;
+          box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+          // transform: translateY(-0.1rem);
+          // transform: skewY(1deg) skewX(5deg) scale(1.1);
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  .hiring {
+    background-color: rgb(179, 58, 58);
+    display: none;
+    position: relative;
+    flex-direction: column;
+    padding: 3rem 0;
+
+    .hiringProcess {
+      display: flex;
+      justify-content: space-between;
+      @include mobile(){
+        
+        flex-direction: column;
+      }
+    }
+    .xHiring {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.5rem;
+      background-color: rgba(burlywood, 0.7);
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+    }
+    .listOfDevelopersPriperedToHire {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      height: 80%;
+      margin: 2rem auto 0 0;
+      @include mobile(){
+        margin: 0 auto;
+      }
+
+      ul {
+        align-self: center;
+        justify-content: center;
+        width: 60%;
+        margin: 0 0 0 0;
+        @include mobile(){
+          width: 80%;
+          margin-bottom: 1rem;
+
+        }
+
+        li {
+          font-size: 2rem;
+          list-style-type: none;
+          text-align: center;
+        }
+      }
+      button {
+        font-family: "Poppins", sans-serif;
+        @include mobile(){
+          width: 80%;
+          margin-bottom: 1rem;
+
+        }
+        @extend %button-style;
+      }
+    }
+    .HireDeveloper {
+      display: none;
+
+    }
+
+    .hireDevelopers {
+      display: none;
+      margin: 0 auto;
+      width: 100%;
+      justify-content: center;
+      align-self: center;
+      flex-direction: column;
+
+      button {
+        width: 60%;
+        font-family: "Poppins", sans-serif;
+
+        @extend %button-style;
+
+        margin-bottom: 0.5rem;
+      }
+      .mainHireDevelopers {
+        .section {
+          align-self: center;
+          text-align: center;
+          .removePeriod {
+            // background-color: aquamarine;
+            width: 1.5rem;
+            padding: 0.2rem 0;
+            color: red;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+    .feedback {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1rem;
+      align-self: center;
+    }
+  }
+}
+
+.hiringTable {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin: 5vh auto;
+
+  h2 {
+    color: rgba(#c75a5a, 1);
+    text-transform: uppercase;
+    margin-bottom: 2vh;
+  }
+
+  .table {
+    margin: 0 auto;
+    width: 80%;
+    td,
+    th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      li {
+        list-style-type: none;
+        font-size: 0.8rem;
+      }
+    }
+    th {
+      text-align: center;
+    }
+    td:nth-child(1) {
+      font-size: 1rem;
+    }
+
+    tr {
+      background-color: rgba(#c75a5a, 0.6);
+
+      @include mobile(){
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@keyframes mainTitle {
+  0% {
+    // scale: 1;
+    color: red;
+  }
+  50% {
+    // scale: 1.7;
+    color: rgb(88, 100, 96);
+  }
+  100% {
+    // scale: 1;
+    color: red;
+  }
+}
