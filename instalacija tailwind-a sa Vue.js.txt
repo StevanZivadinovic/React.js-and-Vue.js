@@ -138,7 +138,7 @@ getters:{
 
 //////////////////////////////
 JSON server
-pozivas json fajl preko: json-server --watch data/db.json, data/db.json je putanja do file-a.
+pozivas json fajl preko: json-server --watch data/db.json --port 8000, data/db.json je putanja do file-a; port 8000, moze da bude i neki drugi
 
 
 
