@@ -3,14 +3,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import About from './../views/About.vue';
 import Home from './../views/Home.vue';
+import addNewItem from './../views/addNewItem.vue'
 
 
 const routes = [
 
   {
-
-
-   
     path: '/about',
     name: 'about',
     component: About
@@ -26,6 +24,11 @@ const routes = [
   {
     path:'/home-app',
     redirect:'/moji'
+  },
+  {
+    path:'/add',
+    name:'addComponent',
+    component:addNewItem
   }
 ]
 

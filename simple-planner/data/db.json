@@ -1,15 +1,39 @@
 {
-    "project":[{
-        "id":1,
-        "title":"Create new homepage banner",
-        "details":"Lorem ipsum",
-        "complete":false
-    },
-
+  "project": [
     {
-        "id":2,
-        "title":"Make marketing email",
-        "details":"Lorem ipsum",
-        "complete":true
-    }]
+      "id": 1,
+      "title": "Create new homepage banner",
+      "details": "Lorem ipsum",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "title": "Make marketing email",
+      "details": "Lorem ipsum",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Make custom style",
+      "details": "Lorem ipsum metum dolor",
+      "complete": true
+    },
+    {
+      "title": "Make some cake!",
+      "details": "Delicious food :)",
+      "id": 4,
+      "complete": true
+    },
+    {
+      "title": "Got a kiss!",
+      "details": "What a lovely kiss! ",
+      "id": 5,
+      "complete": false
+    },
+    {
+      "title": "Pusti muziku!",
+      "details": "Narodno nesto, please!",
+      "id": 6
+    }
+  ]
 }

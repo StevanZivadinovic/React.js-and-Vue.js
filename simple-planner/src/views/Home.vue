@@ -1,11 +1,15 @@
 
 <template>
-  <p>HOME</p>
+ 
+
   <ul>
     <li v-for="podatak in podaci" :key="podatak.id">
-      <SingleProject :podatak="podatak"/>
+      <SingleProject :podatak="podatak" @delete="deleteItemHandler" @patchComplete="patchComplete"/>
     </li>
+  <button @click="goToAddForm">Add new!</button>
   </ul>
+  
+
 </template>
 
 <script>
@@ -26,6 +30,26 @@ export default {
       this.podaci = data.data;
     });
   },
+  methods:{
+    deleteItemHandler(id){
+      this.podaci = this.podaci.filter(podatak=>{
+        return podatak.id!=id
+      })
+     
+    }
+     ,
+      patchComplete(id){
+        const p = this.podaci.find(podatak=>{
+          console.log(podatak.id,id)
+        return podatak.id===id
+      })
+      p.complete = !p.complete;
+      },
+
+      goToAddForm(){
+        this.$router.push('/add')
+      }
+  }
 };
 </script>
 

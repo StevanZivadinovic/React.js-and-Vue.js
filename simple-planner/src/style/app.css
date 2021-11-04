@@ -5,12 +5,27 @@
           box-sizing: border-box;
 }
 
-li {
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 0;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+ul li {
   color: #555;
 }
 
-li .project {
-  margin: 2rem auto;
+ul li .project {
+  margin: 1rem auto;
   width: 80%;
   background: white;
   padding: 1rem 2rem;
@@ -18,9 +33,102 @@ li .project {
   -webkit-box-shadow: 0.1rem 0.2rem 0.3rem rgba(0, 0, 0, 0.05);
           box-shadow: 0.1rem 0.2rem 0.3rem rgba(0, 0, 0, 0.05);
   border-left: .4rem solid #e90074;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-li h3 {
+ul li .project .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+ul li .project .data h3 {
   cursor: pointer;
+}
+
+ul li .project .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10%;
+}
+
+ul li .project .actions .fas {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  color: #bbb;
+  cursor: pointer;
+}
+
+ul li .project .actions .fas:hover {
+  color: #777;
+}
+
+ul li .project .actions .cekirano {
+  color: greenyellow;
+}
+
+ul button {
+  color: #777;
+  font-weight: 600;
+  margin: 1rem auto;
+  width: 30%;
+  padding: 1rem 2rem;
+  background-color: greenyellow;
+  outline: none;
+  border: none;
+  border-radius: .4rem;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  color: #777;
+  font-weight: 600;
+  background: rgba(51, 51, 51, 0.2);
+  padding: 1rem 3rem;
+  border-radius: .6rem;
+}
+
+form input, form textarea {
+  outline: none;
+  border: none;
+  border-bottom: .1rem solid black;
+  background: transparent;
+  margin: .5rem 0;
+}
+
+form button {
+  color: #777;
+  font-weight: 600;
+  margin: 1rem auto;
+  width: 30%;
+  padding: 1rem 2rem;
+  background-color: greenyellow;
+  outline: none;
+  border: none;
+  border-radius: .4rem;
 }
 /*# sourceMappingURL=app.css.map */
