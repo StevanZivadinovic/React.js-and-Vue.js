@@ -2,7 +2,7 @@
 <template>
 <p>pozz</p>
   <router-view/>
-  <button @click="pushButton">push</button>
+  <!-- <button @click="pushButton">push</button> -->
 </template>
 
 <script>

@@ -2,13 +2,19 @@
 <template>
   <p>HOME</p>
   <ul>
-    <li v-for="podatak in podaci" :key="podatak.id">{{ podatak.title }}</li>
+    <li v-for="podatak in podaci" :key="podatak.id">
+      <SingleProject :podatak="podatak"/>
+    </li>
   </ul>
 </template>
 
 <script>
 import axios from "axios";
+import SingleProject from './../components/SingleProject.vue'
 export default {
+  components:{
+    SingleProject:SingleProject
+  },
   data() {
     return {
       podaci: [],

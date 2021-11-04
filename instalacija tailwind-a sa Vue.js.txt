@@ -141,7 +141,11 @@ JSON server
 pozivas json fajl preko: json-server --watch data/db.json --port 8000, data/db.json je putanja do file-a; port 8000, moze da bude i neki drugi
 
 
+////////////////////////////////////////////////////
+axios
 
+npm install axios
+samo inportujes nakon toga u fajl import axios from 'axios
 
 
 
