@@ -1,13 +1,16 @@
 
 <template>
-<p>pozz</p>
+<Navbar/>
   <router-view/>
   <!-- <button @click="pushButton">push</button> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/Navbar.vue'
 export default {
+    components:{
+        Navbar:Navbar
+    },
     methods:{
         pushButton(){
             this.$router.push('/about')

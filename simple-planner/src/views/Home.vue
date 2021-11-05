@@ -1,7 +1,5 @@
 
 <template>
- 
-
   <ul>
     <li v-for="podatak in podaci" :key="podatak.id">
       <SingleProject :podatak="podatak" @delete="deleteItemHandler" @patchComplete="patchComplete"/>

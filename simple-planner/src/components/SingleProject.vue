@@ -7,7 +7,9 @@
       </div>
     </div>
     <div class="actions">
+      <router-link :to="{name:'Edit', params:{id:podatak.id}}">
       <i class="fas fa-pen"></i>
+      </router-link>
       <i @click="deleteItem" class="fas fa-trash"></i>
       <i @click="toggleComplete" class="fas fa-check" ref="tick" :class="podatak.complete ? 'cekirano' : ''"></i>
     </div>

@@ -1,10 +1,10 @@
-//router 4
+//router
 
 import { createRouter, createWebHistory } from 'vue-router'
 import About from './../views/About.vue';
 import Home from './../views/Home.vue';
 import addNewItem from './../views/addNewItem.vue'
-
+import Edit from './../views/Edit.vue'
 
 const routes = [
 
@@ -29,6 +29,12 @@ const routes = [
     path:'/add',
     name:'addComponent',
     component:addNewItem
+  },
+  {
+    path:'/project/:id',
+    name:'Edit',
+    component:Edit,
+    props:true
   }
 ]
 
