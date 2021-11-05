@@ -5,6 +5,34 @@
           box-sizing: border-box;
 }
 
+.buttons {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttons button {
+  color: #777;
+  font-weight: 600;
+  margin: 1rem .5rem;
+  width: 15%;
+  padding: 1rem 2rem;
+  background-color: greenyellow;
+  outline: none;
+  border: none;
+  border-radius: .4rem;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
 ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,6 +94,10 @@ ul li .project .actions {
       -ms-flex-align: center;
           align-items: center;
   width: 10%;
+}
+
+ul li .project .actions a {
+  margin: 0;
 }
 
 ul li .project .actions .fas {
