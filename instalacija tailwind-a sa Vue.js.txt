@@ -65,33 +65,37 @@ umesto:
 
 //////////////////////////////////////////////////////////////////////////////////////////
 add vue router za novi projekat
-https://codeburst.io/setting-up-a-router-on-vue-3-f15ad377eff6
+1) npm install vue-router@next -S , minimum verzija preko 4.0.0
 
+2) folder router pravis i u njemu index.js:
 
-1) npm i vue-router@next
-2) napraviti fajl router.js u src folder i dodati:
+import { createRouter, createWebHistory } from 'vue-router'
+import About from './../views/About.vue';
 
-/////////////
-import { createWebHistory, createRouter } from 'vue-router';
-import Home from '@/views/Home.vue';
 
 const routes = [
-	{
-		path: '/',
-		name: 'Home',
-		component: Home,
-	},
-];
+
+  {
+    path: '/about',
+    name: 'about',
+    component: About
+  }
+  
+]
 
 const router = createRouter({
-	history: createWebHistory(),
-	routes,
-});
+  history: createWebHistory(),
+  routes
+  // scrollBehavior (to, from, savedPosition) {
+  //   return savedPosition || { top: 0 }
+  // }
+})
 
 export default router;
+
 ///////////
-3) importovati router.js u main.js i dodati u zadnjem redu createApp(App).use(router).mount('#app') umesto createApp(App).mount('#app')
-4) unesi sad na primer <router-view /> ili <router-link> i proveri jel radi
+3) importovati index.js u main.js i dodati u zadnjem redu createApp(App).use(router).mount('#app') umesto createApp(App).mount('#app')
+4) unesi sad na primer <router-view /> ili <router-link> i proveri jel radi u app.vue
 
 
 
