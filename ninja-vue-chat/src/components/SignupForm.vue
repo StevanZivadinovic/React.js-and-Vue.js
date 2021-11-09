@@ -22,7 +22,7 @@ data(){
 },
 methods:{
     handleSubmit(){
-        console.log(this.displayName, this.email, this.password)
+     
         projectAuth.createUserWithEmailAndPassword(this.email, this.password)
         .then(data=>{
             projectAuth.currentUser.updateProfile({displayName:this.displayName});
