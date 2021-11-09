@@ -1,8 +1,15 @@
 <template>
   <div class="container welcome">
     Welcome
+    <div v-if="showLogin" >
+      <LoginForm/>
+    <p>No account yet? <span @click="showLogin=false">Signup</span></p>
+    </div>
+    <div v-else>
     <SignupForm />
-    <!-- <LoginForm/> -->
+      <p>Already registered? <span @click="showLogin=true">Login</span></p>
+    </div>
+    <!--  -->
   </div>
 </template>
 
@@ -15,8 +22,14 @@ export default {
     SignupForm: SignupForm,
     LoginForm:LoginForm
   },
+  data(){
+    return{
+      showLogin:true
+    }
+  }
 };
 </script>
 
 <style>
+
 </style>

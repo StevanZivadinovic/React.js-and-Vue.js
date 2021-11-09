@@ -8,6 +8,7 @@
 body {
   background: #e3e1ff;
   color: #444;
+ 
 
   .container {
     width: 90%;
@@ -40,10 +41,21 @@ body {
       color: #999;
       margin: 1rem auto;
     }
+    p{
+        font-size: 1.5rem;
+    }
+    span{
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 1.5rem;
+        
+    }
   }
   .error {
     color: #ff3f80;
     font-size: 1.4rem;
+    padding: 1rem 0;
   }
   button {
     text-decoration: none;
@@ -55,4 +67,5 @@ body {
     padding: 1rem 2rem;
     font-size: 1.5rem;
   }
+  
 }
