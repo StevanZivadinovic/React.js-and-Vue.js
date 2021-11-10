@@ -28,6 +28,7 @@ methods:{
             projectAuth.currentUser.updateProfile({displayName:this.displayName});
             console.log(data)
             console.log(projectAuth.currentUser)
+            this.$emit('login')
             // return data.user.updateProfile({displayName:this.displayName})
         })
         .catch(err=>{

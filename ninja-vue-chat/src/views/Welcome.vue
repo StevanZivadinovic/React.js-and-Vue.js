@@ -2,11 +2,11 @@
   <div class="container welcome">
     Welcome
     <div v-if="showLogin" >
-      <LoginForm/>
+      <LoginForm @login='enterChatroom'/>
     <p>No account yet? <span @click="showLogin=false">Signup</span></p>
     </div>
     <div v-else>
-    <SignupForm />
+    <SignupForm @login='enterChatroom' />
       <p>Already registered? <span @click="showLogin=true">Login</span></p>
     </div>
     <!--  -->
@@ -25,6 +25,11 @@ export default {
   data(){
     return{
       showLogin:true
+    }
+  },
+  methods:{
+    enterChatroom(){
+      this.$router.push('/chatroom')
     }
   }
 };

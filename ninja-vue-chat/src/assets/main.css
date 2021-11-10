@@ -75,4 +75,27 @@ body button {
   padding: 1rem 2rem;
   font-size: 1.5rem;
 }
+
+body .chatroom {
+  font-size: 2rem;
+}
+
+body .chatroom .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem;
+}
+
+body .chatroom .navbar p {
+  font-size: 2rem;
+}
+
+body .chatroom .navbar p.email {
+  color: #999;
+  font-size: 1.5rem;
+}
 /*# sourceMappingURL=main.css.map */

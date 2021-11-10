@@ -23,7 +23,7 @@ methods:{
         console.log(this.email, this.password);
         projectAuth.signInWithEmailAndPassword(this.email, this.password)
         .then(data=>{
-            console.log(data)
+            this.$emit('login')
         })
         .catch(err=>{
             this.error = err.message.substring(9)
