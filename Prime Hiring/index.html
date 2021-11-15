@@ -8,14 +8,13 @@ u posebnom projektu(specijalno kreiranom za to) pod nazivom Prime Hiring -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1">   -->
     <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="shortcut icon" type="image/jpg" href="./img/businessman.png" />
     <title>Prime Hiring</title>
   </head>
   <body>
-
     <h1 class="mainTitle">Hire Developer!</h1>
     <nav>
       <div class="customerNav">
@@ -102,7 +101,6 @@ u posebnom projektu(specijalno kreiranom za to) pod nazivom Prime Hiring -->
     </form>
     <div class="searchMain">
       <span class="searchInputSpan">
-
         <input
           type="text"
           class="search"
@@ -117,7 +115,6 @@ u posebnom projektu(specijalno kreiranom za to) pod nazivom Prime Hiring -->
       <ul class="showList"></ul>
     </div>
 
-    
     <!-- Hiring process -->
     <div class="hiring">
       <div class="hiringProcess">
@@ -130,12 +127,11 @@ u posebnom projektu(specijalno kreiranom za to) pod nazivom Prime Hiring -->
         <form action="" class="hireDevelopers">
           <button class="addPeriod">Add new hiring period!</button>
           <div class="mainHireDevelopers">
-              <div class="section">
-
-                <input type="date" name="startDate" class="startDate" />
-                <input type="date" name="endDate" class="endDate" />
-                <button class="removePeriod">X</button>
-              </div>
+            <div class="section">
+              <input type="date" name="startDate" class="startDate" />
+              <input type="date" name="endDate" class="endDate" />
+              <button class="removePeriod">X</button>
+            </div>
           </div>
           <button class="hireNow">Hire Now!</button>
         </form>
@@ -144,41 +140,42 @@ u posebnom projektu(specijalno kreiranom za to) pod nazivom Prime Hiring -->
       <div class="developersSchedule"></div>
     </div>
 
-
     <!-- Hiring periods table -->
     <div class="hiringTable">
-
       <h2>Table of hired developers and already taken periods</h2>
       <table class="table">
         <tr>
           <th>Developer name</th>
           <th>Already taken periods</th>
         </tr>
-
       </table>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script>
-      let a = ()=>{document.querySelector('.search1').style.transform = 'translateY(0.5rem)';
-      document.querySelector('.search1').style.boxShadow = '0 .25rem 1rem rgba(0, 0, 0, 0.4)';
-    };
-      let b = ()=>{document.querySelector('.search1').style.transform = 'translateX(-.5rem)';
-      document.querySelector('.search1').style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.4)';
-    };
-
-
+      let a = () => {
+        document.querySelector(".search1").style.transform =
+          "translateY(0.5rem)";
+        document.querySelector(".search1").style.boxShadow =
+          "0 .25rem 1rem rgba(0, 0, 0, 0.4)";
+      };
+      let b = () => {
+        document.querySelector(".search1").style.transform =
+          "translateX(-.5rem)";
+        document.querySelector(".search1").style.boxShadow =
+          "0 0.5rem 1rem rgba(0, 0, 0, 0.4)";
+      };
 
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyCwqTqJRMtrwoN0ySFkzZc2VVUCompPjpA",
-  authDomain: "prime-hiring-fixed-cors.firebaseapp.com",
-  projectId: "prime-hiring-fixed-cors",
-  storageBucket: "prime-hiring-fixed-cors.appspot.com",
-  messagingSenderId: "16559068072",
-  appId: "1:16559068072:web:7e03b2a574fb801503c39d",
-  measurementId: "G-JGFFQB06GR"
+        authDomain: "prime-hiring-fixed-cors.firebaseapp.com",
+        projectId: "prime-hiring-fixed-cors",
+        storageBucket: "prime-hiring-fixed-cors.appspot.com",
+        messagingSenderId: "16559068072",
+        appId: "1:16559068072:web:7e03b2a574fb801503c39d",
+        measurementId: "G-JGFFQB06GR",
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
