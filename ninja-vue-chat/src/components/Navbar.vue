@@ -14,6 +14,7 @@
 
 <script>
 import {projectAuth} from './../firebase/config'
+// import {useRouter} from 'vue-router'
 
 import {ref} from 'vue';
 const user = ref(projectAuth.currentUser)
@@ -43,6 +44,7 @@ methods:{
         .then(()=>{
             console.log('user is logedout')
             this.user=projectAuth.currentUser
+            this.$router.push({name:'Welcome'})
         })
         .catch((err)=>{
             console.log(err)
