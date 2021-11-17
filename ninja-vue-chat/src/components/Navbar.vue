@@ -9,11 +9,13 @@
       <button class="" @click="logout">Logout</button>
     
   </div>
+  <NewChatForm/>
     </nav>
 </template>
 
 <script>
 import {projectAuth} from './../firebase/config'
+import NewChatForm from './NewChatForm.vue'
 // import {useRouter} from 'vue-router'
 
 import {ref} from 'vue';
@@ -32,6 +34,9 @@ const user = ref(projectAuth.currentUser)
 
 
 export default {
+    components:{
+        NewChatForm:NewChatForm
+    },
     data(){
         return{
             user:projectAuth.currentUser
