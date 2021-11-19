@@ -8,8 +8,8 @@
       </div>
       <button class="" @click="logout">Logout</button>
     
-  </div>
   <NewChatForm/>
+  </div>
     </nav>
 </template>
 
