@@ -18,6 +18,12 @@ body {
     box-shadow: 0.2rem 0.4rem 0.6rem rgba(28, 6, 49, 0.1);
     background: white;
     font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    .mainForm{
+      display: flex;
+      justify-content: space-between;
+    }
   }
   .welcome {
     text-align: center;
