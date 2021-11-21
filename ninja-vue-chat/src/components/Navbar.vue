@@ -19,8 +19,9 @@
 </template>
 
 <script>
-import { projectAuth } from "./../firebase/config";
+import {projectFirestore, projectAuth } from "./../firebase/config";
 import NewChatForm from "./NewChatForm.vue";
+
 // import {useRouter} from 'vue-router'
 
 import { ref } from "vue";

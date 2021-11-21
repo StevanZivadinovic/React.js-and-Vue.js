@@ -1,4 +1,11 @@
 <template>
+  <div class="chat-window" v-if="documents">
+    <div class="single" v-for="doc in documents" :key="doc.id">
+    <span class="created-at">{{doc.data.createdAt.toDate()}}</span>
+    <span class="name">{{doc.data.name}}</span>
+    <span class="message">{{doc.data.message}}</span>
+    </div>
+  </div>
   <form action="">
     <textarea
       @keypress.enter.prevent="handleSubmit"
@@ -10,14 +17,28 @@
       v-model="message"
     ></textarea>
   </form>
+  <div class="err">{{err}}</div>
 </template>
 
 <script>
-import { projectAuth, timestamp } from "./../firebase/config.js";
+import { projectFirestore,projectAuth, timestamp } from "./../firebase/config.js";
+import {ref} from 'vue'
+let document = [];
+const documents = ref(document)
+    projectFirestore.collection('messages').orderBy('createdAt')
+      .onSnapshot(snap=>{
+        snap.docs.forEach(doc=>{
+         doc.data().createdAt && documents.value.push({data:doc.data(), id:doc.id})
+        })
+      })
+
+
 export default {
   data() {
     return {
       message: "",
+      err:'',
+      documents:document
     };
   },
   methods: {
@@ -25,15 +46,46 @@ export default {
       const chat = {
         name: projectAuth.currentUser.displayName,
         message: this.message,
-        createdAt: timestamp(),
+        createdAt: timestamp()
       };
-      console.log(chat);
-    },
+      projectFirestore.collection('messages').add(chat)
+      .then(data=>{
+         this.message='';
+         console.log(data)
+      }).catch(err=>{
+        this.err=err
+      })
+     
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
+
+
+  .chat-window{
+    background: #fafafa;
+    padding: 3rem 2rem;
+    overflow: hidden;
+    .single{
+      margin: 1.8rem 0;
+
+      .created-at{
+        display: block;
+        color: #999;
+        font-size: 1.2rem;
+        margin-bottom: .4rem;
+      }
+      .name{
+        font-weight: bold;
+        margin-right: .6rem;
+      }
+     
+    }
+  }
+
+
 form {
   margin: 1rem;
   textarea {
@@ -51,6 +103,9 @@ form {
       border-bottom: 0.1rem solid black;
     }
   }
+
   
 }
+
+
 </style>
