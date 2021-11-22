@@ -26,7 +26,9 @@ import {
   projectAuth,
   timestamp,
 } from "./../firebase/config.js";
-import { formatDistanceToNow, subDays } from 'date-fns'
+import { formatDistanceToNow, subDays } from 'date-fns';
+
+
 export default {
   data() {
     return {
@@ -37,13 +39,18 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log(this.documents, 'sss')
+      // console.log(this.documents, 'sss')
       const chat = {
         name: projectAuth.currentUser.displayName,
         message: this.message,
         createdAt: timestamp(),
       };
-  
+      // console.log(this.$refs.chat.scrollHeight)
+    setTimeout(()=>{
+      this.$refs.chat.scrollTop = this.$refs.chat.scrollHeight;
+    },100)
+      
+
       this.documents=[]
       projectFirestore
         .collection("messages")
@@ -59,6 +66,7 @@ export default {
   }
   ,
   mounted(){
+     
    projectFirestore.collection('messages').orderBy('createdAt')
      .onSnapshot(snap=>{
        this.documents=[]
@@ -67,7 +75,10 @@ export default {
        })
 
      })
-     
+       setTimeout(()=>{
+      this.$refs.chat.scrollTop = this.$refs.chat.scrollHeight;
+    },1000)
+ 
   },
   computed:{
     newDataChangedTimeFormat(){
@@ -88,6 +99,10 @@ export default {
   background: #fafafa;
   padding: 3rem 2rem;
   overflow: hidden;
+  height: 40%;
+  max-height: 50rem;
+  border:1px solid black;
+  overflow: scroll;
   .single {
     margin: 1.8rem 0;
     .created-at {
