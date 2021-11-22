@@ -1,7 +1,7 @@
 <template>
-  <div ref="chat" class="chat-window" v-if="documents">
-    <div class="single" v-for="doc in documents" :key="doc.id">
-      <span class="created-at">{{ doc.createdAt.toDate() }}</span>
+  <div ref="chat" class="chat-window" v-if="newDataChangedTimeFormat">
+    <div class="single" v-for="doc in newDataChangedTimeFormat" :key="doc.id">
+      <span class="created-at">{{ doc.createdAt }}</span>
       <span class="name">{{ doc.name }}</span>
       <span class="message">{{ doc.message }}</span>
     </div>
@@ -26,6 +26,7 @@ import {
   projectAuth,
   timestamp,
 } from "./../firebase/config.js";
+import { formatDistanceToNow, subDays } from 'date-fns'
 export default {
   data() {
     return {
@@ -42,6 +43,7 @@ export default {
         message: this.message,
         createdAt: timestamp(),
       };
+  
       this.documents=[]
       projectFirestore
         .collection("messages")
@@ -63,8 +65,20 @@ export default {
        snap.docs.forEach(doc=>{
         doc.data().createdAt && this.documents.push({...doc.data(), id:doc.id})
        })
-      //  documents.value = document
+
      })
+     
+  },
+  computed:{
+    newDataChangedTimeFormat(){
+      if(this.documents){
+
+        return this.documents.map(doc=>{
+          let time =  formatDistanceToNow(doc.createdAt.toDate());
+          return {...doc, createdAt:time}//ovom sintaksom samo menjas zeljeni properti doc-a, a to je ovde "createdAt"
+         })
+      }
+    }
   }
 };
 </script>
