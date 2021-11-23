@@ -3,9 +3,17 @@ import Welcome from './../views/Welcome.vue';
 import Chatroom from './../views/Chatroom.vue';
 import { projectAuth } from '../firebase/config';
 
-const requireAuth = (to, from, next, )=>{
+const requireAuth = (to, from, next )=>{
   if(!projectAuth.currentUser){
     next({name:'Welcome'})
+  }else{
+    next()
+  }
+}
+
+const dontAllowLogedUserToSeeWelcomeScreen=(to,from,next)=>{
+  if(projectAuth.currentUser){
+    next({name:'Chatroom'})
   }else{
     next()
   }
@@ -16,7 +24,8 @@ const routes = [
   {
     path: '/',
     name: 'Welcome',
-    component: Welcome
+    component: Welcome,
+    beforeEnter:dontAllowLogedUserToSeeWelcomeScreen
   },
   {
     path: '/chatroom',

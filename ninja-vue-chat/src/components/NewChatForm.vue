@@ -35,6 +35,7 @@ export default {
       message: "",
       err: "",
       documents: [],
+      unsub : null
     };
   },
   methods: {
@@ -67,8 +68,9 @@ export default {
   ,
   mounted(){
      
-   projectFirestore.collection('messages').orderBy('createdAt')
+   this.unsub = projectFirestore.collection('messages').orderBy('createdAt')
      .onSnapshot(snap=>{
+       console.log('snap');
        this.documents=[]
        snap.docs.forEach(doc=>{
         doc.data().createdAt && this.documents.push({...doc.data(), id:doc.id})
@@ -81,7 +83,7 @@ export default {
  
   },
   computed:{
-    newDataChangedTimeFormat(){
+   newDataChangedTimeFormat(){
       if(this.documents){
 
         return this.documents.map(doc=>{
@@ -90,6 +92,10 @@ export default {
          })
       }
     }
+  }
+  ,
+  unmounted(){
+    this.unsub()//gasenje live pracenja promena pomocu snapshota se ovako radi
   }
 };
 </script>
@@ -101,19 +107,24 @@ export default {
   overflow: hidden;
   height: 40%;
   max-height: 50rem;
-  border:1px solid black;
+  
   overflow: scroll;
+  margin-top:3rem;
   .single {
     margin: 1.8rem 0;
     .created-at {
       display: block;
       color: #999;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin-bottom: 0.4rem;
     }
     .name {
       font-weight: bold;
       margin-right: 0.6rem;
+      font-size: 1.2rem;
+    }
+    .message{
+      font-size: 1.5rem;
     }
   }
 }
