@@ -12,9 +12,9 @@ import ikona9 from "./../assets/ikona9.jpg";
 import fb from "./../assets/facebook.svg";
 
 import "./galerija.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Footer from "./footer";
+// import Footer from "./footer";
 
 const images = [
   ikona1,
@@ -70,7 +70,7 @@ export default class Galerija extends React.Component {
           <div className="col1">
             <div className="sektor">
               <img
-                imageTitle="slika"
+                // imageTitle="slika"
                 className="slika"
                 src={ikona1}
                 onClick={() => this.setState({ isOpen: true, photoIndex: 0 })}
@@ -200,7 +200,7 @@ export default class Galerija extends React.Component {
         {isOpen && (
           <Lightbox
             mainSrc={images[photoIndex]}
-            imageTitle={textHeader[photoIndex]}
+            // imageTitle={textHeader[photoIndex]}
             imageCaption={textFooter[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
             prevSrc={images[(photoIndex + images.length - 1) % images.length]}

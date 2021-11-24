@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Button from "./button";
+// import Button from "./button";
 import "./footer.css";
-import krst from "./../assets/1.png";
+// import krst from "./../assets/1.png";
 import fb from './../assets/facebook.svg';
 
 export default function Footer(props) {

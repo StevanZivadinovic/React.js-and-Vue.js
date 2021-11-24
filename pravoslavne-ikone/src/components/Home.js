@@ -8,8 +8,8 @@ import zlatni_listici from './../assets/zlatni_listici.jpg';
 import pigment from './../assets/pigment.jpg';
 import fb from "./../assets/facebook.svg";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Footer from "./footer";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import Footer from "./footer";
 
 
 

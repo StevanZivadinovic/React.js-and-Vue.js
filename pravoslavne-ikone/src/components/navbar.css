@@ -42,7 +42,7 @@
   }
   
   .nav-menu {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
     list-style: none;

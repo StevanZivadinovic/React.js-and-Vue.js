@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 
 import fb from "./../assets/facebook.svg";
 import "./kontakt.css";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 export default function Kontakt() {
   const [status, setStatus] = useState(false);
@@ -34,7 +34,7 @@ export default function Kontakt() {
           console.log(error.text);
         }
       ); //ova funkcija je kopirana sa njihovog sajta
-
+        console.log(e.target)
     e.target.reset();
   }
 
@@ -102,9 +102,9 @@ export default function Kontakt() {
       let dugme = (document.querySelector(
         'input[type="submit"]'
       ).disabled = false);
-      // dugme.style.cursor = 'pointer'
+     
       setStatus(true);
-      // dugme.innerText = 'email je dobar'
+      
       let label = document.querySelector("label");
       label.style.display = "none";
     } else {
