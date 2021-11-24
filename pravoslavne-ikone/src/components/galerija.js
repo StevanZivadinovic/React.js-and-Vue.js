@@ -181,8 +181,11 @@ export default class Galerija extends React.Component {
           <Footer></Footer>
        
           </div> */}
+
+         
+        </div>
            <div className="contactDetails1">
-            <p>stevanzivadinovic@outlook.com</p>
+            <p>stevanzivadinovic@outlook.co</p>
             <p>061/321-60-87</p>
             <p>
               <a
@@ -193,9 +196,6 @@ export default class Galerija extends React.Component {
               </a>
             </p>
           </div>
-
-         
-        </div>
 
         {isOpen && (
           <Lightbox
