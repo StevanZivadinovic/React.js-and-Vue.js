@@ -70,7 +70,7 @@ export default class Galerija extends React.Component {
           <div className="col1">
             <div className="sektor">
               <img
-                // imageTitle="slika"
+                imageTitle="slika"
                 className="slika"
                 src={ikona1}
                 onClick={() => this.setState({ isOpen: true, photoIndex: 0 })}
@@ -200,7 +200,7 @@ export default class Galerija extends React.Component {
         {isOpen && (
           <Lightbox
             mainSrc={images[photoIndex]}
-            // imageTitle={textHeader[photoIndex]}
+            imageTitle={textHeader[photoIndex]}
             imageCaption={textFooter[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
             prevSrc={images[(photoIndex + images.length - 1) % images.length]}
