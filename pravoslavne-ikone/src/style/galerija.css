@@ -32,8 +32,11 @@ img{
     margin: 10px 20px;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
+}
+#fb{
     margin-bottom: 0;
     width: 2rem;
+
 }
 img:hover{
     cursor: pointer;

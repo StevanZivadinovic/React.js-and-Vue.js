@@ -11,7 +11,7 @@ import ikona8 from "./../assets/ikona8.jpg";
 import ikona9 from "./../assets/ikona9.jpg";
 import fb from "./../assets/facebook.svg";
 
-import "./galerija.css";
+import "./../style/galerija.css";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // import Footer from "./footer";
@@ -185,7 +185,7 @@ export default class Galerija extends React.Component {
          
         </div>
            <div className="contactDetails1">
-            <p>stevanzivadinovic@outlook.co</p>
+            <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
             <p>
               <a

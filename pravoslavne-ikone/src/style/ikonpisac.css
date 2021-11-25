@@ -38,6 +38,8 @@
   background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
   border-radius: 5px;
   font-size: 20px !important;
+  position: fixed;
+  bottom: 0;
 
   
   

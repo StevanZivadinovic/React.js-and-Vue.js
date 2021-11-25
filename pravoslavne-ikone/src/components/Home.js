@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "./../style/Home.css";
 // import { Link, animateScroll as scroll } from "react-scroll";
 import daska from "./../assets/daska.jpg";
 import daska1 from "./../assets/daska1.jpg";
@@ -18,6 +18,7 @@ import fb from "./../assets/facebook.svg";
 
 export default function Home() {
   return (
+    
     <div className="main">
       <div className='uvod'> <h1>Израда Православних икона</h1>
       <p className='podtekst'>-по наруџбини-</p>
@@ -59,6 +60,9 @@ export default function Home() {
         </div>
       </div>
       </div>
+
+
+      <div className='mainNovi'>
       <div id="vizantijskiStil">
         <h2>Византијски стил</h2>
         <div className="text">
@@ -107,14 +111,14 @@ export default function Home() {
 
         <img id="tehnika1" src={zlatni_listici}></img>
         </div>
-        <p>
+        <p className='lastPasus'>
           За сликање се користе прашкасти пигменти који се растварају емулзијом
           жуманцета и сирћета. Позадина иконе облепљује се златним листићима (24
           карата), шлаг металом или осликава бојом по жељи.
         </p>
       </div>
-      <div className="contactDetails1">
-            <p>stevanzivadinovic@outlook.com</p>
+      <div className="kontakt">
+            <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
             <p>
               <a
@@ -125,6 +129,8 @@ export default function Home() {
               </a>
             </p>
           </div>
+          </div>
     </div>
+         
   );
 }

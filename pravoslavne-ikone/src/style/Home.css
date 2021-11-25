@@ -7,8 +7,13 @@
 html {
   scroll-behavior: smooth;
 }
-.main{
+.main {
   width: 90%;
+}
+.mainNovi{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .uvod {
@@ -71,10 +76,11 @@ h1 {
 
 #vizantijskiStil {
   margin-top: 0px;
-  height: 80vh;
+  height: 110vh;
   width: 100%;
+  
 }
-#vizantijskiStil p{
+#vizantijskiStil p {
   text-align: justify;
 }
 
@@ -128,7 +134,7 @@ h1 {
   transition: transform 1.5s;
 }
 #tehnika {
-  height: 80vh;
+  height: 90vh;
   background-image: url("./../assets/textura2.jpg");
   display: flex;
   flex-direction: column;
@@ -150,24 +156,24 @@ h1 {
   transition: transform 1.5s;
 }
 
-.contactDetails1 {
+.kontakt {
   /* width: 100%; */
   background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
   border-radius: 5px;
   font-size: 16px;
   font-size: 20px !important;
-  position: fixed;
-  bottom: 0;
-  left: 0;
 }
-#tehnika p{
+#tehnika p {
   text-align: justify;
   margin: 0 30px 10px 30px;
 }
 
 @media screen and (max-width: 960px) {
-  .contactDetails1 {
-    width: 100%;
+  img {
+    max-width: 60%;
+  }
+  .kontakt {
+   
     background: linear-gradient(
       0deg,
       rgb(28, 27, 27) 10%,
@@ -175,7 +181,10 @@ h1 {
     );
     border-radius: 5px;
     font-size: 16px;
+    display: block;
+    
   }
+
   .uvod {
     height: 100vh;
   }
@@ -211,6 +220,7 @@ h1 {
 
   #vizantijskiStil {
     margin-top: 50px;
+    height: 125vh;
   }
   .text {
     display: flex;
@@ -229,9 +239,9 @@ h1 {
     display: flex;
   }
 
-  #vizantijskiStil {
+  /* #vizantijskiStil {
     height: 100%;
-  }
+  } */
   #daska {
     height: 100%;
   }
@@ -256,7 +266,8 @@ h1 {
     justify-content: space-around;
     align-items: center;
   }
-  #tehnika {
-    height: 100%;
-  }
+  
+ #tehnika{
+   height: 100vh;
+ }
 }

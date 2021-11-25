@@ -36,7 +36,7 @@ export default function Footer(props) {
           </Link></div>
          
           <div>
-            <p>stevanzivadinovic@outlook.com</p>
+            <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
             <a target='_blank' href='https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453'><img id='fb' src={fb}></img></a>
           </div>

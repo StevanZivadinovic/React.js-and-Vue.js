@@ -1,6 +1,6 @@
 import React from "react";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./ikonpisac.css";
+import "./../style/ikonpisac.css";
 // import Footer from "./footer";
 import majka from './../assets/majka.jpg'
 import fb from "./../assets/facebook.svg";
@@ -28,7 +28,7 @@ export default function Ikonopisac() {
       </div>
 
       <div className="contactDetails1">
-            <p>stevanzivadinovic@outlook.com</p>
+            <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
             <p>
               <a

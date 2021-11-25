@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
 import fb from "./../assets/facebook.svg";
-import "./kontakt.css";
+import "./../style/kontakt.css";
 // import { useForm } from "react-hook-form";
 
 export default function Kontakt() {
@@ -193,7 +193,7 @@ export default function Kontakt() {
           </div>
         </div>
         <div className="contactDetails">
-          <p>stevanzivadinovic@outlook.com</p>
+          <p>gagaikone@live.com</p>
           <p>061/321-60-87</p>
           <p>
             <a
