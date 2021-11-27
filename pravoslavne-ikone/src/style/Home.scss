@@ -37,21 +37,14 @@ html {
       background-color: rgba(50, 50, 50, 0.3) !important;
       justify-content: space-around;
       color: rgb(50, 50, 50);
+
+      .liste {
+        color: black;
+      }
     }
   }
 }
 
-
-
-
-
-
-.liste {
-  color: black;
-}
-/* .lista{
-    margin-top: 110px; 
-} */
 .lista li {
   list-style-type: none;
   padding-top: 30px;
@@ -59,50 +52,38 @@ html {
   flex-direction: column;
   justify-content: space-around;
   font-size: 30px;
-}
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
 
-.lista li a {
-  text-decoration: none;
-  color: black;
-  font-weight: 800;
-}
-
-.lista li a:hover {
-  /* color: rgb(14, 107, 49); */
-  border-bottom: 1px solid black;
-  font-weight: 800;
-  transform: scale(1.1);
+    &:hover {
+      border-bottom: 1px solid black;
+      font-weight: 800;
+      transform: scale(1.1);
+    }
+  }
 }
 
 #vizantijskiStil {
   margin-top: 0px;
   height: 110vh;
   width: 100%;
-  
-}
-#vizantijskiStil p {
-  text-align: justify;
-}
-
-#vizantijskiStil h2 {
-  font-family: "Pacifico", cursive;
-}
-
-#daska h2 {
-  color: black;
-  height: 100vh;
-  font-family: "Pacifico", cursive;
-}
-
-.text {
-  display: flex;
-  margin-top: 30px;
-  justify-content: space-between;
-}
-
-.text p {
-  text-align: left;
-  margin: 30px;
+  h2 {
+    font-family: "Pacifico", cursive;
+  }
+  p {
+    text-align: justify;
+  }
+  .text {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    p {
+      text-align: left;
+      margin: 30px;
+    }
+  }
 }
 
 #daska {
@@ -110,50 +91,55 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  h2 {
+    color: white;
+    font-weight: 100;
+    height: 100px;
+    font-family: "Pacifico", cursive;
+  }
+  .textDaska {
+    display: flex;
+    justify-content: space-around;
+    #slikaDaska {
+      width: 300px;
+      border-radius: 30px;
+      &:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+        transition: transform 1.5s;
+      }
+    }
+  }
+  p {
+    margin-top: 40px;
+  }
 }
 
-#daska h2 {
-  color: white;
-  font-weight: 100;
-  height: 100px;
-}
-#daska p {
-  margin-top: 40px;
-}
-.textDaska {
-  display: flex;
-  justify-content: space-around;
-}
-#slikaDaska {
-  width: 300px;
-  border-radius: 30px;
-}
-#slikaDaska:hover {
-  transform: scale(1.5);
-  cursor: pointer;
-  transition: transform 1.5s;
-}
 #tehnika {
   height: 90vh;
   background-image: url("./../assets/textura2.jpg");
   display: flex;
   flex-direction: column;
-}
-#tehnika h2 {
-  font-family: "Pacifico", cursive;
-}
-.slikeTehnika {
-  display: flex;
-  justify-content: space-around;
-}
-#tehnika1 {
-  width: 300px;
-  border-radius: 50px;
-}
-#tehnika1:hover {
-  transform: scale(1.5);
-  cursor: pointer;
-  transition: transform 1.5s;
+  h2 {
+    font-family: "Pacifico", cursive;
+  }
+  .slikeTehnika {
+    display: flex;
+    justify-content: space-around;
+    #tehnika1 {
+      width: 300px;
+      border-radius: 50px;
+      &:hover {
+        transform: scale(1.5);
+        cursor: pointer;
+        transition: transform 1.5s;
+      }
+    }
+  }
+  p {
+    text-align: justify;
+    margin: 0 30px 10px 30px;
+  }
 }
 
 .kontakt {
@@ -163,17 +149,96 @@ html {
   font-size: 16px;
   font-size: 20px !important;
 }
-#tehnika p {
-  text-align: justify;
-  margin: 0 30px 10px 30px;
-}
 
 @media screen and (max-width: 960px) {
   img {
     max-width: 60%;
   }
+
+  .uvod {
+    height: 100vh;
+    .opis {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 30px;
+      background-color: rgba(245, 231, 231, 0.3);
+      .liste {
+        .lista {
+          padding-top: 0;
+          li {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            border-bottom: 1px solid black;
+            a {
+              padding: 10px 0;
+              &:hover {
+                text-decoration: none;
+                background-color: rgb(31, 29, 29);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #vizantijskiStil {
+    margin-top: 50px;
+    height: 100%;
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: none;
+      p {
+        text-align: justify;
+      }
+    }
+  }
+
+  // .nav-menu {
+  //   display: none;
+  // }
+
+  // .active {
+  //   display: flex;
+  // }
+
+  /* #vizantijskiStil {
+    height: 100%;
+  } */
+  #daska {
+    height: 100%;
+    p {
+      padding: 0 30px;
+      text-align: justify;
+    }
+    .textDaska {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      width: 90%;
+      align-self: center;
+      #slikaDaska {
+        align-self: center;
+      }
+    }
+  }
+
+  #tehnika {
+    height: 100vh;
+    .slikeTehnika {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
   .kontakt {
-   
     background: linear-gradient(
       0deg,
       rgb(28, 27, 27) 10%,
@@ -182,92 +247,5 @@ html {
     border-radius: 5px;
     font-size: 16px;
     display: block;
-    
   }
-
-  .uvod {
-    height: 100vh;
-  }
-  .opis {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 30px;
-    background-color: rgba(245, 231, 231, 0.3);
-  }
-
-  ul li a:hover {
-    background-color: rgb(31, 29, 29);
-    cursor: pointer;
-  }
-
-  .lista {
-    padding-top: 0;
-  }
-  .lista li {
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    border-bottom: 1px solid black;
-  }
-  .lista li a {
-    padding: 10px 0;
-  }
-  .lista li a:hover {
-    text-decoration: none;
-  }
-
-  #vizantijskiStil {
-    margin-top: 50px;
-    height: 100%;
-  }
-  .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: none;
-  }
-  .text p {
-    text-align: justify;
-  }
-
-  .nav-menu {
-    display: none;
-  }
-
-  .active {
-    display: flex;
-  }
-
-  /* #vizantijskiStil {
-    height: 100%;
-  } */
-  #daska {
-    height: 100%;
-  }
-  #daska p {
-    padding: 0 30px;
-    text-align: justify;
-  }
-  .textDaska {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 90%;
-    align-self: center;
-  }
-  #slikaDaska {
-    align-self: center;
-  }
-
-  .slikeTehnika {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
- #tehnika{
-   height: 100vh;
- }
 }

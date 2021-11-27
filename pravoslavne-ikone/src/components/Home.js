@@ -27,21 +27,8 @@ export default function Home() {
               <li>
                 <a href="#daska">Традиционално обрађена липова даска</a>
               </li>
-              {/* <animateScroll>
-              <Link
-                
-                // to=".vizantijskiStil"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={1500}
-              >
-               
-              </Link>
-            </animateScroll> */}
             </ul>
           </div>
-
           <div className="liste">
             <ul className="lista">
               <li>
