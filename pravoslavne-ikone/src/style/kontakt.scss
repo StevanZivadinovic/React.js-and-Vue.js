@@ -1,42 +1,34 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-label {
+
+label{
   display: none;
+  
 }
 
-.input:invalid {
+.input:invalid{
   border-color: red;
 }
-
-.input:focus {
+.input:focus{
+  
   outline: none;
 }
-
-#email:invalid {
+#email:invalid{
+  
   position: relative;
+  
+ 
 }
-
-.nav-menu {
+.nav-menu{
   display: none;
 }
-
-.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.active{
   display: flex;
 }
-
 .main3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   /* justify-content: space-between; */
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 100%;
   /* min-height: 200vh; */
 }
@@ -51,26 +43,20 @@ label {
   background: rgba(0, 0, 0, 0.3);
   padding: 30px;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   /* margin-top: 50px; */
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 600px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-top: 50px;
   z-index: 100;
+
 }
 
 .contactDetails {
   width: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
-  background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+  background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
   border-radius: 5px;
   font-size: 20px !important;
   position: absolute;
@@ -87,29 +73,25 @@ label {
 }
 
 .contact-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   z-index: 100;
+
 }
 
 .input-fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-right: 4%;
   z-index: 100;
   position: relative;
+
 }
 
 .input-fields,
 .msg {
   width: 48%;
   z-index: 100;
+
 }
 
 .input-fields .input,
@@ -122,6 +104,7 @@ label {
   color: #c5ecfd;
   width: 100%;
   z-index: 100;
+
 }
 
 .msg textarea {
@@ -132,12 +115,10 @@ label {
   /* Chrome/Opera/Safari */
   color: #c5ecfd;
 }
-
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #c5ecfd;
 }
-
 :-ms-input-placeholder {
   /* IE 10+ */
   color: #c5ecfd;
@@ -156,32 +137,34 @@ label {
 
 @media screen and (max-width: 600px) {
   .contact-form {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
+    
   }
-  .wrapper {
+  .wrapper{
     height: 700px;
     width: 100%;
     z-index: 1;
+
   }
   .msg textarea {
     height: 80px;
     z-index: 1;
+
   }
   .input-fields,
   .msg {
     width: 100%;
     z-index: 1;
+
   }
-  .nav-menu {
+  
+  .nav-menu{
     display: none;
+   
   }
-  .active {
-    display: -webkit-box;
-    display: -ms-flexbox;
+
+  .active{
     display: flex;
   }
+  
 }
-/*# sourceMappingURL=kontakt.css.map */

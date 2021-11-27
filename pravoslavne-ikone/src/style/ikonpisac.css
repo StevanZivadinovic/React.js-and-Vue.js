@@ -2,90 +2,102 @@
   top: 0;
   position: fixed;
 }
+
 .mainM {
   background-image: none;
   height: 100vh;
   width: 100%;
   /* position: fixed; */
   /* bottom: 0; */
-  
-  
-
-
 }
+
 .main1 {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 .textIkonopisac {
   margin-top: 100px;
   width: 500px;
 }
+
 .textIkonopisac p {
   padding-top: 10px;
   text-align: justify;
 }
+
 #majka {
   width: 400px;
-  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
   margin-left: 10px;
   border-radius: 30px;
 }
 
 .contactDetails1 {
   width: 100%;
-  background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+  background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
   border-radius: 5px;
   font-size: 20px !important;
   position: fixed;
   bottom: 0;
-
-  
-  
 }
+
 @media screen and (max-width: 960px) {
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .contactDetails1 {
     width: 100%;
-    background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+    background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
     border-radius: 5px;
     font-size: 16px;
-    
-    
-    
-    
   }
-  .mainM{
-      width: 100%;
-      height: 100%;
-     
+  .mainM {
+    width: 100%;
+    height: 100%;
   }
   .main1 {
     width: 100%;
     color: grey;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-
-  .textIkonopisac{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: -10px;
-      margin-bottom: 10px;
-      padding: 0 50px;
-      width: 100%;
-      margin: -10px auto 20px auto;
+  .textIkonopisac {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding: 0 50px;
+    width: 100%;
+    margin: -10px auto 20px auto;
   }
-  
-
-  
 }
+/*# sourceMappingURL=ikonpisac.css.map */

@@ -1,6 +1,6 @@
 import React from "react";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./../style/ikonpisac.css";
+import "./../style/ikonpisac.scss";
 // import Footer from "./footer";
 import majka from './../assets/majka.jpg'
 import fb from "./../assets/facebook.svg";

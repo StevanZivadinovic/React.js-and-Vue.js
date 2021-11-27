@@ -1,105 +1,121 @@
-.mainGalerija{
+.mainGalerija {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.slika {
+  width: 300px;
+}
+
+.row1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.col1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.row1 {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+}
+
+img {
+  margin: 10px 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#fb {
+  margin-bottom: 0;
+  width: 2rem;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.sektor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sektor p {
+  /* background-image: url('./textura2.jpg'); */
+  background-color: white;
+  font-size: 18px;
+  color: grey;
+  width: 300px;
+  margin-left: 20px;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  text-decoration: underline;
+}
+
+.last {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.contactDetails1 {
+  width: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+  background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+  border-radius: 5px;
+  font-size: 20px !important;
+}
+
+@media screen and (max-width: 960px) {
+  .contactDetails1 {
+    width: 100%;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+    background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .row1 {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+  .col1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainGalerija {
     width: 100%;
     position: relative;
     height: 100%;
-}
-
-
-.slika{
-    width: 300px;
-}
-.row1{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    
-}
-
-.col1{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-    
-}
-.row1{
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 10rem;
-}
-img{
-    margin: 10px 20px;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-}
-#fb{
-    margin-bottom: 0;
-    width: 2rem;
-
-}
-img:hover{
-    cursor: pointer;
-}
-.sektor{
-    display: flex;
-    flex-direction: column;
-    
-   
-
-}
-.sektor p{
-    /* background-image: url('./textura2.jpg'); */
-    background-color: white;
-    font-size: 18px;
-    color: grey;
-    width: 300px;
-    margin-left: 20px;
-    
-
-    
-}
-.title{
-    font-family: 'Pacifico', cursive;
-    text-decoration: underline;
-}
-.last{
-    border-bottom-left-radius:5px;
-    border-bottom-right-radius:5px;
-
-}
-.contactDetails1 {
-    width: 100%;
-    background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
-    border-radius: 5px;
-    font-size: 20px !important;
-    
-    
   }
-
-@media screen and (max-width: 960px) {
-    .contactDetails1 {
-        width: 100%;
-        background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
-        border-radius: 5px;
-        font-size: 16px;
-        
-       
-       
-      }
-      .row1{
-          display: block;
-          float: left;
-          width: 100%;
-      }
-     
-    .col1{
-        display: flex;
-        flex-direction: column;
-    }
-    .mainGalerija{
-        width: 100%;
-        position: relative;
-        height: 100%;
-    }
 }
+/*# sourceMappingURL=galerija.css.map */

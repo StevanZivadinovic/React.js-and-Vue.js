@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 
 import fb from "./../assets/facebook.svg";
-import "./../style/kontakt.css";
+import "./../style/kontakt.scss";
 // import { useForm } from "react-hook-form";
 
 export default function Kontakt() {

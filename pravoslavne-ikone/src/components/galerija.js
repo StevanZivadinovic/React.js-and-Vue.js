@@ -11,7 +11,7 @@ import ikona8 from "./../assets/ikona8.jpg";
 import ikona9 from "./../assets/ikona9.jpg";
 import fb from "./../assets/facebook.svg";
 
-import "./../style/galerija.css";
+import "./../style/galerija.scss";
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // import Footer from "./footer";

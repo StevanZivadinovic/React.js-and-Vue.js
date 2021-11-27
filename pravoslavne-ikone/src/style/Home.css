@@ -1,22 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Crimson Text", serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 .main {
   width: 90%;
 }
-.mainNovi{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.uvod {
+.main .uvod {
   width: 100%;
   background-image: url("./../assets/pozadina-home.jpg");
   background-position: center;
@@ -26,7 +24,7 @@ html {
   height: 100vh;
 }
 
-h1 {
+.main .uvod h1 {
   z-index: 100;
   padding-top: 70px;
   opacity: 1 !important;
@@ -34,30 +32,42 @@ h1 {
   font-weight: 200;
   font-family: "Pacifico", cursive;
 }
-.podtekst {
+
+.main .uvod .podtekst {
   font-family: "Pacifico", cursive;
   color: black;
 }
-.opis {
-  margin-top: 40px;
-  display: flex;
-  background-color: rgb(50, 50, 50, 0.3) !important;
 
-  justify-content: space-around;
-  color: rgb(50, 50, 50);
+.main .uvod .opis {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(50, 50, 50, 0.3) !important;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #323232;
 }
+
 .liste {
   color: black;
 }
+
 /* .lista{
     margin-top: 110px; 
 } */
 .lista li {
   list-style-type: none;
   padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 30px;
 }
 
@@ -71,15 +81,16 @@ h1 {
   /* color: rgb(14, 107, 49); */
   border-bottom: 1px solid black;
   font-weight: 800;
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #vizantijskiStil {
   margin-top: 0px;
   height: 110vh;
   width: 100%;
-  
 }
+
 #vizantijskiStil p {
   text-align: justify;
 }
@@ -95,9 +106,13 @@ h1 {
 }
 
 .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 30px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .text p {
@@ -117,52 +132,82 @@ h1 {
   font-weight: 100;
   height: 100px;
 }
+
 #daska p {
   margin-top: 40px;
 }
+
 .textDaska {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 #slikaDaska {
   width: 300px;
   border-radius: 30px;
 }
+
 #slikaDaska:hover {
-  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
   cursor: pointer;
+  -webkit-transition: -webkit-transform 1.5s;
+  transition: -webkit-transform 1.5s;
   transition: transform 1.5s;
+  transition: transform 1.5s, -webkit-transform 1.5s;
 }
+
 #tehnika {
   height: 90vh;
   background-image: url("./../assets/textura2.jpg");
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 #tehnika h2 {
   font-family: "Pacifico", cursive;
 }
+
 .slikeTehnika {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 #tehnika1 {
   width: 300px;
   border-radius: 50px;
 }
+
 #tehnika1:hover {
-  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
   cursor: pointer;
+  -webkit-transition: -webkit-transform 1.5s;
+  transition: -webkit-transform 1.5s;
   transition: transform 1.5s;
+  transition: transform 1.5s, -webkit-transform 1.5s;
 }
 
 .kontakt {
   /* width: 100%; */
-  background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+  background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
   border-radius: 5px;
   font-size: 16px;
   font-size: 20px !important;
 }
+
 #tehnika p {
   text-align: justify;
   margin: 0 30px 10px 30px;
@@ -173,35 +218,33 @@ h1 {
     max-width: 60%;
   }
   .kontakt {
-   
-    background: linear-gradient(
-      0deg,
-      rgb(28, 27, 27) 10%,
-      rgb(216, 86, 86) 100%
-    );
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+    background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
     border-radius: 5px;
     font-size: 16px;
     display: block;
-    
   }
-
   .uvod {
     height: 100vh;
   }
   .opis {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     width: 100%;
     margin-top: 30px;
-    background-color: rgb(50, 50, 50, 0.3);
+    background-color: rgba(245, 231, 231, 0.3);
   }
-
   ul li a:hover {
-    background-color: rgb(31, 29, 29);
+    background-color: #1f1d1d;
     cursor: pointer;
   }
-
   .lista {
     padding-top: 0;
   }
@@ -217,28 +260,33 @@ h1 {
   .lista li a:hover {
     text-decoration: none;
   }
-
   #vizantijskiStil {
     margin-top: 50px;
-    height: 125vh;
+    height: 100%;
   }
   .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: none;
+        -ms-flex-pack: none;
+            justify-content: none;
   }
   .text p {
     text-align: justify;
   }
-
   .nav-menu {
     display: none;
   }
-
   .active {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
-
   /* #vizantijskiStil {
     height: 100%;
   } */
@@ -250,24 +298,39 @@ h1 {
     text-align: justify;
   }
   .textDaska {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 0 auto;
-    width: 300px;
-    align-self: center;
+    width: 90%;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   #slikaDaska {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
-
   .slikeTehnika {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  
- #tehnika{
-   height: 100vh;
- }
+  #tehnika {
+    height: 100vh;
+  }
 }
+/*# sourceMappingURL=Home.css.map */
