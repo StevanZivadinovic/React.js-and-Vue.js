@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +22,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 80px;
-  height: 100vh;
+  background-position: 50% 15%;
 }
 
 .main .uvod h1 {
@@ -83,7 +84,6 @@ html {
 
 #vizantijskiStil {
   margin-top: 0px;
-  height: 110vh;
   width: 100%;
 }
 
@@ -93,6 +93,7 @@ html {
 
 #vizantijskiStil p {
   text-align: justify;
+  font-family: 'Cormorant', serif;
 }
 
 #vizantijskiStil .text {
@@ -108,20 +109,20 @@ html {
 #vizantijskiStil .text p {
   text-align: left;
   margin: 30px;
+  font-size: 1.5rem;
 }
 
 #daska {
   background-image: url("./../assets/textura2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
 }
 
 #daska h2 {
   color: white;
   font-weight: 100;
-  height: 100px;
   font-family: "Pacifico", cursive;
+  margin-bottom: 2rem;
 }
 
 #daska .textDaska {
@@ -148,11 +149,14 @@ html {
 }
 
 #daska p {
-  margin-top: 40px;
+  width: 90%;
+  margin: 2rem auto .5rem auto;
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+  font-family: 'Cormorant', serif;
 }
 
 #tehnika {
-  height: 90vh;
   background-image: url("./../assets/textura2.jpg");
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,6 +169,8 @@ html {
 
 #tehnika h2 {
   font-family: "Pacifico", cursive;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 #tehnika .slikeTehnika {
@@ -191,8 +197,11 @@ html {
 }
 
 #tehnika p {
-  text-align: justify;
-  margin: 0 30px 10px 30px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  font-size: 1.5rem;
+  font-family: 'Cormorant', serif;
 }
 
 .kontakt {
@@ -204,7 +213,7 @@ html {
   font-size: 20px !important;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 920px) {
   img {
     max-width: 60%;
   }
@@ -260,16 +269,15 @@ html {
   }
   #vizantijskiStil .text p {
     text-align: justify;
+    font-size: 1rem;
   }
-  /* #vizantijskiStil {
-    height: 100%;
-  } */
   #daska {
     height: 100%;
   }
   #daska p {
-    padding: 0 30px;
-    text-align: justify;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1rem;
   }
   #daska .textDaska {
     display: -webkit-box;
@@ -290,7 +298,10 @@ html {
         align-self: center;
   }
   #tehnika {
-    height: 100vh;
+    margin-top: .3rem;
+  }
+  #tehnika h2 {
+    padding-top: 1rem;
   }
   #tehnika .slikeTehnika {
     display: -webkit-box;
@@ -305,6 +316,10 @@ html {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  #tehnika .lastPasus {
+    margin-top: 1rem;
+    font-size: 1rem;
   }
   .kontakt {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
