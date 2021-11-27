@@ -59,7 +59,6 @@
   display: grid !important;
   -ms-grid-columns: (auto)[4];
       grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
   list-style: none;
   text-align: center;
   width: 60vw;
