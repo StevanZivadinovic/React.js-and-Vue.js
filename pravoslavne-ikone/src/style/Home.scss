@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth;
 }
 .main {
-  // width: 90%;
+  width: 90%;
   .uvod {
     width: 100%;
     background-image: url("./../assets/pozadina-home.jpg");
@@ -168,6 +168,11 @@ html {
 }
 
 @media screen and (max-width: 920px) {
+
+
+  .main {
+    width: 100%;
+  }
   img {
     max-width: 60%;
   }
@@ -217,14 +222,6 @@ html {
     }
   }
 
-  // .nav-menu {
-  //   display: none;
-  // }
-
-  // .active {
-  //   display: flex;
-  // }
-
   #daska {
     height: 100%;
     p {
@@ -233,6 +230,9 @@ html {
       font-size: 1rem;
      
 
+    }
+    h2{
+      padding-top: 2rem;
     }
     .textDaska {
       display: flex;
