@@ -77,7 +77,7 @@ export default class Galerija extends React.Component {
               />
               <p className="title"> Св Вукашин Клепачки</p>
               <p>Димензије 21х30cm</p>
-              <p className="last">Цена са златом 100е</p>
+              {/* <p className="last">Цена са златом 110е</p> */}
             </div>
 
             <div className="sektor">
@@ -88,7 +88,7 @@ export default class Galerija extends React.Component {
               />
               <p className="title">Св Јован Крститељ</p>
               <p>Димензије 30х40cm</p>
-              <p className="last">Цена са златом 150е</p>
+              {/* <p className="last">Цена са златом 170е</p> */}
             </div>
 
             <div className="sektor">
@@ -99,7 +99,7 @@ export default class Galerija extends React.Component {
               />
               <p className="title">Св Великомученик Димитрије</p>
               <p>Димензије 18х40cm</p>
-              <p className="last">Цена са златом 110е</p>
+              {/* <p className="last">Цена са златом 110е</p> */}
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default class Galerija extends React.Component {
               />
               <p className="title">Св Кнез Лазар</p>
               <p>Димензије 30х40cm</p>
-              <p className="last">Цена са златом 150е</p>
+              {/* <p className="last">Цена са златом 150е</p> */}
             </div>
 
             <div className="sektor">
@@ -124,7 +124,7 @@ export default class Galerija extends React.Component {
               />
               <p className="title">Мајка Божија - Дечанска</p>
               <p>Димензије 30х40cm</p>
-              <p className="last">Цена са златом 150е</p>
+              {/* <p className="last">Цена са златом 150е</p> */}
             </div>
 
             <div className="sektor">
@@ -171,7 +171,7 @@ export default class Galerija extends React.Component {
               />
               <p className="title">Св Архангел Михаил</p>
               <p>Димензије 26х61cm</p>
-              <p className="last">Цена са златом 200е</p>
+              {/* <p className="last">Цена са златом 200е</p> */}
             </div>
 
            
