@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a7731cf6.chunk.css",
+    "main.js": "/static/js/main.3884ad87.chunk.js",
+    "main.js.map": "/static/js/main.3884ad87.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.787285c7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.787285c7.js.map",
+    "static/css/2.eb283cc0.chunk.css": "/static/css/2.eb283cc0.chunk.css",
+    "static/js/2.ebef0207.chunk.js": "/static/js/2.ebef0207.chunk.js",
+    "static/js/2.ebef0207.chunk.js.map": "/static/js/2.ebef0207.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cdcf1e8f9f83094bc807c6e09999f600.js": "/precache-manifest.cdcf1e8f9f83094bc807c6e09999f600.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.eb283cc0.chunk.css.map": "/static/css/2.eb283cc0.chunk.css.map",
+    "static/css/main.a7731cf6.chunk.css.map": "/static/css/main.a7731cf6.chunk.css.map",
+    "static/js/2.ebef0207.chunk.js.LICENSE.txt": "/static/js/2.ebef0207.chunk.js.LICENSE.txt",
+    "static/media/daska.jpg": "/static/media/daska.ee4f59be.jpg",
+    "static/media/daska1.jpg": "/static/media/daska1.ef279f88.jpg",
+    "static/media/daska2.jpg": "/static/media/daska2.05d45ea4.jpg",
+    "static/media/facebook.svg": "/static/media/facebook.62d8b6ef.svg",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/ikona1.jpg": "/static/media/ikona1.abf7da33.jpg",
+    "static/media/ikona2.jpg": "/static/media/ikona2.b136ce49.jpg",
+    "static/media/ikona3.jpg": "/static/media/ikona3.03ee0c5e.jpg",
+    "static/media/ikona4.jpg": "/static/media/ikona4.0ddb568c.jpg",
+    "static/media/ikona5.jpg": "/static/media/ikona5.7b019d17.jpg",
+    "static/media/ikona6.jpg": "/static/media/ikona6.491b1cfc.jpg",
+    "static/media/ikona7.jpg": "/static/media/ikona7.e0c65826.jpg",
+    "static/media/ikona8.jpg": "/static/media/ikona8.09e191fb.jpg",
+    "static/media/ikona9.jpg": "/static/media/ikona9.286ea7b8.jpg",
+    "static/media/majka.jpg": "/static/media/majka.9b153aa3.jpg",
+    "static/media/pigment.jpg": "/static/media/pigment.e27b0ef3.jpg",
+    "static/media/Home.scss": "/static/media/pozadina-home.12ffae4a.jpg",
+    "static/media/zlatni_listici.jpg": "/static/media/zlatni_listici.56b2d2e4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.787285c7.js",
+    "static/css/2.eb283cc0.chunk.css",
+    "static/js/2.ebef0207.chunk.js",
+    "static/css/main.a7731cf6.chunk.css",
+    "static/js/main.3884ad87.chunk.js"
+  ]
+}
