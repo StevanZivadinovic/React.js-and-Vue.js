@@ -1,6 +1,3 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-
-
-Sitemap: https://pravoslavne-ikone-new.web.app/my_sitemap.xml
