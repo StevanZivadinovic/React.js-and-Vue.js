@@ -91,6 +91,9 @@ img:hover {
 }
 
 @media screen and (max-width: 960px) {
+  .slika {
+    margin: 2rem auto 0 auto;
+  }
   .contactDetails1 {
     width: 100%;
     background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap");
 .navbar {
   top: 0;
   position: fixed;
@@ -5,11 +6,10 @@
 
 .mainM {
   background-image: none;
-  height: 100vh;
   width: 100%;
 }
 
-.main1 {
+.mainM .main1 {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,12 +18,13 @@
       justify-content: space-around;
 }
 
-.textIkonopisac {
+.mainM .main1 .textIkonopisac {
   margin-top: 100px;
   width: 500px;
 }
 
-.textIkonopisac p {
+.mainM .main1 .textIkonopisac p {
+  font-family: 'Cormorant', serif;
   padding-top: 10px;
   text-align: justify;
 }
@@ -53,18 +54,11 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  .contactDetails1 {
-    width: 100%;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
-    background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
-    border-radius: 5px;
-    font-size: 16px;
-  }
   .mainM {
     width: 100%;
     height: 100%;
   }
-  .main1 {
+  .mainM .main1 {
     width: 100%;
     color: grey;
     display: -webkit-box;
@@ -77,7 +71,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .textIkonopisac {
+  .mainM .main1 .textIkonopisac {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -96,6 +90,16 @@
     padding: 0 50px;
     width: 100%;
     margin: -10px auto 20px auto;
+  }
+  .mainM .main1 #majka {
+    margin: 0 auto;
+  }
+  .contactDetails1 {
+    width: 100%;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+    background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+    border-radius: 5px;
+    font-size: 16px;
   }
 }
 /*# sourceMappingURL=ikonpisac.css.map */
