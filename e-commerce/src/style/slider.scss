@@ -1,0 +1,18 @@
+.mainSlider{
+width: 100%;
+height: 100vh;
+display: flex;
+background-color: coral;
+    .arrows{
+        display: flex;
+        .arrow{
+            width: 5rem;
+            height: 5rem;
+            background-color: #fff7f7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

@@ -1,3 +1,64 @@
-.mainNavbar{
-    background-color: red;
+.mainNavbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-top: 1rem;
+
+  .first,
+  .second,
+  .third {
+    width: 33.3%;
+    // text-align: center;
+    flex: 1;
+    height: 3vh;
+    font-size: 2rem;
+  }
+
+  .first {
+    display: flex;
+    span {
+      display: flex;
+      // flex-wrap: wrap;
+      align-items: center;
+      border: 1px solid lightgrey;
+      margin-left: 2.5rem;
+      width: 50%;
+      padding: 0 0.3rem;
+
+      input {
+        border: none;
+        margin-right: 0.1rem;
+        height: 100%;
+        width: 90%;
+        font-size: 2rem;
+      }
+      i {
+        font-size: 2rem;
+      }
+    }
+  }
+  .second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .third {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    div{
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        span{
+            font-size: 2rem;
+            i{
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
+    }
+  }
 }
