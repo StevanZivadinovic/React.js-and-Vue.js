@@ -8,12 +8,14 @@
 }
 
 .mainSlider .arrows {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
 }
 
 .mainSlider .arrows .arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   width: 5rem;
   height: 5rem;
   background-color: #fff7f7;
@@ -27,5 +29,40 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+}
+
+.mainSlider .arrows .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.mainSlider .arrows .wrapper .slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+}
+
+.mainSlider .arrows .wrapper .slide .imageContainer {
+  width: 50%;
+}
+
+.mainSlider .arrows .wrapper .slide .infoContainer {
+  width: 50%;
+}
+
+.mainSlider .arrows .wrapper .slide .infoContainer .title {
+  font-size: 3rem;
+}
+
+.mainSlider .arrows .wrapper .slide .infoContainer .textInfo {
+  font-size: 2rem;
+}
+
+.mainSlider .arrows .wrapper .slide .infoContainer .button {
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=slider.css.map */

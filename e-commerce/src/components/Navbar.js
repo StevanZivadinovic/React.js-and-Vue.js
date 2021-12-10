@@ -10,7 +10,7 @@ export default function Navbar() {
 
                 <span>REGISTER</span>
                 <span>SIGN IN</span>
-                <span><i class="fas fa-shopping-cart"></i></span>
+                <span><i className="fas fa-shopping-cart"></i></span>
                 </div>
 
             </div>
