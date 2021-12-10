@@ -4,11 +4,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: coral;
+  overflow: hidden;
 }
 
 .mainSlider .arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .mainSlider .arrows .arrow {
@@ -18,7 +25,7 @@
   margin: auto 0;
   width: 5rem;
   height: 5rem;
-  background-color: #fff7f7;
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,40 +36,68 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 2;
   cursor: pointer;
+}
+
+.mainSlider .arrows .right {
+  right: 0;
 }
 
 .mainSlider .arrows .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
 }
 
 .mainSlider .arrows .wrapper .slide {
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.mainSlider .arrows .wrapper .slide .imageContainer {
-  width: 50%;
+.mainSlider .arrows .wrapper .slide .imageContainer img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .mainSlider .arrows .wrapper .slide .infoContainer {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .mainSlider .arrows .wrapper .slide .infoContainer .title {
-  font-size: 3rem;
+  font-size: 5vh;
+  font-weight: 800;
+  margin-bottom: 3rem;
 }
 
 .mainSlider .arrows .wrapper .slide .infoContainer .textInfo {
   font-size: 2rem;
+  letter-spacing: .5rem;
+  margin-bottom: 3rem;
 }
 
 .mainSlider .arrows .wrapper .slide .infoContainer .button {
   font-size: 1.5rem;
+  width: 15%;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
 }
 /*# sourceMappingURL=slider.css.map */
