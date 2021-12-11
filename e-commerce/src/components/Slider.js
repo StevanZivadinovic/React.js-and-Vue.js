@@ -1,12 +1,32 @@
 import React from "react";
 import './../style/slider.scss'
 import fashion1 from './../img/fashion1.png'
+import { useState } from "react";
 const Slider = () => {
 
+const [a, setA] = useState(0)
   const handleLeft = () =>{
-    
-    document.querySelector('.wrapper').style.transform = `translateX(${-100}vw)`;
-    console.log('haj')
+    if(
+      a>0
+    ){
+     setA(a-1)
+    }else{
+      setA(2)
+    }
+    document.querySelector('.wrapper').style.transform = `translateX(${a*(-100)}vw)`;
+    console.log('levo')
+  }
+
+  const handleRight = () =>{
+    if(
+      a<2
+    ){
+     setA(a+1)
+    }else{
+      setA(0)
+    }
+    document.querySelector('.wrapper').style.transform = `translateX(${a*(-100)}vw)`;
+    console.log(a,'desno')
   }
 
   return (
@@ -34,7 +54,7 @@ const Slider = () => {
               <img src={fashion1}/>
             </div>
             <div className="infoContainer">
-             <div className="title">winter sale</div>
+             <div className="title">autumn sale</div>
              <div className="textInfo">Some random text...</div>
              <button className="button">Show now</button>
 
@@ -47,7 +67,7 @@ const Slider = () => {
               <img src={fashion1}/>
             </div>
             <div className="infoContainer">
-             <div className="title">spring summer</div>
+             <div className="title">winter summer</div>
              <div className="textInfo">Some random text...</div>
              <button className="button">Show now</button>
 
@@ -55,7 +75,7 @@ const Slider = () => {
           </div>
 
           </div>
-        <span className="arrow right">
+        <span className="arrow right" onClick={()=>{handleRight()}}>
           <i className="fas fa-arrow-right"></i>
         </span>
       </div>
