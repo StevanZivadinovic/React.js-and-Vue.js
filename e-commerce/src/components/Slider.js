@@ -1,6 +1,9 @@
 import React from "react";
 import './../style/slider.scss'
 import fashion1 from './../img/fashion1.png'
+import fashion2 from './../img/fashion2.png'
+import fashion3 from './../img/fashion3.png'
+
 import { useState } from "react";
 const Slider = () => {
 
@@ -49,9 +52,9 @@ const [a, setA] = useState(0)
           </div>
        
 
-          <div className="slide">
+          <div className="slide third">
             <div className="imageContainer">
-              <img src={fashion1}/>
+              <img src={fashion2}/>
             </div>
             <div className="infoContainer">
              <div className="title">autumn sale</div>
@@ -62,9 +65,9 @@ const [a, setA] = useState(0)
           </div>
 
 
-          <div className="slide">
+          <div className="slide second">
             <div className="imageContainer">
-              <img src={fashion1}/>
+              <img src={fashion3}/>
             </div>
             <div className="infoContainer">
              <div className="title">winter summer</div>
