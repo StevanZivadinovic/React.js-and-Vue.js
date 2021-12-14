@@ -1,0 +1,69 @@
+.mainCategories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mainCategories .categorie {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.mainCategories .categorie img {
+  width: 100%;
+  height: 100%;
+}
+
+.mainCategories .categorie .textInfo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainCategories .categorie .textInfo h3 {
+  width: 50%;
+  font-size: 3rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mainCategories .categorie .textInfo button {
+  width: 30%;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.mainCategories .categorie:hover {
+  background-position: top;
+  color: red;
+}
+/*# sourceMappingURL=categories.css.map */
