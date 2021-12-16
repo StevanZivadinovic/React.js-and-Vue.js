@@ -1,9 +1,14 @@
 import './../style/Products.scss'
 import Product from './Product'
+import { shoppingProducts } from './../data/data'
 function Products() {
     return (
         <div className="mainProducts">
-        <Product/>            
+
+            {shoppingProducts.map(product=>{
+                return <Product key={product.id} product={product}/>            
+
+            })}
         </div>
     )
 }
