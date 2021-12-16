@@ -1,53 +1,55 @@
-.mainCategories{
+.mainCategories {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .categorie {
+    flex: 1;
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    .categorie{
-      flex: 1;
-      position: relative;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  color: white;
-//   background-image: url('https://images.unsplash.com/photo-1454024073694-9ddc644ed584?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU2fHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
-      img{
-          width: 100%;
-          height: 100%;
-      }
-
-      .textInfo{
-          position: absolute;
-         width: 100%;
-         height: 100%;
-         display: flex;
-         flex-direction: column;
-         justify-content:center;
-        h3{
-            width: 50%;
-            font-size: 3rem;
-            margin: 0 auto;
-            text-align: center;
-            
-        }
-        button{
-            width: 30%;
-            padding: 1rem 2rem;
-            margin: 0 auto;
-            margin-top:1rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    height: 50vh;
+    overflow: hidden;
+   background-repeat: no-repeat;
+   background-size: cover;
+    &:hover {
+        
+          background-position-y: -5vh;
          
+        }
 
+    .textInfo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        width: 50%;
+        font-size: 3rem;
+        margin: 0 auto;
+        text-align: center;
       }
-
-      &:hover{
-        background-position: top;
-        color: red;
+      button {
+        width: 30%;
+        padding: 1rem 2rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.2rem;
+        cursor: pointer;
+      }
     }
 
-
+    &:hover {
+    //   background-position: top;
+      color: red;
+     
     }
-
     
+  }
 }
