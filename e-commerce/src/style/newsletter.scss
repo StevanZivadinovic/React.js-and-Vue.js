@@ -1,0 +1,45 @@
+  .mainNewsletter{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      padding: 3rem 0;
+      background-color: rgba(rosybrown,.2);
+      h3{
+          text-align: center;
+          font-weight: 800;
+          font-size: 5rem;
+      }
+      .description{
+          text-align: center;
+          font-weight: 100;
+          font-size: 3rem;
+          padding: 1rem 0;
+      }
+      .inputBox{
+          
+          display: flex;
+          height: 4rem;
+
+          input{
+              flex: 8;
+              font-size: 2rem;
+              outline: none;
+              border: none;
+              &:focus{
+                outline: .1rem solid grey;
+              }
+              
+          }
+          button{
+              flex: 1;
+              border: none;
+              background-color: teal;
+              border-radius: .3rem;
+
+              i{
+                  font-size: 2rem;
+              }
+          }
+      }
+  }

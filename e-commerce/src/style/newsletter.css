@@ -1,0 +1,62 @@
+.mainNewsletter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 3rem 0;
+  background-color: rgba(188, 143, 143, 0.2);
+}
+
+.mainNewsletter h3 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 5rem;
+}
+
+.mainNewsletter .description {
+  text-align: center;
+  font-weight: 100;
+  font-size: 3rem;
+  padding: 1rem 0;
+}
+
+.mainNewsletter .inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 4rem;
+}
+
+.mainNewsletter .inputBox input {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+  font-size: 2rem;
+  outline: none;
+  border: none;
+}
+
+.mainNewsletter .inputBox input:focus {
+  outline: .1rem solid grey;
+}
+
+.mainNewsletter .inputBox button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  background-color: teal;
+  border-radius: .3rem;
+}
+
+.mainNewsletter .inputBox button i {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=newsletter.css.map */

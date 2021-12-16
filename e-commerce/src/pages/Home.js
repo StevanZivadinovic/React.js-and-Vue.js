@@ -4,6 +4,7 @@ import Announcement from '../components/Announcement'
 import Slider from '../components/Slider'
 import Categories from '../components/Categories.js'
 import Products from '../components/Products'
+import { Newsletter } from '../components/Newsletter'
 
 function Home() {
 
@@ -15,6 +16,7 @@ function Home() {
             <Slider/>
             <Categories/>
             <Products/>
+            <Newsletter/>
         </div>
     )
 }
