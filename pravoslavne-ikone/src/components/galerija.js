@@ -9,12 +9,21 @@ import ikona6 from "./../assets/ikona6.jpg";
 import ikona7 from "./../assets/ikona7.jpg";
 import ikona8 from "./../assets/ikona8.jpg";
 import ikona9 from "./../assets/ikona9.jpg";
+
+import ikona10 from "./../assets/ikona10.jpg";
+import ikona11 from "./../assets/ikona11.jpg";
+import ikona12 from "./../assets/ikona12.jpg";
+import ikona13 from "./../assets/ikona13.jpg";
+import ikona14 from "./../assets/ikona14.jpg";
+import ikona15 from "./../assets/ikona15.jpg";
+import ikona16 from "./../assets/ikona16.jpg";
+import ikona17 from "./../assets/ikona17.jpg";
+import ikona18 from "./../assets/ikona18.jpg";
 import fb from "./../assets/facebook.svg";
 
 import "./../style/galerija.scss";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-
-// import Footer from "./footer";
+import  GalerijaPrvaStrana  from "./galerijaPrvaStrana";
+import GalerijaDrugaStrana  from "./galerijaDrugaStrana";
 
 const images = [
   ikona1,
@@ -26,6 +35,15 @@ const images = [
   ikona7,
   ikona8,
   ikona9,
+  ikona10,
+  ikona11,
+  ikona12,
+  ikona13,
+  ikona14,
+  ikona15,
+  ikona16,
+  ikona17,
+  ikona18,
 ];
 
 const textHeader = [
@@ -66,124 +84,8 @@ export default class Galerija extends React.Component {
     return (
       <div className="mainGalerija">
         <h1 className="text-middle mt-4">Галерија</h1>
-        <div className="row1">
-          <div className="col1">
-            <div className="sektor">
-              <img
-                imageTitle="slika"
-                className="slika"
-                src={ikona1}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 0 })}
-              />
-              <p className="title"> Св Вукашин Клепачки</p>
-              <p>Димензије 21х30cm</p>
-              {/* <p className="last">Цена са златом 110е</p> */}
-            </div>
-
-            <div className="sektor">
-              <img
-                className="slika"
-                src={ikona2}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 1 })}
-              />
-              <p className="title">Св Јован Крститељ</p>
-              <p>Димензије 30х40cm</p>
-              {/* <p className="last">Цена са златом 170е</p> */}
-            </div>
-
-            <div className="sektor">
-              <img
-                className="slika"
-                src={ikona3}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 2 })}
-              />
-              <p className="title">Св Великомученик Димитрије</p>
-              <p>Димензије 18х40cm</p>
-              {/* <p className="last">Цена са златом 110е</p> */}
-            </div>
-          </div>
-
-          <div className="col1">
-            <div className="sektor">
-              <img
-                imageTitle="slika"
-                className="slika"
-                src={ikona4}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 3 })}
-              />
-              <p className="title">Св Кнез Лазар</p>
-              <p>Димензије 30х40cm</p>
-              {/* <p className="last">Цена са златом 150е</p> */}
-            </div>
-
-            <div className="sektor">
-              <img
-                className="slika"
-                src={ikona5}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 4 })}
-              />
-              <p className="title">Мајка Божија - Дечанска</p>
-              <p>Димензије 30х40cm</p>
-              {/* <p className="last">Цена са златом 150е</p> */}
-            </div>
-
-            <div className="sektor">
-              <img
-                className="slika"
-                src={ikona6}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 5 })}
-              />
-              <p className="title">Икона Мајке Божије</p>
-              <p>Димензије 30х40cm</p>
-              <p className="last">Цена са златом 150е</p>
-            </div>
-          </div>
-
-          <div className="col1">
-            <div className="sektor">
-              <img
-                imageTitle="slika"
-                className="slika"
-                src={ikona7}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 6 })}
-              />
-              <p className="title">Св Муч Јустин Философ</p>
-              <p>Димензије 30х40cm</p>
-              <p className="last">Цена са златом 150е</p>
-            </div>
-
-            <div className="sektor">
-              <img
-                className="slika"
-                src={ikona8}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 7 })}
-              />
-              <p className="title">Св Нектарије Егински</p>
-              <p>Димензије 30х40cm</p>
-              <p className="last">Цена са златом 150е</p>
-            </div>
-
-            <div className="sektor">
-              <img
-                className="slika"
-                src={ikona9}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 8 })}
-              />
-              <p className="title">Св Архангел Михаил</p>
-              <p>Димензије 26х61cm</p>
-              {/* <p className="last">Цена са златом 200е</p> */}
-            </div>
-
-           
-          </div>
-          {/* <div className="footer">
-       
-          <Footer></Footer>
-       
-          </div> */}
-
-         
-        </div>
+        <GalerijaPrvaStrana />
+        <GalerijaDrugaStrana/>
            <div className="contactDetails1">
             <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
@@ -197,26 +99,26 @@ export default class Galerija extends React.Component {
             </p>
           </div>
 
-        {isOpen && (
-          <Lightbox
-            mainSrc={images[photoIndex]}
-            imageTitle={textHeader[photoIndex]}
-            imageCaption={textFooter[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={() => this.setState({ isOpen: false })}
-            onMovePrevRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
-              })
-            }
-            onMoveNextRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
-              })
-            }
-          />
-        )}
+          {isOpen && (
+            <Lightbox
+              mainSrc={images[photoIndex]}
+              imageTitle={textHeader[photoIndex]}
+              imageCaption={textFooter[photoIndex]}
+              nextSrc={images[(photoIndex + 1) % images.length]}
+              prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+              onCloseRequest={() => this.setState({ isOpen: false })}
+              onMovePrevRequest={() =>
+                this.setState({
+                  photoIndex: (photoIndex + images.length - 1) % images.length,
+                })
+              }
+              onMoveNextRequest={() =>
+                this.setState({
+                  photoIndex: (photoIndex + 1) % images.length,
+                })
+              }
+            />
+          )}
       </div>
     );
   }

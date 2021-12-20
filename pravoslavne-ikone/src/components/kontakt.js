@@ -6,13 +6,23 @@ import "./../style/kontakt.scss";
 // import { useForm } from "react-hook-form";
 
 export default function Kontakt() {
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState({
+    textarea:false,
+    phone:false,
+    validationInput:false,
+    validation:false
+
+
+  });
 
   function onClickHandle() {
+    console.log(status)
+
     alert("Порука је послата!");
   }
 
   function onClickHandle1() {
+    console.log(status)
     alert("Емаил је неисправан!");
   }
 
@@ -29,12 +39,13 @@ export default function Kontakt() {
       .then(
         (result) => {
           console.log(result.text);
+          setStatus({...status, textarea:false, phone:false, validationInput:false, validation:false })
         },
         (error) => {
           console.log(error.text);
         }
       ); //ova funkcija je kopirana sa njihovog sajta
-        console.log(e.target)
+    console.log(e.target);
     e.target.reset();
   }
 
@@ -42,55 +53,61 @@ export default function Kontakt() {
 
   //
   let validationInputTextarea = (e) => {
-    var pattern = /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
+    var pattern =
+      /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
     let a = pattern.test(e.target.value);
     console.log(a);
-    setStatus(false);
+    // setStatus(false);
 
     if (a) {
       e.target.style.borderColor = "blue";
-      setStatus(true);
-    }
-    else{
+      setStatus({...status, textarea:true})
+      // setStatus(true);
+      // setStatus([...status, true])
+    } else {
       e.target.style.borderColor = "red";
-      setStatus(false);
+      setStatus({...status, textarea:false})
+      // setStatus(false);
+      // setStatus([...status, false])
 
     }
-    }
+  };
   let validationInputPhone = (e) => {
     var pattern = /^[\s0-9-]+$/;
     let a = pattern.test(e.target.value);
     console.log(a);
-    setStatus(false);
+    // setStatus(false);
 
     if (a) {
+      setStatus({...status, phone:true});
       e.target.style.borderColor = "blue";
-      setStatus(true);
-    }
-    else{
+      // setStatus(true);
+    } 
+    else {
+      setStatus({...status, phone:true})
       e.target.style.borderColor = "red";
-      setStatus(false);
-
+      // setStatus(false);
     }
-    }
+  };
 
   let validationInput = (e) => {
-    var pattern = /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
+    var pattern =
+      /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
     let a = pattern.test(e.target.value);
     console.log(a);
-    setStatus(false);
-
+    // setStatus(false);
 
     if (a) {
+      setStatus({...status, validationInput:true})
       e.target.style.borderColor = "blue";
-      setStatus(true);
-    }
-    else{
+      // setStatus(true);
+    } 
+    else {
+      setStatus({...status, validationInput:true})
       e.target.style.borderColor = "red";
-      setStatus(false);
-
+      // setStatus(false);
     }
-    }
+  };
 
   let validation = (e) => {
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
@@ -99,15 +116,17 @@ export default function Kontakt() {
 
     if (a) {
       e.target.style.borderColor = "blue";
+      setStatus({...status, validation:true})
       let dugme = (document.querySelector(
         'input[type="submit"]'
       ).disabled = false);
-     
-      setStatus(true);
-      
+
+      // setStatus(true);
+
       let label = document.querySelector("label");
       label.style.display = "none";
     } else {
+      setStatus({...status, validation:true})
       e.target.style.borderColor = "red";
       let dugme = (document.querySelector(
         'input[type="submit"]'
@@ -123,11 +142,8 @@ export default function Kontakt() {
 
       label.style.opacity = 1;
 
-      setStatus(false);
+      // setStatus(false);
 
-      let node = document.createTextNode("Hello, I am Arun");
-      console.log(node);
-      dugme1.appendChild(node);
     }
     console.log(status);
   };
@@ -142,7 +158,7 @@ export default function Kontakt() {
         <div className="contact-form">
           <div className="input-fields">
             <input
-            onKeyUp={validationInput}
+              onKeyUp={validationInput}
               type="text"
               className="input"
               placeholder="Name"
@@ -156,38 +172,39 @@ export default function Kontakt() {
               id="email"
               type="email"
               className="input"
-              placeholder="Email Address"
+              placeholder="E-mail адреса"
               required
             ></input>
 
             <input
               onKeyUp={validationInputPhone}
-
               type="text"
               className="input"
-              placeholder="Phone"
+              placeholder="Телефон"
               name="phone"
               required
             ></input>
             <input
               onKeyUp={validationInput}
-
               type="text"
               className="input"
-              placeholder="Subject"
+              placeholder="Тема"
               name="subjekt"
               required
             ></input>
           </div>
           <div className="msg">
-            <textarea  onKeyUp={validationInputTextarea}
-            placeholder="Message" name="message"></textarea>
+            <textarea
+              onKeyUp={validationInputTextarea}
+              placeholder="Порука"
+              name="message"
+            ></textarea>
             <input
-              onClick={status ? onClickHandle : onClickHandle1}
+              onClick={(status.textarea && status.phone && status.validationInput && status.validation) ? onClickHandle : onClickHandle1}
               onSubmit={validation}
               type="submit"
               className="btn"
-              value="send"
+              value="Пошаљи"
               required
             ></input>
           </div>
