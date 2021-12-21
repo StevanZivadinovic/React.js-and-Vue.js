@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 
 import fb from "./../assets/facebook.svg";
 import "./../style/kontakt.scss";
+
 // import { useForm } from "react-hook-form";
 
 export default function Kontakt() {
@@ -26,6 +27,8 @@ export default function Kontakt() {
 
     label.style.opacity = 1;
   };
+
+  
 
   function onClickHandle() {
     console.log(status);
@@ -67,10 +70,16 @@ export default function Kontakt() {
     console.log(e.target);
     e.target.reset();
   }
+  // validationInputTextarea()
+  // validationInputPhone()
+  // validationInputName()
+  // validationInputSubject()
+  // validationEmail()
+
 
   //npm install emailjs-com --save, ovo mora da se instalira da bi EmailJS dodatak radio
 
-  //
+  
   let validationInputTextarea = (e) => {
     var pattern =
       /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
@@ -134,13 +143,15 @@ export default function Kontakt() {
     if (a) {
       setStatus({ ...status, validationInputSubject: true });
       e.target.style.borderColor = "blue";
+      labelPosition("0", 'none');
     } else {
       setStatus({ ...status, validationInputSubject: false });
       e.target.style.borderColor = "red";
+      labelPosition("230", 'inline');
     }
   };
 
-  let validation = (e) => {
+  let validationEmail = (e) => {
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     let a = pattern.test(e.target.value);
     console.log(a);
@@ -204,7 +215,7 @@ export default function Kontakt() {
             ></input>
             <label htmlFor="email">Неисправан унос</label>
             <input
-              onKeyUp={validation}
+              onKeyUp={validationEmail}
               name="email"
               id="email"
               type="email"
@@ -221,12 +232,13 @@ export default function Kontakt() {
               name="phone"
               required
             ></input>
+             <label htmlFor="subject">Неисправан унос</label>
             <input
               onKeyUp={validationInputSubject}
               type="text"
               className="input"
               placeholder="Тема"
-              name="subjekt"
+              name="subject"
               required
             ></input>
           </div>
