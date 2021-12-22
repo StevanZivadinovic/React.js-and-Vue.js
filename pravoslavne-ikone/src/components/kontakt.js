@@ -3,10 +3,12 @@ import emailjs from "emailjs-com";
 
 import fb from "./../assets/facebook.svg";
 import "./../style/kontakt.scss";
+import { connect } from "react-redux";
 
 // import { useForm } from "react-hook-form";
 
-export default function Kontakt() {
+ function Kontakt({statusIzReduxa}) {
+   console.log(statusIzReduxa)
   const [status, setStatus] = useState({
     textarea: false,
     phone: false,
@@ -282,3 +284,9 @@ export default function Kontakt() {
     </div>
   );
 }
+
+let mapStateToProps=(state)=>{
+  return {statusIzReduxa:state.status}
+}
+
+export default connect(mapStateToProps)(Kontakt)
