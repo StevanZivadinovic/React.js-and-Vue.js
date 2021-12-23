@@ -8,6 +8,7 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import { createStore } from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './reducers/rootReducer';
+
 //  npm install redux react-redux
 
 

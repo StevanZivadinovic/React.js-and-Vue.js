@@ -4,11 +4,14 @@ import emailjs from "emailjs-com";
 import fb from "./../assets/facebook.svg";
 import "./../style/kontakt.scss";
 import { connect } from "react-redux";
+import {wholeStateToFalse} from './../actions/wholeStateToFalse'
+import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../actions/validationInputTextarea'
+
 
 // import { useForm } from "react-hook-form";
 
- function Kontakt({statusIzReduxa}) {
-   console.log(statusIzReduxa)
+ function Kontakt({statusIzReduxa, setWholeStatusToFalse, actionValidationInputTextareaTrue1, ValidationInputTextareaFalse1}) {
+   console.log(statusIzReduxa, setWholeStatusToFalse)
   const [status, setStatus] = useState({
     textarea: false,
     phone: false,
@@ -33,13 +36,13 @@ import { connect } from "react-redux";
   
 
   function onClickHandle() {
-    console.log(status);
+    console.log(statusIzReduxa);
 
     alert("Порука је послата!");
   }
 
   function onClickHandle1() {
-    console.log(status);
+    console.log(statusIzReduxa);
     alert("Емаил је неисправан!");
   }
 
@@ -55,15 +58,16 @@ import { connect } from "react-redux";
       )
       .then(
         (result) => {
-          console.log(status);
-          setStatus({
-            ...status,
-            textarea: false,
-            phone: false,
-            validationInput: false,
-            validation: false,
-          });
-          console.log(status);
+          console.log(statusIzReduxa);
+          // setStatus({
+          //   ...status,
+          //   textarea: false,
+          //   phone: false,
+          //   validationInput: false,
+          //   validation: false,
+          // });
+          setWholeStatusToFalse()
+          console.log(statusIzReduxa);
         },
         (error) => {
           console.log(error.text);
@@ -90,12 +94,16 @@ import { connect } from "react-redux";
 
     if (a) {
       e.target.style.borderColor = "blue";
-      setStatus({ ...status, textarea: true });
+      actionValidationInputTextareaTrue1()
+      // setStatus({ ...status, textarea: true });
+
     } else {
       e.target.setCustomValidity("Порука је празна");
 
       e.target.style.borderColor = "red";
-      setStatus({ ...status, textarea: false });
+      ValidationInputTextareaFalse1()
+      // actionValidationInputTextarea()
+      // setStatus({ ...status, textarea: false });
     }
   };
   let validationInputPhone = (e) => {
@@ -188,7 +196,7 @@ import { connect } from "react-redux";
         className="wrapper"
         onSubmit={
           status.validationInputSubject &&
-          status.textarea &&
+          statusIzReduxa.textarea &&
           status.phone &&
           status.validationInput &&
           status.validation
@@ -253,7 +261,7 @@ import { connect } from "react-redux";
             <input
               onClick={
                 status.validationInputSubject &&
-                status.textarea &&
+                statusIzReduxa.textarea &&
                 status.phone &&
                 status.validationInput &&
                 status.validation
@@ -289,4 +297,16 @@ let mapStateToProps=(state)=>{
   return {statusIzReduxa:state.status}
 }
 
-export default connect(mapStateToProps)(Kontakt)
+
+let mapDispatchToProps = (dispatch) =>{
+
+  return {
+    setWholeStatusToFalse:()=>{dispatch(wholeStateToFalse())},
+    actionValidationInputTextareaTrue1:()=>{dispatch(ValidationInputTextareaTrue())},
+    ValidationInputTextareaFalse1:()=>{dispatch(ValidationInputTextareaFalse())}
+
+}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Kontakt)
+
