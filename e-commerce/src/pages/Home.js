@@ -5,6 +5,8 @@ import Slider from '../components/Slider'
 import Categories from '../components/Categories.js'
 import Products from '../components/Products'
 import { Newsletter } from '../components/Newsletter'
+import { Footer } from '../components/Footer'
+
 
 function Home() {
 
@@ -17,6 +19,7 @@ function Home() {
             <Categories/>
             <Products/>
             <Newsletter/>
+            <Footer/>
         </div>
     )
 }

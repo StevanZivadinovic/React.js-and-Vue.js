@@ -1,0 +1,114 @@
+@mixin media($color) {
+    height: 4rem;
+    width: 4rem;
+    background-color: $color;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    border-radius: 50%;
+    margin-right: 1rem
+}
+
+
+.mainFooter{
+    display: flex;
+
+    .left{
+        flex: 1;
+        .title{
+            font-size: 4rem;
+            font-weight:500;
+            margin:1rem;
+        }
+        .description{
+            margin: 1rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        .socialDiv{
+            display: flex;
+            margin: 1rem;
+            i{
+                font-size: 2.5rem;
+                color: white;
+            }
+            .fb{
+                @include media(rgb(59, 124, 165));
+                
+                
+            }
+            .insta{
+                @include media(rgb(216, 76, 76));
+
+            }
+            .tweet{
+                @include media(rgb(76, 211, 216));
+
+            }
+            .pinterest{
+                @include media(rgb(211, 23, 23));
+            }
+        }
+    }
+    .center{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        
+        .centerTitle{
+            margin: 1rem;
+            font-size: 2.5rem;
+        }
+
+        ul{
+            list-style-type: none;
+            margin: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+           
+            li{
+                text-transform: uppercase;
+                font-size: 2rem;
+                width: 50%;
+                margin: .5rem 0;
+            }
+
+
+        }
+
+    }
+    .right{
+        flex: 1;
+        
+        .contactTitle{
+            margin: 1rem;
+            font-size: 2.5rem;
+            flex: 1;
+        }
+        .rightDetails{
+            margin: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 60%;
+          
+            .adress, .contact, .phone,.creditCard{
+                font-size: 1.5rem;
+                text-transform: uppercase;
+
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+            .creditCard{
+                i{
+                    font-size: 2.5rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+        
+    }
+}

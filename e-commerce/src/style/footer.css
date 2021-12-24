@@ -1,0 +1,182 @@
+.mainFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainFooter .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mainFooter .left .title {
+  font-size: 4rem;
+  font-weight: 500;
+  margin: 1rem;
+}
+
+.mainFooter .left .description {
+  margin: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.mainFooter .left .socialDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem;
+}
+
+.mainFooter .left .socialDiv i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.mainFooter .left .socialDiv .fb {
+  height: 4rem;
+  width: 4rem;
+  background-color: #3b7ca5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.mainFooter .left .socialDiv .insta {
+  height: 4rem;
+  width: 4rem;
+  background-color: #d84c4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.mainFooter .left .socialDiv .tweet {
+  height: 4rem;
+  width: 4rem;
+  background-color: #4cd3d8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.mainFooter .left .socialDiv .pinterest {
+  height: 4rem;
+  width: 4rem;
+  background-color: #d31717;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.mainFooter .center {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainFooter .center .centerTitle {
+  margin: 1rem;
+  font-size: 2.5rem;
+}
+
+.mainFooter .center ul {
+  list-style-type: none;
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mainFooter .center ul li {
+  text-transform: uppercase;
+  font-size: 2rem;
+  width: 50%;
+  margin: .5rem 0;
+}
+
+.mainFooter .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mainFooter .right .contactTitle {
+  margin: 1rem;
+  font-size: 2.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mainFooter .right .rightDetails {
+  margin: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 60%;
+}
+
+.mainFooter .right .rightDetails .adress, .mainFooter .right .rightDetails .contact, .mainFooter .right .rightDetails .phone, .mainFooter .right .rightDetails .creditCard {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.mainFooter .right .rightDetails .adress i, .mainFooter .right .rightDetails .contact i, .mainFooter .right .rightDetails .phone i, .mainFooter .right .rightDetails .creditCard i {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=footer.css.map */
