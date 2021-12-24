@@ -23,27 +23,27 @@ const images = [
 ];
 
 const textHeader = [
-  "Св Вукашин Клепачки",
+  "Св Арханђел Гаврил - Бели Анђео",
+  "Св Великомученик Георгије",
   "Св Јован Крститељ",
-  "Св Великомученик Димитрије",
-  "Св Кнез Лазар",
-  "Мајка Божија - Дечанска",
-  "Икона Мајке Божије",
-  "Св Муч Јустин Философ",
-  "Св Нектарије Егински",
-  "Св Архангел Михаил",
+  "Св Апостол Марко",
+  "Икона Пресвете Тројице",
+  "Св Максим Исповедник",
+  "Св Јосиф Исихаста",
+  "Св Херувима и Св Петка",
+  "Св Василије Острошки",
 ];
 
 const textFooter = [
   "21x30cm",
   "30x40cm",
-  "18x40cm",
   "30x40cm",
   "30x40cm",
   "30x40cm",
+  "18x24cm",
+  "15x20cm",
   "30x40cm",
-  "30x40cm",
-  "26x61cm",
+  "20x30cm",
 ];
 
 
@@ -74,7 +74,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 0 })}
     />
     <p className="title"> Св Арханђел Гаврил - Бели Анђео</p>
-    <p>Димензије 21х30cm</p>
+    <p className='dimension'>Димензије 21х30cm</p>
     {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 
@@ -85,7 +85,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 1 })}
     />
     <p className="title">Св Великомученик Георгије</p>
-    <p>Димензије 30х40cm</p>
+    <p className='dimension'>Димензије 30х40cm</p>
     {/* <p className="last">Цена са златом 170е</p> */}
   </div>
 
@@ -96,7 +96,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 2 })}
     />
     <p className="title">Св Јован Крститељ</p>
-    <p>Димензије 30х40cm</p>
+    <p className='dimension'>Димензије 30х40cm</p>
     {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 </div>
@@ -110,7 +110,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 3 })}
     />
     <p className="title">Св Апостол Марко</p>
-    <p>Димензије 30х40cm</p>
+    <p className='dimension'>Димензије 30х40cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
@@ -121,7 +121,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 4 })}
     />
     <p className="title">Икона Пресвете Тројице</p>
-    <p>Димензије 30х40cm</p>
+    <p className='dimension'>Димензије 30х40cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
@@ -132,7 +132,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 5 })}
     />
     <p className="title">Св Максим Исповедник</p>
-    <p>Димензије 18х24cm</p>
+    <p className='dimension'>Димензије 18х24cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 </div>
@@ -146,7 +146,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 6 })}
     />
     <p className="title">Св Јосиф Исихаста</p>
-    <p>Димензије 15х20cm</p>
+    <p className='dimension'>Димензије 15х20cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
@@ -157,7 +157,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 7 })}
     />
     <p className="title">Св Херувима и Св Петка</p>
-    <p>Димензије 30х40cm</p>
+    <p className='dimension'>Димензије 30х40cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
@@ -168,7 +168,7 @@ export default class GalerijaDrugaStrana extends Component {
       onClick={() => this.setState({ isOpen: true, photoIndex: 8 })}
     />
     <p className="title">Св Василије Острошки</p>
-    <p>Димензије 20х30cm</p>
+    <p className='dimension'>Димензије 20х30cm</p>
     {/* <p className="last">Цена са златом 200е</p> */}
   </div>
 </div>

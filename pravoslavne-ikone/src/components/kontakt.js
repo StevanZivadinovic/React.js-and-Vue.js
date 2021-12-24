@@ -94,16 +94,17 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
 
     if (a) {
       e.target.style.borderColor = "blue";
-      actionValidationInputTextareaTrue1()
-      // setStatus({ ...status, textarea: true });
+     
+      // actionValidationInputTextareaTrue1()
+      setStatus({ ...status, textarea: true });
 
     } else {
       e.target.setCustomValidity("Порука је празна");
 
       e.target.style.borderColor = "red";
-      ValidationInputTextareaFalse1()
-      // actionValidationInputTextarea()
-      // setStatus({ ...status, textarea: false });
+      // ValidationInputTextareaFalse1()
+   
+      setStatus({ ...status, textarea: false });
     }
   };
   let validationInputPhone = (e) => {
@@ -196,7 +197,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
         className="wrapper"
         onSubmit={
           status.validationInputSubject &&
-          statusIzReduxa.textarea &&
+          status.textarea &&
           status.phone &&
           status.validationInput &&
           status.validation
@@ -261,7 +262,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
             <input
               onClick={
                 status.validationInputSubject &&
-                statusIzReduxa.textarea &&
+                status.textarea &&
                 status.phone &&
                 status.validationInput &&
                 status.validation

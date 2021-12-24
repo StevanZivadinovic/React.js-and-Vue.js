@@ -1,57 +1,55 @@
-import React, {Component} from "react";
-import ikona1 from "./../assets/ikona1.jpg";
-import ikona2 from "./../assets/ikona2.jpg";
-import ikona3 from "./../assets/ikona3.jpg";
-import ikona4 from "./../assets/ikona4.jpg";
-import ikona5 from "./../assets/ikona5.jpg";
-import ikona6 from "./../assets/ikona6.jpg";
-import ikona7 from "./../assets/ikona7.jpg";
-import ikona8 from "./../assets/ikona8.jpg";
-import ikona9 from "./../assets/ikona9.jpg";
+import React, {Component} from 'react'
+import ikona19 from "./../assets/ikona19.jpg";
+import ikona20 from "./../assets/ikona20.jpg";
+import ikona21 from "./../assets/ikona21.jpg";
+import ikona22 from "./../assets/ikona22.jpg";
+import ikona23 from "./../assets/ikona23.jpg";
+import ikona24 from "./../assets/ikona24.jpg";
+import ikona25 from "./../assets/ikona25.jpg";
+import ikona26 from "./../assets/ikona26.jpg";
+import ikona27 from "./../assets/ikona27.jpg";
 import Lightbox from "react-image-lightbox";
-
-
 const images = [
-  ikona1,
-  ikona2,
-  ikona3,
-  ikona4,
-  ikona5,
-  ikona6,
-  ikona7,
-  ikona8,
-  ikona9,
+  ikona19,
+  ikona20,
+  ikona21,
+  ikona22,
+  ikona23,
+  ikona24,
+  ikona25,
+  ikona26,
+  ikona27,
 
 ];
 
 const textHeader = [
-  "Св Вукашин Клепачки",
-  "Св Јован Крститељ",
-  "Св Великомученик Димитрије",
-  "Св Кнез Лазар",
-  "Мајка Божија - Дечанска",
-  "Икона Мајке Божије",
-  "Св Муч Јустин Философ",
-  "Св Нектарије Егински",
+  "Икона Господња",
+  "Св Симеон Нови Богослов",
+  "Св Григорије Палама",
+  "Икона Мајке Божије Атонске",
   "Св Архангел Михаил",
+  "Св Архангел Рафаил",
+  "Св Архангел Варахил",
+  "Св Архангел Урил",
+  "Св Архангел Салатил",
 ];
 
 const textFooter = [
-  "21x30cm",
-  "30x40cm",
   "18x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "26x61cm",
+  "15x20cm",
+  "15x20cm",
+  "25х50cm",
+  "18x40cm",
+  "18x40cm",
+  "18x40cm",
+  "18x40cm",
+  "18x40cm",
 ];
 
 
 
 
-export default class galerijaPrvaStrana extends Component {
+export default class GalerijaTrecaStrana extends Component {
 
   constructor(props) {
     super(props);
@@ -72,33 +70,33 @@ export default class galerijaPrvaStrana extends Component {
     <img
       imageTitle="slika"
       className="slika"
-      src={ikona1}
+      src={ikona19}
       onClick={() => this.setState({ isOpen: true, photoIndex: 0 })}
     />
-    <p className="title"> Св Вукашин Клепачки</p>
-    <p className='dimension'>Димензије 21х30cm</p>
+    <p className="title"> Икона Господња</p>
+    <p className='dimension'>Димензије 18х40cm</p>
     {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 
   <div className="sektor">
     <img
       className="slika"
-      src={ikona2}
+      src={ikona20}
       onClick={() => this.setState({ isOpen: true, photoIndex: 1 })}
     />
-    <p className="title">Св Јован Крститељ</p>
-    <p className='dimension'>Димензије 30х40cm</p>
+    <p className="title">Св Симеон Нови Богослов</p>
+    <p className='dimension'>Димензије 15х20cm</p>
     {/* <p className="last">Цена са златом 170е</p> */}
   </div>
 
   <div className="sektor">
     <img
       className="slika"
-      src={ikona3}
+      src={ikona21}
       onClick={() => this.setState({ isOpen: true, photoIndex: 2 })}
     />
-    <p className="title">Св Великомученик Димитрије</p>
-    <p className='dimension'>Димензије 18х40cm</p>
+    <p className="title">Св Григорије Палама</p>
+    <p className='dimension'>Димензије 15х20cm</p>
     {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 </div>
@@ -108,33 +106,33 @@ export default class galerijaPrvaStrana extends Component {
     <img
       imageTitle="slika"
       className="slika"
-      src={ikona4}
+      src={ikona22}
       onClick={() => this.setState({ isOpen: true, photoIndex: 3 })}
     />
-    <p className="title">Св Кнез Лазар</p>
-    <p className='dimension'>Димензије 30х40cm</p>
+    <p className="title">Икона Мајке Божије Атонске</p>
+    <p className='dimension'>Димензије 25х50cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
     <img
       className="slika"
-      src={ikona5}
+      src={ikona23}
       onClick={() => this.setState({ isOpen: true, photoIndex: 4 })}
     />
-    <p className="title">Мајка Божија - Дечанска</p>
-    <p className='dimension'>Димензије 30х40cm</p>
+    <p className="title">Икона Св Архангела Михаила</p>
+    <p className='dimension'>Димензије 18х40cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
     <img
       className="slika"
-      src={ikona6}
+      src={ikona24}
       onClick={() => this.setState({ isOpen: true, photoIndex: 5 })}
     />
-    <p className="title">Икона Мајке Божије</p>
-    <p className='dimension'>Димензије 30х40cm</p>
+    <p className="title">Икона Св Архангела Рафаила</p>
+    <p className='dimension'>Димензије 18х40cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 </div>
@@ -144,33 +142,33 @@ export default class galerijaPrvaStrana extends Component {
     <img
       imageTitle="slika"
       className="slika"
-      src={ikona7}
+      src={ikona25}
       onClick={() => this.setState({ isOpen: true, photoIndex: 6 })}
     />
-    <p className="title">Св Муч Јустин Философ</p>
-    <p className='dimension'>Димензије 30х40cm</p>
+    <p className="title">Св Архангела Варахила</p>
+    <p className='dimension'>Димензије 18х40cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
     <img
       className="slika"
-      src={ikona8}
+      src={ikona26}
       onClick={() => this.setState({ isOpen: true, photoIndex: 7 })}
     />
-    <p className="title">Св Нектарије Егински</p>
-    <p className='dimension'>Димензије 30х40cm</p>
+    <p className="title">Св Архангел Урил</p>
+    <p className='dimension'>Димензије 18х40cm</p>
     {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
     <img
       className="slika"
-      src={ikona9}
+      src={ikona27}
       onClick={() => this.setState({ isOpen: true, photoIndex: 8 })}
     />
-    <p className="title">Св Архангел Михаил</p>
-    <p className='dimension'>Димензије 26х61cm</p>
+    <p className="title">Св Архангел Салатил</p>
+    <p className='dimension'>Димензије 18х40cm</p>
     {/* <p className="last">Цена са златом 200е</p> */}
   </div>
 </div>
@@ -201,17 +199,3 @@ export default class galerijaPrvaStrana extends Component {
     )
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
