@@ -11,7 +11,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
 // import { useForm } from "react-hook-form";
 
  function Kontakt({statusIzReduxa, setWholeStatusToFalse, actionValidationInputTextareaTrue1, ValidationInputTextareaFalse1}) {
-   console.log(statusIzReduxa, setWholeStatusToFalse)
+  //  console.log(statusIzReduxa, setWholeStatusToFalse)
   const [status, setStatus] = useState({
     textarea: false,
     phone: false,
@@ -36,13 +36,13 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
   
 
   function onClickHandle() {
-    console.log(statusIzReduxa);
+    console.log(status);
 
     alert("Порука је послата!");
   }
 
   function onClickHandle1() {
-    console.log(statusIzReduxa);
+    console.log(status);
     alert("Емаил је неисправан!");
   }
 
@@ -58,16 +58,16 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
       )
       .then(
         (result) => {
-          console.log(statusIzReduxa);
-          // setStatus({
-          //   ...status,
-          //   textarea: false,
-          //   phone: false,
-          //   validationInput: false,
-          //   validation: false,
-          // });
-          setWholeStatusToFalse()
-          console.log(statusIzReduxa);
+          console.log(status);
+          setStatus({
+            ...status,
+            textarea: false,
+            phone: false,
+            validationInput: false,
+            validation: false,
+          });
+          // setWholeStatusToFalse()
+          console.log(status);
         },
         (error) => {
           console.log(error.text);
