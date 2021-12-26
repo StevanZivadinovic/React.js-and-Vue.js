@@ -8,22 +8,21 @@ import { Newsletter } from '../components/Newsletter'
 import { Footer } from '../components/Footer'
 
 
-function Home() {
 
-   
+
+function ShopingCategoryPage(prop) {
+
     return (
         <div className='mainHome'>
-        
             <Navbar/>
             <Announcement/>
-            <Slider/>
-            <Categories/>
+           
             <Products/>
             <Newsletter/>
             <Footer/>
-           
+            
         </div>
     )
 }
 
-export default Home
+export default ShopingCategoryPage;
