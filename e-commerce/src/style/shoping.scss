@@ -1,0 +1,38 @@
+@mixin styling {
+  font-size: 2rem;
+  text-align: center;
+  padding:1rem 2rem;
+}
+
+.subShoping {
+  margin: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  
+  .filterProducts {
+   
+    @include styling;
+  }
+ 
+  span, option {
+    @include styling;
+    text-align: left !important;
+  
+
+  }
+  select {
+    width: 70%;
+    padding:1rem 2rem;
+  
+    
+    @include styling;
+
+    
+  }
+  .sortProducts {
+    width: 30%;
+    @include styling;
+
+    
+  }
+}

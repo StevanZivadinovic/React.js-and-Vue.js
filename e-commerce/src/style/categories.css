@@ -68,6 +68,12 @@
   cursor: pointer;
 }
 
+.mainCategories .categorie .textInfo button .link {
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+}
+
 .mainCategories .categorie:hover {
   color: red;
 }

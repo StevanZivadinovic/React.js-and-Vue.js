@@ -1,0 +1,38 @@
+.subShoping {
+  margin: 0 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.subShoping .filterProducts {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.subShoping span, .subShoping option {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  text-align: left !important;
+}
+
+.subShoping select {
+  width: 70%;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.subShoping .sortProducts {
+  width: 30%;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+/*# sourceMappingURL=shoping.css.map */

@@ -179,4 +179,9 @@
 .mainFooter .right .rightDetails .adress i, .mainFooter .right .rightDetails .contact i, .mainFooter .right .rightDetails .phone i, .mainFooter .right .rightDetails .creditCard i {
   font-size: 1.5rem;
 }
+
+.mainFooter .right .rightDetails .creditCard i {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
 /*# sourceMappingURL=footer.css.map */

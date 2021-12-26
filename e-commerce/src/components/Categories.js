@@ -5,7 +5,9 @@ import { useState, useEffect } from "react";
 // import image from './../img/categories1.jpg'
 import Item from "./../components/Item";
 
-function Categories() {
+
+function Categories(props) {
+  console.log(props)
   const [nizSrc, setNizSrc] = useState([]);
 
   useEffect(() => {
@@ -25,3 +27,19 @@ function Categories() {
 }
 
 export default Categories;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

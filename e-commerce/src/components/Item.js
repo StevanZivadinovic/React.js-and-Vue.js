@@ -4,6 +4,8 @@ import {BrowserRouter as Router,Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom';
 function Item(props) {
   let navigate = useNavigate();
+  console.log(navigate)
+  console.log(props)
 
 
   // onClick={()=>{useNavigate1.push('/category')}}
