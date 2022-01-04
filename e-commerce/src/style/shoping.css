@@ -12,12 +12,14 @@
   font-size: 2rem;
   text-align: center;
   padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 .subShoping span, .subShoping option {
   font-size: 2rem;
   text-align: center;
   padding: 1rem 2rem;
+  cursor: pointer;
   text-align: left !important;
 }
 
@@ -27,6 +29,7 @@
   font-size: 2rem;
   text-align: center;
   padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 .subShoping .sortProducts {
@@ -34,5 +37,6 @@
   font-size: 2rem;
   text-align: center;
   padding: 1rem 2rem;
+  cursor: pointer;
 }
 /*# sourceMappingURL=shoping.css.map */

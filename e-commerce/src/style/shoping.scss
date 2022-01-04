@@ -2,6 +2,7 @@
   font-size: 2rem;
   text-align: center;
   padding:1rem 2rem;
+  cursor: pointer;
 }
 
 .subShoping {
@@ -23,6 +24,9 @@
   select {
     width: 70%;
     padding:1rem 2rem;
+  
+
+    
   
     
     @include styling;
