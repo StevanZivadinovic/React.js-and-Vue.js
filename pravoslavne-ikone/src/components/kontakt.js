@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+// import{ init } from '@emailjs/browser';
+
 
 import fb from "./../assets/facebook.svg";
 import "./../style/kontakt.scss";
@@ -19,7 +21,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
     validation: false,
     validationInputSubject: false,
   });
-
+  // init("user_iDF7GBVBepZlv2bZg187d");
   let labelPosition = (position, display) => {
     let label = document.querySelector("label");
     // label.style.opacity = opacit;
@@ -58,7 +60,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
       )
       .then(
         (result) => {
-          console.log(status);
+          console.log(result);
           setStatus({
             ...status,
             textarea: false,
@@ -67,7 +69,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
             validation: false,
           });
           // setWholeStatusToFalse()
-          console.log(status);
+          console.log(result);
         },
         (error) => {
           console.log(error.text);
@@ -220,7 +222,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
               // onInvalid=this.setCustomValidity('Enter User Name Here')
               type="text"
               className="input"
-              placeholder="Name"
+              placeholder="Име"
               name="from_name"
               required
             ></input>
@@ -231,7 +233,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
               id="email"
               type="email"
               className="input"
-              placeholder="E-mail адреса"
+              placeholder="E-маил адреса"
               required
             ></input>
             <label htmlFor="phone">Неисправан унос</label>
