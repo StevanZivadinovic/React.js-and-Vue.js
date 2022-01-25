@@ -18,7 +18,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
     textarea: false,
     phone: false,
     validationInput: false,
-    validation: false,
+    validationEmail: false,
     validationInputSubject: false,
   });
   // init("user_iDF7GBVBepZlv2bZg187d");
@@ -38,17 +38,23 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
   
 
   function onClickHandle() {
-    console.log(status);
+    console.log(status.validationInputSubject &&
+      status.textarea &&
+      status.phone &&
+      status.validationInput &&
+      status.validationEmail);
 
     alert("Порука је послата!");
   }
 
   function onClickHandle1() {
     console.log(status);
+
     alert("Емаил је неисправан!");
   }
 
   function sendEmail(e) {
+    console.log('hay hay')
     e.preventDefault();
 
     emailjs
@@ -66,7 +72,8 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
             textarea: false,
             phone: false,
             validationInput: false,
-            validation: false,
+            validationEmail: false,
+            validationInputSubject: false,
           });
           // setWholeStatusToFalse()
           console.log(result);
@@ -94,13 +101,18 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
     let a = pattern.test(e.target.value);
     console.log(a);
 
-    if (a) {
+    if (a)  {
       e.target.style.borderColor = "blue";
      
       // actionValidationInputTextareaTrue1()
       setStatus({ ...status, textarea: true });
+      console.log(status);
+      e.target.setCustomValidity("");
 
-    } else {
+  
+
+    } 
+    else  {
       e.target.setCustomValidity("Порука је празна");
 
       e.target.style.borderColor = "red";
@@ -117,7 +129,8 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
     if (a) {
       setStatus({ ...status, phone: true });
       e.target.style.borderColor = "blue";
-    } else {
+      e.target.setCustomValidity("");
+    } else  {
       e.target.setCustomValidity("Молимо Вас не користите словне карактере.");
 
       setStatus({ ...status, phone: true });
@@ -132,10 +145,11 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
     let a = pattern.test(e.target.value);
     console.log(a);
 
-    if (a) {
+    if (a)  {
       setStatus({ ...status, validationInput: true });
       e.target.style.borderColor = "blue";
       labelPosition("0", 'none');
+      e.target.setCustomValidity("");
     } else {
       e.target.setCustomValidity(
         "Молимо Вас не користите бројеве или специјалне карактере."
@@ -147,7 +161,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
     }
   };
 
-  let validationInputSubject = (e) => {
+  let validationInputSubject1 = (e) => {
     var pattern =
       /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
     let a = pattern.test(e.target.value);
@@ -157,35 +171,36 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
       setStatus({ ...status, validationInputSubject: true });
       e.target.style.borderColor = "blue";
       labelPosition("0", 'none');
-    } else {
+      e.target.setCustomValidity("");
+    } else{
       setStatus({ ...status, validationInputSubject: false });
       e.target.style.borderColor = "red";
       labelPosition("230", 'inline');
     }
   };
 
-  let validationEmail = (e) => {
+  let validationEmail1 = (e) => {
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     let a = pattern.test(e.target.value);
     console.log(a);
 
     if (a) {
       e.target.style.borderColor = "blue";
-      setStatus({ ...status, validation: true });
-      let dugme = (document.querySelector(
+      setStatus({ ...status, validationEmail: true });
+      document.querySelector(
         'input[type="submit"]'
-      ).disabled = false);
+      ).disabled = false
       
       labelPosition("110", 'none');
-
+      e.target.setCustomValidity("");
     } else {
-      e.target.setCustomValidity("Молимо Вас користите формат xxxxx@xxxx.xxx");
+      e.target.setCustomValidity("Е-маил је неисправан");
 
-      setStatus({ ...status, validation: true });
+      setStatus({ ...status, validationEmail: false });
       e.target.style.borderColor = "red";
-      let dugme = (document.querySelector(
+      document.querySelector(
         'input[type="submit"]'
-      ).disabled = true);
+      ).disabled = true
       let dugme1 = document.querySelector('input[type="submit"]');
       labelPosition("110", 'inline');
     }
@@ -202,11 +217,12 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
           status.textarea &&
           status.phone &&
           status.validationInput &&
-          status.validation
+          status.validationEmail
             ? sendEmail
-            : (e) => {
-                e.preventDefault();
-              }
+            :(e) => {
+              e.preventDefault();
+           
+            } 
         }
       >
         <div className="title">
@@ -228,7 +244,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
             ></input>
             <label htmlFor="email">Неисправан унос</label>
             <input
-              onKeyUp={validationEmail}
+              onKeyUp={validationEmail1}
               name="email"
               id="email"
               type="email"
@@ -247,7 +263,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
             ></input>
              <label htmlFor="subject">Неисправан унос</label>
             <input
-              onKeyUp={validationInputSubject}
+              onKeyUp={validationInputSubject1}
               type="text"
               className="input"
               placeholder="Тема"
@@ -267,7 +283,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
                 status.textarea &&
                 status.phone &&
                 status.validationInput &&
-                status.validation
+                status.validationEmail
                   ? onClickHandle
                   : onClickHandle1
               }
