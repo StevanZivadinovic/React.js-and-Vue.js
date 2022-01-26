@@ -6,8 +6,13 @@
 }
 .mainM {
   background-image: none;
-  
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+  margin-bottom: 100px;
+  margin-top: 100px;
   .main1 {
     width: 100%;
     display: flex;

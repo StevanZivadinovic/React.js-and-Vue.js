@@ -208,7 +208,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
   };
 
   return (
-    <div className="main3" style={{position:'relative'}}>
+    <div className="main3" >
       {/* onSubmit={handleSubmit(onSubmit)} */}
       <form
         className="wrapper"
@@ -307,8 +307,8 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
             </a>
           </p>
         </div> */}
-        <Footer></Footer>
       </form>
+        <Footer></Footer>
     </div>
   );
 }

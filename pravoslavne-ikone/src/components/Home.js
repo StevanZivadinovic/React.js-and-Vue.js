@@ -7,13 +7,14 @@ import daska2 from "./../assets/daska2.jpg";
 import zlatni_listici from "./../assets/zlatni_listici.jpg";
 import pigment from "./../assets/pigment.jpg";
 import fb from "./../assets/facebook.svg";
+import Footer from "./footer";
 
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Footer from "./footer";
 
 export default function Home() {
   return (
-    <div className="main">
+    <div className="main" >
       <div className="uvod">
         {" "}
         <h1>Израда Православних икона</h1>
@@ -99,7 +100,7 @@ export default function Home() {
             листићима (24 карата), шлаг металом или осликава бојом по жељи.
           </p>
         </div>
-        <div className="kontakt">
+        {/* <div className="kontakt">
           <p>gagaikone@live.com</p>
           <p>061/321-60-87</p>
           <p>
@@ -110,8 +111,9 @@ export default function Home() {
               <img id="fb" src={fb}></img>
             </a>
           </p>
-        </div>
+        </div> */}
       </div>
+        <Footer></Footer>
     </div>
   );
 }
