@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import Button from "./button";
-import "./footer.scss";
+import "./../style/footer.scss";
 // import krst from "./../assets/1.png";
 import fb from './../assets/facebook.svg';
 
@@ -28,17 +28,17 @@ export default function Footer(props) {
 
   return (
     <>
-      <nav className="navbar1">
-        <div className="navbar-container1">
-            <div> <Link to="/" className="navbar-logo1" onClick={closeMobileMenu}>
+      <nav className="footer">
+        <div className="footer-container">
+            {/* <div> <Link to="/" className="navbar-logo1" onClick={closeMobileMenu}>
             Православне иконе - Ниш
            
-          </Link></div>
+          </Link></div> */}
          
-          <div>
+          <div className="contact">
             <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
-            <a target='_blank' href='https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453'><img id='fb' src={fb}></img></a>
+            <a id ='linkDoFb'target='_blank' href='https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453'><i class="fab fa-facebook"></i></a>
           </div>
         </div>
       </nav>

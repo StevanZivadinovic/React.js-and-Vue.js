@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 // import{ init } from '@emailjs/browser';
 
-
+import Footer from './footer'
 import fb from "./../assets/facebook.svg";
 import "./../style/kontakt.scss";
 import { connect } from "react-redux";
@@ -208,7 +208,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
   };
 
   return (
-    <div className="main3">
+    <div className="main3" style={{position:'relative'}}>
       {/* onSubmit={handleSubmit(onSubmit)} */}
       <form
         className="wrapper"
@@ -249,7 +249,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
               id="email"
               type="email"
               className="input"
-              placeholder="E-маил адреса"
+              placeholder="Mаил адреса"
               required
             ></input>
             <label htmlFor="phone">Неисправан унос</label>
@@ -295,7 +295,7 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
             ></input>
           </div>
         </div>
-        <div className="contactDetails">
+        {/* <div className="contactDetails">
           <p>gagaikone@live.com</p>
           <p>061/321-60-87</p>
           <p>
@@ -306,7 +306,8 @@ import {ValidationInputTextareaTrue, ValidationInputTextareaFalse} from './../ac
               <img id="fb" src={fb}></img>
             </a>
           </p>
-        </div>
+        </div> */}
+        <Footer></Footer>
       </form>
     </div>
   );

@@ -42,6 +42,7 @@ import ikona36 from "./../assets/ikona36.jpg";
 import fb from "./../assets/facebook.svg";
 
 import "./../style/galerija.scss";
+import Footer from './footer'
 import  GalerijaPrvaStrana  from "./galerijaPrvaStrana";
 import GalerijaDrugaStrana  from "./galerijaDrugaStrana";
 import GalerijaTrecaStrana  from "./galerijaTrecaStrana";
@@ -129,7 +130,7 @@ export default class Galerija extends React.Component {
         <GalerijaDrugaStrana/>
         <GalerijaTrecaStrana/>
         <GalerijaCetvrtaStrana/>
-           <div className="contactDetails1">
+           {/* <div className="contactDetails1">
             <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
             <p>
@@ -140,7 +141,8 @@ export default class Galerija extends React.Component {
                 <img id="fb" src={fb}></img>
               </a>
             </p>
-          </div>
+          </div> */}
+          <Footer></Footer>
 
           {isOpen && (
             <Lightbox

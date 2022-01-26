@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from "react";
 import { Link } from 'react-router-dom';
 // import  Button  from './button';
 import './../style/navbar.scss'
-import krst from './../assets/1.png'
+import krst from './../assets/krst_beli.png'
 // Za slike sa font awesoma, uzimas cdn kod sa njihovog sajta koji se nalazi na tvom profilu,
 //i kopiras ga u index.html, u public folderu!!!!!!!!!!!!!!!!!
 
