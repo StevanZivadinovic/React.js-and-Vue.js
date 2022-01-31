@@ -60,9 +60,8 @@
             "sr":{
               "aot":true,
               "outputPath":"dist/under-c-sr",
-              "i18nFile":"src/locale/messages.sr.xlf",
-              "i18nFormat":"xlf",
-              "i18nLocale":"sr"
+              "localize":true,
+              "i18nMissingTranslation": "error"
             },
 
             "development": {
