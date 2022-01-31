@@ -20,7 +20,7 @@
       </trans-unit>
       <trans-unit id="8462079686310951773" datatype="html">
         <source>Party time or relax?</source>
-        <source>Забава или одмор?</source>
+        <target>Забава или одмор?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/boxes/boxes.component.html</context>
           <context context-type="linenumber">4</context>
@@ -28,7 +28,7 @@
       </trans-unit>
       <trans-unit id="constractionButton" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{text}}"/></source>
-        <source>Здраво</source>
+        <target>Здраво</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/button/button.component.html</context>
           <context context-type="linenumber">1</context>
@@ -38,7 +38,7 @@
       </trans-unit>
       <trans-unit id="constractionHeader" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ title }}"/></source>
-        <source>Мој први ангулар сајт</source>
+        <target>Мој први ангулар сајт</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/header/header.component.html</context>
           <context context-type="linenumber">2</context>
@@ -48,7 +48,7 @@
       </trans-unit>
       <trans-unit id="ConstructionMainText" datatype="html">
         <source>Where to travel?</source>
-        <source>Где путовати?</source>
+        <target>Где путовати?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main/main.component.html</context>
           <context context-type="linenumber">2</context>
@@ -58,7 +58,7 @@
       </trans-unit>
       <trans-unit id="ConstructionParagrafText" datatype="html">
         <source>Ask us..</source>
-        <source>Питајте нас...</source>
+        <target>Питајте нас...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/main/main.component.html</context>
           <context context-type="linenumber">3</context>
