@@ -1,0 +1,24 @@
+.mainBoxes{
+    display: flex;
+    background-color: rgb(181, 182, 107);
+    height: 43vh;
+    justify-content: space-around;
+    align-items: center;
+    .box{
+        width: 25%;
+        height: 20rem;
+        background-color: rgb(95, 95, 61);
+        border-radius: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.2);
+            transition: .3s all ease;
+        }
+    }
+}

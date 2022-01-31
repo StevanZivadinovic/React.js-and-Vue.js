@@ -1,0 +1,20 @@
+@mixin mainMixin($width, $font) {
+    margin: 0 auto;
+    width:$width;
+    font-size: $font;
+    text-align: center;
+}
+
+.mainMain{
+    height: 50vh;
+    background-image: url('https://images.unsplash.com/photo-1643407997122-86f5534dcbd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1{
+        @include mainMixin(40%,5rem )
+    }
+    p{
+        @include mainMixin(30%,3rem )
+    }
+}

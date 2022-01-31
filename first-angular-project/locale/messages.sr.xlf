@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3024472091927741852" datatype="html">
+        <source>Sea or mountain?</source>
+        <target>Море или планина?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/boxes/boxes.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5590227435791217331" datatype="html">
+        <source>Pick a country!</source>
+         <target>Изабери земљу!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/boxes/boxes.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8462079686310951773" datatype="html">
+        <source>Party time or relax?</source>
+        <source>Забава или одмор?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/boxes/boxes.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="constractionButton" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{text}}"/></source>
+        <source>Здраво</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/button/button.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description"> Click button in header</note>
+        <note priority="1" from="meaning">Button </note>
+      </trans-unit>
+      <trans-unit id="constractionHeader" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ title }}"/></source>
+        <source>Мој први ангулар сајт</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description"> The name of website</note>
+        <note priority="1" from="meaning">Title </note>
+      </trans-unit>
+      <trans-unit id="ConstructionMainText" datatype="html">
+        <source>Where to travel?</source>
+        <source>Где путовати?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/main/main.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description"> Main text in main component</note>
+        <note priority="1" from="meaning">MainText</note>
+      </trans-unit>
+      <trans-unit id="ConstructionParagrafText" datatype="html">
+        <source>Ask us..</source>
+        <source>Питајте нас...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/main/main.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description"> Paragraf text in main component</note>
+        <note priority="1" from="meaning">ParagrafText</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

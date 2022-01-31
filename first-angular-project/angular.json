@@ -57,6 +57,14 @@
               ],
               "outputHashing": "all"
             },
+            "sr":{
+              "aot":true,
+              "outputPath":"dist/under-c-sr",
+              "i18nFile":"src/locale/messages.sr.xlf",
+              "i18nFormat":"xlf",
+              "i18nLocale":"sr"
+            },
+
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -68,12 +76,17 @@
           },
           "defaultConfiguration": "production"
         },
+        
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "first-angular-project:build:production"
             },
+            "sr":{
+              "browserTarget": "first-angular-project:build:sr"
+            }
+            ,
             "development": {
               "browserTarget": "first-angular-project:build:development"
             }
