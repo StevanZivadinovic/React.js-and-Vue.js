@@ -39,6 +39,16 @@ import ikona33 from "./../assets/ikona33.jpg";
 import ikona34 from "./../assets/ikona34.jpg";
 import ikona35 from "./../assets/ikona35.jpg";
 import ikona36 from "./../assets/ikona36.jpg";
+
+import ikona37 from "./../assets/ikona37.JPG";
+import ikona38 from "./../assets/ikona38.JPG";
+import ikona39 from "./../assets/ikona39.JPG";
+import ikona40 from "./../assets/ikona40.JPG";
+import ikona41 from "./../assets/ikona41.jpg";
+import ikona42 from "./../assets/ikona42.jpg";
+import ikona43 from "./../assets/ikona43.jpg";
+import ikona44 from "./../assets/ikona44.jpg";
+import ikona45 from "./../assets/ikona45.jpg";
 import fb from "./../assets/facebook.svg";
 
 import "./../style/galerija.scss";
@@ -47,6 +57,8 @@ import  GalerijaPrvaStrana  from "./galerijaPrvaStrana";
 import GalerijaDrugaStrana  from "./galerijaDrugaStrana";
 import GalerijaTrecaStrana  from "./galerijaTrecaStrana";
 import GalerijaCetvrtaStrana from './galerijaCetvrtaStrana';
+import GalerijaPetaStrana from './galerijaPetaStrana';
+
 
 
 const images = [
@@ -85,7 +97,10 @@ const images = [
   ikona33,
   ikona34,
   ikona35,
-  ikona36
+  ikona36,
+  ikona37,
+  ikona38,
+  ikona39
 ];
 
 const textHeader = [
@@ -130,6 +145,7 @@ export default class Galerija extends React.Component {
         <GalerijaDrugaStrana/>
         <GalerijaTrecaStrana/>
         <GalerijaCetvrtaStrana/>
+        <GalerijaPetaStrana></GalerijaPetaStrana>
            {/* <div className="contactDetails1">
             <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>

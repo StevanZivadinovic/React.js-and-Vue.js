@@ -38,7 +38,7 @@ export default function Footer(props) {
           <div className="contact">
             <p>gagaikone@live.com</p>
             <p>061/321-60-87</p>
-            <a id ='linkDoFb'target='_blank' href='https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453'><i class="fab fa-facebook"></i></a>
+            <a id ='linkDoFb'target='_blank' href='https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453'><i className="fab fa-facebook"></i></a>
           </div>
         </div>
       </nav>
