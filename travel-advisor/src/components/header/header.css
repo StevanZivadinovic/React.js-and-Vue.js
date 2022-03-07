@@ -1,0 +1,19 @@
+div.mainHeader {
+  background-color: #294ba8;
+  color: white;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 100;
+  justify-content: space-between;
+}
+div.mainHeader h5 {
+  margin-left: 1rem;
+}
+div.mainHeader .right {
+  display: flex;
+}
+div.mainHeader .input h6 {
+  margin: none;
+}/*# sourceMappingURL=header.css.map */

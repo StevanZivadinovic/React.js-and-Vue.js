@@ -1,0 +1,25 @@
+div.mainHeader{
+    background-color: rgb(41, 75, 168);
+    color: white;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 100;
+    justify-content: space-between;
+    h5{
+        margin-left: 1rem;
+    }
+    .right{
+
+        display: flex;
+    }
+
+    .input{
+        h6{
+            margin:none;
+        }
+    }
+
+  
+}
