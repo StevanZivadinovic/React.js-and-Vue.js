@@ -14,6 +14,35 @@ div.mainHeader h5 {
 div.mainHeader .right {
   display: flex;
 }
-div.mainHeader .input h6 {
-  margin: none;
+div.mainHeader .right .input {
+  align-self: center;
+  height: 100%;
+  margin: 0 1rem;
+  display: flex;
+}
+div.mainHeader .right .input input {
+  background-color: #4a73e4;
+  outline: none;
+  border: none;
+  align-self: center;
+  padding: 0.3rem 0;
+  color: white;
+  border-radius: 0.2rem;
+}
+div.mainHeader .right .input input:focus {
+  outline: none;
+  border: none;
+}
+div.mainHeader .right .input input::-moz-placeholder {
+  color: #5d5c5c;
+}
+div.mainHeader .right .input input:-ms-input-placeholder {
+  color: #5d5c5c;
+}
+div.mainHeader .right .input input::placeholder {
+  color: #5d5c5c;
+}
+div.mainHeader .right .input h6 {
+  align-self: center;
+  margin: 0 !important;
 }/*# sourceMappingURL=header.css.map */

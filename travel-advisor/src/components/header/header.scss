@@ -1,25 +1,45 @@
-div.mainHeader{
-    background-color: rgb(41, 75, 168);
-    color: white;
-    height: 4vh;
+div.mainHeader {
+  background-color: rgb(41, 75, 168);
+  color: white;
+  height: 4vh;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 100;
+  justify-content: space-between;
+  h5 {
+    margin-left: 1rem;
+  }
+  .right {
     display: flex;
-    align-items: center;
-    font-size: 1.3rem;
-    font-weight: 100;
-    justify-content: space-between;
-    h5{
-        margin-left: 1rem;
-    }
-    .right{
-
-        display: flex;
-    }
-
-    .input{
-        h6{
-            margin:none;
+    // height: 4vh;
+    .input {
+      align-self: center;
+      height: 100%;
+      margin: 0 1rem;
+      display: flex;
+      input {
+          background-color: rgb(74, 115, 228);
+          
+          outline: none;
+          border: none;
+          align-self: center;
+          padding: 0.3rem 0;
+          color: white;
+          border-radius: .2rem;
+          &:focus {
+          outline: none;
+          border: none;
         }
+        &::placeholder{
+            color: rgb(93, 92, 92);
+        }
+      }
+      h6 {
+        align-self: center;
+        margin: 0 !important;
+       
+      }
     }
-
-  
+  }
 }
