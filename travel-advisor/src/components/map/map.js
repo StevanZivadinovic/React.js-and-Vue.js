@@ -4,7 +4,7 @@ import GoogleMapReact from 'google-map-react'
 import 'leaflet/dist/leaflet.css';
 //da dobije google key ides na https://console.cloud.google.com/projectcreate //ovo ne radi jer mora da se plati
 
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'//instalirao sam openstreetmap
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'//instalirao sam openstreetmap, react leafet
 import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import {Icon} from 'leaflet'
 
