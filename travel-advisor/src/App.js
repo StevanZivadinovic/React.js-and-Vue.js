@@ -12,8 +12,12 @@ function App() {
   const [bounds, setBounds] = useState(null);
   
   useEffect(() => {
-   setBounds(JSON.parse(localStorage.getItem('bounds')))
-  }, [localStorage.getItem('bounds')])
+   setBounds(JSON.parse(localStorage.getItem('bounds')));
+   console.log(JSON.parse(localStorage.getItem('bounds'))._northEast.lat);
+   console.log('hajjjjjjjjj')
+  }, [])
+
+  
   
 
   useEffect(() => {
@@ -30,7 +34,7 @@ function App() {
         setApiPlaces(data);
         return data;
       })
-    },[coordinates, bounds])
+    },[bounds])
     // console.log(apiPlaces, coordinates, bounds)
 
 
