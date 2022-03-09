@@ -57,8 +57,8 @@ export default function List() {
         <div className="places">
        
           {places && places.map((a,i)=>{
-            console.log(a,i);
-            return <PlaceDetails name={a.name}></PlaceDetails>
+            // console.log(a, i, Math.random());
+            return <PlaceDetails key={Math.random()} name={a.name}></PlaceDetails>
           })}
           </div>
      
