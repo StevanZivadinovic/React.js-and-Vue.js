@@ -14,9 +14,11 @@ import {
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import { Icon } from "leaflet";
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { actionBounds } from "../actions/actionBounds";
 
 
-export default function Map() {//nije moglo preko coordinates, trazi da se uradi cleanup
+ function Map({setBoundsMap}) {//nije moglo preko coordinates, trazi da se uradi cleanup
   let coords = JSON.parse(localStorage.getItem("geo"));
   
   const [position, setPosition] = useState(coords);
@@ -41,8 +43,8 @@ export default function Map() {//nije moglo preko coordinates, trazi da se uradi
     map.on("moveend", function (e) {
      
       var bounds = map.getBounds();
-      
-      console.log(bounds._southWest.lat, bounds._northEast.lat, bounds._southWest.lng, bounds._northEast.lng);
+      setBoundsMap()     
+ 
       localStorage.setItem('bounds',JSON.stringify(bounds))
     });
 
@@ -80,3 +82,15 @@ export default function Map() {//nije moglo preko coordinates, trazi da se uradi
     </div>
   );
 }
+
+
+let mapDispatchToProps = (dispatch) =>{
+
+  return {
+    setBoundsMap:()=>{dispatch(actionBounds())},
+
+
+}
+}
+
+export default connect(null, mapDispatchToProps)(Map);

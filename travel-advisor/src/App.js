@@ -5,8 +5,10 @@ import Map from "./components/map/map";
 
 import { useEffect, useState } from "react";
 import { getPlaces } from "./components/api/getPlaces";
+import { connect } from "react-redux";
+import { actionBounds } from "./components/actions/actionBounds";
 
-function App() {
+function App({statusIzReduxa}) {
   const [apiPlaces, setApiPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({});
   const [bounds, setBounds] = useState(null);
@@ -14,8 +16,8 @@ function App() {
   useEffect(() => {
    setBounds(JSON.parse(localStorage.getItem('bounds')));
    console.log(JSON.parse(localStorage.getItem('bounds'))._northEast.lat);
-   console.log('hajjjjjjjjj')
-  }, [])
+   console.log(statusIzReduxa)
+  }, [statusIzReduxa])
 
   
   
@@ -34,8 +36,8 @@ function App() {
         setApiPlaces(data);
         return data;
       })
-    },[bounds])
-    // console.log(apiPlaces, coordinates, bounds)
+    },[bounds, coordinates])
+    console.log(apiPlaces, coordinates, bounds)
 
 
  
@@ -44,7 +46,7 @@ function App() {
   
           <Header></Header>
         <div className="leftRight">
-          <List></List>
+          <List apiPlaces = {apiPlaces} bounds={bounds}></List>
           <Map setBounds = {setBounds}></Map>
         </div>
        
@@ -53,4 +55,18 @@ function App() {
   );
 }
 
-export default App;
+let mapStateToProps=(state)=>{
+  return {statusIzReduxa:state.status}
+}
+
+
+let mapDispatchToProps = (dispatch) =>{
+
+  return {
+    setBounds1:()=>{dispatch(actionBounds())},
+
+
+}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

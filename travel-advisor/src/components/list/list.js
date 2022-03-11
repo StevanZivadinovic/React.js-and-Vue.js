@@ -1,24 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PlaceDetails from "../placeDetails/placeDetails";
 import "./list.scss";
-export default function List() {
+export default function List({apiPlaces, bounds}) {
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState(0);
-  let places = [
-    {name:'cool place'},
-    {name:'best beer'},
-    {name:'best steak'},
+ const [places, setPlaces] = useState(apiPlaces)
 
-    {name:'cool place'},
-    {name:'best beer'},
-    {name:'best steak'},
+//  useEffect(() => {
+//    if(apiPlaces){
 
-    {name:'cool place'},
-    {name:'best beer'},
-    {name:'best steak'},
-
-  ]
-
+//      setPlaces(apiPlaces)
+//    }
+//  }, [bounds])
+ 
+ 
   console.log(type, rating);
   return (
     <div className="list">
