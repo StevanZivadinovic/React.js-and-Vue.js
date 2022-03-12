@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Bar, Chart, Line } from "react-chartjs-2";
+import { Doughnut, Chart, Line, Pie } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
-export default function Chart1() {
+export default function ChartPie() {
   const [data1, setData] = useState([]);
  
   let baseUrl = "https://api.coinranking.com/v2/coins/?limit=10";
@@ -30,12 +30,13 @@ export default function Chart1() {
         });
    
   }, [])
-console.log(data1)
+console.log(data1);
+
   return (
-    <div style={{width:'50%'}}>
-     {data1.length>0 ? <Bar
+    <div className="doughnut" style={{width:'35%'}}>
+     {data1.length>0 ? <Pie
         // width={50}
-        height={100}
+        height={10}
         datasetIdKey="id"
         data={{
           labels:  data1[0].coins.map((x) =>x.name
