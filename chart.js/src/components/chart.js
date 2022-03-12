@@ -3,48 +3,45 @@ import { Bar, Chart, Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 export default function Chart1() {
-const [data, setData] = useState([])
-    let baseUrl = 'https://api.coinranking.com/v2/coins/?limit=10';
-    let apiKey = 'coinranking61e127443d6ebacdd2029e840cc940a34960b2b7f0ec54ac';
-    let proxy = 'https://cors-anywhere.herokuapp.com/'
-useEffect(() => {
-    fetch(`${proxy}${baseUrl}`,{
-        method:"GET",
-        headers:{
-        'Content-Type':'application/json',
-        'x-access-token': `${apiKey} `,
-        'Access-Control-Allow-Origin':`*`
-         }
-        
-        }).then((response)=>{
-        if (response.ok) {
-            response.json().then((json)=>{
-                console.log(json);
-            })
+  const [data, setData] = useState([]);
+  // const [getData, setgetData] = useState(true)
+  let baseUrl = "https://api.coinranking.com/v2/coins/?limit=10";
+  let apiKey = "coinranking61e127443d6ebacdd2029e840cc940a34960b2b7f0ec54ac";
+  let proxy = "https://cors-anywhere.herokuapp.com/";
+  useEffect(() => {
+    const fetchCoins = async () => {
+      await fetch(`${proxy}${baseUrl}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': `${apiKey}`,
+          'Access-Control-Allow-Origin': "*"
         }
-        else{
-            console.log("error");
-        }
-        }).catch((error)=>{
-        
-        console.log(error);
-        })
-
-}, [])
-
-   
-
+      })
+        .then((response) => {
+          if (response.ok) {
+            response.json().then((json) => {
+              console.log(json.data);
+              setData(json.data)
+            });
+          }
+        }).catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchCoins()
+  }, [baseUrl, proxy, apiKey])
+console.log(data.coins)
   return (
     <div>
-      <Bar
+     {data ? <Bar
         datasetIdKey="id"
         data={{
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          labels: data.length>0  && data.coins.map((x) => x.name),
           datasets: [
             {
-              label: "# of Votes",
-
-              data: [12, 19, 3, 5, 2, 5],
+              label: data.length>0 && `${data.coins.length} Coins Available`,
+              data: data.length>0 && data.data.coins.map((x) => x.price),
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
@@ -74,16 +71,16 @@ useEffect(() => {
           },
           plugins: {
             legend: {
-                labels: {
-                    // This more specific font property overrides the global property
-                    font: {
-                        size: 25
-                    }
-                }
-            }
-        }
+              labels: {
+                // This more specific font property overrides the global property
+                font: {
+                  size: 25,
+                },
+              },
+            },
+          },
         }}
-      />
+      />:''}
     </div>
   );
 }
