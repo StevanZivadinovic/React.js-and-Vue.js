@@ -3,8 +3,8 @@ import { Bar, Chart, Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 export default function Chart1() {
-  const [data, setData] = useState([]);
-  // const [getData, setgetData] = useState(true)
+  const [data1, setData] = useState([]);
+  const [counter, setCounter] = useState(0)
   let baseUrl = "https://api.coinranking.com/v2/coins/?limit=10";
   let apiKey = "coinranking61e127443d6ebacdd2029e840cc940a34960b2b7f0ec54ac";
   let proxy = "https://cors-anywhere.herokuapp.com/";
@@ -22,26 +22,27 @@ export default function Chart1() {
           if (response.ok) {
             response.json().then((json) => {
               console.log(json.data);
-              setData(json.data)
+              setData([json.data])
             });
+            setCounter(counter)
           }
         }).catch((error) => {
           console.log(error);
         });
     };
     fetchCoins()
-  }, [baseUrl, proxy, apiKey])
-console.log(data.coins)
+  }, [baseUrl, proxy, apiKey, counter])
+console.log(data1)
   return (
     <div>
-     {data ? <Bar
+     {data1.length>0 ? <Bar
         datasetIdKey="id"
         data={{
-          labels: data.length>0  && data.coins.map((x) => x.name),
+          labels: data1.length>0  && data1[0].coins.map((x) => x.name),
           datasets: [
             {
-              label: data.length>0 && `${data.coins.length} Coins Available`,
-              data: data.length>0 && data.data.coins.map((x) => x.price),
+              label: data1.length>0 && `${data1[0].coins.length} Coins Available`,
+              data: data1.length>0 && data1[0].coins.map((x) => x.price),
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
