@@ -38,11 +38,11 @@ console.log(data1)
      {data1.length>0 ? <Bar
         datasetIdKey="id"
         data={{
-          labels: data1.length>0  && data1[0].coins.map((x) => x.name),
+          labels:  data1[0].coins.map((x) => x.name),
           datasets: [
             {
-              label: data1.length>0 && `${data1[0].coins.length} Coins Available`,
-              data: data1.length>0 && data1[0].coins.map((x) => x.price),
+              label:  `${data1[0].coins.length} Coins Available`,
+              data: data1[0].coins.map((x) => x.price),
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
