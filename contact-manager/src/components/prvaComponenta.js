@@ -7,7 +7,7 @@ export default function PrvaComponenta() {
     const [recnik, setRecnik] = useState([]);
     const username = 'steva94';
     const password = 'andjelanole1994'
-    const  url = new URL("https://dictapi.lexicala.com/users/me") ;
+    const  url = new URL("https://dictapi.lexicala.com/languages") ;
 
     url.search = new URLSearchParams({'username':username, 'password':password});
     // url.search = new URLSearchParams(password);
@@ -19,23 +19,26 @@ export default function PrvaComponenta() {
 
 
     useEffect(() => {
-        fetch('https://dictapi.lexicala.com/users/me?username=steva94&password=andjelanole1994'
 
-           )
-            .then((response) => {
-              if (response.ok) {
-                response.json().then((data) => {
-               return data.json()
-                });
+
+/////s///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // fetch(url
+
+        //    )
+        //     .then((response) => {
+        //       if (response.ok) {
+        //         response.json().then((data) => {
+        //        return data.json()
+        //         });
                 
-              }
-            })
-            .then((data)=>{
-                console.log(data)
-            })
-            .catch((error) => {
-              console.log(error);
-            });
+        //       }
+        //     })
+        //     .then((data)=>{
+        //         console.log(data)
+        //     })
+        //     .catch((error) => {
+        //       console.log(error);
+        //     });
        
       }, [])
     
