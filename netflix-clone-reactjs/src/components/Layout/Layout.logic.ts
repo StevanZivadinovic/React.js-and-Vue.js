@@ -8,7 +8,6 @@ const LayoutLogic = ()=>{
     const [routesArray1, setRoutesArray1] = useState<string[]>([]);
     const [showNavbar, setShowNavbar] = useState(false);
     const location = window.location.pathname;
-    console.log(routes)
 
     useEffect(() => {
         setRoutesArray([...routes]);
@@ -22,7 +21,7 @@ const LayoutLogic = ()=>{
         })
     }, [routesArray])
     
-    console.log(routesArray1);
+    
 
     useEffect(() => {
      
@@ -33,7 +32,7 @@ const LayoutLogic = ()=>{
             setShowNavbar(false);
         }
     }, [routesArray1])
-    console.log(showNavbar);
+    
 
     return {showNavbar}
 

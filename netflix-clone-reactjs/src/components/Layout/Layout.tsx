@@ -17,18 +17,16 @@ interface typeLayout{
 }
 
 
-const Layout:FC<typeLayout> =({children, routes}) =>{
+const Layout:FC<typeLayout> =({children}) =>{
  const {showNavbar} = LayoutLogic();
- console.log(showNavbar)
+
     
     return(
         <>
         <React.Suspense>
-      
         {
            showNavbar ? <Navbar/> :''
         }
-        
         <main>{children}</main>
         </React.Suspense>
         </>
