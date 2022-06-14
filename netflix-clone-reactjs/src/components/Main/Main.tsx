@@ -29,7 +29,15 @@ const Main = () => {
     
     
     let movie:IMovie = movies[Math.floor(Math.random()*movies.length)];
-   console.log(movie)
+
+    const cutOverview = (string, num) =>{
+        if(string.length>num){
+            return string.slice(0,num) + '...';
+        }else{
+            return string;
+        }
+    }
+
   return (
     <div className='w-full h-[550px] text-white z-[-10] top-0 absolute bg-center'>
         <div className='w-full h-full'>
@@ -43,7 +51,7 @@ const Main = () => {
 
             </div>
             <p className='text-gray-400 text-2xl'>Realised: {movie?.release_date}</p>
-            <p className='w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-400 text-2xl'>{movie?.overview}</p>
+            <p className='w-full text-white text-[18px] text-bold'>{cutOverview(movie?.overview, 150)}</p>
             </div>
         </div>
     </div>
