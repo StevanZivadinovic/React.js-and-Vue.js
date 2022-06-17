@@ -1,10 +1,14 @@
 import axios from 'axios';
-import {FaHeart, FaRegHeart} from 'react-icons/fa'
-import React, { FC, useEffect, useState } from 'react'
+
+import React, { FC, useEffect, useState } from 'react';
+import {MdChevronLeft, MdChevronRight} from 'react-icons/md'
+// @ts-ignore
+import Movie from '../Movie/Movie.tsx';
 
 interface IRow{
     title:string,
-    requestURL:string
+    requestURL:string,
+    IDRow:string
 }
 
 interface IMovie{
@@ -14,10 +18,10 @@ interface IMovie{
   overview:string
 }
 
-const Row:FC<IRow> = ({title, requestURL}) => {
+const Row:FC<IRow> = ({title, requestURL, IDRow}) => {
 
   const [movies, setMovies] = useState([]);
-  const [like, setLike] = useState(false);
+  
 
   useEffect(() => {
     axios.get(requestURL).then((res)=>{
@@ -25,25 +29,28 @@ const Row:FC<IRow> = ({title, requestURL}) => {
     })
   }, [requestURL]);
 
-  console.log(movies, title);
-  
+  const moveLeft=()=>{
+    let slider = document.querySelector('#slider' + IDRow);
+    console.log(slider!.scrollLeft)
+    slider!.scrollLeft = slider!.scrollLeft-500
+  }
+  const moveRight=()=>{
+    let slider = document.querySelector('#slider' + IDRow);
+    console.log(slider!.scrollLeft)
+    slider!.scrollLeft = slider!.scrollLeft+500
+  }
+  // ! je coerce (prinuditi) znak, koji se stavlja kad si siguran da element nije null a typescript ti pravi problem
   return (
     <>
-    <div className='relative flex flex-col items-center'>
+    <div className='relative flex flex-col items-center group'>
+      <MdChevronLeft onClick={moveLeft} size={40} className='bg-white rounded-full opacity-50 hover:opacity-100 hidden  absolute left-0 top-[50%] z-[100] cursor-pointer group-hover:block'/>
     <h2 className='text-white text-3xl font-bold md:text-4xl p-4 text-left w-full'>{title}</h2>
-      <div id="slider" className='flex'>
+      <div id={"slider" + IDRow} className='w-full scroll-smooth whitespace-nowrap overflow-x-scroll relative scrollbar-hide'>
         {movies.map((item:IMovie, i)=>{
-          return <div key={i} className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
-            <img src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={item.title}></img>
-            <div className='flex flex-col justify-center absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-black/80 text-white'>
-              <p className='text-3xl font-bold text-center'>{item.title}</p>
-              <p className='absolute top-4 left-4 text-gray-300'>
-                {like ? <FaHeart size='2rem'/> :<FaRegHeart size='2rem'/>}
-              </p>
-            </div>
-          </div>
+          return <Movie item={item} key={i}></Movie>
         })}
       </div>
+      <MdChevronRight onClick={moveRight} size={40} className='bg-white rounded-full opacity-50 hover:opacity-100 hidden absolute right-0 top-[50%] z-[100] cursor-pointer group-hover:block'/>
     </div>
     </>
   )

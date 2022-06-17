@@ -13,11 +13,11 @@ const HomePage = () => {
     <div className='text-white text-2xl'>
       <Main></Main>
     </div>
-      <Row title={'UpComing'} requestURL={requests.requestUpcoming}></Row>
-      <Row title={'Popular'} requestURL={requests.requestPopular}></Row>
-      <Row title={'Trending'} requestURL={requests.requestTrending}></Row>
-      <Row title={'Horor'} requestURL={requests.requestHoror}></Row>
-      <Row title={'TopRated'} requestURL={requests.requestTopRated}></Row>
+      <Row IDRow='1' title={'UpComing'} requestURL={requests.requestUpcoming}></Row>
+      <Row IDRow='2' title={'Popular'} requestURL={requests.requestPopular}></Row>
+      <Row IDRow='3' title={'Trending'} requestURL={requests.requestTrending}></Row>
+      <Row IDRow='4' title={'Horor'} requestURL={requests.requestHoror}></Row>
+      <Row IDRow='5' title={'TopRated'} requestURL={requests.requestTopRated}></Row>
   </>
   )
 }
