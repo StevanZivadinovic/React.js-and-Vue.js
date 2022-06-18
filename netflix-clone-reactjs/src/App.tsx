@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 // @ts-ignore
+import { AuthContextProvider } from "./components/AuthContext/AuthContext.tsx";
+// @ts-ignore
 import Layout from "./components/Layout/Layout.tsx";
 // @ts-ignore
 import routes from "./config/routes.ts";
@@ -9,9 +11,10 @@ import routes from "./config/routes.ts";
 
 
 function App() {
+
   return (
     <>
-    
+    <AuthContextProvider>
     <Layout routes={routes}>
      <React.Suspense>
         <Routes>
@@ -20,7 +23,7 @@ function App() {
      
       </React.Suspense>
       </Layout>
-
+      </AuthContextProvider>
     </>
   );
 }
