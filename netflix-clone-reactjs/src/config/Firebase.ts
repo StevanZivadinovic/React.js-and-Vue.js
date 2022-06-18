@@ -16,7 +16,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APPID,
   measurementId: process.env.REACT_APP_MEASUREMENTID
 };
-console.log('haj',process.env.REACT_APP_APIKEY)
+
 
 //env varijable uvek moraju da pocinju sa REACT_APP_ radi sigurnosti;
 //kad menjas env varijable moras da restartujes react aplikaciju, tj da ponovo pokrenes local server

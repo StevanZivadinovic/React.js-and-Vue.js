@@ -31,12 +31,10 @@ const Row:FC<IRow> = ({title, requestURL, IDRow}) => {
 
   const moveLeft=()=>{
     let slider = document.querySelector('#slider' + IDRow);
-    console.log(slider!.scrollLeft)
     slider!.scrollLeft = slider!.scrollLeft-500
   }
   const moveRight=()=>{
     let slider = document.querySelector('#slider' + IDRow);
-    console.log(slider!.scrollLeft)
     slider!.scrollLeft = slider!.scrollLeft+500
   }
   // ! je coerce (prinuditi) znak, koji se stavlja kad si siguran da element nije null a typescript ti pravi problem

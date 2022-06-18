@@ -12,8 +12,6 @@ import routes from "./config/routes.ts";
 
 function App() {
 
-  console.log(process.env.REACT_APP_PROJECTID)
-  console.log(AuthContextProvider.value);
   return (
     <>
     <AuthContextProvider>
