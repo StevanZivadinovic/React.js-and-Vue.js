@@ -1,6 +1,6 @@
 import {createContext, useContext, useEffect, useState} from 'react';
 // @ts-ignore
-import {auth} from '../../config/Firebase.ts';
+import {auth, db} from '../../config/Firebase.ts';
 
 import {
     createUserWithEmailAndPassword,
@@ -9,19 +9,26 @@ import {
     onAuthStateChanged
 } from 'firebase/auth';
 
+import {doc, setDoc} from 'firebase/firestore'
 interface IContext {
-    // signUp:object,
-    // user:object
+    signUp:object,
+    user:object,
+    logIn:object,
+    logOut:object
 }
 
-export const AuthContext = createContext<IContext>({});
+export const AuthContext = createContext<IContext>({signUp:{}, 
+    user:{}, logIn:{}, logOut:{}});
 
 export function AuthContextProvider({children}){
 
     const [user, setUser] = useState({});
 
     function signUp(email:string,password:string){
-        return createUserWithEmailAndPassword(auth, email, password);
+         createUserWithEmailAndPassword(auth, email, password);
+         setDoc(doc(db, 'users', email),{
+            savedShows:[]
+         })
     }
     function logIn(email:string, password:string){
         return signInWithEmailAndPassword(auth, email, password)
@@ -47,3 +54,7 @@ export function User() {
       
     return useContext(AuthContext);
   }
+
+function defaultValue<T>(defaultValue: any, IContext: any) {
+    throw new Error('Function not implemented.');
+}
