@@ -16,7 +16,7 @@ const routes: IRoute[] = [
     { path: "/", permissions: null!, component: HomePage, params: null! },
     { path: "/login", permissions: null!, component: LoginPage, params: null! },
     { path: "/signup", permissions: null!, component: SignupPage, params: null! },
-    { path: "/account", permissions: null!, component: AccountPage, params: null! },
+    // { path: "/account", permissions: null!, component: AccountPage, params: null! }, //ova komponenta je protected zato je ubacena klasicno
     { path: "*", permissions: null!, component: ErrorPage, params: { code: "404", message: "Page not found" } },
 ]
 

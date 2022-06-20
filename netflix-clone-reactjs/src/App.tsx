@@ -9,6 +9,8 @@ import Layout from "./components/Layout/Layout.tsx";
 // @ts-ignore
 import ProtectedRoute from "./components/ProtectedPage/ProtectedRoute.tsx";
 // @ts-ignore
+import AccountPage from "./pages/Account/Account.tsx";
+// @ts-ignore
 import routes from "./config/routes.ts";
 
 
@@ -27,6 +29,8 @@ const {user} = User()
           element={
           <route.component {...route.params} />
           } />)}
+          
+          <Route path='/account' element={<ProtectedRoute><AccountPage/></ProtectedRoute>}></Route>
         </Routes>
      
       </React.Suspense>
