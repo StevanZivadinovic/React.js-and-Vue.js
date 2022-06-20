@@ -10,11 +10,14 @@ import {
 } from 'firebase/auth';
 
 interface IContext {
-    // signUp:object,
-    // user:object
+    signUp:object,
+    user:object,
+    logIn:object,
+    logOut:object
 }
 
-export const AuthContext = createContext<IContext>({});
+export const AuthContext = createContext<IContext>({signUp:{}, 
+    user:{}, logIn:{}, logOut:{}});
 
 export function AuthContextProvider({children}){
 
@@ -47,3 +50,7 @@ export function User() {
       
     return useContext(AuthContext);
   }
+
+function defaultValue<T>(defaultValue: any, IContext: any) {
+    throw new Error('Function not implemented.');
+}
