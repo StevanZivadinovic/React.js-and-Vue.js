@@ -1,4 +1,6 @@
 import React from "react";
+//@ts-ignore
+import SavedShows from "../../components/SavedShows/SavedShows.tsx";
 
 const AccountPage = () => {
   return (
@@ -12,6 +14,7 @@ const AccountPage = () => {
       <div className="absolute top-[15%] p-8 md:p-12">
         <h1 className="text-3xl md:text-5xl font-bold">My Shows</h1>
       </div>
+      <SavedShows></SavedShows>
     </div>
   );
 };

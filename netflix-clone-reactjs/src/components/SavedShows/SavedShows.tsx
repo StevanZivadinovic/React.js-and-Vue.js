@@ -6,11 +6,12 @@ import {updateDoc, doc, onSnapshot} from 'firebase/firestore';
 import {User} from './../AuthContext/AuthContext.tsx'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { IMovie } from '../../interfaces/movie';
-//@ts-ignore
-import Movie from './../../components/Movie/Movie.tsx'
+
+
 
 const SavedShows = () => {
     const [movies, setMovies]=useState([]);
+    const {user}=User();
 
     const moveLeft = () => {
         let slider = document.querySelector("#slider");
@@ -20,6 +21,13 @@ const SavedShows = () => {
         let slider = document.querySelector("#slider");
         slider!.scrollLeft = slider!.scrollLeft + 500;
       };
+
+      useEffect(() => {
+        onSnapshot(doc(db, 'users', `${user?.email}`),doc=>{
+            setMovies(doc.data()?.savedShows);
+        })
+      }, [user?.email])
+      console.log(movies)
   return (
     <>
      <div className="relative flex flex-col items-center group">
@@ -35,8 +43,16 @@ const SavedShows = () => {
           id={"slider"}
           className="w-full scroll-smooth whitespace-nowrap overflow-x-scroll relative scrollbar-hide"
         >
-          {movies.map((item: IMovie, i) => {
-            return <Movie item={item} key={i}></Movie>;
+          {movies?.map((item: IMovie, i) => {
+            return (
+                <div key={i} className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
+    <img src={`https://image.tmdb.org/t/p/w500/${item?.img}`} alt={item.title}></img>
+    <div className='flex flex-col justify-center absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-black/80 text-white'>
+      <p className='text-3xl font-bold text-center'>{item.title}</p>
+      
+    </div>
+  </div>
+            )
           })}
         </div>
         <MdChevronRight
