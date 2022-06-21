@@ -6,12 +6,24 @@ import {updateDoc, doc, onSnapshot} from 'firebase/firestore';
 import {User} from './../AuthContext/AuthContext.tsx'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { IMovie } from '../../interfaces/movie';
+import {AiOutlineClose} from 'react-icons/ai'
 
 
 
 const SavedShows = () => {
     const [movies, setMovies]=useState([]);
     const {user}=User();
+    const movieRef = doc(db,'users', `${user?.email}`);
+    const deleteShow = async(passedID)=>{
+      try{
+        const result = movies.filter((item:IMovie)=>item.id!==passedID);
+        await updateDoc(movieRef,{
+          savedShows:result
+        })
+      }catch(err){
+        console.log(err);
+      }
+    }
 
     const moveLeft = () => {
         let slider = document.querySelector("#slider");
@@ -34,7 +46,7 @@ const SavedShows = () => {
         <MdChevronLeft
           onClick={moveLeft}
           size={40}
-          className="bg-white rounded-full opacity-50 hover:opacity-100 hidden  absolute left-0 top-[50%] z-[100] cursor-pointer group-hover:block"
+          className="bg-white text-red-600 rounded-full opacity-50 hover:opacity-100 hidden  absolute left-0 top-[50%] z-[100] cursor-pointer group-hover:block"
         />
         <h2 className="text-white text-3xl font-bold md:text-4xl p-4 text-left w-full">
         My Show 
@@ -49,7 +61,7 @@ const SavedShows = () => {
     <img src={`https://image.tmdb.org/t/p/w500/${item?.img}`} alt={item.title}></img>
     <div className='flex flex-col justify-center absolute top-0 left-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-black/80 text-white'>
       <p className='text-3xl font-bold text-center'>{item.title}</p>
-      
+      <p onClick={()=>{deleteShow(item.id)}} className='absolute top-6 right-6 text-gray-300'><AiOutlineClose size={20}/></p>
     </div>
   </div>
             )
@@ -58,7 +70,7 @@ const SavedShows = () => {
         <MdChevronRight
           onClick={moveRight}
           size={40}
-          className="bg-white rounded-full opacity-50 hover:opacity-100 hidden absolute right-0 top-[50%] z-[100] cursor-pointer group-hover:block"
+          className="bg-white text-red-600 rounded-full opacity-50 hover:opacity-100 hidden absolute right-0 top-[50%] z-[100000] cursor-pointer group-hover:block"
         />
       </div>
     </>
