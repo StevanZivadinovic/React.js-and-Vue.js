@@ -39,7 +39,6 @@ const SavedShows = () => {
             setMovies(doc.data()?.savedShows);
         })
       }, [user?.email])
-      console.log(movies)
   return (
     <>
      <div className="relative flex flex-col items-center group">
