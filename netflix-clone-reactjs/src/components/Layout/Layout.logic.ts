@@ -6,7 +6,7 @@ const LayoutLogic = ()=>{
 
     const [routesArray, setRoutesArray] = useState<IRoute[]>([]);
     const [routesArray1, setRoutesArray1] = useState<string[]>([]);
-    const [showNavbar, setShowNavbar] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(true);
     const location = window.location.pathname;
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const LayoutLogic = ()=>{
 
     useEffect(() => {
      
-        if(routesArray1.includes(window.location.pathname)){
+        if(routesArray1.includes(location) || location==='/account'){
             
             setShowNavbar(true);
         }else{
