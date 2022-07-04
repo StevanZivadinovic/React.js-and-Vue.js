@@ -15,4 +15,11 @@ div{
         color:#ff0099;
     }
 }
+
+@media(max-width:${({theme})=>theme.mobile}){
+    flex-direction:column;
+    text-align:center;
+    align-items:center; 
+    
+}
 `
