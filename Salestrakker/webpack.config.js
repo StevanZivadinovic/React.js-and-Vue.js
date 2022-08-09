@@ -1,19 +1,22 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const path = require("path");
 
 module.exports = {
 
-  entry: {
-    index:"./src/index.js"
-  },
+  entry: 
+  "./src/index.js"
+  ,
   output: {
-    filename: "bundle.[hash].js",
+    // filename: "bundle.[hash].js",
+    filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+   
   
   ],
   resolve: {
@@ -29,7 +32,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", 'postcss-loader' ],
+        use: [
+          "style-loader", 
+          { 
+          loader:"css-loader",
+          options:{importLoaders:1}
+          },
+           'postcss-loader' 
+          ],
       },
       {
         test: /\.png|svg|jpg|gif$/,
@@ -37,4 +47,10 @@ module.exports = {
       },
     ],
   },
+  devServer:{
+    watchContentBase:true,
+    contentBase:path.resolve(__dirname, 'dist'),
+    open:true
+  }
+
 };
