@@ -1,8 +1,11 @@
 import React from 'react';
+import Home from './pages/Home';
 import './styles.css'
 const App = () => {
  
-  return <div className="text-5xl font-bold text-red-600 ">Hello!!</div>;
+  return <>
+  <Home/>
+  </>;
 };
 
 export default App;
