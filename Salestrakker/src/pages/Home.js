@@ -54,7 +54,7 @@ const Home = ({ setVisibleHomePageCallback }) => {
                 }}
                 key={i}
                 className="p-1 hover:cursor-pointer hover:bg-blue-300 text-[1.2rem] bg-blue-600 "
-                value="weekly">
+               >
                 {a}
               </li>
             );
