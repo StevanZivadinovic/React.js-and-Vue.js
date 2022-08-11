@@ -1,18 +1,34 @@
-import React, { useState } from 'react';
-import Home, { AuthContext } from './pages/Home';
+import React, { useState, createContext, useContext } from 'react';
+import {UserContext} from './Context/UserContext';
+import Home from './pages/Home';
 import Table from './pages/Table';
-import './styles.css'
+import './styles.css';
 const App = () => {
-
-
- const [visibleHomePage, setVisibleHomePage] = useState(true);
-
- 
-  return <>
-  {/* <AuthContext> */}
-  {visibleHomePage ? <Home setVisibleHomePageCallback={(boolean)=>{setVisibleHomePage(boolean)}}/>: <Table/>}
-  {/* </AuthContext> */}
-  </>;
+  const [visibleHomePage, setVisibleHomePage] = useState(true);
+  const [income, setIncome] = useState(null);
+  const [type, setType] = useState(null);
+  const [currentTextButton, setCurrentTextButton] = useState(null);
+   
+  return (
+    <>
+    <UserContext.Provider value={{income, type, currentTextButton}}>
+      {visibleHomePage ? (
+        <Home
+          setCurrentTextButtonContext={(value) => {
+            setCurrentTextButton(value);
+          }}
+          setTypeContext={(value) => setType(value)}
+          setIncomeContext={(value) => setIncome(value)}
+          setVisibleHomePageCallback={(boolean) => {
+            setVisibleHomePage(boolean);
+          }}
+        />
+      ) : (
+        <Table />
+      )}
+      </UserContext.Provider>
+    </>
+  );
 };
 
 export default App;
