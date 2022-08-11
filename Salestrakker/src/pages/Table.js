@@ -12,11 +12,15 @@ const Table = () => {
   const [monthlyIncome, setMonthlyIncome] = useState(0);
   const [annualyIncome, setAnnualyIncome] = useState(0);
 
-  const[weeklyTax, setWeeklyTax]=useState(0);
-  const[forthnightlyTax, setForthnightlyTax]=useState(0);
-  const[monthlyTax, setMonthlyTax]=useState(0);
-  const[annualyTax, setAnnualyTax]=useState(0);
+  const [weeklyTax, setWeeklyTax] = useState(0);
+  const [forthnightlyTax, setForthnightlyTax] = useState(0);
+  const [monthlyTax, setMonthlyTax] = useState(0);
+  const [annualyTax, setAnnualyTax] = useState(0);
 
+  const [finallyWeeklyRavenue, setFinallyWeeklyRavenue] = useState(0);
+  const [finallyForthnightlyRavenue, setFinallyForthnightlyRavenue] = useState(0);
+  const [finallyMonthlyRavenue, setFinallyMonthlyRavenue] = useState(0);
+  const [finallyAnnualyRavenue, setFinallyAnnualyRavenue] = useState(0);
 
   useEffect(() => {
     switch (currentTextButton) {
@@ -52,32 +56,53 @@ const Table = () => {
       default:
         break;
     }
-    console.log(income, type, currentTextButton);
   }, [income, currentTextButton]);
-
 
   //We suppose that tax is 20%;
   useEffect(() => {
     switch (type) {
       case 'gross':
-        setWeeklyTax(weeklyIncome*0.2);
-        setForthnightlyTax(forthnightlyIncome*0.2);
-        setMonthlyTax(monthlyIncome*0.2);
-        setAnnualyTax(annualyIncome*0.2);
+        setWeeklyTax(weeklyIncome * 0.2);
+        setForthnightlyTax(forthnightlyIncome * 0.2);
+        setMonthlyTax(monthlyIncome * 0.2);
+        setAnnualyTax(annualyIncome * 0.2);
 
         break;
       case 'neto':
-        setWeeklyTax(weeklyIncome/4);
-        setForthnightlyTax(forthnightlyIncome/4);
-        setMonthlyTax(monthlyIncome/4);
-        setAnnualyTax(annualyIncome/4);
+        setWeeklyTax(weeklyIncome / 4);
+        setForthnightlyTax(forthnightlyIncome / 4);
+        setMonthlyTax(monthlyIncome / 4);
+        setAnnualyTax(annualyIncome / 4);
         break;
 
       default:
         break;
     }
-    console.log(type)
-  }, [type, income]);
+  }, [type, income, weeklyIncome]);
+
+  useEffect(() => {
+    switch (type) {
+      case 'gross':
+        
+    setFinallyWeeklyRavenue(weeklyIncome-weeklyTax);
+    setFinallyForthnightlyRavenue(forthnightlyIncome-forthnightlyTax);
+    setFinallyMonthlyRavenue(monthlyIncome-monthlyTax);
+    setFinallyAnnualyRavenue(annualyIncome-annualyTax);
+        break;
+
+      case 'neto':
+        
+        setFinallyWeeklyRavenue(weeklyIncome+weeklyTax);
+        setFinallyForthnightlyRavenue(forthnightlyIncome+forthnightlyTax);
+        setFinallyMonthlyRavenue(monthlyIncome+monthlyTax);
+        setFinallyAnnualyRavenue(annualyIncome+annualyTax);
+        break;
+
+      default:
+        break;
+    }
+
+  }, [weeklyTax, type]);
 
   return (
     <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between mt-[20%] bg-purple-500">
@@ -124,7 +149,9 @@ const Table = () => {
               {weeklyIncome}
             </td>
             <td className="border-[1px] border-solid border-red-300 text-left py-2">{weeklyTax}</td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">
+              {finallyWeeklyRavenue}
+            </td>
           </tr>
 
           <tr className="border-[1px] border-solid border-red-300 text-left py-2 even:bg-gray-300">
@@ -132,8 +159,12 @@ const Table = () => {
             <td className="border-[1px] border-solid border-red-300 text-left py-2">
               {forthnightlyIncome}
             </td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{forthnightlyTax}</td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">
+              {forthnightlyTax}
+            </td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">
+              {finallyForthnightlyRavenue}
+            </td>
           </tr>
 
           <tr className="border-[1px] border-solid border-red-300 text-left py-2 even:bg-gray-300">
@@ -141,8 +172,12 @@ const Table = () => {
             <td className="border-[1px] border-solid border-red-300 text-left py-2">
               {monthlyIncome}
             </td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{monthlyTax}</td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">
+              {monthlyTax}
+            </td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">
+              {finallyMonthlyRavenue}
+            </td>
           </tr>
 
           <tr className="border-[1px] border-solid border-red-300 text-left py-2 even:bg-gray-300">
@@ -150,8 +185,12 @@ const Table = () => {
             <td className="border-[1px] border-solid border-red-300 text-left py-2">
               {annualyIncome}
             </td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{annualyTax}</td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">
+              {annualyTax}
+            </td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">
+              {finallyAnnualyRavenue}
+            </td>
           </tr>
         </tbody>
       </table>
