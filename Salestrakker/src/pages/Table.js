@@ -12,6 +12,12 @@ const Table = () => {
   const [monthlyIncome, setMonthlyIncome] = useState(0);
   const [annualyIncome, setAnnualyIncome] = useState(0);
 
+  const[weeklyTax, setWeeklyTax]=useState(0);
+  const[forthnightlyTax, setForthnightlyTax]=useState(0);
+  const[monthlyTax, setMonthlyTax]=useState(0);
+  const[annualyTax, setAnnualyTax]=useState(0);
+
+
   useEffect(() => {
     switch (currentTextButton) {
       case 'Weekly':
@@ -49,17 +55,29 @@ const Table = () => {
     console.log(income, type, currentTextButton);
   }, [income, currentTextButton]);
 
+
+  //We suppose that tax is 20%;
   useEffect(() => {
     switch (type) {
       case 'gross':
+        setWeeklyTax(weeklyIncome*0.2);
+        setForthnightlyTax(forthnightlyIncome*0.2);
+        setMonthlyTax(monthlyIncome*0.2);
+        setAnnualyTax(annualyIncome*0.2);
+
         break;
       case 'neto':
+        setWeeklyTax(weeklyIncome/4);
+        setForthnightlyTax(forthnightlyIncome/4);
+        setMonthlyTax(monthlyIncome/4);
+        setAnnualyTax(annualyIncome/4);
         break;
 
       default:
         break;
     }
-  }, [type]);
+    console.log(type)
+  }, [type, income]);
 
   return (
     <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between mt-[20%] bg-purple-500">
@@ -105,7 +123,7 @@ const Table = () => {
             <td className="border-[1px] border-solid border-red-300 text-left py-2">
               {weeklyIncome}
             </td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">{weeklyTax}</td>
             <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
           </tr>
 
@@ -114,7 +132,7 @@ const Table = () => {
             <td className="border-[1px] border-solid border-red-300 text-left py-2">
               {forthnightlyIncome}
             </td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">{forthnightlyTax}</td>
             <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
           </tr>
 
@@ -123,16 +141,16 @@ const Table = () => {
             <td className="border-[1px] border-solid border-red-300 text-left py-2">
               {monthlyIncome}
             </td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">{monthlyTax}</td>
             <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
           </tr>
-          
+
           <tr className="border-[1px] border-solid border-red-300 text-left py-2 even:bg-gray-300">
             <td className="border-[1px] border-solid border-red-300 text-left py-2">Annualy</td>
             <td className="border-[1px] border-solid border-red-300 text-left py-2">
               {annualyIncome}
             </td>
-            <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
+            <td className="border-[1px] border-solid border-red-300 text-left py-2">{annualyTax}</td>
             <td className="border-[1px] border-solid border-red-300 text-left py-2">{}</td>
           </tr>
         </tbody>
