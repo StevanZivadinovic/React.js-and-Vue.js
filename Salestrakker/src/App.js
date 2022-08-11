@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Home from './pages/Home';
+import Home, { AuthContext } from './pages/Home';
 import Table from './pages/Table';
 import './styles.css'
 const App = () => {
@@ -9,8 +9,9 @@ const App = () => {
 
  
   return <>
+  {/* <AuthContext> */}
   {visibleHomePage ? <Home setVisibleHomePageCallback={(boolean)=>{setVisibleHomePage(boolean)}}/>: <Table/>}
-  
+  {/* </AuthContext> */}
   </>;
 };
 
