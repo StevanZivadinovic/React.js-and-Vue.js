@@ -17,7 +17,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable }) => {
         onClick={() => {
           setDisplayDropdownMenu(!displayDropdownMenu);
         }}
-        className="hover:cursor-pointer hover:bg-red-300 hover:text-purple-800 text-2xl bg-transparent text-blue-100 border-2 border-gray-300 rounded outline-none p-[6px] w-[25%]">
+        className="hover:cursor-pointer hover:bg-red-300 hover:text-purple-800 text-2xl bg-transparent text-blue-100 border-2 border-gray-300 rounded outline-none p-[6px] mx-2">
         {currentTextButton}
       </button>
       <ul
