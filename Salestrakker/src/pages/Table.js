@@ -21,42 +21,43 @@ const Table = () => {
   const [finallyForthnightlyRavenue, setFinallyForthnightlyRavenue] = useState(0);
   const [finallyMonthlyRavenue, setFinallyMonthlyRavenue] = useState(0);
   const [finallyAnnualyRavenue, setFinallyAnnualyRavenue] = useState(0);
-
+  let parsedIncome=parseInt(income)
   useEffect(() => {
+    console.log(typeof income)
     switch (currentTextButton) {
       case 'Weekly':
-        setWeeklyIncome(income);
-        setForthnightlyIncome(income * 2);
-        setMonthlyIncome(income * 4);
-        setAnnualyIncome(income * 52);
+        setWeeklyIncome(parsedIncome);
+        setForthnightlyIncome(parsedIncome * 2);
+        setMonthlyIncome(parsedIncome * 4);
+        setAnnualyIncome(parsedIncome * 52);
 
         break;
 
       case 'Forthnightly':
-        setWeeklyIncome(income / 2);
-        setForthnightlyIncome(income);
-        setMonthlyIncome(income * 2);
-        setAnnualyIncome(income * 24);
+        setWeeklyIncome(parsedIncome / 2);
+        setForthnightlyIncome(parsedIncome);
+        setMonthlyIncome(parsedIncome * 2);
+        setAnnualyIncome(parsedIncome * 24);
         break;
 
       case 'Monthly':
-        setWeeklyIncome(income / 4);
-        setForthnightlyIncome(income / 2);
-        setMonthlyIncome(income);
-        setAnnualyIncome(income * 12);
+        setWeeklyIncome(parsedIncome / 4);
+        setForthnightlyIncome(parsedIncome / 2);
+        setMonthlyIncome(parsedIncome);
+        setAnnualyIncome(parsedIncome * 12);
         break;
 
       case 'Annualy':
-        setWeeklyIncome(income / 52);
-        setForthnightlyIncome(income / 24);
-        setMonthlyIncome(income / 12);
-        setAnnualyIncome(income);
+        setWeeklyIncome(parsedIncome / 52);
+        setForthnightlyIncome(parsedIncome / 24);
+        setMonthlyIncome(parsedIncome / 12);
+        setAnnualyIncome(parsedIncome);
         break;
 
       default:
         break;
     }
-  }, [income, currentTextButton]);
+  }, [parsedIncome, currentTextButton]);
 
   //We suppose that tax is 20%;
   useEffect(() => {

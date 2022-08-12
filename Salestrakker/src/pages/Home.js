@@ -12,27 +12,9 @@ const Home = ({
   const [currentTextButton, setCurrentTextButton] = useState('Monthly');
   const [visibleHomePage, setVisibleHomePage] = useState(true);
   const [income, setIncome] = useState(0);
-  const [type, setType] = useState('');
+  const [type, setType] = useState('neto');
   const [clicked, setClicked] = useState(false);
   const buttons = useRef(null);
-
-  let toggle = () => {
-    let buttonsArray = buttons.current.children;
-    Array.from(buttonsArray).forEach((a) => {
-      a.addEventListener('click', (e) => {
-        e.stopPropagation();
-        Array.from(buttonsArray).forEach((a) => {
-          a.classList.remove('bg-purple-800');
-        });
-
-        if (!a.classList.contains('bg-purple-800')) {
-          a.classList.add('bg-purple-800');
-        } else {
-          a.classList.remove('bg-purple-800');
-        }
-      });
-    });
-  };
 
   let handleVisible = (e) => {
     e.preventDefault();
@@ -44,16 +26,14 @@ const Home = ({
     console.log(income, type, currentTextButton);
   };
 
-  let handleGross = () => {
+  function handleGross(e) {
     setType('gross');
-    setClicked(!clicked);
-    toggle();
-  };
-  let handleNeto = () => {
+    setClicked(true);
+  }
+  function handleNeto(e) {
     setType('neto');
-    setClicked(!clicked);
-    toggle();
-  };
+    setClicked(false);
+  }
   useEffect(() => {
     setVisibleHomePageCallback(visibleHomePage);
   }, [visibleHomePage]);
@@ -80,8 +60,20 @@ const Home = ({
       <div className=" flex flex-col justify-center items-center my-[5rem]">
         <h3 className="text-2xl text-blue-100 my-8">Please choose the income type:</h3>
         <div ref={buttons} className="w-full flex justify-around">
-          <Button handle={handleGross} textOfButton={`Gross`} width={`w-80`}></Button>
-          <Button handle={handleNeto} textOfButton={`Neto`} width={`w-80`}></Button>
+          <Button
+            clicked={clicked}
+            handle={(e) => {
+              handleGross(e);
+            }}
+            textOfButton={`Gross`}
+            width={`w-80`}></Button>
+          <Button
+            clicked={!clicked}
+            handle={(e) => {
+              handleNeto(e);
+            }}
+            textOfButton={`Neto`}
+            width={`w-80`}></Button>
         </div>
         <Button
           handle={handleVisible}
