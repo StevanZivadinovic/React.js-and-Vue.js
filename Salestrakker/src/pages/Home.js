@@ -59,7 +59,7 @@ const Home = ({
       </div>
 
       <div className=" flex flex-col justify-center items-center my-[5rem]">
-        <h3 className="text-2xl text-blue-100 my-8">Please choose the income type:</h3>
+        <h3 className="text-2xl text-gray-100 my-8">Please choose the income type:</h3>
         <div ref={buttons} className="w-full flex justify-around">
           <Button
             clicked={clicked}
