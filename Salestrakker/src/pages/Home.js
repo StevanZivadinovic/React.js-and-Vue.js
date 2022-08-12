@@ -8,7 +8,7 @@ const Home = ({
   setTypeContext,
   setCurrentTextButtonContext
 }) => {
-  const [displayDropdownMenu, setDisplayDropdownMenu] = useState(false);
+  // const [displayDropdownMenu, setDisplayDropdownMenu] = useState(false);
   const [currentTextButton, setCurrentTextButton] = useState('Monthly');
   const [visibleHomePage, setVisibleHomePage] = useState(true);
   const [income, setIncome] = useState(0);
@@ -39,7 +39,7 @@ const Home = ({
   }, [visibleHomePage]);
 
   return (
-    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between mt-[20%] bg-purple-500">
+    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between  bg-purple-500 shadow-2xl shadow-red-700">
       <h1 className="text-3xl text-blue-100 mb-4">Income tax calculator</h1>
       <p className="text-2xl text-blue-100">Enter your income:</p>
       <div className="relative">

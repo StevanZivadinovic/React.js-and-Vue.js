@@ -2,10 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import DropdownMenu from '../components/DropdownMenu';
 import { UserContext } from '../Context/UserContext';
 
-const Table = () => {
-  // const [displayDropdownMenu, setDisplayDropdownMenu] = useState(false);
-  // const [currentTextButton, setCurrentTextButton] = useState('Monthly');
-  // let textForButton = ['Weekly', 'Forthnightly', 'Monthly', 'Annualy'];
+const Table = ({setVisibleHomePageCallback}) => {
   const { income, type, currentTextButton } = useContext(UserContext);
   const [weeklyIncome, setWeeklyIncome] = useState(0);
   const [forthnightlyIncome, setForthnightlyIncome] = useState(0);
@@ -21,9 +18,11 @@ const Table = () => {
   const [finallyForthnightlyRavenue, setFinallyForthnightlyRavenue] = useState(0);
   const [finallyMonthlyRavenue, setFinallyMonthlyRavenue] = useState(0);
   const [finallyAnnualyRavenue, setFinallyAnnualyRavenue] = useState(0);
-  let parsedIncome=parseInt(income)
+  let parsedIncome=parseInt(income);
+
+  const [incomeTitle, setIncomeTitle]=useState(parsedIncome)
   useEffect(() => {
-    console.log(typeof income)
+  
     switch (currentTextButton) {
       case 'Weekly':
         setWeeklyIncome(parsedIncome);
@@ -105,16 +104,44 @@ const Table = () => {
 
   }, [weeklyTax, type]);
 
+  let handleBack=()=>{
+    setVisibleHomePageCallback(true);
+  }
+
+  // useEffect(() => {
+  //   switch (currentTextButton) {
+  //     case 'Weekly':
+  //       setIncomeTitle(weeklyIncome)
+  //       break;
+  //       case 'Forthnightly':
+  //       setIncomeTitle(forthnightlyIncome)
+  //       break;
+  //       case 'Monthly':
+  //       setIncomeTitle(monthlyIncome)
+  //       break;
+  //       case 'Annualy':
+  //       setIncomeTitle(annualyIncome)
+  //       break;
+    
+  //     default:
+  //       break;
+  //   }
+  //   console.log(currentTextButton)
+  // }, [currentTextButton, weeklyIncome])
+  
+  
+
   return (
-    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between mt-[20%] bg-purple-500">
+    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between mt-[20%] bg-purple-500 relative shadow-2xl shadow-red-700">
       <h1 className="text-3xl text-blue-100 mb-4">Income tax calculator</h1>
+      <button onClick={handleBack} className='font-bold w-[1rem] h-[1rem] absolute right-5 bg-red-300 p-8 flex justify-center items-center rounded-[50%]'><span>&#8592;</span>  Back</button>
       <div>
         <div className="flex justify-around">
-          <p className="text-center flex  items-center">${income}</p>
+          <p className="text-center flex  items-center">${parsedIncome}</p>
           <div className="w-1/2">
             Your net
             <span className="relative">
-              <DropdownMenu handleFrecuency={() => {}}></DropdownMenu>
+              <DropdownMenu handleFrecuency={()=>{}} currentTextTable={currentTextButton}></DropdownMenu>
             </span>
             income
           </div>

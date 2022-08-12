@@ -10,7 +10,7 @@ const App = () => {
   const [currentTextButton, setCurrentTextButton] = useState(null);
    
   return (
-    <>
+    <div className='h-screen flex justify-center align-center'>
     <UserContext.Provider value={{income, type, currentTextButton}}>
       {visibleHomePage ? (
         <Home
@@ -24,10 +24,11 @@ const App = () => {
           }}
         />
       ) : (
-        <Table />
+        <Table setVisibleHomePageCallback={(boolean) => {
+          setVisibleHomePage(boolean)}} />
       )}
       </UserContext.Provider>
-    </>
+    </div>
   );
 };
 
