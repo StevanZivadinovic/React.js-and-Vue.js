@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const DropdownMenu = ({ handleFrecuency, currentTextTable }) => {
   const [displayDropdownMenu, setDisplayDropdownMenu] = useState(false);
   const [currentTextButton, setCurrentTextButton] = useState(
-    currentTextTable ? currentTextTable : 'Monthy'
+    currentTextTable ? currentTextTable : 'Monthly'
   );
   let textForButton = ['Weekly', 'Forthnightly', 'Monthly', 'Annualy'];
 

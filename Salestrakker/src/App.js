@@ -7,7 +7,7 @@ const App = () => {
   const [visibleHomePage, setVisibleHomePage] = useState(true);
   const [income, setIncome] = useState(null);
   const [type, setType] = useState(null);
-  const [currentTextButton, setCurrentTextButton] = useState(null);
+  const [currentTextButton, setCurrentTextButton] = useState('Monthly');
    
   return (
     <div className='h-screen flex justify-center align-center'>

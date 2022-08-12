@@ -18,9 +18,12 @@ const Table = ({setVisibleHomePageCallback}) => {
   const [finallyForthnightlyRavenue, setFinallyForthnightlyRavenue] = useState(0);
   const [finallyMonthlyRavenue, setFinallyMonthlyRavenue] = useState(0);
   const [finallyAnnualyRavenue, setFinallyAnnualyRavenue] = useState(0);
+
+  const [frequency, setFrequency]=useState(currentTextButton)
+  const [incomeTitle, setIncomeTitle]=useState(parsedIncome)
+
   let parsedIncome=parseInt(income);
 
-  const [incomeTitle, setIncomeTitle]=useState(parsedIncome)
   useEffect(() => {
   
     switch (currentTextButton) {
@@ -108,26 +111,27 @@ const Table = ({setVisibleHomePageCallback}) => {
     setVisibleHomePageCallback(true);
   }
 
-  // useEffect(() => {
-  //   switch (currentTextButton) {
-  //     case 'Weekly':
-  //       setIncomeTitle(weeklyIncome)
-  //       break;
-  //       case 'Forthnightly':
-  //       setIncomeTitle(forthnightlyIncome)
-  //       break;
-  //       case 'Monthly':
-  //       setIncomeTitle(monthlyIncome)
-  //       break;
-  //       case 'Annualy':
-  //       setIncomeTitle(annualyIncome)
-  //       break;
+  useEffect(() => {
+    switch (frequency) {
+      case 'Weekly':
+        setIncomeTitle(weeklyIncome)
+        break;
+        case 'Forthnightly':
+        setIncomeTitle(forthnightlyIncome)
+        break;
+        case 'Monthly':
+        setIncomeTitle(monthlyIncome)
+        break;
+        case 'Annualy':
+        setIncomeTitle(annualyIncome)
+        break;
     
-  //     default:
-  //       break;
-  //   }
+      default:
+        break;
+    }
   //   console.log(currentTextButton)
-  // }, [currentTextButton, weeklyIncome])
+  console.log(frequency)
+  }, [currentTextButton, weeklyIncome, frequency])
   
   
 
@@ -137,11 +141,11 @@ const Table = ({setVisibleHomePageCallback}) => {
       <button onClick={handleBack} className='font-bold w-[1rem] h-[1rem] absolute right-5 bg-red-300 p-8 flex justify-center items-center rounded-[50%]'><span>&#8592;</span>  Back</button>
       <div>
         <div className="flex justify-around">
-          <p className="text-center flex  items-center">${parsedIncome}</p>
+          <p className="text-center flex  items-center">${incomeTitle}</p>
           <div className="w-1/2">
             Your net
             <span className="relative">
-              <DropdownMenu handleFrecuency={()=>{}} currentTextTable={currentTextButton}></DropdownMenu>
+              <DropdownMenu handleFrecuency={(text)=>{setFrequency(text)}} currentTextTable={currentTextButton}></DropdownMenu>
             </span>
             income
           </div>
