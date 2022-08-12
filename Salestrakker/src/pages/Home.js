@@ -39,18 +39,19 @@ const Home = ({
   }, [visibleHomePage]);
 
   return (
-    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between  bg-purple-500 shadow-2xl shadow-red-700">
-      <h1 className="text-3xl text-blue-100 mb-4">Income tax calculator</h1>
-      <p className="text-2xl text-blue-100">Enter your income:</p>
+    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between  bg-yellow-550 shadow-2xl shadow-yellow-500">
+      <h1 className="text-3xl text-yellow-500 mb-4">Income tax calculator</h1>
+      <p className="text-2xl text-gray-100 pb-2">Enter your income:</p>
       <div className="relative">
         <input
-          className="focus:bg-blue-300 font-bold text-blue-600 border text-2xl border-gray-300 rounded outline-none p-2 w-[75%] bg-transparent"
+          className="focus:bg-gray-300  font-bold text-yellow-500 font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-[70%] bg-transparent"
           type="number"
           onChange={(e) => {
             setIncome(e.target.value);
           }}
         />
         <DropdownMenu
+        align={'left-[70%]'}
           handleFrecuency={(text) => {
             setCurrentTextButton(text);
           }}

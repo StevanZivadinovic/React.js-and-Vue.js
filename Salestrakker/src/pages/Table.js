@@ -145,7 +145,7 @@ const Table = ({setVisibleHomePageCallback}) => {
           <div className="w-1/2">
             Your net
             <span className="relative">
-              <DropdownMenu handleFrecuency={(text)=>{setFrequency(text)}} currentTextTable={currentTextButton}></DropdownMenu>
+              <DropdownMenu align={'right-0'} width={'full'} handleFrecuency={(text)=>{setFrequency(text)}} currentTextTable={currentTextButton}></DropdownMenu>
             </span>
             income
           </div>
