@@ -8,10 +8,12 @@ const App = () => {
   const [income, setIncome] = useState(null);
   const [type, setType] = useState(null);
   const [currentTextButton, setCurrentTextButton] = useState('Monthly');
+  const [styleMode, setStyleMode] = useState(true);
    
   return (
-    <div className='h-screen flex justify-center align-center'>
-    <UserContext.Provider value={{income, type, currentTextButton}}>
+    <div className='h-screen flex justify-center align-center flex-col'>
+      <button className='mt-10 text-2xl text-gray-100 cursor-pointer'>{styleMode ? `Light mode` : `Dark mode`}</button>
+    <UserContext.Provider value={{income, type, currentTextButton, styleMode}}>
       {visibleHomePage ? (
         <Home
           setCurrentTextButtonContext={(value) => {
