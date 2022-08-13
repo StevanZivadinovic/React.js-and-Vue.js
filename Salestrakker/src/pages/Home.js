@@ -41,13 +41,13 @@ const Home = ({
 
   return (
     <div
-      className={`z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between  ${
+      className={`z-[1000] rounded p-6 w-[80%]  m-auto flex flex-col justify-center text-center sm:justify-between sm:text-left sm:w-1/2  ${
         styleMode ? 'bg-transparent' : 'bg-yellow-500'
-      } shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'} `}>
+      } shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
       <h1
         className={`${
-          styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
-        } text-3xl mb-4 flex align-center`}>
+          styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg' 
+        } text-3xl mb-4 flex align-center text-center self-center sm:text-left`}>
         Income tax calculator
       </h1>
       <p
@@ -56,7 +56,7 @@ const Home = ({
         }`}>
         Enter your income:
       </p>
-      <div className="relative">
+      <div className="relative flex flex-col sm:flex-row">
         <input
           placeholder="&#xf4c0;"
           className={`focus:bg-gray-300  font-bold ${
