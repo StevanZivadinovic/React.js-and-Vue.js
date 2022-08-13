@@ -41,7 +41,7 @@ const Home = ({
 
   return (
     <div
-      className={`z-[1000] rounded p-6 w-[80%]  m-auto flex flex-col justify-center text-center sm:justify-between sm:text-left sm:w-1/2  ${
+      className={`z-[1000] rounded p-6 w-[90%]  m-auto flex flex-col justify-center text-center sm:justify-between sm:text-left sm:w-1/2  ${
         styleMode ? 'bg-transparent' : 'bg-yellow-500'
       } shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
       <h1
@@ -61,7 +61,7 @@ const Home = ({
           placeholder="&#xf4c0;"
           className={`focus:bg-gray-300  font-bold ${
             styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
-          } font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-[70%] bg-transparent   
+          } font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-full sm:w-[70%] bg-transparent   
           font-awesome 
           `}
           type="number"
@@ -71,6 +71,7 @@ const Home = ({
         />
         <DropdownMenu
           align={'left-[70%]'}
+          width={'[30%]'}
           handleFrecuency={(text) => {
             setCurrentTextButton(text);
           }}

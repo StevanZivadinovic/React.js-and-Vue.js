@@ -6,7 +6,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
   const [currentTextButton, setCurrentTextButton] = useState(
     currentTextTable ? currentTextTable : 'Monthly'
   );
-  const {styleMode } = useContext(UserContext);
+  const { styleMode } = useContext(UserContext);
   let textForButton = ['Weekly', 'Forthnightly', 'Monthly', 'Annualy'];
 
   useEffect(() => {
@@ -19,13 +19,20 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
         onClick={() => {
           setDisplayDropdownMenu(!displayDropdownMenu);
         }}
-        className={`hover:cursor-pointer ${styleMode ? 'hover:bg-gray-300 hover:text-yellow-500':'hover:bg-dark-mode-mainBg hover:text-yellow-500'}  text-2xl bg-transparent ${styleMode ? 'text-yellow-500':'text-dark-mode-mainBg'} border-2 border-gray-300 rounded outline-none p-[6px] mx-2`}>
+        className={`hover:cursor-pointer ${
+          styleMode
+            ? 'hover:bg-gray-300 hover:text-yellow-500'
+            : 'hover:bg-dark-mode-mainBg hover:text-yellow-500'
+        }  text-2xl bg-transparent ${
+          styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
+        } border-2 border-gray-300 rounded outline-none p-[6px] sm:mx-2 mt-2 sm:mt-0
+        w-full sm:w-[30%]`}>
         {currentTextButton}
       </button>
       <ul
         name=""
         id="periodOfIncome"
-        className={`rounded absolute ${align} hover:cursor-pointer text-2xl  'bg-transparent' text-gray-100  border-gray-300 w-${width} ${
+        className={`rounded absolute top-28 sm:top-14  sm:${align} hover:cursor-pointer text-2xl  'bg-transparent' text-gray-100  border-gray-300 w-full sm:w-${width} ${
           !displayDropdownMenu ? 'hidden' : 'block'
         }`}>
         {textForButton.map((a, i) => {
@@ -37,7 +44,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
                   setCurrentTextButton(a);
                 }}
                 key={i}
-                className="p-1 rounded-t-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
+                className=" rounded-t-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
                 {a}
               </li>
             );
