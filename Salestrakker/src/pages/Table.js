@@ -139,7 +139,7 @@ const Table = ({ setVisibleHomePageCallback }) => {
          font-bold ${styleMode ? "text-yellow-500":'text-dark-mode-mainBg'} w-[1rem] h-[1rem] absolute
          ${styleMode ? ('hover:bg-yellow-500 hover:text-gray-100'):'hover:bg-dark-mode-mainBg hover:text-gray-100'} right-5 bg-gray-100 p-10
            flex justify-center items-center rounded-[50%]`}>
-        <span>&#8592;</span> Back
+        <span className='animate-arrow_animation'>&#8592;</span> Back
       </button>
       <div>
         <div className="flex justify-around">

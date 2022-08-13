@@ -24,10 +24,19 @@ module.exports = {
             transform: 'scale(0.8)'
         }
         },
+        arrow_translate:{
+          '0%':{
+            transform:'translateX(-5px)'
+          },
+          '100%':{
+            transform:'translateX(0px)'
+          }
+        }
       },
       
       animation: {
-        'waving-hand': 'hamburger_puls 5s ease-in-out  infinite',
+        'waving-hand': 'hamburger_puls 5s linear  infinite',
+        'arrow_animation':'arrow_translate 2s linear infinite'
     
       },
     },
