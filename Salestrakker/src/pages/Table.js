@@ -176,21 +176,21 @@ const Table = ({ setVisibleHomePageCallback }) => {
         </div>
       </div>
       <TableComponent
-        weeklyIncome={weeklyIncome}
-        weeklyTax={weeklyTax}
-        finallyWeeklyRavenue={finallyWeeklyRavenue}
+        weeklyIncome={weeklyIncome.toFixed(2)}
+        weeklyTax={weeklyTax.toFixed(2)}
+        finallyWeeklyRavenue={finallyWeeklyRavenue.toFixed(2)}
         
-        forthnightlyIncome={forthnightlyIncome}
-        forthnightlyTax={forthnightlyTax}
-        finallyForthnightlyRavenue={finallyForthnightlyRavenue}
+        forthnightlyIncome={forthnightlyIncome.toFixed(2)}
+        forthnightlyTax={forthnightlyTax.toFixed(2)}
+        finallyForthnightlyRavenue={finallyForthnightlyRavenue.toFixed(2)}
 
-        monthlyIncome={monthlyIncome}
-        monthlyTax={monthlyTax}
-        finallyMonthlyRavenue={finallyMonthlyRavenue}
-        
-        annualyIncome={annualyIncome}
-        annualyTax={annualyTax}
-        finallyAnnualyRavenue={finallyAnnualyRavenue}
+        monthlyIncome={monthlyIncome.toFixed(2)}
+        monthlyTax={monthlyTax.toFixed(2)}
+        finallyMonthlyRavenue={finallyMonthlyRavenue.toFixed(2)}
+
+        annualyIncome={annualyIncome.toFixed(2)}
+        annualyTax={annualyTax.toFixed(2)}
+        finallyAnnualyRavenue={finallyAnnualyRavenue.toFixed(2)}
         ></TableComponent>
 
         
