@@ -126,8 +126,7 @@ const Table = ({ setVisibleHomePageCallback }) => {
       default:
         break;
     }
-    //   console.log(currentTextButton)
-    console.log(frequency);
+  
   }, [currentTextButton, weeklyIncome, frequency]);
 
   return (
@@ -182,33 +181,6 @@ const Table = ({ setVisibleHomePageCallback }) => {
           <Row textColor={'text-yellow-500'} frequency={'Monthly'} income={monthlyIncome} tax={monthlyTax} finallyRavenue={finallyMonthlyRavenue}/>
           <Row textColor={'text-dark-mode-mainBg'} frequency={'Annualy'} income={annualyIncome} tax={annualyTax} finallyRavenue={finallyAnnualyRavenue}/>
 
-          {/* <tr className="text-center text-yellow-500 py-2 even:bg-gray-100">
-            <td className="text-center text-yellow-500 py-2">Weekly</td>
-            <td className="text-center text-yellow-500 py-2">{weeklyIncome}</td>
-            <td className="text-center text-yellow-500 py-2">{weeklyTax}</td>
-            <td className="text-center text-yellow-500 py-2">{finallyWeeklyRavenue}</td>
-          </tr> */}
-
-          {/* <tr>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >Forthightly</td>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{forthnightlyIncome}</td>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{forthnightlyTax}</td>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{finallyForthnightlyRavenue}</td>
-          </tr> */}
-
-          {/* <tr className=" text-center text-yellow-500 py-2 even:bg-gray-100">
-            <td className=" text-center text-yellow-500 py-2">Monthly</td>
-            <td className=" text-center text-yellow-500 py-2">{monthlyIncome}</td>
-            <td className=" text-center text-yellow-500 py-2">{monthlyTax}</td>
-            <td className=" text-center text-yellow-500 py-2">{finallyMonthlyRavenue}</td>
-          </tr> */}
-
-          {/* <tr>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >Annualy</td>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{annualyIncome}</td>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{annualyTax}</td>
-            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{finallyAnnualyRavenue}</td>
-          </tr> */}
         </tbody>
       </table>
     </div>
@@ -217,23 +189,3 @@ const Table = ({ setVisibleHomePageCallback }) => {
 
 export default Table;
 
-// @keyframes hamburger_puls {
-// 	0% {
-// 		opacity: 1;
-// 		transform: scale(1);
-// 	}
-// 	100% {
-// 		opacity: 0;
-// 		transform: scale(1.4);
-// 	}
-// }
-
-// #header .hamburger:after {
-// 	position: absolute;
-// 	content: '';
-// 	height: 100%;
-// 	width: 100%;
-// 	border-radius: 50%;
-// 	border: 3px solid white;
-// 	animation: hamburger_puls 1s ease infinite;
-// }
