@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import DropdownMenu from '../components/DropdownMenu';
+import { Row } from '../components/Row';
 import { UserContext } from '../Context/UserContext';
 
 const Table = ({ setVisibleHomePageCallback }) => {
@@ -137,7 +138,7 @@ const Table = ({ setVisibleHomePageCallback }) => {
         className={`after:content-[""] after:absolute after:h-[100%] after:w-full after:rounded-[50%] after:b-1 after:border-solid after:border-gray-100
       after:animate-waving-hand
          font-bold ${styleMode ? "text-yellow-500":'text-dark-mode-mainBg'} w-[1rem] h-[1rem] absolute
-          hover:bg-yellow-500 hover:text-gray-100 right-5 bg-gray-100 p-10
+         ${styleMode ? ('hover:bg-yellow-500 hover:text-gray-100'):'hover:bg-dark-mode-mainBg hover:text-gray-100'} right-5 bg-gray-100 p-10
            flex justify-center items-center rounded-[50%]`}>
         <span>&#8592;</span> Back
       </button>
@@ -175,33 +176,39 @@ const Table = ({ setVisibleHomePageCallback }) => {
               <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Net income</th>
             )}
           </tr>
-          <tr className="text-center text-yellow-500 py-2 even:bg-gray-100">
+
+          <Row textColor={'text-yellow-500'} frequency={'Weekly'} income={weeklyIncome} tax={weeklyTax} finallyRavenue={finallyWeeklyRavenue}/>
+          <Row textColor={'text-dark-mode-mainBg'} frequency={'Forthightly'} income={forthnightlyIncome} tax={forthnightlyTax} finallyRavenue={finallyForthnightlyRavenue}/>
+          <Row textColor={'text-yellow-500'} frequency={'Monthly'} income={monthlyIncome} tax={monthlyTax} finallyRavenue={finallyMonthlyRavenue}/>
+          <Row textColor={'text-dark-mode-mainBg'} frequency={'Annualy'} income={annualyIncome} tax={annualyTax} finallyRavenue={finallyAnnualyRavenue}/>
+
+          {/* <tr className="text-center text-yellow-500 py-2 even:bg-gray-100">
             <td className="text-center text-yellow-500 py-2">Weekly</td>
             <td className="text-center text-yellow-500 py-2">{weeklyIncome}</td>
             <td className="text-center text-yellow-500 py-2">{weeklyTax}</td>
             <td className="text-center text-yellow-500 py-2">{finallyWeeklyRavenue}</td>
-          </tr>
+          </tr> */}
 
-          <tr>
+          {/* <tr>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >Forthightly</td>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{forthnightlyIncome}</td>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{forthnightlyTax}</td>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{finallyForthnightlyRavenue}</td>
-          </tr>
+          </tr> */}
 
-          <tr className=" text-center text-yellow-500 py-2 even:bg-gray-100">
+          {/* <tr className=" text-center text-yellow-500 py-2 even:bg-gray-100">
             <td className=" text-center text-yellow-500 py-2">Monthly</td>
             <td className=" text-center text-yellow-500 py-2">{monthlyIncome}</td>
             <td className=" text-center text-yellow-500 py-2">{monthlyTax}</td>
             <td className=" text-center text-yellow-500 py-2">{finallyMonthlyRavenue}</td>
-          </tr>
+          </tr> */}
 
-          <tr>
+          {/* <tr>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >Annualy</td>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{annualyIncome}</td>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{annualyTax}</td>
             <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{finallyAnnualyRavenue}</td>
-          </tr>
+          </tr> */}
         </tbody>
       </table>
     </div>

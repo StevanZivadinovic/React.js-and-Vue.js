@@ -48,7 +48,7 @@ const Home = ({
       <p className={`text-2xl text-gray-100 pb-2 ${styleMode ? 'text-yellow-500':'text-dark-mode-mainBg'}`}>Enter your income:</p>
       <div className="relative">
         <input
-          className="focus:bg-gray-300  font-bold text-yellow-500 font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-[70%] bg-transparent"
+          className={`focus:bg-gray-300  font-bold ${styleMode? 'text-yellow-500' :'text-dark-mode-mainBg'} font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-[70%] bg-transparent`}
           type="number"
           onChange={(e) => {
             setIncome(e.target.value);
