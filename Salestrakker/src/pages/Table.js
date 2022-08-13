@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import DropdownMenu from '../components/DropdownMenu';
 import { Row } from '../components/Row';
+import { TableComponent } from '../components/TableComponent';
 import { UserContext } from '../Context/UserContext';
 
 const Table = ({ setVisibleHomePageCallback }) => {
@@ -126,24 +127,39 @@ const Table = ({ setVisibleHomePageCallback }) => {
       default:
         break;
     }
-  
   }, [currentTextButton, weeklyIncome, frequency]);
 
   return (
-    <div className={`z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between ${styleMode? 'transpartent':'bg-yellow-500'} relative shadow-2xl ${styleMode?'shadow-yellow-500':'shadow-dark-mode-mainBg'}`}>
-      <h1 className={`text-3xl ${styleMode? 'text-gray-100' :'text-dark-mode-mainBg'} mb-4`}>Income tax calculator</h1>
+    <div
+      className={`z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between ${
+        styleMode ? 'transpartent' : 'bg-yellow-500'
+      } relative shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
+      <h1 className={`text-3xl ${styleMode ? 'text-gray-100' : 'text-dark-mode-mainBg'} mb-4`}>
+        Income tax calculator
+      </h1>
       <button
         onClick={handleBack}
         className={`after:content-[""] after:absolute after:h-[100%] after:w-full after:rounded-[50%] after:b-1 after:border-solid after:border-gray-100
       after:animate-waving-hand
-         font-bold ${styleMode ? "text-yellow-500":'text-dark-mode-mainBg'} w-[1rem] h-[1rem] absolute
-         ${styleMode ? ('hover:bg-yellow-500 hover:text-gray-100'):'hover:bg-dark-mode-mainBg hover:text-gray-100'} right-5 bg-gray-100 p-10
+         font-bold ${
+           styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
+         } w-[1rem] h-[1rem] absolute
+         ${
+           styleMode
+             ? 'hover:bg-yellow-500 hover:text-gray-100'
+             : 'hover:bg-dark-mode-mainBg hover:text-gray-100'
+         } right-5 bg-gray-100 p-10
            flex justify-center items-center rounded-[50%]`}>
-        <span className='animate-arrow_animation'>&#8592;</span> Back
+        <span className="animate-arrow_animation">&#8592;</span> Back
       </button>
       <div>
         <div className="flex justify-around">
-          <p className={`text-center flex ${styleMode ? "text-yellow-500":'text-dark-mode-mainBg'} text-2xl  items-center`}>${incomeTitle}</p>
+          <p
+            className={`text-center flex ${
+              styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
+            } text-2xl  items-center`}>
+            ${incomeTitle}
+          </p>
           <div className="w-1/2 text-gray-100 text-2xl">
             {`Your ${type == 'gross' ? type : type.slice(0, -1)}`}
             <span className="relative">
@@ -159,33 +175,27 @@ const Table = ({ setVisibleHomePageCallback }) => {
           </div>
         </div>
       </div>
-      <table className="w-full  mt-8">
-        <tbody className="text-2xl">
-          <tr className="text-center  py-2 even:bg-gray-100">
-            <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Frequency</th>
-            {type == 'gross' ? (
-              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Gross income</th>
-            ) : (
-              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Net income</th>
-            )}
-            <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Tax</th>
-            {type == 'neto' ? (
-              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Gross income</th>
-            ) : (
-              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Net income</th>
-            )}
-          </tr>
+      <TableComponent
+        weeklyIncome={weeklyIncome}
+        weeklyTax={weeklyTax}
+        finallyWeeklyRavenue={finallyWeeklyRavenue}
+        
+        forthnightlyIncome={forthnightlyIncome}
+        forthnightlyTax={forthnightlyTax}
+        finallyForthnightlyRavenue={finallyForthnightlyRavenue}
 
-          <Row textColor={'text-yellow-500'} frequency={'Weekly'} income={weeklyIncome} tax={weeklyTax} finallyRavenue={finallyWeeklyRavenue}/>
-          <Row textColor={'text-dark-mode-mainBg'} frequency={'Forthightly'} income={forthnightlyIncome} tax={forthnightlyTax} finallyRavenue={finallyForthnightlyRavenue}/>
-          <Row textColor={'text-yellow-500'} frequency={'Monthly'} income={monthlyIncome} tax={monthlyTax} finallyRavenue={finallyMonthlyRavenue}/>
-          <Row textColor={'text-dark-mode-mainBg'} frequency={'Annualy'} income={annualyIncome} tax={annualyTax} finallyRavenue={finallyAnnualyRavenue}/>
+        monthlyIncome={monthlyIncome}
+        monthlyTax={monthlyTax}
+        finallyMonthlyRavenue={finallyMonthlyRavenue}
+        
+        annualyIncome={annualyIncome}
+        annualyTax={annualyTax}
+        finallyAnnualyRavenue={finallyAnnualyRavenue}
+        ></TableComponent>
 
-        </tbody>
-      </table>
+        
     </div>
   );
 };
 
 export default Table;
-
