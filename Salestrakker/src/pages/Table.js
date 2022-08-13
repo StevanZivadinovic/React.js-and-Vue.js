@@ -3,7 +3,7 @@ import DropdownMenu from '../components/DropdownMenu';
 import { UserContext } from '../Context/UserContext';
 
 const Table = ({ setVisibleHomePageCallback }) => {
-  const { income, type, currentTextButton } = useContext(UserContext);
+  const { income, type, currentTextButton, styleMode } = useContext(UserContext);
   const [weeklyIncome, setWeeklyIncome] = useState(0);
   const [forthnightlyIncome, setForthnightlyIncome] = useState(0);
   const [monthlyIncome, setMonthlyIncome] = useState(0);
@@ -130,20 +130,20 @@ const Table = ({ setVisibleHomePageCallback }) => {
   }, [currentTextButton, weeklyIncome, frequency]);
 
   return (
-    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between transpartent relative shadow-2xl shadow-yellow-500">
-      <h1 className="text-3xl text-gray-100 mb-4">Income tax calculator</h1>
+    <div className={`z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between ${styleMode? 'transpartent':'bg-yellow-500'} relative shadow-2xl ${styleMode?'shadow-yellow-500':'shadow-dark-mode-mainBg'}`}>
+      <h1 className={`text-3xl ${styleMode? 'text-gray-100' :'text-dark-mode-mainBg'} mb-4`}>Income tax calculator</h1>
       <button
         onClick={handleBack}
-        className='after:content-[""] after:absolute after:h-[100%] after:w-full after:rounded-[50%] after:b-1 after:border-solid after:border-gray-100
+        className={`after:content-[""] after:absolute after:h-[100%] after:w-full after:rounded-[50%] after:b-1 after:border-solid after:border-gray-100
       after:animate-waving-hand
-         font-bold text-yellow-500 w-[1rem] h-[1rem] absolute
-          hover:bg-yellow-500 hover:text-gray-100 right-5 bg-gray-300 p-10
-           flex justify-center items-center rounded-[50%]'>
+         font-bold ${styleMode ? "text-yellow-500":'text-dark-mode-mainBg'} w-[1rem] h-[1rem] absolute
+          hover:bg-yellow-500 hover:text-gray-100 right-5 bg-gray-100 p-10
+           flex justify-center items-center rounded-[50%]`}>
         <span>&#8592;</span> Back
       </button>
       <div>
         <div className="flex justify-around">
-          <p className="text-center flex text-yellow-500 text-2xl  items-center">${incomeTitle}</p>
+          <p className={`text-center flex ${styleMode ? "text-yellow-500":'text-dark-mode-mainBg'} text-2xl  items-center`}>${incomeTitle}</p>
           <div className="w-1/2 text-gray-100 text-2xl">
             {`Your ${type == 'gross' ? type : type.slice(0, -1)}`}
             <span className="relative">
@@ -161,46 +161,46 @@ const Table = ({ setVisibleHomePageCallback }) => {
       </div>
       <table className="w-full  mt-8">
         <tbody className="text-2xl">
-          <tr className="text-center  py-2 even:bg-gray-300">
-            <th className="text-center text-gray-300 py-2">Frequency</th>
+          <tr className="text-center  py-2 even:bg-gray-100">
+            <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Frequency</th>
             {type == 'gross' ? (
-              <th className="text-center text-gray-300 py-2">Gross income</th>
+              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Gross income</th>
             ) : (
-              <th className="text-center text-gray-300 py-2">Net income</th>
+              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Net income</th>
             )}
-            <th className="text-center text-gray-300 py-2">Tax</th>
+            <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Tax</th>
             {type == 'neto' ? (
-              <th className="text-center text-gray-300 py-2">Gross income</th>
+              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Gross income</th>
             ) : (
-              <th className="text-center text-gray-300 py-2">Net income</th>
+              <th className={`text-center ${styleMode? 'text-gray-100':'text-dark-mode-mainBg'} py-2`}>Net income</th>
             )}
           </tr>
-          <tr className="text-center text-yellow-500 py-2 even:bg-gray-300">
+          <tr className="text-center text-yellow-500 py-2 even:bg-gray-100">
             <td className="text-center text-yellow-500 py-2">Weekly</td>
             <td className="text-center text-yellow-500 py-2">{weeklyIncome}</td>
             <td className="text-center text-yellow-500 py-2">{weeklyTax}</td>
             <td className="text-center text-yellow-500 py-2">{finallyWeeklyRavenue}</td>
           </tr>
 
-          <tr className=" text-center text-yellow-500 py-2 even:bg-gray-300">
-            <td className=" text-center text-yellow-500 py-2">Forthightly</td>
-            <td className=" text-center text-yellow-500 py-2">{forthnightlyIncome}</td>
-            <td className=" text-center text-yellow-500 py-2">{forthnightlyTax}</td>
-            <td className=" text-center text-yellow-500 py-2">{finallyForthnightlyRavenue}</td>
+          <tr>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >Forthightly</td>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{forthnightlyIncome}</td>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{forthnightlyTax}</td>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{finallyForthnightlyRavenue}</td>
           </tr>
 
-          <tr className=" text-center text-yellow-500 py-2 even:bg-gray-300">
+          <tr className=" text-center text-yellow-500 py-2 even:bg-gray-100">
             <td className=" text-center text-yellow-500 py-2">Monthly</td>
             <td className=" text-center text-yellow-500 py-2">{monthlyIncome}</td>
             <td className=" text-center text-yellow-500 py-2">{monthlyTax}</td>
             <td className=" text-center text-yellow-500 py-2">{finallyMonthlyRavenue}</td>
           </tr>
 
-          <tr className=" text-center text-yellow-500 py-2 even:bg-gray-300">
-            <td className=" text-center text-yellow-500 py-2">Annualy</td>
-            <td className=" text-center text-yellow-500 py-2">{annualyIncome}</td>
-            <td className=" text-center text-yellow-500 py-2">{annualyTax}</td>
-            <td className=" text-center text-yellow-500 py-2">{finallyAnnualyRavenue}</td>
+          <tr>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >Annualy</td>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{annualyIncome}</td>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{annualyTax}</td>
+            <td className={`text-center ${styleMode?'text-yellow-500':'text-dark-mode-mainBg'} py-2`} >{finallyAnnualyRavenue}</td>
           </tr>
         </tbody>
       </table>

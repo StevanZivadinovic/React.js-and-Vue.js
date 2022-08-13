@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../Context/UserContext';
 
 const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
   const [displayDropdownMenu, setDisplayDropdownMenu] = useState(false);
   const [currentTextButton, setCurrentTextButton] = useState(
     currentTextTable ? currentTextTable : 'Monthly'
   );
+  const {styleMode } = useContext(UserContext);
   let textForButton = ['Weekly', 'Forthnightly', 'Monthly', 'Annualy'];
 
   useEffect(() => {
@@ -17,13 +19,13 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
         onClick={() => {
           setDisplayDropdownMenu(!displayDropdownMenu);
         }}
-        className="hover:cursor-pointer hover:bg-gray-300 hover:text-yellow-500  text-2xl bg-transparent text-gray-100 border-2 border-gray-300 rounded outline-none p-[6px] mx-2">
+        className={`hover:cursor-pointer ${styleMode ? 'hover:bg-gray-300 hover:text-yellow-500':'hover:bg-dark-mode-mainBg hover:text-yellow-500'}  text-2xl bg-transparent ${styleMode ? 'text-yellow-500':'text-dark-mode-mainBg'} border-2 border-gray-300 rounded outline-none p-[6px] mx-2`}>
         {currentTextButton}
       </button>
       <ul
         name=""
         id="periodOfIncome"
-        className={`rounded absolute ${align} hover:cursor-pointer text-2xl bg-transparent text-gray-100  border-gray-300 w-${width} ${
+        className={`rounded absolute ${align} hover:cursor-pointer text-2xl  'bg-transparent' text-gray-100  border-gray-300 w-${width} ${
           !displayDropdownMenu ? 'hidden' : 'block'
         }`}>
         {textForButton.map((a, i) => {
@@ -35,7 +37,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
                   setCurrentTextButton(a);
                 }}
                 key={i}
-                className="p-1 rounded-t-xl hover:cursor-pointer hover:bg-gray-600 hover:text-yellow-300 text-[1.2rem] bg-gray-300 w-full">
+                className="p-1 rounded-t-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
                 {a}
               </li>
             );
@@ -47,7 +49,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
                   setCurrentTextButton(a);
                 }}
                 key={i}
-                className="p-1  rounded-b-xl hover:cursor-pointer hover:bg-gray-600 hover:text-yellow-300 text-[1.2rem] bg-gray-300 w-full">
+                className="p-1  rounded-b-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
                 {a}
               </li>
             );
@@ -59,7 +61,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
                   setCurrentTextButton(a);
                 }}
                 key={i}
-                className="p-1  hover:cursor-pointer hover:bg-gray-600 hover:text-yellow-300 text-[1.2rem] bg-gray-300 w-full">
+                className="p-1  hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
                 {a}
               </li>
             );

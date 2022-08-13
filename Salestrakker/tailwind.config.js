@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        'dark-mode-mainBg':'rgb(33,37,41)'
+      },
       keyframes: {
         hamburger_puls: {
           '0% ':{

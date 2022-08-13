@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, createContext, useContext } from 'react';
 import Button from '../components/Button';
 import DropdownMenu from '../components/DropdownMenu';
+import { UserContext } from '../Context/UserContext';
 
 const Home = ({
   setVisibleHomePageCallback,
@@ -8,6 +9,9 @@ const Home = ({
   setTypeContext,
   setCurrentTextButtonContext
 }) => {
+  const {styleMode } = useContext(UserContext);
+ 
+  
   // const [displayDropdownMenu, setDisplayDropdownMenu] = useState(false);
   const [currentTextButton, setCurrentTextButton] = useState('Monthly');
   const [visibleHomePage, setVisibleHomePage] = useState(true);
@@ -39,9 +43,9 @@ const Home = ({
   }, [visibleHomePage]);
 
   return (
-    <div className="z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between  bg-yellow-550 shadow-2xl shadow-yellow-500">
-      <h1 className="text-3xl text-yellow-500 mb-4">Income tax calculator</h1>
-      <p className="text-2xl text-gray-100 pb-2">Enter your income:</p>
+    <div className={`z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between  ${styleMode?'bg-transparent':'bg-yellow-500'} shadow-2xl ${styleMode?'shadow-yellow-500':'shadow-dark-mode-mainBg'} `}>
+      <h1 className={`${styleMode ? 'text-yellow-500':'text-dark-mode-mainBg'} text-3xl mb-4`}>Income tax calculator</h1>
+      <p className={`text-2xl text-gray-100 pb-2 ${styleMode ? 'text-yellow-500':'text-dark-mode-mainBg'}`}>Enter your income:</p>
       <div className="relative">
         <input
           className="focus:bg-gray-300  font-bold text-yellow-500 font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-[70%] bg-transparent"
@@ -59,7 +63,7 @@ const Home = ({
       </div>
 
       <div className=" flex flex-col justify-center items-center my-[5rem]">
-        <h3 className="text-2xl text-gray-100 my-8">Please choose the income type:</h3>
+        <h3 className={`text-2xl text-gray-100 my-8 ${styleMode ? 'text-yellow-500':'text-dark-mode-mainBg'}`}>Please choose the income type:</h3>
         <div ref={buttons} className="w-full flex justify-around">
           <Button
             clicked={clicked}
