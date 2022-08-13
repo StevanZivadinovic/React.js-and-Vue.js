@@ -44,7 +44,10 @@ const Home = ({
       className={`z-[1000] rounded p-6 w-1/2 m-auto flex flex-col justify-between  ${
         styleMode ? 'bg-transparent' : 'bg-yellow-500'
       } shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'} `}>
-      <h1 className={`${styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'} text-3xl mb-4`}>
+      <h1
+        className={`${
+          styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
+        } text-3xl mb-4 flex align-center`}>
         Income tax calculator
       </h1>
       <p
@@ -55,9 +58,12 @@ const Home = ({
       </p>
       <div className="relative">
         <input
+          placeholder="&#xf4c0;"
           className={`focus:bg-gray-300  font-bold ${
             styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
-          } font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-[70%] bg-transparent`}
+          } font-sans border text-2xl border-gray-300 rounded outline-none p-2 w-[70%] bg-transparent   
+          font-awesome 
+          `}
           type="number"
           onChange={(e) => {
             setIncome(e.target.value);

@@ -6,6 +6,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily:{
+      'awesome':['FontAwesome']
+    },
     extend: {
       colors:{
         'dark-mode-mainBg':'rgb(33,37,41)'
