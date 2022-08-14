@@ -70,7 +70,8 @@ const Home = ({
           }}
         />
         <DropdownMenu
-          align={'left-[70%]'}
+        top={'sm:top-14'}
+        topMobile={'top-28'}
           width={'[30%]'}
           handleFrecuency={(text) => {
             setCurrentTextButton(text);

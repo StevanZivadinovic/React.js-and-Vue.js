@@ -164,7 +164,8 @@ const Table = ({ setVisibleHomePageCallback }) => {
             {`Your ${type == 'gross' ? type : type.slice(0, -1)}`}
             <span className="relative">
               <DropdownMenu
-                align={'right-0'}
+               top={'sm:top-10'}
+               topMobile={'top-10'}
                 width={'full'}
                 handleFrecuency={(text) => {
                   setFrequency(text);

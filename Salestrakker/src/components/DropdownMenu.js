@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../Context/UserContext';
 
-const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
+const DropdownMenu = ({ handleFrecuency, currentTextTable, width, top, topMobile }) => {
   const [displayDropdownMenu, setDisplayDropdownMenu] = useState(false);
   const [currentTextButton, setCurrentTextButton] = useState(
     currentTextTable ? currentTextTable : 'Monthly'
@@ -32,7 +32,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, align }) => {
       <ul
         name=""
         id="periodOfIncome"
-        className={`rounded absolute top-28 sm:top-14  sm:${align} hover:cursor-pointer text-2xl  'bg-transparent' text-gray-100  border-gray-300 w-full sm:w-${width} ${
+        className={`rounded absolute ${topMobile} ${top}  sm:right-0 hover:cursor-pointer text-2xl  'bg-transparent' text-gray-100  border-gray-300 w-full sm:w-${width} ${
           !displayDropdownMenu ? 'hidden' : 'block'
         }`}>
         {textForButton.map((a, i) => {
