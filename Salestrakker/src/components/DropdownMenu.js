@@ -26,7 +26,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, top, topMobile
         }  text-2xl bg-transparent ${
           styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
         } border-2 border-gray-300 rounded outline-none p-[6px] sm:mx-2 mt-2 sm:mt-0
-        w-full sm:w-[30%]`}>
+        w-full sm:w-auto`}>
         {currentTextButton}
       </button>
       <ul
@@ -36,22 +36,18 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, top, topMobile
           !displayDropdownMenu ? 'hidden' : 'block'
         }`}>
         {textForButton.map((a, i) => {
-       
-            return (
-              <li
-                onClick={() => {
-                  setDisplayDropdownMenu(false);
-                  setCurrentTextButton(a);
-                }}
-                key={i}
-                className="last:rounded-b-xl first:rounded-t-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
-                {a}
-              </li>
-            );
-          
-          
-          }
-        )}
+          return (
+            <li
+              onClick={() => {
+                setDisplayDropdownMenu(false);
+                setCurrentTextButton(a);
+              }}
+              key={i}
+              className="last:rounded-b-xl first:rounded-t-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
+              {a}
+            </li>
+          );
+        })}
       </ul>
     </>
   );
