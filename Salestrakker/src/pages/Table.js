@@ -157,7 +157,7 @@ const Table = ({ setVisibleHomePageCallback }) => {
           <p
             className={`text-center flex ${
               styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
-            } text-3xl  items-center`}>
+            } text-2xl  items-center`}>
             ${incomeTitle}
           </p>
           <div className="w-[60%] sm:w-1/2 text-gray-100 text-2xl">
@@ -177,21 +177,21 @@ const Table = ({ setVisibleHomePageCallback }) => {
         </div>
       </div>
       <TableComponent
-        weeklyIncome={weeklyIncome.toFixed(2)}
-        weeklyTax={weeklyTax.toFixed(2)}
-        finallyWeeklyRavenue={finallyWeeklyRavenue.toFixed(2)}
+        weeklyIncome={weeklyIncome.toFixed(0)}
+        weeklyTax={weeklyTax.toFixed(0)}
+        finallyWeeklyRavenue={finallyWeeklyRavenue.toFixed(0)}
         
-        forthnightlyIncome={forthnightlyIncome.toFixed(2)}
-        forthnightlyTax={forthnightlyTax.toFixed(2)}
-        finallyForthnightlyRavenue={finallyForthnightlyRavenue.toFixed(2)}
+        forthnightlyIncome={forthnightlyIncome.toFixed(0)}
+        forthnightlyTax={forthnightlyTax.toFixed(0)}
+        finallyForthnightlyRavenue={finallyForthnightlyRavenue.toFixed(0)}
 
-        monthlyIncome={monthlyIncome.toFixed(2)}
-        monthlyTax={monthlyTax.toFixed(2)}
-        finallyMonthlyRavenue={finallyMonthlyRavenue.toFixed(2)}
+        monthlyIncome={monthlyIncome.toFixed(0)}
+        monthlyTax={monthlyTax.toFixed(0)}
+        finallyMonthlyRavenue={finallyMonthlyRavenue.toFixed(0)}
 
-        annualyIncome={annualyIncome.toFixed(2)}
-        annualyTax={annualyTax.toFixed(2)}
-        finallyAnnualyRavenue={finallyAnnualyRavenue.toFixed(2)}
+        annualyIncome={annualyIncome.toFixed(0)}
+        annualyTax={annualyTax.toFixed(0)}
+        finallyAnnualyRavenue={finallyAnnualyRavenue.toFixed(0)}
         ></TableComponent>
 
         
