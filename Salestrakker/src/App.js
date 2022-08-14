@@ -20,7 +20,7 @@ const App = () => {
         onClick={() => {
           setStyleMode(!styleMode);
         }}
-        className={`mt-10 text-2xl ${
+        className={`my-10 text-2xl ${
           styleMode ? 'text-gray-100' : 'text-yellow-500'
         } cursor-pointer sm:w-[15%] w-[40%]  mx-auto`}>
         {styleMode ? (

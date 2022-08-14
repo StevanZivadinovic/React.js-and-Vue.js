@@ -131,7 +131,7 @@ const Table = ({ setVisibleHomePageCallback }) => {
 
   return (
     <div
-      className={`z-[1000] rounded p-6 w-[90%] sm:w-1/2 m-auto flex flex-col justify-between ${
+      className={`z-[1000] rounded p-6 w-[90%] sm:w-1/2 m-auto flex flex-col justify-between my-0 ${
         styleMode ? 'transpartent' : 'bg-yellow-500'
       } relative shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
       <h1 className={`text-xl sm:text-3xl ${styleMode ? 'text-gray-100' : 'text-dark-mode-mainBg'} mb-4`}>

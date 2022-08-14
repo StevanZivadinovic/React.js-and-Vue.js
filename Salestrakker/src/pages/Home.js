@@ -41,7 +41,7 @@ const Home = ({
 
   return (
     <div
-      className={`z-[1000] rounded p-6 w-[90%]  m-auto flex flex-col justify-center text-center sm:justify-between sm:text-left sm:w-1/2  ${
+      className={`z-[1000] rounded p-6 w-[90%] my-0  m-auto flex flex-col justify-center text-center sm:justify-between sm:text-left sm:w-1/2  ${
         styleMode ? 'bg-transparent' : 'bg-yellow-500'
       } shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
       <h1
