@@ -134,13 +134,13 @@ const Table = ({ setVisibleHomePageCallback }) => {
       className={`z-[1000] rounded p-6 w-[90%] sm:w-1/2 m-auto flex flex-col justify-between ${
         styleMode ? 'transpartent' : 'bg-yellow-500'
       } relative shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
-      <h1 className={`text-3xl ${styleMode ? 'text-gray-100' : 'text-dark-mode-mainBg'} mb-4`}>
+      <h1 className={`text-xl sm:text-3xl ${styleMode ? 'text-gray-100' : 'text-dark-mode-mainBg'} mb-4`}>
         Income tax calculator
       </h1>
       <button
         onClick={handleBack}
         className={`after:content-[""] after:absolute after:h-[100%] after:w-full after:rounded-[50%] after:b-1 after:border-solid after:border-gray-100
-      after:animate-waving-hand
+      after:sm:animate-waving-hand
          font-bold ${
            styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
          } w-[1rem] h-[1rem] absolute
@@ -148,7 +148,7 @@ const Table = ({ setVisibleHomePageCallback }) => {
            styleMode
              ? 'hover:bg-yellow-500 hover:text-gray-100'
              : 'hover:bg-dark-mode-mainBg hover:text-gray-100'
-         } right-5 bg-gray-100 p-10
+         } right-5 sm:bg-gray-100 sm:p-10 p-5
            flex justify-center items-center rounded-[50%]`}>
         <span className="animate-arrow_animation">&#8592;</span> Back
       </button>

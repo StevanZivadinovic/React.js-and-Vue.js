@@ -19,7 +19,7 @@ export const TableComponent = ({
   const { type, styleMode } = useContext(UserContext);
   return (
     <table className="w-full  mt-8">
-      <tbody className="text-2xl">
+      <tbody className="text-base sm:text-2xl">
         <tr className="text-center  py-2 even:bg-gray-100">
           <th
             className={`text-center ${styleMode ? 'text-gray-100' : 'text-dark-mode-mainBg'} py-2`}>

@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className={`h-screen flex justify-center align-center flex-col ${styleMode?'bg-dark-mode-mainBg':'bg-gray-100'}`}>
           
-      <button onClick={()=>{setStyleMode(!styleMode)}} className={`mt-10 text-2xl ${styleMode ?'text-gray-100':'text-yellow-500'} cursor-pointer`}>
+      <button onClick={()=>{setStyleMode(!styleMode)}} className={`mt-10 text-2xl ${styleMode ?'text-gray-100':'text-yellow-500'} cursor-pointer sm:w-[15%] w-[40%]  mx-auto`}>
         {styleMode ? <span><i className="fa-solid fa-sun"></i> Light mode</span> : <span><i className="fa-solid fa-moon"></i> Dark  Mode</span>}</button>
     <UserContext.Provider value={{income, type, currentTextButton, styleMode}}>
       {visibleHomePage ? (
