@@ -112,22 +112,22 @@ const Table = ({ setVisibleHomePageCallback }) => {
   useEffect(() => {
     switch (frequency) {
       case 'Weekly':
-        setIncomeTitle(weeklyIncome);
+        setIncomeTitle(finallyWeeklyRavenue);
         break;
       case 'Forthnightly':
-        setIncomeTitle(forthnightlyIncome);
+        setIncomeTitle(finallyForthnightlyRavenue);
         break;
       case 'Monthly':
-        setIncomeTitle(monthlyIncome);
+        setIncomeTitle(finallyMonthlyRavenue);
         break;
       case 'Annualy':
-        setIncomeTitle(annualyIncome);
+        setIncomeTitle(finallyAnnualyRavenue);
         break;
 
       default:
         break;
     }
-  }, [currentTextButton, weeklyIncome, frequency]);
+  }, [currentTextButton, weeklyIncome, frequency, finallyWeeklyRavenue]);
 
   return (
     <div
@@ -161,7 +161,7 @@ const Table = ({ setVisibleHomePageCallback }) => {
             ${incomeTitle}
           </p>
           <div className="w-1/2 text-gray-100 text-2xl">
-            {`Your ${type == 'gross' ? type : type.slice(0, -1)}`}
+            {`Your ${type == 'gross' ? 'net' : 'gross'}`}
             <span className="relative">
               <DropdownMenu
                top={'sm:top-10'}

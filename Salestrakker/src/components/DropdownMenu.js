@@ -36,7 +36,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, top, topMobile
           !displayDropdownMenu ? 'hidden' : 'block'
         }`}>
         {textForButton.map((a, i) => {
-          if (i == 0) {
+       
             return (
               <li
                 onClick={() => {
@@ -44,36 +44,14 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, top, topMobile
                   setCurrentTextButton(a);
                 }}
                 key={i}
-                className=" rounded-t-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
+                className="last:rounded-b-xl first:rounded-t-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
                 {a}
               </li>
             );
-          } else if (i == textForButton.length - 1) {
-            return (
-              <li
-                onClick={() => {
-                  setDisplayDropdownMenu(false);
-                  setCurrentTextButton(a);
-                }}
-                key={i}
-                className="p-1  rounded-b-xl hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
-                {a}
-              </li>
-            );
-          } else {
-            return (
-              <li
-                onClick={() => {
-                  setDisplayDropdownMenu(false);
-                  setCurrentTextButton(a);
-                }}
-                key={i}
-                className="p-1  hover:cursor-pointer hover:bg-dark-mode-mainBg hover:text-yellow-500 text-[1.2rem] bg-gray-300 w-full">
-                {a}
-              </li>
-            );
+          
+          
           }
-        })}
+        )}
       </ul>
     </>
   );
