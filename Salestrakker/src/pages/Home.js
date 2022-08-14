@@ -46,7 +46,7 @@ const Home = ({
       } shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
       <h1
         className={`${
-          styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg' 
+          styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
         } text-2xl sm:text-3xl mb-4 flex align-center text-center self-center sm:text-left`}>
         Income tax calculator
       </h1>
@@ -70,8 +70,8 @@ const Home = ({
           }}
         />
         <DropdownMenu
-        top={'sm:top-14'}
-        topMobile={'top-28'}
+          top={'sm:top-14'}
+          topMobile={'top-28'}
           width={'[30%]'}
           handleFrecuency={(text) => {
             setCurrentTextButton(text);

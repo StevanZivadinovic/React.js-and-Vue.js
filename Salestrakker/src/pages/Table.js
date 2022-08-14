@@ -134,7 +134,10 @@ const Table = ({ setVisibleHomePageCallback }) => {
       className={`z-[1000] rounded p-6 w-[90%] sm:w-1/2 m-auto flex flex-col justify-between my-0 ${
         styleMode ? 'transpartent' : 'bg-yellow-500'
       } relative shadow-2xl ${styleMode ? 'shadow-yellow-500' : 'shadow-dark-mode-mainBg'}`}>
-      <h1 className={`text-xl sm:text-3xl ${styleMode ? 'text-gray-100' : 'text-dark-mode-mainBg'} mb-4`}>
+      <h1
+        className={`text-xl sm:text-3xl ${
+          styleMode ? 'text-gray-100' : 'text-dark-mode-mainBg'
+        } mb-4`}>
         Income tax calculator
       </h1>
       <button
@@ -164,8 +167,8 @@ const Table = ({ setVisibleHomePageCallback }) => {
             {`Your ${type == 'gross' ? 'net' : 'gross'}`}
             <span className="relative">
               <DropdownMenu
-               top={'sm:top-10'}
-               topMobile={'top-10'}
+                top={'sm:top-10'}
+                topMobile={'top-10'}
                 width={'full'}
                 handleFrecuency={(text) => {
                   setFrequency(text);
@@ -180,21 +183,15 @@ const Table = ({ setVisibleHomePageCallback }) => {
         weeklyIncome={weeklyIncome.toFixed(0)}
         weeklyTax={weeklyTax.toFixed(0)}
         finallyWeeklyRavenue={finallyWeeklyRavenue.toFixed(0)}
-        
         forthnightlyIncome={forthnightlyIncome.toFixed(0)}
         forthnightlyTax={forthnightlyTax.toFixed(0)}
         finallyForthnightlyRavenue={finallyForthnightlyRavenue.toFixed(0)}
-
         monthlyIncome={monthlyIncome.toFixed(0)}
         monthlyTax={monthlyTax.toFixed(0)}
         finallyMonthlyRavenue={finallyMonthlyRavenue.toFixed(0)}
-
         annualyIncome={annualyIncome.toFixed(0)}
         annualyTax={annualyTax.toFixed(0)}
-        finallyAnnualyRavenue={finallyAnnualyRavenue.toFixed(0)}
-        ></TableComponent>
-
-        
+        finallyAnnualyRavenue={finallyAnnualyRavenue.toFixed(0)}></TableComponent>
     </div>
   );
 };
