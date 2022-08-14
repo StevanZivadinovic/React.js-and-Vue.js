@@ -157,10 +157,10 @@ const Table = ({ setVisibleHomePageCallback }) => {
           <p
             className={`text-center flex ${
               styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
-            } text-2xl  items-center`}>
+            } text-3xl  items-center`}>
             ${incomeTitle}
           </p>
-          <div className="w-1/2 text-gray-100 text-2xl">
+          <div className="w-[60%] sm:w-1/2 text-gray-100 text-2xl">
             {`Your ${type == 'gross' ? 'net' : 'gross'}`}
             <span className="relative">
               <DropdownMenu

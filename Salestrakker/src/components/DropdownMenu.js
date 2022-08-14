@@ -23,7 +23,7 @@ const DropdownMenu = ({ handleFrecuency, currentTextTable, width, top, topMobile
           styleMode
             ? 'hover:bg-gray-300 hover:text-yellow-500'
             : 'hover:bg-dark-mode-mainBg hover:text-yellow-500'
-        }  text-2xl bg-transparent ${
+        } text-xl  sm:text-2xl bg-transparent ${
           styleMode ? 'text-yellow-500' : 'text-dark-mode-mainBg'
         } border-2 border-gray-300 rounded outline-none p-[6px] sm:mx-2 mt-2 sm:mt-0
         w-full sm:w-auto`}>
