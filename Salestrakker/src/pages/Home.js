@@ -20,11 +20,10 @@ const Home = ({
   let handleVisible = (e) => {
     e.preventDefault();
     setVisibleHomePage(!visibleHomePage);
-    console.log('calculate', visibleHomePage);
     setIncomeContext(income);
     setTypeContext(type);
     setCurrentTextButtonContext(currentTextButton);
-    console.log(income, type, currentTextButton);
+    
   };
 
   function handleGross(e) {

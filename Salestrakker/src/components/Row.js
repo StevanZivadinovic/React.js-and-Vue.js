@@ -3,9 +3,7 @@ import { UserContext } from '../Context/UserContext';
 
 export const Row = ({ textColor, frequency, income, tax, finallyRavenue }) => {
   const { styleMode } = useContext(UserContext);
-  useEffect(() => {
-    console.log(styleMode, textColor);
-  }, [styleMode]);
+
 
   return (
     <tr
