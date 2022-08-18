@@ -7,7 +7,7 @@ export const Newsletter = () => {
             <div className='description'>Get timely updates from your favorite products</div>
             <div className='inputBox'>
                 <input type='text' placeholder='Your mail'></input>
-                <button onClick={()=>{alert('hello')}}><i class="fas fa-angle-double-right"></i></button>
+                <button onClick={()=>{alert('hello')}}><i className="fas fa-angle-double-right"></i></button>
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ import Item from "./../components/Item";
 
 
 function Categories(props) {
-  console.log(props)
+ 
   const [nizSrc, setNizSrc] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Categories(props) {
       setNizSrc([...nizSrc, cat]);
     });
   }, []);
-  console.log(nizSrc);
+
   return (
     <div className="mainCategories">
       {categoriesData.map((categorie) => {
