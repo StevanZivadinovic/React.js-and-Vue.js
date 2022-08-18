@@ -36,26 +36,24 @@ export const Product = () => {
               </div>
             </div>
             <div className="size">
-                <span>Size</span>
-                <select>
-                    <option>XS</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                    <option>XXL</option>
-
-                </select>
+              <span>Size</span>
+              <select>
+                <option>XS</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+              </select>
             </div>
           </div>
           <div className="plusMinusAndButton">
-              <div className="plusMinus">
-
+            <div className="plusMinus">
               <span>-</span>
               <span>1</span>
               <span>+</span>
-              </div>
-          <button>Add to cart</button>
+            </div>
+            <button>Add to cart</button>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ function ShopingCategoryPage(prop) {
       <Announcement />
       <div className="subShoping">
         <div className="filterProducts">
-            <span>Filter products </span>
+          <span>Filter products </span>
           <select>
             <option disabled selected>
               Size
@@ -27,12 +27,12 @@ function ShopingCategoryPage(prop) {
         </div>
 
         <div className="sortProducts">
-            <span>Sort products </span>
-        <select>
-          <option selected>Newest</option>
-          <option>Price (asc)</option>
-          <option>Price (desc)</option>
-        </select>
+          <span>Sort products </span>
+          <select>
+            <option selected>Newest</option>
+            <option>Price (asc)</option>
+            <option>Price (desc)</option>
+          </select>
         </div>
       </div>
       <Products />
