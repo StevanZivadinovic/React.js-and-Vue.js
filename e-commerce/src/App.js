@@ -1,5 +1,3 @@
-// import './style/navbar.scss'
-
 import Home from "./pages/Home";
 import ShopingCategoryPage from "./pages/ShopingCategoryPage";
 import { Product } from "./pages/Product";
