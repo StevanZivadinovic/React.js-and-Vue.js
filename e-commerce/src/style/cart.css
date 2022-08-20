@@ -1,0 +1,56 @@
+.mainCart .wrapper {
+  padding: 2rem;
+}
+
+.mainCart .wrapper h1 {
+  font-weight: 300;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.mainCart .wrapper .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainCart .wrapper .top .topButton {
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mainCart .wrapper .top .topTexts .topText {
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0rem 1rem;
+}
+
+.mainCart .wrapper .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainCart .wrapper .bottom .info {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.mainCart .wrapper .bottom .summary {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: red;
+}
+/*# sourceMappingURL=cart.css.map */

@@ -1,0 +1,77 @@
+.mainLogin {
+  width: 100vw;
+  height: 100vh;
+  background: url("./../img/register.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mainLogin .wrapper {
+  width: 100%;
+  padding: 10%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainLogin h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.mainLogin form {
+  width: 40%;
+  height: 60%;
+}
+
+.mainLogin form input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 20%;
+  min-width: 45%;
+  margin: 2rem 0rem 1rem 1rem;
+  padding: 1rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 1.5rem;
+}
+
+.mainLogin form button {
+  width: 40%;
+  border: none;
+  padding: 1.5rem 2rem;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  margin-top: .5rem;
+  font-size: 1.6rem;
+  margin-left: 1rem;
+}
+
+.mainLogin form a {
+  margin: 1.5rem 0rem 0rem 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: grey;
+  display: block;
+}
+/*# sourceMappingURL=login.css.map */

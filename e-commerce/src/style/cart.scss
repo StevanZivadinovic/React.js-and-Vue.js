@@ -1,0 +1,38 @@
+.mainCart {
+  .wrapper {
+    padding: 2rem;
+    h1 {
+      font-weight: 300;
+      text-align: center;
+      font-size: 3rem;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .topButton {
+        padding: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .topTexts {
+        .topText {
+          text-decoration: underline;
+          cursor: pointer;
+          margin: 0rem 1rem;
+        }
+      }
+    }
+    .bottom{
+        display: flex;
+        justify-content: space-between;
+        .info{
+            flex: 3;
+        }
+        .summary{
+            flex: 1;
+            background-color: red;
+        }
+    }
+  }
+}
