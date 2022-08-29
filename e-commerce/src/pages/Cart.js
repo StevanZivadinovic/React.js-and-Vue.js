@@ -25,7 +25,7 @@ const Cart = () => {
                   </div>
                 </div>
                 <span className="productId">
-                  <b>ID:</b> 382468236428
+                  <b>ID:</b> 38246823642
                 </span>
                 <div className="productColor"></div>
                 <span className="productSize"> <b>Size:</b> 37.5</span>
