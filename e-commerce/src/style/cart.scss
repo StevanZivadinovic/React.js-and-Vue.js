@@ -20,6 +20,7 @@
           text-decoration: underline;
           cursor: pointer;
           margin: 0rem 1rem;
+          font-size: 2rem;
         }
       }
     }
@@ -31,8 +32,62 @@
         }
         .summary{
             flex: 1;
-            background-color: red;
+            background-color: lightgray;
+            font-size: 2rem;
+            
         }
     }
+  }
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10%;
+  .productDetail{
+    display: flex;
+    img{
+
+      max-width: 20%;
+      
+    }
+    .details{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 5rem;
+
+      .productName{
+        b{
+        font-size: 2rem;
+
+        }
+        font-size: 2rem;
+      }
+      .productId{
+        b{
+          font-size: 2rem;
+  
+          }
+          font-size: 2rem;
+      }
+      .productColor{
+        
+        width: 2rem;
+        height: 2rem;
+        background-color: black;
+        border-radius: 50%;
+      }
+      .productSize{
+        font-size: 2rem;
+        b{
+          font-size: 2rem;
+  
+          }
+      }
+    }
+  }
+  .priceDetail{
+    font-size: 2rem;
   }
 }

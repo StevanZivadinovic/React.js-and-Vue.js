@@ -1,5 +1,6 @@
 import React from "react";
 import "./../style/cart.scss";
+import cart1 from './../img/cart.jpg'
 
 const Cart = () => {
   return (
@@ -18,19 +19,19 @@ const Cart = () => {
           <div className="info">
             <div className="product">
               <div className="productDetail">
-                <img src="https://www.freepik.com/psd/plain-t-shirt" alt="" />
+                <img src={cart1} alt="" />
                 <div className="details">
                   <div className="productName">
                     <b>Product:</b> Jessie thunder name
                   </div>
-                </div>
                 <span className="productId">
                   <b>ID:</b> 38246823642
                 </span>
                 <div className="productColor"></div>
                 <span className="productSize"> <b>Size:</b> 37.5</span>
+                </div>
               </div>
-              <div className="priceDetail">price</div>
+              <div className="priceDetail">$10</div>
             </div>
           </div>
           <div className="summary">summary</div>

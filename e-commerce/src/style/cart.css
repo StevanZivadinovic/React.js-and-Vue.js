@@ -30,6 +30,7 @@
   text-decoration: underline;
   cursor: pointer;
   margin: 0rem 1rem;
+  font-size: 2rem;
 }
 
 .mainCart .wrapper .bottom {
@@ -51,6 +52,76 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: red;
+  background-color: lightgray;
+  font-size: 2rem;
+}
+
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 10%;
+}
+
+.product .productDetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product .productDetail img {
+  max-width: 20%;
+}
+
+.product .productDetail .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 5rem;
+}
+
+.product .productDetail .details .productName {
+  font-size: 2rem;
+}
+
+.product .productDetail .details .productName b {
+  font-size: 2rem;
+}
+
+.product .productDetail .details .productId {
+  font-size: 2rem;
+}
+
+.product .productDetail .details .productId b {
+  font-size: 2rem;
+}
+
+.product .productDetail .details .productColor {
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.product .productDetail .details .productSize {
+  font-size: 2rem;
+}
+
+.product .productDetail .details .productSize b {
+  font-size: 2rem;
+}
+
+.product .priceDetail {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=cart.css.map */
