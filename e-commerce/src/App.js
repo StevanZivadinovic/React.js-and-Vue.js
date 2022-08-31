@@ -10,11 +10,15 @@ import {
   Routes, //ovo je switch zapravo
   Route,
 } from "react-router-dom";
+import { AuthContextProvider, User } from "./components/AuthContext/AuthContext";
 
 function App() {
+  const {user} = User()
+ 
   return (
     <div className="App">
       <Router>
+          <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/category" element={<ShopingCategoryPage />}></Route>
@@ -22,10 +26,8 @@ function App() {
           <Route path="/register" element={<Register />}></Route>  
           <Route path="/login" element={<Login />}></Route>
           <Route path="/cart" element={<Cart />}></Route> 
-
-
-
         </Routes>
+          </AuthContextProvider>
       </Router>
     </div>
   );
