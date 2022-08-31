@@ -30,11 +30,15 @@
         .info{
             flex: 3;
         }
-        .summary{
-            flex: 1;
-            background-color: lightgray;
-            font-size: 2rem;
-            
+        .summaryContainer{
+          display: flex;
+          flex-direction: column;
+          .summary{
+              flex: 1;
+              background-color: lightgray;
+              font-size: 2rem;
+              
+          }
         }
     }
   }
@@ -75,7 +79,6 @@
         
         width: 2rem;
         height: 2rem;
-        background-color: black;
         border-radius: 50%;
       }
       .productSize{

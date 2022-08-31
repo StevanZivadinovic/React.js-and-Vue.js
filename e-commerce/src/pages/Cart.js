@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./../style/cart.scss";
-import cart1 from './../img/cart.jpg'
+import listsOfImage from './../helperFunc/images'
 import { db } from "../config/firebase";
 import { collection, onSnapshot, query } from "firebase/firestore";
 
 const Cart = () => {
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
+  
 
   let q= query(collection(db, 'proizvodi'))
   useEffect(() => {
+    setProducts([]);
     onSnapshot(q,(snapshot)=>{
       snapshot.docs.map(doc=>{
         console.log(doc.data())
         setProducts(products=>[...products, doc.data()])
       })
     })
-  }, [db])
+  }, [])
   console.log(products)
   
   return (
@@ -34,31 +36,39 @@ const Cart = () => {
         <div className="bottom">
           <div className="info">
             {
-              products.map(a=>{
+              products.map((a,i)=>{
 
                 return(
             <div className="product" key={a.id}>
               <div className="productDetail">
-                <img src={cart1} alt="" />
+                <img src={listsOfImage[i]} alt="" />
                 <div className="details">
                   <div className="productName">
-                    <b>Product:</b> Jessie thunder name
+                    <b>Product:</b> {a.productName}
                   </div>
                 <span className="productId">
                   <b>ID:</b> {a.id}
                 </span>
-                <div className="productColor"></div>
-                <span className="productSize"> <b>Size:</b> 37.5</span>
+                <div className="productColor" style={{backgroundColor:`${a.color}`}}></div>
+                <span className="productSize"> <b>Size: </b>{ a.size}</span>
                 </div>
               </div>
-              <div className="priceDetail">$10</div>
+              <div className="priceDetail">${a.price}</div>
             </div>
                 )
               })
 
             }
             </div>
-          <div className="summary">summary</div>
+            <div className="summaryContainer">
+
+            {
+              products.map(a=>{{
+
+                return <div className="summary" key={a.id}>{a.summary}</div>
+              }})
+            }
+            </div>
         </div>
       </div>
     </div>
