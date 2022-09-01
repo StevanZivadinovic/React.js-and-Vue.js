@@ -17,6 +17,7 @@ const Register = () => {
     try{
         await signUp(email, password);
         navigate('/');
+        console.log('profile created')
     }catch(err){
         console.log(err);
         navigate('/register');

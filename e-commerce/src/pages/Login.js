@@ -15,12 +15,15 @@ const Login = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
+      console.log(email, password)
       await logIn(email, password);
       // setErr("");
       navigate("/");
       console.log('login')
     } catch (err) {
       // setErr(err.message);
+      // navigate("/login");
+
       console.log(err);
     }
   };
@@ -31,9 +34,9 @@ const Login = () => {
       <form>
        
         <input placeholder="email" type="email" onChange={(e)=>{setEmail(e.target.value)}}/>
-        <input placeholder="password" type="text" />
+        <input placeholder="password" type="text" onChange={(e)=>{setPassword(e.target.value)}}/>
         <button onClick={(e)=>{handleSignIn(e)}}>Login</button>
-        <Link to=''>Create new account</Link>
+        <Link to='/register'>Create new account</Link>
       </form>
     </div>
   </div>
