@@ -1,5 +1,5 @@
 .mainCart {
-  .backButton{
+  .backButton {
     padding: 1rem 2rem;
     font-size: 2rem;
     cursor: pointer;
@@ -29,80 +29,70 @@
         }
       }
     }
-    .bottom{
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      .info {
+        flex: 2;
+      }
+      .summaryContainer {
         display: flex;
-        justify-content: space-between;
-        .info{
-            flex: 2;
-            
+        flex-direction: column;
+        margin: 2rem 0rem;
+        width: 30%;
+        .summary {
+          flex: 1;
+          background-color: lightgray;
+          font-size: 2rem;
+          margin-bottom: 2rem;
         }
-        .summaryContainer{
-          display: flex;
-          flex-direction: column;
-          margin: 2rem 0rem;
-          width: 30%;
-          .summary{
-              flex: 1;
-              background-color: lightgray;
-              font-size: 2rem;
-              margin-bottom: 2rem;
-       
-
-              
-          }
-        }
+      }
     }
   }
 }
 
-.product{
+.product {
   display: flex;
   justify-content: space-between;
   margin-right: 10%;
   margin: 2rem 0rem;
-  .productDetail{
+  .productDetail {
     display: flex;
-    img{
-
+    img {
       max-width: 20%;
-      
     }
-    .details{
+    .details {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       margin-left: 5rem;
 
-      .productName{
-        b{
-        font-size: 2rem;
-
+      .productName {
+        b {
+          font-size: 2rem;
         }
         font-size: 2rem;
       }
-      .productId{
-        b{
+      .productId {
+        b {
           font-size: 2rem;
-  
-          }
-          font-size: 2rem;
+        }
+        font-size: 2rem;
       }
-      .productColor{
-        
+      .productColor {
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
       }
-      .productSize{
+      .productSize {
         font-size: 2rem;
-        b{
+        b {
           font-size: 2rem;
-  
-          }
+        }
       }
     }
   }
-  .priceDetail{
+  .priceDetail {
     font-size: 2rem;
     margin-right: 2rem;
   }

@@ -29,21 +29,14 @@ const Cart = () => {
   }, []);
 
   const handleBackButton = (e) => {
-    // e.preventDefault()
-    console.log("haj");
     navigate("/");
   };
 
- 
-  
-    const handleCurrentPage = (page)=>{
-      
-      setCurrentPage(page);
-      console.log(page)
-    }
-  
+  const handleCurrentPage = (page) => {
+    setCurrentPage(page);
+    console.log(page);
+  };
 
- 
   return (
     <div className="mainCart">
       <button className="backButton" onClick={(e) => handleBackButton(e)}>
@@ -107,7 +100,7 @@ const Cart = () => {
         paginate={paginate}
         postPerPage={postPerPage}
         totalPosts={products}
-        handleCurrentPage={(page)=>handleCurrentPage(page)}
+        handleCurrentPage={(page) => handleCurrentPage(page)}
       ></Pagination>
     </div>
   );
