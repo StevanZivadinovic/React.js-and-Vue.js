@@ -89,6 +89,7 @@
 
 .mainNavbar .third div span {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .mainNavbar .third div span i {

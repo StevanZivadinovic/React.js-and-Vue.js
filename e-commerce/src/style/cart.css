@@ -1,3 +1,9 @@
+.mainCart .backButton {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 .mainCart .wrapper {
   padding: 2rem;
 }
@@ -43,17 +49,30 @@
 }
 
 .mainCart .wrapper .bottom .info {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
-.mainCart .wrapper .bottom .summary {
+.mainCart .wrapper .bottom .summaryContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem 0rem;
+  width: 30%;
+}
+
+.mainCart .wrapper .bottom .summaryContainer .summary {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   background-color: lightgray;
   font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 .product {
@@ -64,6 +83,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-right: 10%;
+  margin: 2rem 0rem;
 }
 
 .product .productDetail {
@@ -109,7 +129,6 @@
 .product .productDetail .details .productColor {
   width: 2rem;
   height: 2rem;
-  background-color: black;
   border-radius: 50%;
 }
 
@@ -123,5 +142,6 @@
 
 .product .priceDetail {
   font-size: 2rem;
+  margin-right: 2rem;
 }
 /*# sourceMappingURL=cart.css.map */

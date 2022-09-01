@@ -3,9 +3,19 @@ import "./../style/slider.scss";
 import fashion1 from "./../img/fashion1.png";
 import fashion2 from "./../img/fashion2.png";
 import fashion3 from "./../img/fashion3.png";
+import { useNavigate } from "react-router-dom";
 
 const Slider = () => {
+
+
   const [a, setA] = useState(0);
+  const navigate=useNavigate();
+
+  const handleNavigate = () =>{
+    navigate('/cart')
+  }
+
+
   const handleLeft = () => {
     if (a > 0) {
       setA(a - 1);
@@ -46,7 +56,7 @@ const Slider = () => {
             <div className="infoContainer">
               <div className="title">summer sale</div>
               <div className="textInfo">Some random text...</div>
-              <button className="button">Show now</button>
+              <button className="button" onClick={handleNavigate}>Show now</button>
             </div>
           </div>
 
@@ -57,7 +67,7 @@ const Slider = () => {
             <div className="infoContainer">
               <div className="title">autumn sale</div>
               <div className="textInfo">Some random text...</div>
-              <button className="button">Show now</button>
+              <button className="button" onClick={handleNavigate}>Show now</button>
             </div>
           </div>
 
@@ -68,7 +78,7 @@ const Slider = () => {
             <div className="infoContainer">
               <div className="title">winter summer</div>
               <div className="textInfo">Some random text...</div>
-              <button className="button">Show now</button>
+              <button className="button" onClick={handleNavigate}>Show now</button>
             </div>
           </div>
         </div>

@@ -17,12 +17,7 @@ export const categoriesData = [
         title:'LIGHT JACKETS'
 
     },
-    // {
-    //     id:4,
-    //     img:'https://images.unsplash.com/photo-1637628107704-6cab0ab3e197?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-    //     title:'LIGHT JACKETS'
-
-    // },
+   
     
 ]
 

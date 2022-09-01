@@ -1,0 +1,22 @@
+.paginationList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3rem;
+  width: 40%;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+}
+
+.paginationList li {
+  padding: 1rem;
+  border: 0.2rem solid lightblue;
+  font-size: 2rem;
+  text-decoration: none;
+  cursor: pointer;
+  height: 100%;
+}
+/*# sourceMappingURL=pagination.css.map */
