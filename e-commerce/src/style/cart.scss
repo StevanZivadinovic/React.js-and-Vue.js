@@ -79,10 +79,17 @@
         }
         font-size: 2rem;
       }
-      .productColor {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
+      .colorDiv{
+        display: flex;
+        align-items: center;
+        
+        .productColor {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          display: inline-block;
+          margin-left: .5rem;
+        }
       }
       .productSize {
         font-size: 2rem;

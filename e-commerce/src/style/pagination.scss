@@ -1,16 +1,33 @@
-.paginationList {
-  display: flex;
-  height: 3rem;
-  width: 40%;
-  margin: 0 auto;
-  justify-content: center;
-  list-style-type: none;
-  li {
-    padding: 1rem;
-    border: 0.2rem solid lightblue;
-    font-size: 2rem;
-    text-decoration: none;
-    height: 100%;
-    cursor: pointer; 
+
+.paginationDiv{
+  
+  .paginationList {
+   display: flex;
+   width: 30%;
+   margin: 0 auto;
+   list-style-type: none;
+   text-align: center;
+   justify-content: center;
+    li {
+      display: flex;
+      color: black;
+      height: 100%;
+      cursor: pointer; 
+      font-size: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+        transition: all .5s ease;
+        background-color: lightgray;
+      }
+      
+    }
+    .active{
+      background-color: gray;
+
+    }
   }
 }

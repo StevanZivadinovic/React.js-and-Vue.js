@@ -9,16 +9,18 @@ import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(3);
+  const [postPerPage, setPostPerPage] = useState(4);
+  const [categoryOfProduct, setCategoryOfProduct]=useState('proizvodi')
   const navigate = useNavigate();
 
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
+  
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  let q = query(collection(db, "proizvodi"));
+  let q = query(collection(db, categoryOfProduct));
   useEffect(() => {
     setProducts([]);
     onSnapshot(q, (snapshot) => {
@@ -66,10 +68,10 @@ const Cart = () => {
                       <span className="productId">
                         <b>ID:</b> {a.id}
                       </span>
-                      <div
-                        className="productColor"
-                        style={{ backgroundColor: `${a.color}` }}
-                      ></div>
+                      <div style={{fontSize:'2rem'}} className='colorDiv'
+                        
+                      >Color: <span className="productColor"
+                      style={{ backgroundColor: `${a.color}` }}></span></div>
                       <span className="productSize">
                         {" "}
                         <b>Size: </b>

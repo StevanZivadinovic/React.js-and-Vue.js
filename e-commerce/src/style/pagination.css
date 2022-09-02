@@ -1,22 +1,42 @@
-.paginationList {
+.paginationDiv .paginationList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 3rem;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
+  list-style-type: none;
+  text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  list-style-type: none;
 }
 
-.paginationList li {
-  padding: 1rem;
-  border: 0.2rem solid lightblue;
-  font-size: 2rem;
-  text-decoration: none;
-  cursor: pointer;
+.paginationDiv .paginationList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
   height: 100%;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.paginationDiv .paginationList li:hover {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  background-color: lightgray;
+}
+
+.paginationDiv .paginationList .active {
+  background-color: gray;
 }
 /*# sourceMappingURL=pagination.css.map */
