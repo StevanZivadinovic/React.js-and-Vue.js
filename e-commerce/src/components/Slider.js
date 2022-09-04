@@ -6,15 +6,18 @@ import fashion3 from "./../img/fashion3.png";
 import { useNavigate } from "react-router-dom";
 
 const Slider = () => {
-
-
   const [a, setA] = useState(0);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  const handleNavigate = () =>{
-    navigate('/cart')
-  }
 
+
+  const images=[{image:fashion1, seasson:'summer', subText:'Discover the latest styles of sundresses, crop tops, sandals and sunhats online now....'},
+   {image:fashion2, seasson:'autumn', subText:'Our fresh edit of autumn clothes includes everything from staple jumper dresses and oversized sweaters to leather look trousers'},
+  {image:fashion3, seasson:'winter', subText:'Discover our new Winter clothing in various colors and sizes'}]
+
+  const handleNavigate = () => {
+    navigate("/cart");
+  };
 
   const handleLeft = () => {
     if (a > 0) {
@@ -27,14 +30,15 @@ const Slider = () => {
   const handleRight = () => {
     if (a < 2) {
       setA(a + 1);
-      console.log("uslo");
     } else {
       setA(0);
     }
   };
 
   useEffect(() => {
-    document.querySelector(".wrapper").style.transform = `translateX(${a * -100}vw)`;
+    document.querySelector(".wrapper").style.transform = `translateX(${
+      a * -100
+    }vw)`;
   }, [a]);
 
   return (
@@ -49,38 +53,27 @@ const Slider = () => {
           <i className="fas fa-arrow-left"></i>
         </span>
         <div className="wrapper">
-          <div className="slide">
-            <div className="imageContainer">
-              <img src={fashion1} />
-            </div>
-            <div className="infoContainer">
-              <div className="title">summer sale</div>
-              <div className="textInfo">Some random text...</div>
-              <button className="button" onClick={handleNavigate}>Show now</button>
-            </div>
-          </div>
-
-          <div className="slide third">
-            <div className="imageContainer">
-              <img src={fashion2} />
-            </div>
-            <div className="infoContainer">
-              <div className="title">autumn sale</div>
-              <div className="textInfo">Some random text...</div>
-              <button className="button" onClick={handleNavigate}>Show now</button>
-            </div>
-          </div>
-
-          <div className="slide second">
-            <div className="imageContainer">
-              <img src={fashion3} />
-            </div>
-            <div className="infoContainer">
-              <div className="title">winter summer</div>
-              <div className="textInfo">Some random text...</div>
-              <button className="button" onClick={handleNavigate}>Show now</button>
-            </div>
-          </div>
+       
+          {
+            images.map((a,i)=>{
+              return (
+                <div className="slide" key={i}>
+                  <div className="imageContainer">
+                    <img src={a.image} />
+                  </div>
+                  <div className="infoContainer">
+                    <div className="title">{`${a.seasson} sale`}</div>
+                    <div className="textInfo">{a.subText}</div>
+                    <button className="button" onClick={handleNavigate}>
+                      Show now
+                    </button>
+                  </div>
+                </div>
+              );
+            })
+          }
+         
+        
         </div>
         <span
           className="arrow right"
