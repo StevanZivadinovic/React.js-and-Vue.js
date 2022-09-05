@@ -1,0 +1,63 @@
+.mainAddProducts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url("./../img/register.png");
+}
+
+.mainAddProducts h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.mainAddProducts .formAddProducts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 0rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.mainAddProducts .formAddProducts label {
+  font-size: 1.7rem;
+}
+
+.mainAddProducts .formAddProducts input {
+  min-height: 7%;
+  min-width: 45%;
+  margin: 2rem 0rem 1rem 0rem;
+  padding: 1rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 1.7rem;
+}
+
+.mainAddProducts .formAddProducts button {
+  min-height: 10%;
+  font-size: 2rem;
+  min-width: 45%;
+  cursor: pointer;
+}
+/*# sourceMappingURL=addProducts.css.map */

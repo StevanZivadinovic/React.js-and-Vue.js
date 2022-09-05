@@ -47,9 +47,14 @@ const Cart = () => {
 
   return (
     <div className="mainCart">
+      <div className="buttonsCartTop">
       <button className="backButton" onClick={(e) => handleBackButton(e)}>
         Back1
       </button>
+      <button className="addButton" >
+        Add Product
+      </button>
+      </div>
       <div className="wrapper">
         <h1>Your bag</h1>
         <div className="top">

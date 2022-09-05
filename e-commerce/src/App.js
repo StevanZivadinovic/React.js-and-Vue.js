@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import { AuthContextProvider, User } from "./components/AuthContext/AuthContext";
 import { useState } from "react";
+import { AddProducts } from "./pages/AddProducts";
 
 function App() {
   const {user} = User();
@@ -34,6 +35,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>  
           <Route path="/login" element={<Login />}></Route>
           <Route path="/cart" element={<Cart collection={collection} />}></Route> 
+          <Route path='addProducts' element={<AddProducts></AddProducts>}></Route>
         </Routes>
           </AuthContextProvider>
       </Router>

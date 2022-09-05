@@ -1,4 +1,13 @@
-.mainCart .backButton {
+.mainCart .buttonsCartTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainCart .buttonsCartTop .backButton, .mainCart .buttonsCartTop .addButton {
   padding: 1rem 2rem;
   font-size: 2rem;
   cursor: pointer;

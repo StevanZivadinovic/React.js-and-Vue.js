@@ -1,8 +1,12 @@
 .mainCart {
-  .backButton {
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    cursor: pointer;
+  .buttonsCartTop{
+    display: flex;
+    justify-content: space-between;
+    .backButton, .addButton {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      cursor: pointer;
+    }
   }
   .wrapper {
     padding: 2rem;
