@@ -16,12 +16,18 @@ const Cart = () => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
+
+
+  
+  
   
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  let q = query(collection(db, categoryOfProduct));
+  let q = query(collection(db, `${localStorage.getItem('seasson')}Collection`));
+
   useEffect(() => {
+   
     setProducts([]);
     onSnapshot(q, (snapshot) => {
       snapshot.docs.map((doc) => {

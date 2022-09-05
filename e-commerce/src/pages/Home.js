@@ -8,11 +8,16 @@ import { Newsletter } from "../components/Newsletter";
 import { Footer } from "../components/Footer";
 
 function Home() {
+
+
+
+
+  
   return (
     <div className="mainHome">
       <Navbar />
       <Announcement />
-      <Slider />
+      <Slider/>
       <Categories />
       <Products />
       <Newsletter />

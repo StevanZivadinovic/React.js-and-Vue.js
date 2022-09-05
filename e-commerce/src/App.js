@@ -11,21 +11,29 @@ import {
   Route,
 } from "react-router-dom";
 import { AuthContextProvider, User } from "./components/AuthContext/AuthContext";
+import { useState } from "react";
 
 function App() {
-  const {user} = User()
+  const {user} = User();
+  const [collection, setCollection] = useState('')
+
+  const getCollectionFromSlider = (seasson)=>{
+    setCollection(seasson)
+  }
+
+
  
   return (
     <div className="App">
       <Router>
           <AuthContextProvider>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home getCollectionFromSlider={(seasson)=>getCollectionFromSlider(seasson)} />}></Route>
           <Route path="/category" element={<ShopingCategoryPage />}></Route>
           <Route path="/product" element={<Product />}></Route>
           <Route path="/register" element={<Register />}></Route>  
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/cart" element={<Cart />}></Route> 
+          <Route path="/cart" element={<Cart collection={collection} />}></Route> 
         </Routes>
           </AuthContextProvider>
       </Router>
