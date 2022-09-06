@@ -27,6 +27,8 @@ const Cart = () => {
   let q = query(collection(db, `${localStorage.getItem('seasson')}Collection`));
 
   useEffect(() => {
+
+    const controller = new AbortController();
    
     setProducts([]);
     onSnapshot(q, (snapshot) => {
@@ -34,6 +36,10 @@ const Cart = () => {
         setProducts((products) => [...products, doc.data()]);
       });
     });
+
+    return (()=>{
+      controller.abort();
+    })
   }, []);
 
   const handleBackButton = (e) => {
@@ -42,8 +48,11 @@ const Cart = () => {
 
   const handleCurrentPage = (page) => {
     setCurrentPage(page);
-    console.log(page);
   };
+
+  const handleAddProduct = (e) =>{
+    navigate("/addProducts");
+  }
 
   return (
     <div className="mainCart">
@@ -51,7 +60,7 @@ const Cart = () => {
       <button className="backButton" onClick={(e) => handleBackButton(e)}>
         Back1
       </button>
-      <button className="addButton" >
+      <button className="addButton" onClick={(e)=>{handleAddProduct(e)}}>
         Add Product
       </button>
       </div>
