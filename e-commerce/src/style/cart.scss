@@ -46,9 +46,15 @@
         width: 30%;
         .summary {
           flex: 1;
+          display: flex;
           background-color: lightgray;
           font-size: 2rem;
           margin-bottom: 2rem;
+          justify-content: space-between;
+          button{
+            font-size: 2rem;
+            padding: 1rem;
+          }
         }
       }
     }

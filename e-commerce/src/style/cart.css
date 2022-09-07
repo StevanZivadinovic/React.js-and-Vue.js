@@ -79,9 +79,20 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: lightgray;
   font-size: 2rem;
   margin-bottom: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainCart .wrapper .bottom .summaryContainer .summary button {
+  font-size: 2rem;
+  padding: 1rem;
 }
 
 .product {

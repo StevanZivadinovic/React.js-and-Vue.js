@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./../style/cart.scss";
 import listsOfImage from "./../helperFunc/images";
 import { db } from "../config/firebase";
-import { collection, onSnapshot, query } from "firebase/firestore";
+import { collection, doc, onSnapshot, query, setDoc } from "firebase/firestore";
 import { Pagination } from "../components/Pagination";
 import { useNavigate } from "react-router-dom";
 
@@ -54,6 +54,23 @@ const Cart = () => {
     navigate("/addProducts");
   }
 
+  const handleAddProductToBag = (productToBuy) =>{
+    setDoc(doc(db, `bug`, `${(Math.random()*10000000).toFixed(0)}`), {
+      id: productToBuy.id,
+      productName: productToBuy.productName,
+      color: productToBuy.color,
+      size:productToBuy.size,
+      price:productToBuy.price,
+      summary:productToBuy.summary
+    }).then(()=>{
+      console.log('product added to bug');
+      
+
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
+
   return (
     <div className="mainCart">
       <div className="buttonsCartTop">
@@ -69,7 +86,7 @@ const Cart = () => {
         <div className="top">
           <button className="topButton">Continue shoping</button>
           <div className="topTexts">
-            <span className="topText">Shopping Bag(0)</span>
+            <span className="topText" onClick={()=>{navigate("/bag")}}>Shopping Bag(0)</span>
             <span className="topText">Your Wishlist</span>
           </div>
           <button className="topButton">Checkout now</button>
@@ -109,12 +126,14 @@ const Cart = () => {
               {
                 return (
                   <div className="summary" key={a.id}>
-                    {a.summary}
+                    {a.summary}<span><button onClick={(e)=>handleAddProductToBag(a)}>Buy!</button></span>
                   </div>
                 );
               }
             })}
           </div>
+
+          
         </div>
       </div>
 
