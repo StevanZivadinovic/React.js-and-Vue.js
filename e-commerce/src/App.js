@@ -16,7 +16,7 @@ import { AddProducts } from "./pages/AddProducts";
 import { Bag } from "./pages/Bag";
 
 function App() {
-  const {user} = User();
+  // const {user} = User();
   const [collection, setCollection] = useState('')
 
   const getCollectionFromSlider = (seasson)=>{

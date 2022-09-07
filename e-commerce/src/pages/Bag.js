@@ -2,9 +2,10 @@ import { collection, onSnapshot, query } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { db } from '../config/firebase';
 import listsOfImage from '../helperFunc/images';
+import './../style/bug.scss'
 
 export const Bag = () => {
-    const [productToBuy, setProductToBuy] = useState([1,2,3]);
+    const [productToBuy, setProductToBuy] = useState([]);
 
 
     let q = query(collection(db, `bug`));
@@ -26,9 +27,9 @@ export const Bag = () => {
   }, []);
 
   return (
-    <div>
-        <h1>Bag</h1>
-
+    <div className='mainBug'>
+        <h1 className='mainBugTitle'>Bag</h1>
+        <div className="mainBugContent">
         <div className=''>
         {productToBuy.map((a, i) => {
               return (
@@ -58,6 +59,19 @@ export const Bag = () => {
               );
             })}
         </div>
+        <div className="summaryContainer">
+            {productToBuy.map((a) => {
+              {
+                return (
+                  <div className="summary" key={a.id}>
+                    {a.summary}
+                  </div>
+                );
+              }
+            })}
+          </div>
+        </div>
+       
     </div>
   )
 }

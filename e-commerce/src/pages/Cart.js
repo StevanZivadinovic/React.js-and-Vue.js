@@ -10,7 +10,8 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(4);
-  const [categoryOfProduct, setCategoryOfProduct]=useState('proizvodi')
+  const [categoryOfProduct, setCategoryOfProduct]=useState('proizvodi');
+  const [numberOfProductsInBug, setNumberOfProductsInBug] = useState(0)
   const navigate = useNavigate();
 
   const indexOfLastPost = currentPage * postPerPage;
@@ -25,6 +26,9 @@ const Cart = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   let q = query(collection(db, `${localStorage.getItem('seasson')}Collection`));
+  let qBug = query(collection(db, `bug`));
+
+
 
   useEffect(() => {
 
@@ -41,6 +45,23 @@ const Cart = () => {
       controller.abort();
     })
   }, []);
+
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    setNumberOfProductsInBug([]);
+    onSnapshot(qBug, (snapshot) => {
+      snapshot.docs.map((doc) => {
+        setNumberOfProductsInBug((numberOfProductsInBug) => [...numberOfProductsInBug, doc.data()]);
+      });
+    });
+
+    return (()=>{
+      controller.abort();
+    })
+  }, [])
+  
 
   const handleBackButton = (e) => {
     navigate("/");
@@ -82,11 +103,11 @@ const Cart = () => {
       </button>
       </div>
       <div className="wrapper">
-        <h1>Your bag</h1>
+        <h1>Your shop</h1>
         <div className="top">
           <button className="topButton">Continue shoping</button>
           <div className="topTexts">
-            <span className="topText" onClick={()=>{navigate("/bag")}}>Shopping Bag(0)</span>
+            <span className="topText" onClick={()=>{navigate("/bag")}}>Shopping Bag({numberOfProductsInBug.length})</span>
             <span className="topText">Your Wishlist</span>
           </div>
           <button className="topButton">Checkout now</button>
