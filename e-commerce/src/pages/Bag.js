@@ -1,4 +1,5 @@
 import { collection, onSnapshot, query } from 'firebase/firestore';
+import { doc, deleteDoc } from "firebase/firestore";
 import React, { useEffect, useState } from 'react'
 import { db } from '../config/firebase';
 import listsOfImage from '../helperFunc/images';
@@ -8,7 +9,7 @@ export const Bag = () => {
     const [productToBuy, setProductToBuy] = useState([]);
 
 
-    let q = query(collection(db, `bug`));
+    let q = query(collection(db, `bag`));
 
   useEffect(() => {
 
@@ -26,6 +27,16 @@ export const Bag = () => {
     })
   }, []);
 
+  const handleDeleteProductFromBag = (docBag) =>{
+    console.log('haj haj')
+    deleteDoc(doc(db, "bag", docBag.id))
+    .then(()=>{
+      console.log('data is deleted')
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
+
   return (
     <div className='mainBug'>
         <h1 className='mainBugTitle'>Bag</h1>
@@ -33,7 +44,7 @@ export const Bag = () => {
         <div className=''>
         {productToBuy.map((a, i) => {
               return (
-                <div className="product" key={a.id}>
+                <div className="product" key={i}>
                   <div className="productDetail">
                     <img src={listsOfImage[i]} alt="" />
                     <div className="details">
@@ -60,11 +71,16 @@ export const Bag = () => {
             })}
         </div>
         <div className="summaryContainer">
-            {productToBuy.map((a) => {
+            {productToBuy.map((a,i) => {
               {
                 return (
-                  <div className="summary" key={a.id}>
+                  <div className="summary" key={i}>
                     {a.summary}
+                    <span>
+                      <button onClick={(e) => handleDeleteProductFromBag(a)}>
+                        Delete
+                      </button>
+                    </span>
                   </div>
                 );
               }
