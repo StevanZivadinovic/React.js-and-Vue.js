@@ -28,14 +28,24 @@ export const Bag = () => {
   }, []);
 
   const handleDeleteProductFromBag = (docBag) =>{
-    console.log('haj haj')
-    deleteDoc(doc(db, "bag", docBag.id))
-    .then(()=>{
-      console.log('data is deleted')
-    }).catch((err)=>{
-      console.log(err);
+
+    onSnapshot(q, (snapshot) => {
+      snapshot.docs.map((docFromBagDB) => {
+      if(docFromBagDB.data().id=== docBag.id){
+        deleteDoc(doc(db, "bag", docFromBagDB.id))
+        .then(()=>{
+          console.log('data is deleted')
+        }).catch((err)=>{
+          console.log(err);
+        })
+
+      }else{
+        console.log('There is no sach product')
+      }
+      });
     })
-  }
+
+}
 
   return (
     <div className='mainBug'>
