@@ -1,22 +1,24 @@
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { doc, deleteDoc } from "firebase/firestore";
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { db } from '../config/firebase';
 import listsOfImage from '../helperFunc/images';
 import './../style/bug.scss'
 
 export const Bag = () => {
     const [productToBuy, setProductToBuy] = useState([]);
+    const [noDataText, setnoDataText] = useState('The bag is empty!')
+    const productListDiv = useRef()
 
 
     let q = query(collection(db, `bag`));
 
   useEffect(() => {
-
     const controller = new AbortController();
-   
+    
     setProductToBuy([]);
     onSnapshot(q, (snapshot) => {
+      console.log('okinuto')
       snapshot.docs.map((doc) => {
         setProductToBuy((productToBuy) => [...productToBuy, doc.data()]);
       });
@@ -32,6 +34,7 @@ export const Bag = () => {
     onSnapshot(q, (snapshot) => {
       snapshot.docs.map((docFromBagDB) => {
       if(docFromBagDB.data().id=== docBag.id){
+        setProductToBuy([])
         deleteDoc(doc(db, "bag", docFromBagDB.id))
         .then(()=>{
           console.log('data is deleted')
@@ -50,11 +53,12 @@ export const Bag = () => {
   return (
     <div className='mainBug'>
         <h1 className='mainBugTitle'>Bag</h1>
+        <h2 className='emptyBagTitle'>{productToBuy.length==0 ? noDataText : ''}</h2>
         <div className="mainBugContent">
         <div className=''>
         {productToBuy.map((a, i) => {
               return (
-                <div className="product" key={i}>
+                <div className="product" key={i} ref={productListDiv}>
                   <div className="productDetail">
                     <img src={listsOfImage[i]} alt="" />
                     <div className="details">

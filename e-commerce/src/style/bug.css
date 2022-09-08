@@ -3,6 +3,12 @@
   text-align: center;
 }
 
+.emptyBagTitle {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
 .mainBugContent {
   display: -webkit-box;
   display: -ms-flexbox;
