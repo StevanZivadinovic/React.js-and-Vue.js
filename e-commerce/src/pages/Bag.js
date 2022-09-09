@@ -18,7 +18,6 @@ export const Bag = () => {
     
     setProductToBuy([]);
     onSnapshot(q, (snapshot) => {
-      console.log('okinuto')
       snapshot.docs.map((doc) => {
         setProductToBuy((productToBuy) => [...productToBuy, doc.data()]);
       });
@@ -42,8 +41,6 @@ export const Bag = () => {
           console.log(err);
         })
 
-      }else{
-        console.log('There is no sach product')
       }
       });
     })
