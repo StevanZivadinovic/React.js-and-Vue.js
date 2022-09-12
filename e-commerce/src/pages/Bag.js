@@ -18,6 +18,7 @@ export const Bag = () => {
     
     setProductToBuy([]);
     onSnapshot(q, (snapshot) => {
+      console.log('okinuto')
       snapshot.docs.map((doc) => {
         setProductToBuy((productToBuy) => [...productToBuy, doc.data()]);
       });
@@ -41,6 +42,8 @@ export const Bag = () => {
           console.log(err);
         })
 
+      }else{
+        console.log('There is no sach product')
       }
       });
     })
@@ -88,7 +91,9 @@ export const Bag = () => {
                   <div className="summary" key={i}>
                     {a.summary}
                     <span>
-                      <button onClick={(e) => handleDeleteProductFromBag(a)}>
+                      <button 
+                      onClick={(e) => handleDeleteProductFromBag(a)}
+                      >
                         Delete
                       </button>
                     </span>

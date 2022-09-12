@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import Home from "./pages/Home";
 import ShopingCategoryPage from "./pages/ShopingCategoryPage";
 import Register from "./pages/Register";
@@ -16,7 +17,7 @@ import { AddProducts } from "./pages/AddProducts";
 import { Bag } from "./pages/Bag";
 
 function App() {
-  // const {user} = User();
+  const {user} = User();
   const [collection, setCollection] = useState('')
 
   const getCollectionFromSlider = (seasson)=>{
@@ -24,12 +25,11 @@ function App() {
   }
 
 
- 
   return (
     <div className="App">
-      <Router>
+      <Router> 
           <AuthContextProvider>
-        <Routes>
+        <Routes> 
           <Route path="/" element={<Home getCollectionFromSlider={(seasson)=>getCollectionFromSlider(seasson)} />}></Route>
           <Route path="/category" element={<ShopingCategoryPage />}></Route>
           <Route path="/product" element={<Product />}></Route>
@@ -40,7 +40,7 @@ function App() {
           <Route path='/bag' element={<Bag></Bag>}></Route>
 
 
-        </Routes>
+         </Routes>
           </AuthContextProvider>
       </Router>
     </div>

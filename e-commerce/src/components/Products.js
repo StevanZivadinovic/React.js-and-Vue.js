@@ -1,3 +1,4 @@
+import * as React from 'react';
 import './../style/Products.scss'
 import Product from './Product'
 import { shoppingProducts } from './../data/data'
