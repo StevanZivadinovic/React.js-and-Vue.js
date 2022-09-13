@@ -8,10 +8,11 @@
   .second,
   .third {
     width: 33.3%;
-    // text-align: center;
     flex: 1;
     height: 3vh;
     font-size: 2rem;
+    display: flex;
+    align-items: center;
   }
 
   .first {

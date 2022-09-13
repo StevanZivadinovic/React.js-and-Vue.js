@@ -9,15 +9,15 @@ export default function Navbar() {
     const navigate = useNavigate();
     const {user,logOut}=User()
 
-    let handleNavigateRegister = ()=>{
+    const handleNavigateRegister = ()=>{
         navigate('/register');
     }
 
-    let handleNavigateLogin = ()=>{
+    const handleNavigateLogin = ()=>{
         navigate('/login');
     }
 
-    let handleLogout = ()=>{
+    const handleLogout = ()=>{
         try{
 
             navigate('/login');
@@ -26,6 +26,9 @@ export default function Navbar() {
         }catch(err){
             console.log(err)
         }
+    }
+    const handleNavigateCart = () =>{
+        navigate('/cart');
     }
     return (
         <div className='mainNavbar'>
@@ -36,7 +39,7 @@ export default function Navbar() {
                 {user?.email && <span className='logoutButton' onClick={handleLogout}>LOGOUT</span>}
                 {!user?.email && <span className='registerButton' onClick={handleNavigateRegister}>REGISTER</span>}
                 {!user?.email && <span onClick={handleNavigateLogin}>SIGN IN</span>}
-                <span><i className="fas fa-shopping-cart"></i></span>
+                <span onClick={handleNavigateCart}><i className="fas fa-shopping-cart"></i></span>
                 </div>
 
             </div>
