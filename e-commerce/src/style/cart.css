@@ -41,6 +41,16 @@
   cursor: pointer;
 }
 
+.mainCart .wrapper .top .topTexts {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .mainCart .wrapper .top .topTexts .topText {
   text-decoration: underline;
   cursor: pointer;

@@ -25,7 +25,11 @@
         cursor: pointer;
       }
       .topTexts {
+        width: 100%;
+        display: flex;
+        justify-content: center;
         .topText {
+
           text-decoration: underline;
           cursor: pointer;
           margin: 0rem 1rem;

@@ -1,21 +1,36 @@
-.mainBugTitle {
+.mainBug .mainBugTitle {
   font-size: 4rem;
   text-align: center;
 }
 
-.emptyBagTitle {
+.mainBug .topButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainBug .topButtons button {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.mainBug .emptyBagTitle {
   font-size: 2rem;
   text-align: center;
   margin-top: 5rem;
 }
 
-.mainBugContent {
+.mainBug .mainBugContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.mainBugContent .summaryContainer {
+.mainBug .mainBugContent .summaryContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,7 +42,7 @@
   width: 30%;
 }
 
-.mainBugContent .summaryContainer .summary {
+.mainBug .mainBugContent .summaryContainer .summary {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -42,7 +57,7 @@
           justify-content: space-between;
 }
 
-.mainBugContent .summaryContainer .summary button {
+.mainBug .mainBugContent .summaryContainer .summary button {
   font-size: 2rem;
   padding: 1rem;
 }

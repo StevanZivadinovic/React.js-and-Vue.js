@@ -1,6 +1,7 @@
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { doc, deleteDoc } from "firebase/firestore";
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { db } from "../config/firebase";
 import listsOfImage from "../helperFunc/images";
 import "./../style/bug.scss";
@@ -9,6 +10,7 @@ export const Bag = () => {
   const [productToBuy, setProductToBuy] = useState([]);
   const [noDataText, setnoDataText] = useState("The bag is empty!");
   const productListDiv = useRef();
+  const navigate = useNavigate()
 
   let q = query(collection(db, `bag`));
 
@@ -50,12 +52,20 @@ export const Bag = () => {
     });
   };
 
+  const handleBackToCart = ()=>{
+    navigate('/cart');
+  }
+
   return (
     <div className="mainBug">
       <h1 className="mainBugTitle">Bag</h1>
       <h2 className="emptyBagTitle">
         {productToBuy.length == 0 ? noDataText : ""}
       </h2>
+      <div className="topButtons">
+      <button className="topButton" onClick={handleBackToCart}>Continue shoping</button>
+      <button className="topButton">Checkout now</button>
+      </div>
       <div className="mainBugContent">
         <div className="">
           {productToBuy.map((a, i) => {

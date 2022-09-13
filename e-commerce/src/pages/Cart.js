@@ -108,7 +108,7 @@ const Cart = () => {
       <div className="wrapper">
         <h1>Your shop</h1>
         <div className="top">
-          <button className="topButton">Continue shoping</button>
+         
           <div className="topTexts">
             <span
               className="topText"
@@ -120,7 +120,7 @@ const Cart = () => {
             </span>
             <span className="topText">Your Wishlist</span>
           </div>
-          <button className="topButton">Checkout now</button>
+          
         </div>
         <div className="bottom">
           <div className="info">

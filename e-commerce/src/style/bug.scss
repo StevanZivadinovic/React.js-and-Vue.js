@@ -1,6 +1,18 @@
-.mainBugTitle{
+
+
+.mainBug{
+  .mainBugTitle{
     font-size: 4rem;
     text-align: center;
+}
+.topButtons{
+  display: flex;
+justify-content: space-between;
+button{
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
 }
 .emptyBagTitle{
   font-size: 2rem;
@@ -29,4 +41,5 @@
           }
         }
       }
+}
 }
