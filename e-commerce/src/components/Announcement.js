@@ -1,4 +1,5 @@
 import React from 'react'
+import './../style/announcement.scss';
 
 function Announcement() {
     const styleAnnouncement = {
@@ -8,11 +9,11 @@ function Announcement() {
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
-        fontSize:'1.4rem'
+        
     }
     return (
-        <div style={styleAnnouncement}>
-            Super Deal! Free Shipping on Orders Over $50
+        <div style={styleAnnouncement} className='mainAnnouncement'>
+            <p>Super Deal! Free Shipping on Orders Over $50</p>
         </div>
     )
 }

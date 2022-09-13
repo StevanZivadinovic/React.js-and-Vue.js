@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,iBADa,CACb,CAAC,CAAA;EACG,SAAS,EAAE,MAAM;EACjB,SAAS,EAAE,gCAAgC;CAE9C;;AAGL,UAAU,CAAV,oBAAU;EACN,IAAI;IAAE,IAAI,EAAE,GAAG;;EACf,EAAE;IAAE,IAAI,EAAE,KAAK",
+    "sources": [
+        "announcement.scss"
+    ],
+    "names": [],
+    "file": "announcement.css"
+}
