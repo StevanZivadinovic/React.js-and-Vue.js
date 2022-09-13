@@ -20,7 +20,9 @@ export const Bag = () => {
     onSnapshot(q, (snapshot) => {
       console.log('okinuto')
       snapshot.docs.map((doc) => {
-        setProductToBuy((productToBuy) => [...productToBuy, doc.data()]);
+        let c = doc.data();
+        c['docID']=doc.id;
+        setProductToBuy((productToBuy) => [...productToBuy, c]);
       });
     });
 
@@ -30,19 +32,23 @@ export const Bag = () => {
   }, []);
 
   const handleDeleteProductFromBag = (docBag) =>{
-
+console.log(docBag)
     onSnapshot(q, (snapshot) => {
-      snapshot.docs.map((docFromBagDB) => {
-      if(docFromBagDB.data().id=== docBag.id){
-        setProductToBuy([])
-        deleteDoc(doc(db, "bag", docFromBagDB.id))
-        .then(()=>{
+      snapshot.docChanges().forEach((docFromBagDB) => {
+        if(docFromBagDB.doc.id=== docBag.docID){
+          console.log(docFromBagDB.doc.id, docBag.docID)
+          deleteDoc(doc(db, "bag", docFromBagDB.doc.id))
+          .then(()=>{
+          // setProductToBuy([])
+        
+          
           console.log('data is deleted')
         }).catch((err)=>{
           console.log(err);
         })
-
+        
       }else{
+       
         console.log('There is no sach product')
       }
       });
@@ -92,6 +98,7 @@ export const Bag = () => {
                     {a.summary}
                     <span>
                       <button 
+                      // data-id={a.doc.id}
                       onClick={(e) => handleDeleteProductFromBag(a)}
                       >
                         Delete
