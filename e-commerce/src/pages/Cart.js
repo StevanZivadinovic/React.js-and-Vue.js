@@ -5,6 +5,7 @@ import { db } from "../config/firebase";
 import { collection, doc, onSnapshot, query, setDoc } from "firebase/firestore";
 import { Pagination } from "../components/Pagination";
 import { useNavigate } from "react-router-dom";
+import { User } from "../components/AuthContext/AuthContext";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -17,6 +18,8 @@ const Cart = () => {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
+
+ const {user} = User()
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -96,14 +99,14 @@ const Cart = () => {
         <button className="backButton" onClick={(e) => handleBackButton(e)}>
           Back1
         </button>
-        <button
+        {user ? <button
           className="addButton"
           onClick={(e) => {
             handleAddProduct(e);
           }}
         >
           Add Product
-        </button>
+        </button> : ''}
       </div>
       <div className="wrapper">
         <h1>Your shop</h1>
