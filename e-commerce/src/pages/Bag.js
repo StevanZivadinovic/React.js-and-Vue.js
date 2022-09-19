@@ -33,7 +33,6 @@ export const Bag = () => {
   }, []);
 
   const handleDeleteProductFromBag = (docBag) => {
-    console.log(docBag);
     onSnapshot(q, (snapshot) => {
       snapshot.docChanges().forEach((docFromBagDB) => {
         if (docFromBagDB.doc.id === docBag.docID) {

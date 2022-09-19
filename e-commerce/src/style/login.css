@@ -74,4 +74,19 @@
   color: grey;
   display: block;
 }
+
+.mainLogin .orText {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.mainLogin .customerButton {
+  margin: 0;
+  padding: 2rem;
+  width: 40%;
+  font-size: 2rem;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+}
 /*# sourceMappingURL=login.css.map */

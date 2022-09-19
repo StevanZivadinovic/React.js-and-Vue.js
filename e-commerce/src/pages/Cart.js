@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./../style/cart.scss";
 import listsOfImage from "./../helperFunc/images";
 import { db } from "../config/firebase";
-import { collection, doc, onSnapshot, query, setDoc } from "firebase/firestore";
+import { collection, deleteDoc, doc, onSnapshot, query, setDoc } from "firebase/firestore";
 import { Pagination } from "../components/Pagination";
 import { useNavigate } from "react-router-dom";
 import { User } from "../components/AuthContext/AuthContext";
@@ -41,10 +41,12 @@ const Cart = () => {
   useEffect(() => {
     const controller = new AbortController();
 
-    setProducts([]);
     onSnapshot(q, (snapshot) => {
+      setProducts([]);
       snapshot.docs.map((doc) => {
-        setProducts((products) => [...products, doc.data()]);
+        let c = doc.data();
+        c["docID"] = doc.id;
+        setProducts((products) => [...products, c]);
       });
     });
 
@@ -93,6 +95,25 @@ const Cart = () => {
       });
   };
 
+
+  const handleDeleteProductFromCart = (docBag) => {
+    onSnapshot(q, (snapshot) => {
+      snapshot.docChanges().forEach((docFromCartDB) => {
+        if (docFromCartDB.doc.id === docBag.docID) {
+          deleteDoc(doc(db, `${localStorage.getItem("seasson")}Collection`, docFromCartDB.doc.id))
+            .then(() => {
+              console.log("data is deleted");
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } else {
+          console.log("There is no sach product");
+        }
+      });
+    });
+  };
+
   return (
     <div className="mainCart">
       <div className="buttonsCartTop">
@@ -112,7 +133,7 @@ const Cart = () => {
         <h1>Your shop</h1>
         <div className="top">
          
-          <div className="topTexts">
+          {!user?.email && <div className="topTexts">
             <span
               className="topText"
               onClick={() => {
@@ -122,8 +143,8 @@ const Cart = () => {
               Shopping Bag({numberOfProductsInBug.length})
             </span>
             <span className="topText">Your Wishlist</span>
-          </div>
-          
+          </div>}
+
         </div>
         <div className="bottom">
           <div className="info">
@@ -165,9 +186,12 @@ const Cart = () => {
                   <div className="summary" key={a.id}>
                     {a.summary}
                     <span>
-                      <button onClick={(e) => handleAddProductToBag(a)}>
+                      {user?.email && <button onClick={(e) => handleDeleteProductFromCart(a)}>
+                        Delete!
+                      </button>}
+                      {!user?.email && <button onClick={(e) => handleAddProductToBag(a)}>
                         Buy!
-                      </button>
+                      </button>}
                     </span>
                   </div>
                 );

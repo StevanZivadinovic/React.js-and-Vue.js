@@ -27,6 +27,10 @@ const Login = () => {
       console.log(err);
     }
   };
+
+  const handleNavigateToHomePage = ()=>{
+    navigate('/')
+  }
   return (
     <div className="mainLogin">
     <div className="wrapper">
@@ -38,6 +42,8 @@ const Login = () => {
         <button onClick={(e)=>{handleSignIn(e)}}>Login</button>
         <Link to='/register'>Create new account</Link>
       </form>
+      <p className='orText'>OR</p>
+      <button className='customerButton' onClick={()=>{handleNavigateToHomePage()}}>Continue as customer!</button>
     </div>
   </div>
   )
