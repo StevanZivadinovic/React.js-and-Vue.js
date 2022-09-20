@@ -36,7 +36,6 @@ const Login = () => {
     <div className="wrapper">
       <h1>Sign in</h1>
       <form>
-       
         <input placeholder="email" type="email" onChange={(e)=>{setEmail(e.target.value)}}/>
         <input placeholder="password" type="text" onChange={(e)=>{setPassword(e.target.value)}}/>
         <button onClick={(e)=>{handleSignIn(e)}}>Login</button>
