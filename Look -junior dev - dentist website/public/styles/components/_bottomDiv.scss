@@ -1,0 +1,81 @@
+.bottomDiv{
+    font-size: 3.7vw;
+    color:rgb(112,112,112);
+
+    .text{
+        margin: 0 10px 20% 10px;
+        line-height: 10vw;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        .textPara{
+           
+            .main{
+                .bolded{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    .initialyHiddenDisclimer{
+        display: none;
+    }
+
+    
+    .second{
+        margin: 0 10px 10% 10px;
+
+    }
+    .footerText{
+        margin: 0 10px 5% 10px;
+
+    }
+    .initialyHiddenImage{
+        display: none;
+    }
+    
+}
+
+@media (min-width: 960px) {
+.bottomDiv{
+    font-size: 12px;
+    max-width: 954px;
+    margin: 0 auto;
+    .text{
+        line-height: 30px !important;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 5%;
+        text-align: center;
+
+    }
+    .initialyHiddenDisclimer{
+        margin: 30% auto 0px auto;
+        display: block;
+        
+        
+    }
+    
+    
+    .initialyShowDisclimer{
+        display: none;
+    }
+    .footerText{
+       margin-bottom: 12px;
+       line-height: 18px !important;
+
+    }
+    .Advertising{
+        margin-top: 2.5% !important;
+    }
+}
+    .initialyHiddenImage{
+        display: block !important;
+        text-align: center !important;
+    }
+    .rights{
+        margin-top: 2% !important;
+        margin-bottom: 24px !important;
+       
+        
+    }
+}

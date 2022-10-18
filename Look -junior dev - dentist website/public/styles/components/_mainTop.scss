@@ -1,0 +1,248 @@
+.topButton {
+  font-family: sans-serif;
+  border: 2px solid rgb(128, 130, 133);
+  border-radius: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+
+  .top,
+  .middle,
+  .bottom {
+    position: relative;
+
+    .mainLink {
+      position: absolute;
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      text-decoration: none;
+    }
+  }
+  .mainTop {
+    a {
+      text-decoration: none;
+      color: black;
+      line-height: 6vw;
+
+      .mainTopTitleFirst {
+        margin-top: 10px;
+        font-size: 6vw;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 12px;
+        .blueText {
+          color: #3498db;
+        }
+      }
+      .mainTopTitleSecond {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        font-size: 6.5vw;
+      }
+    }
+  }
+
+  .mainImage {
+    box-shadow: 0px 0px 10px 0px #000;
+    margin: 10% 10px 10% 10px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(128, 130, 133);;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .mainGreenButton {
+    max-width: 100%;
+    padding: 0 15px;
+
+    .mainGreenButtonLink {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      text-decoration: none;
+
+      button {
+        box-shadow: 0px 0px 10px 0px rgb(52, 147, 45);
+        background-color: rgb(52, 147, 45);
+        border: none;
+        border-radius: 15px;
+        padding: 1px;
+        width: 100%;
+        height: 15vw;
+        font-size: 6vw;
+        color: white;
+        font-weight: 700;
+        margin-bottom: 5%;
+        cursor: pointer;
+        text-align: center;
+        position: relative;
+        
+
+        .svgImage {
+          position: absolute;
+          fill: white;
+          max-width: 15vw;
+          max-height: 15vw;
+          width: 15vw;
+          height: 15vw;
+          top: 0;
+          left: 40px;
+        }
+      }
+    }
+    
+  }
+  .textDivMain {
+    margin: 0 10px 10% 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 6.5vw;
+    font-weight: 400;
+
+    .boldText {
+      font-weight: 700;
+    }
+    .underlinedText {
+      text-decoration: underline;
+    }
+  }
+  .videoDescriptionTitle {
+    text-align: center;
+    font-size: 11vw;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    margin: 0 5px 10% 5px;
+  }
+  .videoDescriptionSubTitle {
+    text-align: center;
+    font-size: 8vw;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    margin: 0 5px 10% 5px;
+  }
+  .mainList {
+    text-align: center;
+    font-size: 6.5vw;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin: 0 10px 10% 10px;
+    margin-left: 40px;
+    li {
+      list-style-type: none;
+      text-align: left;
+      margin-bottom: 18px;
+      &::before {
+        content: "\f111";
+        width: 17px;
+        margin-left: -25px;
+        margin-right: 8px;
+        font-size: 4vw;
+        line-height: 10px;
+        position: relative;
+        vertical-align: top;
+        top: 20px;
+        font-family: FontAwesome;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .topButton {
+    max-width: 954px;
+    margin: 0 auto;
+    .mainTop{
+      width: 80%;
+      margin: 0 auto;
+      letter-spacing: 0rem;
+      a{
+        .mainTopTitleFirst, .mainTopTitleSecond{
+          font-size: 32px;
+          line-height: 32px;
+        }
+      }
+    }
+    .mainImage{
+      width: 723px;
+      height: 405px;
+      margin: 1% auto 3% auto;
+
+    }
+    .mainGreenButtonLink {
+     text-align: center;
+      button{
+        width: 436px !important;
+        height: 74px !important;
+        font-size: 28px !important;
+      }
+    }
+    #textDivMain {
+      width: 85%;
+      margin: 0 auto;
+      .textDivMain {
+        letter-spacing: 0rem;
+        font-size: 22px;
+        line-height: 26px;
+        margin: 0 10px 5% 10px;
+      }
+
+      .videoDescriptionTitle{
+        font-size: 36px;
+        margin: 0 5px 5% 5px;
+      }
+      .videoDescriptionSubTitle{
+        font-size: 26px;
+        margin: 0 5px 5% 5px;
+      }
+      .mainList{
+        text-align: left;
+        line-height: 26px;
+        font-size: 22px;
+
+        li {
+        
+          &::before {
+            content: "\f111";
+            width: 11px;
+            height: 0;
+            margin-left: -19px;
+            margin-right: 8px;
+            font-size: 13px;
+            line-height: 0;
+            position: relative;
+            vertical-align: top;
+            top: 13px;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+
+  .svgImage {
+    fill: white;
+    max-width: 15vw;
+    max-height: 15vw;
+    width: 50px !important;
+    height: 50px !important;
+    top: 15% !important;
+  }

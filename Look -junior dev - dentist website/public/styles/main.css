@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+.topButton {
+  font-family: sans-serif;
+  border: 2px solid rgb(128, 130, 133);
+  border-radius: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.topButton .top,
+.topButton .middle,
+.topButton .bottom {
+  position: relative;
+}
+.topButton .top .mainLink,
+.topButton .middle .mainLink,
+.topButton .bottom .mainLink {
+  position: absolute;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  text-decoration: none;
+}
+.topButton .mainTop a {
+  text-decoration: none;
+  color: black;
+  line-height: 6vw;
+}
+.topButton .mainTop a .mainTopTitleFirst {
+  margin-top: 10px;
+  font-size: 6vw;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.topButton .mainTop a .mainTopTitleFirst .blueText {
+  color: #3498db;
+}
+.topButton .mainTop a .mainTopTitleSecond {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 6.5vw;
+}
+.topButton .mainImage {
+  box-shadow: 0px 0px 10px 0px #000;
+  margin: 10% 10px 10% 10px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgb(128, 130, 133);
+}
+.topButton .mainImage img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+}
+.topButton .mainGreenButton {
+  max-width: 100%;
+  padding: 0 15px;
+}
+.topButton .mainGreenButton .mainGreenButtonLink {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  text-decoration: none;
+}
+.topButton .mainGreenButton .mainGreenButtonLink button {
+  box-shadow: 0px 0px 10px 0px rgb(52, 147, 45);
+  background-color: rgb(52, 147, 45);
+  border: none;
+  border-radius: 15px;
+  padding: 1px;
+  width: 100%;
+  height: 15vw;
+  font-size: 6vw;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 5%;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+.topButton .mainGreenButton .mainGreenButtonLink button .svgImage {
+  position: absolute;
+  fill: white;
+  max-width: 15vw;
+  max-height: 15vw;
+  width: 15vw;
+  height: 15vw;
+  top: 0;
+  left: 40px;
+}
+.topButton .textDivMain {
+  margin: 0 10px 10% 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 6.5vw;
+  font-weight: 400;
+}
+.topButton .textDivMain .boldText {
+  font-weight: 700;
+}
+.topButton .textDivMain .underlinedText {
+  text-decoration: underline;
+}
+.topButton .videoDescriptionTitle {
+  text-align: center;
+  font-size: 11vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  margin: 0 5px 10% 5px;
+}
+.topButton .videoDescriptionSubTitle {
+  text-align: center;
+  font-size: 8vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin: 0 5px 10% 5px;
+}
+.topButton .mainList {
+  text-align: center;
+  font-size: 6.5vw;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin: 0 10px 10% 10px;
+  margin-left: 40px;
+}
+.topButton .mainList li {
+  list-style-type: none;
+  text-align: left;
+  margin-bottom: 18px;
+}
+.topButton .mainList li::before {
+  content: "\f111";
+  width: 17px;
+  margin-left: -25px;
+  margin-right: 8px;
+  font-size: 4vw;
+  line-height: 10px;
+  position: relative;
+  vertical-align: top;
+  top: 20px;
+  font-family: FontAwesome;
+}
+
+@media (min-width: 960px) {
+  .topButton {
+    max-width: 954px;
+    margin: 0 auto;
+  }
+  .topButton .mainTop {
+    width: 80%;
+    margin: 0 auto;
+    letter-spacing: 0rem;
+  }
+  .topButton .mainTop a .mainTopTitleFirst, .topButton .mainTop a .mainTopTitleSecond {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .topButton .mainImage {
+    width: 723px;
+    height: 405px;
+    margin: 1% auto 3% auto;
+  }
+  .topButton .mainGreenButtonLink {
+    text-align: center;
+  }
+  .topButton .mainGreenButtonLink button {
+    width: 436px !important;
+    height: 74px !important;
+    font-size: 28px !important;
+  }
+  .topButton #textDivMain {
+    width: 85%;
+    margin: 0 auto;
+  }
+  .topButton #textDivMain .textDivMain {
+    letter-spacing: 0rem;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 0 10px 5% 10px;
+  }
+  .topButton #textDivMain .videoDescriptionTitle {
+    font-size: 36px;
+    margin: 0 5px 5% 5px;
+  }
+  .topButton #textDivMain .videoDescriptionSubTitle {
+    font-size: 26px;
+    margin: 0 5px 5% 5px;
+  }
+  .topButton #textDivMain .mainList {
+    text-align: left;
+    line-height: 26px;
+    font-size: 22px;
+  }
+  .topButton #textDivMain .mainList li::before {
+    content: "\f111";
+    width: 11px;
+    height: 0;
+    margin-left: -19px;
+    margin-right: 8px;
+    font-size: 13px;
+    line-height: 0;
+    position: relative;
+    vertical-align: top;
+    top: 13px;
+  }
+}
+.svgImage {
+  fill: white;
+  max-width: 15vw;
+  max-height: 15vw;
+  width: 50px !important;
+  height: 50px !important;
+  top: 15% !important;
+}
+
+.freeLinks {
+  display: flex;
+  justify-content: center;
+  margin: 10rem 0;
+}
+.freeLinks p a {
+  color: rgb(65, 105, 225);
+  font-size: 4vw;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+}
+
+@media (min-width: 960px) {
+  .freeLinks {
+    margin: 10rem 0 2rem 0;
+  }
+  .freeLinks p a {
+    font-size: 12px;
+    line-height: 30px;
+  }
+}
+.scientificReferences {
+  margin-bottom: 10%;
+}
+.scientificReferences a .firstImage {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+.scientificReferences a .firstImage img {
+  width: 20vw;
+}
+.scientificReferences a .secondImage {
+  border: 2px solid rgb(128, 130, 133);
+  border-radius: 10px;
+  max-width: 100%;
+}
+.scientificReferences a .secondImage img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (min-width: 960px) {
+  .scientificReferences {
+    max-width: 954px;
+    margin: 0 auto;
+  }
+  .scientificReferences a .firstImage {
+    display: none;
+  }
+}
+.bottomDiv {
+  font-size: 3.7vw;
+  color: rgb(112, 112, 112);
+}
+.bottomDiv .text {
+  margin: 0 10px 20% 10px;
+  line-height: 10vw;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+.bottomDiv .text .textPara .main .bolded {
+  font-weight: 700;
+}
+.bottomDiv .initialyHiddenDisclimer {
+  display: none;
+}
+.bottomDiv .second {
+  margin: 0 10px 10% 10px;
+}
+.bottomDiv .footerText {
+  margin: 0 10px 5% 10px;
+}
+.bottomDiv .initialyHiddenImage {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .bottomDiv {
+    font-size: 12px;
+    max-width: 954px;
+    margin: 0 auto;
+  }
+  .bottomDiv .text {
+    line-height: 30px !important;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center;
+  }
+  .bottomDiv .initialyHiddenDisclimer {
+    margin: 30% auto 0px auto;
+    display: block;
+  }
+  .bottomDiv .initialyShowDisclimer {
+    display: none;
+  }
+  .bottomDiv .footerText {
+    margin-bottom: 12px;
+    line-height: 18px !important;
+  }
+  .bottomDiv .Advertising {
+    margin-top: 2.5% !important;
+  }
+  .initialyHiddenImage {
+    display: block !important;
+    text-align: center !important;
+  }
+  .rights {
+    margin-top: 2% !important;
+    margin-bottom: 24px !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */

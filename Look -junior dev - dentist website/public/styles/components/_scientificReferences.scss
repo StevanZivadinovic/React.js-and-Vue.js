@@ -1,0 +1,35 @@
+.scientificReferences{
+    margin-bottom: 10%;
+    a{
+        .firstImage{
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 5%;
+            img{
+                width: 20vw;
+                
+            }
+        }
+        .secondImage{
+            border: 2px solid rgb(128, 130, 133);
+            border-radius:10px;
+            max-width: 100%;
+            img{
+                width:100%;
+                border-radius:10px;
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .scientificReferences{
+        max-width: 954px;
+        margin: 0 auto;
+        a{
+            .firstImage{
+                display: none;
+            }
+        }
+    }
+}
