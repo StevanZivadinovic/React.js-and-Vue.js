@@ -145,7 +145,7 @@ export default class Galerija extends React.Component {
         <GalerijaDrugaStrana/>
         <GalerijaTrecaStrana/>
         <GalerijaCetvrtaStrana/>
-        <GalerijaPetaStrana></GalerijaPetaStrana>
+        <GalerijaPetaStrana/>
           <Footer></Footer>
 
           {isOpen && (
