@@ -5,9 +5,9 @@ import ikona12 from "./../assets/ikona12.png";
 import ikona13 from "./../assets/ikona13.png";
 import ikona14 from "./../assets/ikona14.png";
 import ikona15 from "./../assets/ikona15.png";
-import ikona16 from "./../assets/ikona16.jpg";
-import ikona17 from "./../assets/ikona17.jpg";
-import ikona18 from "./../assets/ikona18.jpg";
+import ikona16 from "./../assets/ikona16.png";
+import ikona17 from "./../assets/ikona17.png";
+import ikona18 from "./../assets/ikona18.png";
 import Lightbox from "react-image-lightbox";
 const images = [
   ikona10,
