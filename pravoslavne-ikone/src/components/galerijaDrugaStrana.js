@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import ikona10 from "./../assets/ikona10.jpg";
-import ikona11 from "./../assets/ikona11.jpg";
-import ikona12 from "./../assets/ikona12.jpg";
-import ikona13 from "./../assets/ikona13.jpg";
-import ikona14 from "./../assets/ikona14.jpg";
-import ikona15 from "./../assets/ikona15.jpg";
+import ikona10 from "./../assets/ikona10.png";
+import ikona11 from "./../assets/ikona11.png";
+import ikona12 from "./../assets/ikona12.png";
+import ikona13 from "./../assets/ikona13.png";
+import ikona14 from "./../assets/ikona14.png";
+import ikona15 from "./../assets/ikona15.png";
 import ikona16 from "./../assets/ikona16.jpg";
 import ikona17 from "./../assets/ikona17.jpg";
 import ikona18 from "./../assets/ikona18.jpg";

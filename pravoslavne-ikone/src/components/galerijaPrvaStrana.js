@@ -1,13 +1,13 @@
 import React, {Component} from "react";
-import ikona1 from "./../assets/ikona1.jpg";
-import ikona2 from "./../assets/ikona2.jpg";
-import ikona3 from "./../assets/ikona3.jpg";
-import ikona4 from "./../assets/ikona4.jpg";
-import ikona5 from "./../assets/ikona5.jpg";
-import ikona6 from "./../assets/ikona6.jpg";
-import ikona7 from "./../assets/ikona7.jpg";
-import ikona8 from "./../assets/ikona8.jpg";
-import ikona9 from "./../assets/ikona9.jpg";
+import ikona1 from "./../assets/ikona1.png";
+import ikona2 from "./../assets/ikona2.png";
+import ikona3 from "./../assets/ikona3.png";
+import ikona4 from "./../assets/ikona4.png";
+import ikona5 from "./../assets/ikona5.png";
+import ikona6 from "./../assets/ikona6.png";
+import ikona7 from "./../assets/ikona7.png";
+import ikona8 from "./../assets/ikona8.png";
+import ikona9 from "./../assets/ikona9.png";
 import Lightbox from "react-image-lightbox";
 
 
@@ -47,9 +47,6 @@ const textFooter = [
   "30x40cm",
   "26x61cm",
 ];
-
-
-
 
 export default class galerijaPrvaStrana extends Component {
 
