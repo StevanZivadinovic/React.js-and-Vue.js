@@ -20,10 +20,10 @@ import ikona16 from "./../assets/ikona16.png";
 import ikona17 from "./../assets/ikona17.png";
 import ikona18 from "./../assets/ikona18.png";
 
-import ikona19 from "./../assets/ikona19.jpg";
-import ikona20 from "./../assets/ikona20.jpg";
-import ikona21 from "./../assets/ikona21.jpg";
-import ikona22 from "./../assets/ikona22.jpg";
+import ikona19 from "./../assets/ikona19.png";
+import ikona20 from "./../assets/ikona20.png";
+import ikona21 from "./../assets/ikona21.png";
+import ikona22 from "./../assets/ikona22.png";
 import ikona23 from "./../assets/ikona23.jpg";
 import ikona24 from "./../assets/ikona24.jpg";
 import ikona25 from "./../assets/ikona25.jpg";
