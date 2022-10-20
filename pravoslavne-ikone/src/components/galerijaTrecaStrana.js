@@ -3,11 +3,11 @@ import ikona19 from "./../assets/ikona19.png";
 import ikona20 from "./../assets/ikona20.png";
 import ikona21 from "./../assets/ikona21.png";
 import ikona22 from "./../assets/ikona22.png";
-import ikona23 from "./../assets/ikona23.jpg";
-import ikona24 from "./../assets/ikona24.jpg";
-import ikona25 from "./../assets/ikona25.jpg";
-import ikona26 from "./../assets/ikona26.jpg";
-import ikona27 from "./../assets/ikona27.jpg";
+import ikona23 from "./../assets/ikona23.png";
+import ikona24 from "./../assets/ikona24.png";
+import ikona25 from "./../assets/ikona25.png";
+import ikona26 from "./../assets/ikona26.png";
+import ikona27 from "./../assets/ikona27.png";
 import Lightbox from "react-image-lightbox";
 const images = [
   ikona19,

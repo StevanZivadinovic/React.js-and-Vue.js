@@ -4,10 +4,10 @@ import ikona38 from "./../assets/ikona38.JPG";
 import ikona39 from "./../assets/ikona39.JPG";
 import ikona40 from "./../assets/ikona40.JPG";
 import ikona41 from "./../assets/ikona41.jpg";
-import ikona42 from "./../assets/ikona42.jpg";
-import ikona43 from "./../assets/ikona43.jpg";
-import ikona44 from "./../assets/ikona44.jpg";
-import ikona45 from "./../assets/ikona45.jpg";
+import ikona42 from "./../assets/ikona42.png";
+import ikona43 from "./../assets/ikona43.png";
+import ikona44 from "./../assets/ikona44.png";
+import ikona45 from "./../assets/ikona45.png";
 import Lightbox from "react-image-lightbox";
 const images = [
   ikona37,
