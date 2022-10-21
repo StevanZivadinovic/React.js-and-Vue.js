@@ -1,16 +1,12 @@
 import React from "react";
 import "./../style/Home.scss";
-// import { Link, animateScroll as scroll } from "react-scroll";
 import daska from "./../assets/daska.jpg";
 import daska1 from "./../assets/daska1.jpg";
 import daska2 from "./../assets/daska2.jpg";
 import zlatni_listici from "./../assets/zlatni_listici.jpg";
 import pigment from "./../assets/pigment.jpg";
-import fb from "./../assets/facebook.svg";
 import Footer from "./footer";
 
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Footer from "./footer";
 
 export default function Home() {
   return (
