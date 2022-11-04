@@ -1,28 +1,27 @@
 import React, {Component} from 'react'
 import ikona48 from "./../assets/ikona48.png";
+import ikona49 from "./../assets/ikona49.png";
+
 
 import Lightbox from "react-image-lightbox";
 const images = [
     ikona48,
+    ikona49
  
 
 ];
 
 const textHeader = [
   "Св Ксенија Петроградска",
+  "Св Архангел Михаил",
+
 
 ];
 
 const textFooter = [
   "30x40cm",
-  "21x30cm",
-  "21x30cm",
-  "21х30cm",
-  "26x61cm",
-  "30x40cm",
-  "2х(18x40)cm",
-  "30x40cm",
-  "30x40cm",
+  "25x50cm",
+
 ];
 
 
@@ -54,12 +53,18 @@ export default class GalerijaSestaStrana extends Component {
     />
     <p className="title"> Св Ксенија Петроградска</p>
     <p className='dimension'>Димензије 30х40cm</p>
-    {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 
-  
-
- 
+  <div className="sektor">
+    <img
+      imageTitle="slika"
+      className="slika"
+      src={ikona49}
+      onClick={() => this.setState({ isOpen: true, photoIndex: 1 })}
+    />
+    <p className="title"> Св Архангел Михаил</p>
+    <p className='dimension'>Димензије 25х50cm</p>
+  </div>
 </div>
 
 
