@@ -58,6 +58,7 @@ import GalerijaDrugaStrana  from "./galerijaDrugaStrana";
 import GalerijaTrecaStrana  from "./galerijaTrecaStrana";
 import GalerijaCetvrtaStrana from './galerijaCetvrtaStrana';
 import GalerijaPetaStrana from './galerijaPetaStrana';
+import GalerijaSestaStrana from "./galerijaSestaStrana";
 
 
 
@@ -146,6 +147,7 @@ export default class Galerija extends React.Component {
         <GalerijaTrecaStrana/>
         <GalerijaCetvrtaStrana/>
         <GalerijaPetaStrana/>
+        <GalerijaSestaStrana/>
           <Footer></Footer>
 
           {isOpen && (
