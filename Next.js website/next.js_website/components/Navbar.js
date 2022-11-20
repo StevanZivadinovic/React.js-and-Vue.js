@@ -15,8 +15,7 @@ export const Navbar = () => {
   useEffect(() => {
     
     window.addEventListener('scroll', ()=>{
-      if(window.scrollY >= 10){
-        console.log('skrolovano')
+      if(window.scrollY >= 90){
         setColor('white');
         setTextColor('black');
       }else{
@@ -34,7 +33,7 @@ export const Navbar = () => {
           <h1 style={{color:`${textColor}`}} className="font-bold text-4xl">Captur</h1>
         </Link>
 
-        <ul className="hidden sm:flex">
+        <ul className="hidden sm:flex" style={{color:`${textColor}`}}>
           <li className="p-4">
             <Link href="/">Home</Link>
           </li>
