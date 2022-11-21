@@ -13,9 +13,9 @@ const Slider = () => {
     setCurrent(current === 0 ? SliderData.length - 1 : current - 1);
   };
   return (
-    <div id="gallery" className="max-w-[1240px] mx-auto">
+    <div id="gallery" className="max-w-[1240px] mx-auto mb-[1rem]">
       <h1 className="text-2xl font-bold text-center p-4">Gallery</h1>
-      <div className="relative flex justify-center p-4">
+      <div className="relative flex justify-center  mx-[2rem]">
         {SliderData.map((img, i) => {
           return (
             <div
@@ -24,26 +24,26 @@ const Slider = () => {
                   ? "opacity-[1] ease-in duration-1000"
                   : "opacity-0"
               }
+              style={{height:'660px', width:'1440px'}}
               key={i}
             >
               <FaArrowCircleLeft
                 onClick={previousSlide}
                 size={50}
-                className="absolute top-[50%] left-[30px] cursor-pointer text-white/70 select-none z-[2] "
+                className="absolute top-[50%] left-[100px] cursor-pointer text-white/70 select-none z-[2] "
               />
               {i === current && (
                 <Image
                   src={img.image}
-                  width={1440}
-                  height={600}
                   alt="image"
-                  style={{ objectFit: "cover" }}
+                  layout="fill"
+                  objectFit="contain"       
                 />
               )}
               <FaArrowCircleRight
                 onClick={nextSlide}
                 size={50}
-                className="absolute top-[50%] right-[30px] cursor-pointer text-white/70 select-none z-[2]"
+                className="absolute top-[50%] right-[100px] cursor-pointer text-white/70 select-none z-[2]"
               />
             </div>
           );
