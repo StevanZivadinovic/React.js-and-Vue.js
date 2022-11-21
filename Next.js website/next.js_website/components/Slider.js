@@ -36,7 +36,7 @@ const Slider = () => {
                 <Image
                   src={img.image}
                   alt="image"
-                  layout="fill"
+                  fill
                   objectFit="contain"       
                 />
               )}
