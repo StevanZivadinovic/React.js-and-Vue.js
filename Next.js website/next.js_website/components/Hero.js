@@ -4,7 +4,7 @@ const Hero = ({heading, message }) => {
   return (
     <div
       className="h-screen flex justify-center align-center items-center custom-bg
-    bg-center bg-cover bg-no-repeat
+    bg-center bg-cover bg-no-repeat scroll-smooth
     "
     >
       {/* Overlay */}
