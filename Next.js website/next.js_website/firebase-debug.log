@@ -1,0 +1,106 @@
+[debug] [2022-11-22T17:41:12.550Z] ----------------------------------------------------------------------
+[debug] [2022-11-22T17:41:12.553Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Name\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-22T17:41:12.554Z] CLI Version:   11.16.1
+[debug] [2022-11-22T17:41:12.554Z] Platform:      win32
+[debug] [2022-11-22T17:41:12.554Z] Node Version:  v16.14.0
+[debug] [2022-11-22T17:41:12.555Z] Time:          Tue Nov 22 2022 18:41:12 GMT+0100 (Central European Standard Time)
+[debug] [2022-11-22T17:41:12.556Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-22T17:41:12.655Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-22T17:41:12.656Z] > authorizing via signed-in user (stevanzivadinovic11@gmail.com)
+[debug] [2022-11-22T17:41:12.656Z] [iam] checking project nextjs-website-c2bd7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-22T17:41:12.660Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions [none]
+[debug] [2022-11-22T17:41:12.661Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions x-goog-quota-user=projects/nextjs-website-c2bd7
+[debug] [2022-11-22T17:41:12.661Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-22T17:41:13.461Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions 200
+[debug] [2022-11-22T17:41:13.461Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-22T17:41:13.463Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 [none]
+[debug] [2022-11-22T17:41:13.731Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 200
+[debug] [2022-11-22T17:41:13.731Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 {"projectId":"nextjs-website-c2bd7","projectNumber":"979110648330","displayName":"nextjs-website","name":"projects/nextjs-website-c2bd7","resources":{"hostingSite":"nextjs-website-c2bd7"},"state":"ACTIVE","etag":"1_a896cce0-557e-4127-8e36-87aff6df815b"}
+[debug] [2022-11-23T19:33:36.099Z] ----------------------------------------------------------------------
+[debug] [2022-11-23T19:33:36.102Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Name\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-23T19:33:36.103Z] CLI Version:   11.16.1
+[debug] [2022-11-23T19:33:36.103Z] Platform:      win32
+[debug] [2022-11-23T19:33:36.103Z] Node Version:  v16.14.0
+[debug] [2022-11-23T19:33:36.105Z] Time:          Wed Nov 23 2022 20:33:36 GMT+0100 (Central European Standard Time)
+[debug] [2022-11-23T19:33:36.105Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-23T19:33:36.111Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-11-23T19:33:36.230Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-23T19:33:36.231Z] > authorizing via signed-in user (stevanzivadinovic11@gmail.com)
+[debug] [2022-11-23T19:33:36.231Z] [iam] checking project nextjs-website-c2bd7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-23T19:33:36.232Z] > refreshing access token with scopes: []
+[debug] [2022-11-23T19:33:36.234Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-11-23T19:33:36.234Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-23T19:33:36.418Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-11-23T19:33:36.419Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-11-23T19:33:36.430Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions [none]
+[debug] [2022-11-23T19:33:36.431Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions x-goog-quota-user=projects/nextjs-website-c2bd7
+[debug] [2022-11-23T19:33:36.431Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:33:36.588Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-11-23T19:33:36.588Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-11-23T19:33:37.258Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions 200
+[debug] [2022-11-23T19:33:37.259Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:33:37.260Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 [none]
+[debug] [2022-11-23T19:33:37.565Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 200
+[debug] [2022-11-23T19:33:37.565Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 {"projectId":"nextjs-website-c2bd7","projectNumber":"979110648330","displayName":"nextjs-website","name":"projects/nextjs-website-c2bd7","resources":{"hostingSite":"nextjs-website-c2bd7"},"state":"ACTIVE","etag":"1_a896cce0-557e-4127-8e36-87aff6df815b"}
+[debug] [2022-11-23T19:33:48.999Z] Error: EPERM: operation not permitted, open 'C:\html\React.js-and-Vue.js\Next.js website\next.js_website\.next\trace'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-11-23T19:34:09.885Z] ----------------------------------------------------------------------
+[debug] [2022-11-23T19:34:09.887Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Name\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-23T19:34:09.888Z] CLI Version:   11.16.1
+[debug] [2022-11-23T19:34:09.888Z] Platform:      win32
+[debug] [2022-11-23T19:34:09.888Z] Node Version:  v16.14.0
+[debug] [2022-11-23T19:34:09.890Z] Time:          Wed Nov 23 2022 20:34:09 GMT+0100 (Central European Standard Time)
+[debug] [2022-11-23T19:34:09.890Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-23T19:34:09.987Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-23T19:34:09.988Z] > authorizing via signed-in user (stevanzivadinovic11@gmail.com)
+[debug] [2022-11-23T19:34:09.988Z] [iam] checking project nextjs-website-c2bd7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-23T19:34:09.992Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions [none]
+[debug] [2022-11-23T19:34:09.992Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions x-goog-quota-user=projects/nextjs-website-c2bd7
+[debug] [2022-11-23T19:34:09.992Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:34:10.800Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions 200
+[debug] [2022-11-23T19:34:10.800Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:34:10.801Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 [none]
+[debug] [2022-11-23T19:34:11.103Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 200
+[debug] [2022-11-23T19:34:11.103Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 {"projectId":"nextjs-website-c2bd7","projectNumber":"979110648330","displayName":"nextjs-website","name":"projects/nextjs-website-c2bd7","resources":{"hostingSite":"nextjs-website-c2bd7"},"state":"ACTIVE","etag":"1_a896cce0-557e-4127-8e36-87aff6df815b"}
+[debug] [2022-11-23T19:48:50.127Z] ----------------------------------------------------------------------
+[debug] [2022-11-23T19:48:50.130Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Name\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-23T19:48:50.131Z] CLI Version:   11.16.1
+[debug] [2022-11-23T19:48:50.131Z] Platform:      win32
+[debug] [2022-11-23T19:48:50.131Z] Node Version:  v16.14.0
+[debug] [2022-11-23T19:48:50.132Z] Time:          Wed Nov 23 2022 20:48:50 GMT+0100 (Central European Standard Time)
+[debug] [2022-11-23T19:48:50.133Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-23T19:48:50.276Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-23T19:48:50.277Z] > authorizing via signed-in user (stevanzivadinovic11@gmail.com)
+[debug] [2022-11-23T19:48:50.277Z] [iam] checking project nextjs-website-c2bd7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-23T19:48:50.281Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions [none]
+[debug] [2022-11-23T19:48:50.282Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions x-goog-quota-user=projects/nextjs-website-c2bd7
+[debug] [2022-11-23T19:48:50.282Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:48:51.167Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions 200
+[debug] [2022-11-23T19:48:51.167Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:48:51.168Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 [none]
+[debug] [2022-11-23T19:48:51.449Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 200
+[debug] [2022-11-23T19:48:51.450Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 {"projectId":"nextjs-website-c2bd7","projectNumber":"979110648330","displayName":"nextjs-website","name":"projects/nextjs-website-c2bd7","resources":{"hostingSite":"nextjs-website-c2bd7"},"state":"ACTIVE","etag":"1_838461d0-11ac-4fdb-ad83-ec20a890dfc6"}
+[debug] [2022-11-23T19:52:06.487Z] ----------------------------------------------------------------------
+[debug] [2022-11-23T19:52:06.490Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Name\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-23T19:52:06.490Z] CLI Version:   11.16.1
+[debug] [2022-11-23T19:52:06.491Z] Platform:      win32
+[debug] [2022-11-23T19:52:06.491Z] Node Version:  v16.14.0
+[debug] [2022-11-23T19:52:06.492Z] Time:          Wed Nov 23 2022 20:52:06 GMT+0100 (Central European Standard Time)
+[debug] [2022-11-23T19:52:06.493Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-23T19:52:06.632Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-23T19:52:06.633Z] > authorizing via signed-in user (stevanzivadinovic11@gmail.com)
+[debug] [2022-11-23T19:52:06.633Z] [iam] checking project nextjs-website-c2bd7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-23T19:52:06.636Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions [none]
+[debug] [2022-11-23T19:52:06.637Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions x-goog-quota-user=projects/nextjs-website-c2bd7
+[debug] [2022-11-23T19:52:06.637Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:52:07.441Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions 200
+[debug] [2022-11-23T19:52:07.441Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nextjs-website-c2bd7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-23T19:52:07.442Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 [none]
+[debug] [2022-11-23T19:52:07.740Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 200
+[debug] [2022-11-23T19:52:07.740Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nextjs-website-c2bd7 {"projectId":"nextjs-website-c2bd7","projectNumber":"979110648330","displayName":"nextjs-website","name":"projects/nextjs-website-c2bd7","resources":{"hostingSite":"nextjs-website-c2bd7"},"state":"ACTIVE","etag":"1_838461d0-11ac-4fdb-ad83-ec20a890dfc6"}
