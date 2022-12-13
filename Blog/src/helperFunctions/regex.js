@@ -1,0 +1,2 @@
+export const validUsername = new RegExp("^[A-Za-z][A-Za-z0-9_]{7,29}$");
+export const validPassword = new RegExp("((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))");
