@@ -5,22 +5,27 @@ const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [usernameErr, setUsernameErr] = useState(false);
-  const [pwdError, setPwdError] = useState(false);
+  const [invalidMessage, setInvalidMessage] = useState('')
 
-  const validate = () => {
-    if (!validUsername.test(username)) {
-      setUsernameErr(true);
-    } else {
-      setUsernameErr(false);
-    }
 
-    if (!validPassword.test(password)) {
-      setPwdError(true);
-    } else {
-      setPwdError(false);
-    }
-  };
+  const signin = ()=>{
+    fetch("https://dummyjson.com/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+        // expiresInMins: 60, // optional
+      }),
+    })
+      .then((res) => {
+        return res.json()})
+      .then(res=>{
+        setInvalidMessage(res.message)
+        console.log(res.message)
+      })
+    
+  }
 
   return (
     <div className="bg-[#F0F0F0] h-[100vh] flex justify-center flex-col content-center text-center">
@@ -51,14 +56,14 @@ const Login = () => {
       </div>
       <div className="buttonDiv">
         <button
-          className="uppercase rounded w-[10%] bg-[#487AF7] text-[#F0F0F0]"
-          onClick={validate}
+          className="uppercase rounded my-[1rem] w-[10%] bg-[#487AF7] text-[#F0F0F0]"
+          onClick={signin}
         >
           Sign in
         </button>
       </div>
-      {usernameErr && <p className="text-red-500">Your username is invalid</p>}
-      {pwdError && <p className="text-red-500">Your password is invalid</p>}
+      {invalidMessage.length > 0 && <p className="text-red-500 uppercase">{invalidMessage}</p>}
+      
     </div>
   );
 };
