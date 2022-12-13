@@ -21,8 +21,13 @@ const Login = () => {
       .then((res) => {
         return res.json()})
       .then(res=>{
-        setInvalidMessage(res.message)
-        console.log(res.message)
+
+        if(res.message){
+            setInvalidMessage(res.message)
+        }else{
+
+        }
+        
       })
     
   }
