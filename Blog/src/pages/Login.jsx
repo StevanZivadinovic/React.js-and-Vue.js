@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {validUsername, validPassword} from './../helperFunctions/regex'
 
 const Login = () => {
@@ -7,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [invalidMessage, setInvalidMessage] = useState('')
 
+  const navigate = useNavigate()
 
   const signin = ()=>{
     fetch("https://dummyjson.com/auth/login", {
@@ -21,11 +23,11 @@ const Login = () => {
       .then((res) => {
         return res.json()})
       .then(res=>{
-
+            console.log(res)
         if(res.message){
-            setInvalidMessage(res.message)
+            setInvalidMessage(res.message);
         }else{
-
+            navigate('/blogs');
         }
         
       })
