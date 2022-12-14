@@ -1,10 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import axiosInstance from "../helperFunctions/axiosInstance";
+
 
 const UserContext = createContext(null);
 
-const UserContextProvider = ({ children, username, password }) => {
+const UserContextProvider = ({ children }) => {
     const [dataApp, setData] = useState();
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -12,8 +12,8 @@ const UserContextProvider = ({ children, username, password }) => {
 
     let navigate = useNavigate();
 
-    useEffect(() => {
-        fetch("https://dummyjson.com/auth/login", {
+    const getRequest = (username, password) =>{
+      fetch("https://dummyjson.com/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -26,6 +26,7 @@ const UserContextProvider = ({ children, username, password }) => {
         return res.json()})
       .then(res=>{
         setData(res);
+        console.log(res);
         if(res.message){
             setInvalidMessage(res.message);
         }else{
@@ -33,12 +34,15 @@ const UserContextProvider = ({ children, username, password }) => {
         }
         
       })
+    }
+    useEffect(() => {
+        
 
         return () => {};
     }, []);
 
     return (
-        <UserContext.Provider value={dataApp}>{children}</UserContext.Provider>
+        <UserContext.Provider value={{dataApp, getRequest}}>{children}</UserContext.Provider>
     );
 };
 

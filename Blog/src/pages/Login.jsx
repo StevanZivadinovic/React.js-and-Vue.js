@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 import {validUsername, validPassword} from './../helperFunctions/regex'
 
 const Login = () => {
@@ -8,29 +9,32 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [invalidMessage, setInvalidMessage] = useState('')
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const contextData = React.useContext(UserContext);
+  console.log(contextData)
 
   const signin = ()=>{
-    fetch("https://dummyjson.com/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: username,
-        password: password,
-        // expiresInMins: 60, // optional
-      }),
-    })
-      .then((res) => {
-        return res.json()})
-      .then(res=>{
-            console.log(res)
-        if(res.message){
-            setInvalidMessage(res.message);
-        }else{
-            navigate('/blogs');
-        }
+    contextData.getRequest(username, password)
+  //   fetch("https://dummyjson.com/auth/login", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       username: username,
+  //       password: password,
+  //       // expiresInMins: 60, // optional
+  //     }),
+  //   })
+  //     .then((res) => {
+  //       return res.json()})
+  //     .then(res=>{
+  //           console.log(res)
+  //       if(res.message){
+  //           setInvalidMessage(res.message);
+  //       }else{
+  //           navigate('/blogs');
+  //       }
         
-      })
+  //     })
     
   }
 
