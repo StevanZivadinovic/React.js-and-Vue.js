@@ -7,7 +7,7 @@ const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [invalidMessage, setInvalidMessage] = useState('')
+  
 
   const navigate = useNavigate();
   const contextData = React.useContext(UserContext);
@@ -54,7 +54,7 @@ const Login = () => {
           Sign in
         </button>
       </div>
-      {invalidMessage.length > 0 && <p className="text-red-500 uppercase">{invalidMessage}</p>}
+      {contextData.invalidMessage.length > 0 && <p className="text-red-500 uppercase">{contextData.invalidMessage}</p>}
       
     </div>
   );

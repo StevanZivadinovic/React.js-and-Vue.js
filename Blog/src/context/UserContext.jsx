@@ -6,7 +6,7 @@ const UserContext = createContext(null);
 
 const UserContextProvider = ({ children }) => {
     const [dataApp, setData] = useState();
-
+    const [invalidMessage, setInvalidMessage] = useState('')
     const [searchParams, setSearchParams] = useSearchParams();
     let token = searchParams.get("token");
 
@@ -43,7 +43,7 @@ const UserContextProvider = ({ children }) => {
     }, []);
 
     return (
-        <UserContext.Provider value={{dataApp, getRequest}}>{children}</UserContext.Provider>
+        <UserContext.Provider value={{dataApp, getRequest, invalidMessage}}>{children}</UserContext.Provider>
     );
 };
 
