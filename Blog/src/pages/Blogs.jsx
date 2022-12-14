@@ -6,6 +6,9 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([])
   const contextData = React.useContext(UserContext);
 
+  function lines(text) {  
+    return text.split('\n')
+  }
 
   useEffect(() => {
     localStorage.setItem('id', contextData.dataApp.id)
@@ -13,7 +16,9 @@ const Blogs = () => {
 .then(res => res.json())
 .then((data)=>{
   console.log(data.posts);
-  setBlogs(data.posts)
+  setBlogs(data.posts);
+
+  
 });
   }, [])
   
@@ -34,11 +39,18 @@ const Blogs = () => {
             </div>
             <div className="flex justify-between align-center self-center content-center likes">
               <div className="">
-            <p className='w-[50%] leading-4 h-[2rem] overflow-hidden '>{`${a.body}`}</p>
+              {/* leading-4 h-[2rem] overflow-hidden */}
+            <p className='w-[50%]'>{`${a.body.split('\n').map((a,i)=>{
+              if(i<=1){
+                return a;
+              }
+            })}`}</p>
               </div>
-              <div className="flex text-center">
-              <AiOutlineLike size={50} className='mr-[.3rem]'/>
-              <p className='text-[1.5rem] flex flex-col justify-center'>{a.reactions}</p>
+              <div className="flex text-center justify-center">
+                <div className="flex justify-center align-center self-center">
+                <AiOutlineLike size={50} className='mr-[.3rem] flex justify-center flex-col'/>
+              <p className='text-[1.5rem] flex flex-col justify-center'>{a.reactions}</p>  
+                </div>
               </div>
             </div>
           </li>)
