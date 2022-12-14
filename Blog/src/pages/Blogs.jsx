@@ -40,11 +40,7 @@ const Blogs = () => {
             <div className="flex justify-between align-center self-center content-center likes">
               <div className="">
               {/* leading-4 h-[2rem] overflow-hidden */}
-            <p className='w-[50%]'>{`${a.body.split('\n').map((a,i)=>{
-              if(i<=1){
-                return a;
-              }
-            })}`}</p>
+            <p className='lineClamp w-[50%]'>{a.body}</p>
               </div>
               <div className="flex text-center justify-center">
                 <div className="flex justify-center align-center self-center">
