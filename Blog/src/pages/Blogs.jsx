@@ -31,7 +31,8 @@ const Blogs = () => {
   body: JSON.stringify({
     title: title,
     userId: contextData.dataApp.id,
-    body:bodyOfBlog
+    body:bodyOfBlog,
+    reactions:Math.floor(Math.random() * 20)
     /* other post data */
   })
 })
