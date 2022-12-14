@@ -15,26 +15,7 @@ const Login = () => {
 
   const signin = ()=>{
     contextData.getRequest(username, password)
-  //   fetch("https://dummyjson.com/auth/login", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       username: username,
-  //       password: password,
-  //       // expiresInMins: 60, // optional
-  //     }),
-  //   })
-  //     .then((res) => {
-  //       return res.json()})
-  //     .then(res=>{
-  //           console.log(res)
-  //       if(res.message){
-  //           setInvalidMessage(res.message);
-  //       }else{
-  //           navigate('/blogs');
-  //       }
-        
-  //     })
+  
     
   }
 
