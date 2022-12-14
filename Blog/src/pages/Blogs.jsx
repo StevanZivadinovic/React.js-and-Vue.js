@@ -32,13 +32,14 @@ const Blogs = () => {
     title: title,
     userId: contextData.dataApp.id,
     body:bodyOfBlog,
-    reactions:Math.floor(Math.random() * 20)
+    reactions:Math.floor(Math.random() * 20),
+    token:contextData.dataApp.token
     /* other post data */
   })
 })
 .then(res => res.json())
 .then((addedBlog)=>{
-  console.log(addedBlog);
+  console.log(addedBlog, contextData.dataApp.token);
   setBlogs([...blogs,addedBlog])
 });
 
