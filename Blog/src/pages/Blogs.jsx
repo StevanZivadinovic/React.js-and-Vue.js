@@ -11,11 +11,10 @@ const Blogs = () => {
 
   useEffect(() => {
    
-   
     fetch(
       contextData.dataApp !==undefined
         ? `https://dummyjson.com/posts/user/${contextData?.dataApp.id}`
-        : `https://dummyjson.com/posts/user/${localStorage.getItem("id")}`
+        : `https://dummyjson.com/posts/user/${parseInt(localStorage.getItem("id"))}`
     )
       .then((res) => res.json())
       .then((data) => {

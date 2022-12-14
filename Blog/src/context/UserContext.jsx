@@ -26,7 +26,7 @@ const UserContextProvider = ({ children }) => {
         return res.json()})
       .then(res=>{
         setData(res);
-       localStorage.setItem('id', res.is);
+       localStorage.setItem('id', res.id);
         console.log(res);
         if(res.message){
             setInvalidMessage(res.message);
