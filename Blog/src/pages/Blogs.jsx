@@ -11,8 +11,9 @@ const Blogs = () => {
 
   useEffect(() => {
    
+   
     fetch(
-      contextData.dataApp.id
+      contextData.dataApp !==undefined
         ? `https://dummyjson.com/posts/user/${contextData?.dataApp.id}`
         : `https://dummyjson.com/posts/user/${localStorage.getItem("id")}`
     )
