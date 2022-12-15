@@ -30,17 +30,17 @@ const Blogs = () => {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     title: title,
-    userId: contextData.dataApp.id,
+    userId: contextData.dataApp !==undefined ? contextData.dataApp.id : parseInt(localStorage.getItem("id")),
     body:bodyOfBlog,
     reactions:Math.floor(Math.random() * 20),
-    token:contextData.dataApp.token
-    /* other post data */
+    token: contextData.dataApp !==undefined ? contextData.dataApp.token : localStorage.getItem('token')
+    
   })
 })
 .then(res => {
   return res.json()})
   .then((addedBlog)=>{
-    console.log(addedBlog, contextData.dataApp.token);
+    console.log(addedBlog);
     setBlogs([...blogs,addedBlog]);
     
   });
