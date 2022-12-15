@@ -70,7 +70,7 @@ const Blogs = () => {
           onChange={(e)=>{setBodyOfBlog(e.target.value)}}
 
         ></textarea>
-        <button className="mx-auto uppercase rounded my-[1rem] w-[20%] bg-[#487AF7] text-[#F0F0F0] ">
+        <button type="submit" className="mx-auto uppercase rounded my-[1rem] w-[20%] bg-[#487AF7] text-[#F0F0F0] ">
           Post
         </button>
       </form>
