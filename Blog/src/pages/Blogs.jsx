@@ -3,10 +3,10 @@ import { UserContext } from "../context/UserContext";
 import { AiOutlineLike } from "react-icons/ai";
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState([]);
   const [title, setTitle] = useState("");
-  const [addedBlog, setAddedBlog] = useState();
   const [bodyOfBlog, setBodyOfBlog] = useState("");
+  const [blogs, setBlogs] = useState([]);
+  const [addedBlog, setAddedBlog] = useState();
   const contextData = React.useContext(UserContext);
 
   useEffect(() => {
@@ -37,17 +37,19 @@ const Blogs = () => {
     /* other post data */
   })
 })
-.then(res => res.json())
-.then((addedBlog)=>{
-  console.log(addedBlog, contextData.dataApp.token);
-  setBlogs([...blogs,addedBlog])
-});
-
+.then(res => {
+  return res.json()})
+  .then((addedBlog)=>{
+    console.log(addedBlog, contextData.dataApp.token);
+    setBlogs([...blogs,addedBlog]);
+    
+  });
+  e.target.reset()
   }
 
   return (
     <div className="bg-[#F0F0F0] min-h-[100vh] pt-[10%]">
-      <form className="flex flex-col w-[60%] mx-auto  content-center" action="">
+      <form onSubmit={(e)=>{makeNewBlog(e)}} className="flex flex-col w-[60%] mx-auto  content-center" action="">
         <input
           className="p-[.5rem] rounded mb-[1rem]"
           aria-label="Title"
@@ -67,7 +69,7 @@ const Blogs = () => {
           onChange={(e)=>{setBodyOfBlog(e.target.value)}}
 
         ></textarea>
-        <button onClick={(e)=>{makeNewBlog(e)}} className="mx-auto uppercase rounded my-[1rem] w-[20%] bg-[#487AF7] text-[#F0F0F0] ">
+        <button className="mx-auto uppercase rounded my-[1rem] w-[20%] bg-[#487AF7] text-[#F0F0F0] ">
           Post
         </button>
       </form>
