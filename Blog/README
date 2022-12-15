@@ -1,0 +1,20 @@
+BLOGS APP
+
+Here is an application 'Blogs' that is use to manage your blogs.
+
+The CLI for the App is Vite so:
+1) Clone project in your PC
+2) Jump to project folder in your terminal.
+3) Type command: npm install
+4) App starts with command: npm run dev
+
+Now it will start project in http://127.0.0.1:5173/
+
+Constrains:
+*It is preferable to use React or Angular to create an application.
+*For the design of applications, it is not necessary to strictly adhere to the selection of color, size and other things, but it is important that it looks as close as possible. Preferably using Bootstrap, Tailwind or some other CSS framework.
+*Using Type Script is preferred, but not required.
+*The deadline for completing the task is 7 days.
+
+Solution:
+App is made in React.js with Vite CLI and Tailwind CSS

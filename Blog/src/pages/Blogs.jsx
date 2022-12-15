@@ -9,6 +9,7 @@ const Blogs = () => {
   const [addedBlog, setAddedBlog] = useState();
   const contextData = React.useContext(UserContext);
 
+
   useEffect(() => {
    
     fetch(
