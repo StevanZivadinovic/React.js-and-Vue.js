@@ -1,22 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import {validUsername, validPassword} from './../helperFunctions/regex'
 
 const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
-
-  const navigate = useNavigate();
   const contextData = React.useContext(UserContext);
-  console.log(contextData)
+
 
   const signin = ()=>{
-    contextData.getRequest(username, password)
-  
-    
+    contextData.getRequest(username, password);
   }
 
   return (
