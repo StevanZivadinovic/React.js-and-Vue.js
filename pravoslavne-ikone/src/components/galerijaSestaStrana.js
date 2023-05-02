@@ -21,7 +21,7 @@ const [photoIndex, setPhotoIndex] = useState(0)
                 imageTitle="slika"
                 className="slika"
                 src={ikona48}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 0 })}
+                onClick={() =>{setIsOpen(true); setPhotoIndex(0)}}
               />
               <p className="title"> Св Ксенија Петроградска</p>
               <p className="dimension">Димензије 30х40cm</p>
@@ -32,7 +32,7 @@ const [photoIndex, setPhotoIndex] = useState(0)
                 imageTitle="slika"
                 className="slika"
                 src={ikona49}
-                onClick={() => this.setState({ isOpen: true, photoIndex: 1 })}
+                onClick={() =>{setIsOpen(true); setPhotoIndex(1)}}
               />
               <p className="title"> Св Архангел Михаил</p>
               <p className="dimension">Димензије 25х50cm</p>
@@ -46,17 +46,9 @@ const [photoIndex, setPhotoIndex] = useState(0)
             imageCaption={textFooter[photoIndex]}
             nextSrc={images[(photoIndex + 1) % images.length]}
             prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={() => this.setState({ isOpen: false })}
-            onMovePrevRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
-              })
-            }
-            onMoveNextRequest={() =>
-              this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
-              })
-            }
+            onCloseRequest={() => setIsOpen(false)}
+            onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+            onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
           />
         )}
       </div>
