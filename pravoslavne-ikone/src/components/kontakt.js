@@ -27,7 +27,6 @@ function Kontakt({
     label.style.fontSize = "14px";
     label.style.display = `${display}`;
     label.style.color = "red";
-
     label.style.opacity = 1;
   };
 
@@ -59,7 +58,6 @@ function Kontakt({
             validationEmail: false,
             validationInputSubject: false,
           });
-          // setWholeStatusToFalse()
         },
         (error) => {
           console.log(error.text);
@@ -77,8 +75,6 @@ function Kontakt({
 
     if (a) {
       e.target.style.borderColor = "blue";
-
-      // actionValidationInputTextareaTrue1()
       setStatus({ ...status, textarea: true });
 
       e.target.setCustomValidity("");
@@ -86,7 +82,6 @@ function Kontakt({
       e.target.setCustomValidity("Порука је празна");
 
       e.target.style.borderColor = "red";
-      // ValidationInputTextareaFalse1()
 
       setStatus({ ...status, textarea: false });
     }
@@ -163,7 +158,6 @@ function Kontakt({
       setStatus({ ...status, validationEmail: false });
       e.target.style.borderColor = "red";
       document.querySelector('input[type="submit"]').disabled = true;
-      let dugme1 = document.querySelector('input[type="submit"]');
       labelPosition("110", "inline");
     }
   };
