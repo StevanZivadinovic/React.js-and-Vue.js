@@ -72,7 +72,7 @@ export default function Navbar(props) {
               Галерија
             </Link>
           </li>
-{/* sada */}
+{/* sa */}
           <li className='nav-item'>
             <Link
               to='/kontakt'

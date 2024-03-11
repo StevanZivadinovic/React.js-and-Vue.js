@@ -12,8 +12,10 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "emailjs-com": "^2.6.4",
+    "eslint": "^8.57.0",
     "firebase": "^9.5.0",
     "font-awesome": "^4.7.0",
+    "prettier": "^3.2.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.11.1",
@@ -24,7 +26,8 @@
     "react-router-sitemap-generator": "^0.0.8",
     "react-scripts": "5.0.1",
     "redux": "^4.1.2",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "save-dev": "^0.0.1-security"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -52,14 +55,14 @@
   },
   "husky": {
     "hooks": {
-    "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
-    "eslint — fix",
-    "prettier — write",
-    "git add"
-  ]
+      "eslint — fix",
+      "prettier — write",
+      "git add"
+    ]
   }
 }
