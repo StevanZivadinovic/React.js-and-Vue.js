@@ -53,7 +53,5 @@
   "hooks": {
     "pre-commit": "lint-staged"
   },
-    "*.js": "eslint --fix"
-  
-  
+  "*.js": "eslint --fix"
 }
