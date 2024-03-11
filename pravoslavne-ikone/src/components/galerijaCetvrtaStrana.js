@@ -95,7 +95,6 @@ export default class GalerijaCetvrtaStrana extends Component {
     />
     <p className="title">Св Сава</p>
     <p className='dimension'>Димензије 21х30cm</p>
-    {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 </div>
 
