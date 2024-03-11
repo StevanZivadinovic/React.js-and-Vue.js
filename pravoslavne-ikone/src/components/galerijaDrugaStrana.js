@@ -75,7 +75,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title"> Св Арханђел Гаврил - Бели Анђео</p>
     <p className='dimension'>Димензије 21х30cm</p>
-    {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 
   <div className="sektor">
@@ -86,7 +85,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Св Великомученик Георгије</p>
     <p className='dimension'>Димензије 30х40cm</p>
-    {/* <p className="last">Цена са златом 170е</p> */}
   </div>
 
   <div className="sektor">
@@ -97,7 +95,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Св Јован Крститељ</p>
     <p className='dimension'>Димензије 30х40cm</p>
-    {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 </div>
 
@@ -111,7 +108,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Св Апостол Марко</p>
     <p className='dimension'>Димензије 30х40cm</p>
-    {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
@@ -122,7 +118,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Икона Пресвете Тројице</p>
     <p className='dimension'>Димензије 30х40cm</p>
-    {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
@@ -133,7 +128,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Св Максим Исповедник</p>
     <p className='dimension'>Димензије 18х24cm</p>
-    {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 </div>
 
@@ -147,7 +141,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Св Јосиф Исихаста</p>
     <p className='dimension'>Димензије 15х20cm</p>
-    {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
@@ -158,7 +151,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Св Херувима и Св Петка</p>
     <p className='dimension'>Димензије 30х40cm</p>
-    {/* <p className="last">Цена са златом 150е</p> */}
   </div>
 
   <div className="sektor">
@@ -169,7 +161,6 @@ export default class GalerijaDrugaStrana extends Component {
     />
     <p className="title">Св Василије Острошки</p>
     <p className='dimension'>Димензије 20х30cm</p>
-    {/* <p className="last">Цена са златом 200е</p> */}
   </div>
 </div>
 </div>
@@ -194,8 +185,6 @@ export default class GalerijaDrugaStrana extends Component {
             />
           )}
 </div>
-
-
     )
   }
 }

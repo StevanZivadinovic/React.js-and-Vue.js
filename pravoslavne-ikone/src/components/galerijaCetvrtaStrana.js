@@ -68,7 +68,7 @@ export default class GalerijaCetvrtaStrana extends Component {
 <div className="col1">
   <div className="sektor">
     <img
-      imageTitle="slika"
+      imagetitle="slika"
       className="slika"
       src={ikona28}
       onClick={() => this.setState({ isOpen: true, photoIndex: 0 })}
@@ -104,7 +104,7 @@ export default class GalerijaCetvrtaStrana extends Component {
 <div className="col1">
   <div className="sektor">
     <img
-      imageTitle="slika"
+      imagetitle="slika"
       className="slika"
       src={ikona31}
       onClick={() => this.setState({ isOpen: true, photoIndex: 3 })}
@@ -140,7 +140,7 @@ export default class GalerijaCetvrtaStrana extends Component {
 <div className="col1">
   <div className="sektor">
     <img
-      imageTitle="slika"
+      imagetitle="slika"
       className="slika"
       src={ikona34}
       onClick={() => this.setState({ isOpen: true, photoIndex: 6 })}

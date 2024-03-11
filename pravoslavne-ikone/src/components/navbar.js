@@ -1,6 +1,5 @@
 import React, { useState, useEffect }  from "react";
 import { Link } from 'react-router-dom';
-// import  Button  from './button';
 import './../style/navbar.scss'
 import krst from './../assets/krst_beli.png'
 // Za slike sa font awesoma, uzimas cdn kod sa njihovog sajta koji se nalazi na tvom profilu,
@@ -44,11 +43,9 @@ export default function Navbar(props) {
         <div>
           <img id='krst'  src={krst}></img>
         </div>
-        {/* <i class="fa-solid fa-bars"></i> */}
         
         <div className='menu-icon' onClick={handleClick}>
         <FontAwesomeIcon icon={click ?  faTimes :faBars} />
-          {/* <i className={click ? "fas fa-times" : "fas fa-bars"} /> */}
           
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>

@@ -43,13 +43,14 @@ function Kontakt({
 
     emailjs
       .sendForm(
-        "service_vqyu154",
+        "service_fyy4nvv",
         "template_pasc3rj",
         e.target,
         "user_iDF7GBVBepZlv2bZg187d"
       )
       .then(
-        (result) => {
+        () => {
+          alert('Ваш email је послат!')
           setStatus({
             ...status,
             textarea: false,
@@ -164,7 +165,6 @@ function Kontakt({
 
   return (
     <div className="main3">
-      {/* onSubmit={handleSubmit(onSubmit)} */}
       <form
         className="wrapper"
         onSubmit={
@@ -187,7 +187,6 @@ function Kontakt({
             <label htmlFor="from_name">Неисправан унос</label>
             <input
               onKeyUp={validationInputName}
-              // onInvalid=this.setCustomValidity('Enter User Name Here')
               type="text"
               className="input"
               placeholder="Име"
@@ -239,7 +238,6 @@ function Kontakt({
                   ? onClickHandle
                   : onClickHandle1
               }
-              // onSubmit={validation}
               type="submit"
               className="btn"
               value="Пошаљи"
@@ -247,18 +245,6 @@ function Kontakt({
             ></input>
           </div>
         </div>
-        {/* <div className="contactDetails">
-          <p>gagaikone@live.com</p>
-          <p>061/321-60-87</p>
-          <p>
-            <a
-              target="_blank"
-              href="https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453"
-            >
-              <img id="fb" src={fb}></img>
-            </a>
-          </p>
-        </div> */}
       </form>
       <Footer></Footer>
     </div>
