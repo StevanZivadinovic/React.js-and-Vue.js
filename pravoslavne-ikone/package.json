@@ -46,5 +46,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "husky": "^9.0.11"
+  },
+  "hooks": {
+    "pre-commit": "lint-staged"
+  },
+    "*.js": "eslint --fix"
+  
+  
 }
