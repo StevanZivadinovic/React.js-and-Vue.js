@@ -75,7 +75,6 @@ export default class GalerijaCetvrtaStrana extends Component {
     />
     <p className="title"> Часни крст</p>
     <p className='dimension'>Димензије 21х29cm</p>
-    {/* <p className="last">Цена са златом 110е</p> */}
   </div>
 
   <div className="sektor">
@@ -86,7 +85,6 @@ export default class GalerijaCetvrtaStrana extends Component {
     />
     <p className="title">Св Архангел Михаил</p>
     <p className='dimension'>Димензије 21х30cm</p>
-    {/* <p className="last">Цена са златом 170е</p> */}
   </div>
 
   <div className="sektor">
