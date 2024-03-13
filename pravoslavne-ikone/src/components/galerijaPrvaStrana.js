@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import ikona1 from "./../assets/ikona1.png";
-import ikona2 from "./../assets/ikona2.png";
-import ikona3 from "./../assets/ikona3.png";
-import ikona4 from "./../assets/ikona4.png";
-import ikona5 from "./../assets/ikona5.png";
-import ikona6 from "./../assets/ikona6.png";
-import ikona7 from "./../assets/ikona7.png";
-import ikona8 from "./../assets/ikona8.png";
-import ikona9 from "./../assets/ikona9.png";
-import Lightbox from "react-image-lightbox";
+import React, { useState } from 'react';
+import ikona1 from './../assets/ikona1.png';
+import ikona2 from './../assets/ikona2.png';
+import ikona3 from './../assets/ikona3.png';
+import ikona4 from './../assets/ikona4.png';
+import ikona5 from './../assets/ikona5.png';
+import ikona6 from './../assets/ikona6.png';
+import ikona7 from './../assets/ikona7.png';
+import ikona8 from './../assets/ikona8.png';
+import ikona9 from './../assets/ikona9.png';
+import Lightbox from 'react-image-lightbox';
 
 const images = [
   ikona1,
@@ -23,27 +23,27 @@ const images = [
 ];
 
 const textHeader = [
-  "Св Вукашин Клепачки",
-  "Св Јован Крститељ",
-  "Св Великомученик Димитрије",
-  "Св Кнез Лазар",
-  "Мајка Божија - Дечанска",
-  "Икона Мајке Божије",
-  "Св Муч Јустин Философ",
-  "Св Нектарије Егински",
-  "Св Архангел Михаил",
+  'Св Вукашин Клепачки',
+  'Св Јован Крститељ',
+  'Св Великомученик Димитрије',
+  'Св Кнез Лазар',
+  'Мајка Божија - Дечанска',
+  'Икона Мајке Божије',
+  'Св Муч Јустин Философ',
+  'Св Нектарије Егински',
+  'Св Архангел Михаил',
 ];
 
 const textFooter = [
-  "21x30cm",
-  "30x40cm",
-  "18x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "26x61cm",
+  '21x30cm',
+  '30x40cm',
+  '18x40cm',
+  '30x40cm',
+  '30x40cm',
+  '30x40cm',
+  '30x40cm',
+  '30x40cm',
+  '26x61cm',
 ];
 
 export const GalerijaPrvaStrana = () => {
@@ -56,7 +56,7 @@ export const GalerijaPrvaStrana = () => {
         <div className="col1">
           <div className="sektor">
             <img
-              imageTitle="slika"
+              alt=""
               className="slika"
               src={ikona1}
               onClick={() => {
@@ -70,6 +70,7 @@ export const GalerijaPrvaStrana = () => {
 
           <div className="sektor">
             <img
+              alt=""
               className="slika"
               src={ikona2}
               onClick={() => {
@@ -83,6 +84,7 @@ export const GalerijaPrvaStrana = () => {
 
           <div className="sektor">
             <img
+              alt=""
               className="slika"
               src={ikona3}
               onClick={() => {
@@ -98,7 +100,7 @@ export const GalerijaPrvaStrana = () => {
         <div className="col1">
           <div className="sektor">
             <img
-              imageTitle="slika"
+              alt=""
               className="slika"
               src={ikona4}
               onClick={() => {
@@ -112,6 +114,7 @@ export const GalerijaPrvaStrana = () => {
 
           <div className="sektor">
             <img
+              alt=""
               className="slika"
               src={ikona5}
               onClick={() => {
@@ -125,6 +128,7 @@ export const GalerijaPrvaStrana = () => {
 
           <div className="sektor">
             <img
+              alt=""
               className="slika"
               src={ikona6}
               onClick={() => {
@@ -140,7 +144,7 @@ export const GalerijaPrvaStrana = () => {
         <div className="col1">
           <div className="sektor">
             <img
-              imageTitle="slika"
+              alt=""
               className="slika"
               src={ikona7}
               onClick={() => {
@@ -154,6 +158,7 @@ export const GalerijaPrvaStrana = () => {
 
           <div className="sektor">
             <img
+              alt=""
               className="slika"
               src={ikona8}
               onClick={() => {
@@ -167,6 +172,7 @@ export const GalerijaPrvaStrana = () => {
 
           <div className="sektor">
             <img
+              alt=""
               className="slika"
               src={ikona9}
               onClick={() => {

@@ -1,22 +1,20 @@
-import React, { useState } from "react";
-import ikona48 from "./../assets/ikona48.png";
-import ikona49 from "./../assets/ikona49.png";
-import ikona50 from "./../assets/ikona50.png";
-import ikona51 from "./../assets/ikona51.png";
-import ikona52 from "./../assets/ikona52.png";
-import Lightbox from "react-image-lightbox";
-
-
+import React, { useState } from 'react';
+import ikona48 from './../assets/ikona48.png';
+import ikona49 from './../assets/ikona49.png';
+import ikona50 from './../assets/ikona50.png';
+import ikona51 from './../assets/ikona51.png';
+import ikona52 from './../assets/ikona52.png';
+import Lightbox from 'react-image-lightbox';
 
 const images = [ikona48, ikona49, ikona50, ikona51, ikona52];
 const textHeader = [
-  "Св Ксенија Петроградска",
-  "Св Архангел Михаил",
-  "Житије Св Илије",
-  "Св Преподобна Мати Параскева",
-  "Св Великомученик Кнез Лазар"
+  'Св Ксенија Петроградска',
+  'Св Архангел Михаил',
+  'Житије Св Илије',
+  'Св Преподобна Мати Параскева',
+  'Св Великомученик Кнез Лазар',
 ];
-const textFooter = ["30x40cm", "25x50cm", "45х60cm", "18x40cm", "30x40cm"];
+const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm'];
 
 export const GalerijaSestaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +27,6 @@ export const GalerijaSestaStrana = () => {
           <div className="sektor">
             <img
               alt=""
-              imageTitle="slika"
               className="slika"
               src={ikona48}
               onClick={() => {
@@ -44,7 +41,6 @@ export const GalerijaSestaStrana = () => {
           <div className="sektor">
             <img
               alt=""
-              imageTitle="slika"
               className="slika"
               src={ikona49}
               onClick={() => {
@@ -58,7 +54,6 @@ export const GalerijaSestaStrana = () => {
           <div className="sektor">
             <img
               alt=""
-              imageTitle="slika"
               className="slika"
               src={ikona50}
               onClick={() => {
@@ -73,7 +68,7 @@ export const GalerijaSestaStrana = () => {
         <div className="col1">
           <div className="sektor">
             <img
-              imageTitle="slika"
+              alt=""
               className="slika"
               src={ikona51}
               onClick={() => {
@@ -86,7 +81,7 @@ export const GalerijaSestaStrana = () => {
           </div>
           <div className="sektor">
             <img
-              imageTitle="slika"
+              alt=""
               className="slika"
               src={ikona52}
               onClick={() => {

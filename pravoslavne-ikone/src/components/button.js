@@ -1,8 +1,8 @@
-import React from "react";
-import "./button.scss";
-import { Link } from "react-router-dom";
-const STYLES = ["btn-primary", "btn--outline"];
-const SIZES = ["btn-medium", "btn-large"];
+import React from 'react';
+import './button.scss';
+import { Link } from 'react-router-dom';
+const STYLES = ['btn-primary', 'btn--outline'];
+const SIZES = ['btn-medium', 'btn-large'];
 
 export default function Button({
   children,

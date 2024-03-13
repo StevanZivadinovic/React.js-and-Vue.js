@@ -9,43 +9,33 @@ let initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-
-  if(action.type === 'WHOLE_STATE_TO_FALSE'){
-    console.log('akcija')
+  if (action.type === 'WHOLE_STATE_TO_FALSE') {
+    console.log('akcija');
 
     return state;
   }
-  if(action.type === 'VALIDATION_TEXTAREA_TRUE'){
+  if (action.type === 'VALIDATION_TEXTAREA_TRUE') {
     console.log('truetextareaTRUE');
-    console.log(state.status.textarea)
-    return{
-      
-      status:{
+    console.log(state.status.textarea);
+    return {
+      status: {
         ...state,
-        textarea:true
-      }
-      
-    }
+        textarea: true,
+      },
+    };
   }
 
-  if(action.type === 'VALIDATION_TEXTAREA_FALSE'){
+  if (action.type === 'VALIDATION_TEXTAREA_FALSE') {
     console.log('truetextareaFALSE');
-    return{
-      
-      status:{
+    return {
+      status: {
         ...state,
-        textarea:false
-      }
-      
-    }
-
+        textarea: false,
+      },
+    };
   }
 
   return state;
-  
-
-  
-
 };
 
 export default rootReducer;

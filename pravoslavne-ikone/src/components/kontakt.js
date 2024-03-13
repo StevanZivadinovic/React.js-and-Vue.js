@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
-import Footer from "./footer";
-import "./../style/kontakt.scss";
-import { connect } from "react-redux";
-import { wholeStateToFalse } from "./../actions/wholeStateToFalse";
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import Footer from './footer';
+import './../style/kontakt.scss';
+import { connect } from 'react-redux';
+import { wholeStateToFalse } from './../actions/wholeStateToFalse';
 import {
   ValidationInputTextareaTrue,
   ValidationInputTextareaFalse,
-} from "./../actions/validationInputTextarea";
+} from './../actions/validationInputTextarea';
 
-function Kontakt({
-}) {
+function Kontakt() {
   const [status, setStatus] = useState({
     textarea: false,
     phone: false,
@@ -20,22 +19,22 @@ function Kontakt({
   });
 
   let labelPosition = (position, display) => {
-    let label = document.querySelector("label");
-    label.style.position = "absolute";
+    let label = document.querySelector('label');
+    label.style.position = 'absolute';
     label.style.top = `${position}px`;
-    label.style.right = "0px";
-    label.style.fontSize = "14px";
+    label.style.right = '0px';
+    label.style.fontSize = '14px';
     label.style.display = `${display}`;
-    label.style.color = "red";
+    label.style.color = 'red';
     label.style.opacity = 1;
   };
 
   function onClickHandle() {
-    alert("Порука је послата!");
+    alert('Порука је послата!');
   }
 
   function onClickHandle1() {
-    alert("Емаил је неисправан!");
+    alert('Емаил је неисправан!');
   }
 
   function sendEmail(e) {
@@ -43,14 +42,14 @@ function Kontakt({
 
     emailjs
       .sendForm(
-        "service_fyy4nvv",
-        "template_pasc3rj",
+        'service_fyy4nvv',
+        'template_pasc3rj',
         e.target,
-        "user_iDF7GBVBepZlv2bZg187d"
+        'user_iDF7GBVBepZlv2bZg187d'
       )
       .then(
         () => {
-          alert('Ваш email је послат!')
+          alert('Ваш email је послат!');
           setStatus({
             ...status,
             textarea: false,
@@ -75,14 +74,14 @@ function Kontakt({
     let a = pattern.test(e.target.value);
 
     if (a) {
-      e.target.style.borderColor = "blue";
+      e.target.style.borderColor = 'blue';
       setStatus({ ...status, textarea: true });
 
-      e.target.setCustomValidity("");
+      e.target.setCustomValidity('');
     } else {
-      e.target.setCustomValidity("Порука је празна");
+      e.target.setCustomValidity('Порука је празна');
 
-      e.target.style.borderColor = "red";
+      e.target.style.borderColor = 'red';
 
       setStatus({ ...status, textarea: false });
     }
@@ -93,14 +92,14 @@ function Kontakt({
 
     if (a) {
       setStatus({ ...status, phone: true });
-      e.target.style.borderColor = "blue";
-      e.target.setCustomValidity("");
+      e.target.style.borderColor = 'blue';
+      e.target.setCustomValidity('');
     } else {
-      e.target.setCustomValidity("Молимо Вас не користите словне карактере.");
+      e.target.setCustomValidity('Молимо Вас не користите словне карактере.');
 
       setStatus({ ...status, phone: true });
-      e.target.style.borderColor = "red";
-      labelPosition("170");
+      e.target.style.borderColor = 'red';
+      labelPosition('170');
     }
   };
 
@@ -111,17 +110,17 @@ function Kontakt({
 
     if (a) {
       setStatus({ ...status, validationInput: true });
-      e.target.style.borderColor = "blue";
-      labelPosition("0", "none");
-      e.target.setCustomValidity("");
+      e.target.style.borderColor = 'blue';
+      labelPosition('0', 'none');
+      e.target.setCustomValidity('');
     } else {
       e.target.setCustomValidity(
-        "Молимо Вас не користите бројеве или специјалне карактере."
+        'Молимо Вас не користите бројеве или специјалне карактере.'
       );
       setStatus({ ...status, validationInput: false });
-      e.target.style.borderColor = "red";
+      e.target.style.borderColor = 'red';
 
-      labelPosition("50", "inline");
+      labelPosition('50', 'inline');
     }
   };
 
@@ -132,13 +131,13 @@ function Kontakt({
 
     if (a) {
       setStatus({ ...status, validationInputSubject: true });
-      e.target.style.borderColor = "blue";
-      labelPosition("0", "none");
-      e.target.setCustomValidity("");
+      e.target.style.borderColor = 'blue';
+      labelPosition('0', 'none');
+      e.target.setCustomValidity('');
     } else {
       setStatus({ ...status, validationInputSubject: false });
-      e.target.style.borderColor = "red";
-      labelPosition("230", "inline");
+      e.target.style.borderColor = 'red';
+      labelPosition('230', 'inline');
     }
   };
 
@@ -147,19 +146,19 @@ function Kontakt({
     let a = pattern.test(e.target.value);
 
     if (a) {
-      e.target.style.borderColor = "blue";
+      e.target.style.borderColor = 'blue';
       setStatus({ ...status, validationEmail: true });
       document.querySelector('input[type="submit"]').disabled = false;
 
-      labelPosition("110", "none");
-      e.target.setCustomValidity("");
+      labelPosition('110', 'none');
+      e.target.setCustomValidity('');
     } else {
-      e.target.setCustomValidity("Е-маил је неисправан");
+      e.target.setCustomValidity('Е-маил је неисправан');
 
       setStatus({ ...status, validationEmail: false });
-      e.target.style.borderColor = "red";
+      e.target.style.borderColor = 'red';
       document.querySelector('input[type="submit"]').disabled = true;
-      labelPosition("110", "inline");
+      labelPosition('110', 'inline');
     }
   };
 

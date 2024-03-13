@@ -18,10 +18,10 @@ h1 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .col1 {
@@ -29,10 +29,10 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 10px;
 }
 
@@ -63,8 +63,8 @@ img:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .sektor p {
@@ -82,8 +82,8 @@ img:hover {
 }
 
 .dimension {
-  border-bottom-left-radius: .5rem;
-  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .last {
@@ -93,7 +93,13 @@ img:hover {
 
 .contactDetails1 {
   width: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(10%, #1c1b1b),
+    to(#d85656)
+  );
   background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
   border-radius: 5px;
   font-size: 20px !important;
@@ -105,7 +111,13 @@ img:hover {
   }
   .contactDetails1 {
     width: 100%;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+    background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(10%, #1c1b1b),
+      to(#d85656)
+    );
     background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
     border-radius: 5px;
     font-size: 16px;
@@ -122,8 +134,8 @@ img:hover {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .mainGalerija {
     width: 100%;

@@ -1,18 +1,17 @@
-import React from "react";
-import "./../style/Home.scss";
-import daska from "./../assets/daska.jpg";
-import daska1 from "./../assets/daska1.jpg";
-import daska2 from "./../assets/daska2.jpg";
-import zlatni_listici from "./../assets/zlatni_listici.jpg";
-import pigment from "./../assets/pigment.jpg";
-import Footer from "./footer";
-
+import React from 'react';
+import './../style/Home.scss';
+import daska from './../assets/daska.jpg';
+import daska1 from './../assets/daska1.jpg';
+import daska2 from './../assets/daska2.jpg';
+import zlatni_listici from './../assets/zlatni_listici.jpg';
+import pigment from './../assets/pigment.jpg';
+import Footer from './footer';
 
 export default function Home() {
   return (
-    <div className="main" >
+    <div className="main">
       <div className="uvod">
-        {" "}
+        {' '}
         <h1>Израда Православних икона</h1>
         <p className="podtekst">-по наруџбини-</p>
         <div className="opis">
@@ -73,9 +72,9 @@ export default function Home() {
         <div id="daska">
           <h2>Традиционално обрађена липова даска</h2>
           <div className="textDaska">
-            <img id="slikaDaska" src={daska}></img>
-            <img id="slikaDaska" src={daska1}></img>
-            <img id="slikaDaska" src={daska2}></img>
+            <img alt="" id="slikaDaska" src={daska}></img>
+            <img alt="" id="slikaDaska" src={daska1}></img>
+            <img alt="" id="slikaDaska" src={daska2}></img>
           </div>
           <p>
             Даска се израђује из делова са кушацима. Дебљина даске је 3cm. Са
@@ -86,9 +85,9 @@ export default function Home() {
         <div id="tehnika">
           <h2>Техника израде</h2>
           <div className="slikeTehnika">
-            <img id="tehnika1" src={pigment}></img>
+            <img alt="" id="tehnika1" src={pigment}></img>
 
-            <img id="tehnika1" src={zlatni_listici}></img>
+            <img alt="" id="tehnika1" src={zlatni_listici}></img>
           </div>
           <p className="lastPasus">
             За сликање се користе прашкасти пигменти који се растварају
@@ -109,7 +108,7 @@ export default function Home() {
           </p>
         </div> */}
       </div>
-        <Footer></Footer>
+      <Footer></Footer>
     </div>
   );
 }

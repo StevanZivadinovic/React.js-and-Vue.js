@@ -1,59 +1,57 @@
-import React from "react";
-import Lightbox from "react-image-lightbox";
-import ikona1 from "./../assets/ikona1.png";
-import ikona2 from "./../assets/ikona2.png";
-import ikona3 from "./../assets/ikona3.png";
-import ikona4 from "./../assets/ikona4.png";
-import ikona5 from "./../assets/ikona5.png";
-import ikona6 from "./../assets/ikona6.png";
-import ikona7 from "./../assets/ikona7.png";
-import ikona8 from "./../assets/ikona8.png";
-import ikona9 from "./../assets/ikona9.png";
+import React from 'react';
+import Lightbox from 'react-image-lightbox';
+import ikona1 from './../assets/ikona1.png';
+import ikona2 from './../assets/ikona2.png';
+import ikona3 from './../assets/ikona3.png';
+import ikona4 from './../assets/ikona4.png';
+import ikona5 from './../assets/ikona5.png';
+import ikona6 from './../assets/ikona6.png';
+import ikona7 from './../assets/ikona7.png';
+import ikona8 from './../assets/ikona8.png';
+import ikona9 from './../assets/ikona9.png';
 
-import ikona10 from "./../assets/ikona10.png";
-import ikona11 from "./../assets/ikona11.png";
-import ikona12 from "./../assets/ikona12.png";
-import ikona13 from "./../assets/ikona13.png";
-import ikona14 from "./../assets/ikona14.png";
-import ikona15 from "./../assets/ikona15.png";
-import ikona16 from "./../assets/ikona16.png";
-import ikona17 from "./../assets/ikona17.png";
-import ikona18 from "./../assets/ikona18.png";
+import ikona10 from './../assets/ikona10.png';
+import ikona11 from './../assets/ikona11.png';
+import ikona12 from './../assets/ikona12.png';
+import ikona13 from './../assets/ikona13.png';
+import ikona14 from './../assets/ikona14.png';
+import ikona15 from './../assets/ikona15.png';
+import ikona16 from './../assets/ikona16.png';
+import ikona17 from './../assets/ikona17.png';
+import ikona18 from './../assets/ikona18.png';
 
-import ikona19 from "./../assets/ikona19.png";
-import ikona20 from "./../assets/ikona20.png";
-import ikona21 from "./../assets/ikona21.png";
-import ikona22 from "./../assets/ikona22.png";
-import ikona23 from "./../assets/ikona23.png";
-import ikona24 from "./../assets/ikona24.png";
-import ikona25 from "./../assets/ikona25.png";
-import ikona26 from "./../assets/ikona26.png";
-import ikona27 from "./../assets/ikona27.png";
+import ikona19 from './../assets/ikona19.png';
+import ikona20 from './../assets/ikona20.png';
+import ikona21 from './../assets/ikona21.png';
+import ikona22 from './../assets/ikona22.png';
+import ikona23 from './../assets/ikona23.png';
+import ikona24 from './../assets/ikona24.png';
+import ikona25 from './../assets/ikona25.png';
+import ikona26 from './../assets/ikona26.png';
+import ikona27 from './../assets/ikona27.png';
 
-import ikona28 from "./../assets/ikona28.jpg";
-import ikona29 from "./../assets/ikona29.jpg";
-import ikona30 from "./../assets/ikona30.jpg";
-import ikona31 from "./../assets/ikona31.jpg";
-import ikona32 from "./../assets/ikona32.jpg";
-import ikona33 from "./../assets/ikona33.jpg";
-import ikona34 from "./../assets/ikona34.jpg";
-import ikona35 from "./../assets/ikona35.jpg";
-import ikona36 from "./../assets/ikona36.jpg";
+import ikona28 from './../assets/ikona28.jpg';
+import ikona29 from './../assets/ikona29.jpg';
+import ikona30 from './../assets/ikona30.jpg';
+import ikona31 from './../assets/ikona31.jpg';
+import ikona32 from './../assets/ikona32.jpg';
+import ikona33 from './../assets/ikona33.jpg';
+import ikona34 from './../assets/ikona34.jpg';
+import ikona35 from './../assets/ikona35.jpg';
+import ikona36 from './../assets/ikona36.jpg';
 
-import ikona37 from "./../assets/ikona37.JPG";
-import ikona38 from "./../assets/ikona38.JPG";
-import ikona39 from "./../assets/ikona39.JPG";
+import ikona37 from './../assets/ikona37.JPG';
+import ikona38 from './../assets/ikona38.JPG';
+import ikona39 from './../assets/ikona39.JPG';
 
-import "./../style/galerija.scss";
-import Footer from './footer'
-import {GalerijaPrvaStrana}   from "./galerijaPrvaStrana";
-import GalerijaDrugaStrana  from "./galerijaDrugaStrana";
-import GalerijaTrecaStrana  from "./galerijaTrecaStrana";
+import './../style/galerija.scss';
+import Footer from './footer';
+import { GalerijaPrvaStrana } from './galerijaPrvaStrana';
+import { GalerijaDrugaStrana } from './galerijaDrugaStrana';
+import GalerijaTrecaStrana from './galerijaTrecaStrana';
 import GalerijaCetvrtaStrana from './galerijaCetvrtaStrana';
 import GalerijaPetaStrana from './galerijaPetaStrana';
-import GalerijaSestaStrana from "./galerijaSestaStrana";
-
-
+import GalerijaSestaStrana from './galerijaSestaStrana';
 
 const images = [
   ikona1,
@@ -94,31 +92,31 @@ const images = [
   ikona36,
   ikona37,
   ikona38,
-  ikona39
+  ikona39,
 ];
 
 const textHeader = [
-  "Св Вукашин Клепачки",
-  "Св Јован Крститељ",
-  "Св Великомученик Димитрије",
-  "Св Кнез Лазар",
-  "Мајка Божија - Дечанска",
-  "Икона Мајке Божије",
-  "Св Муч Јустин Философ",
-  "Св Нектарије Егински",
-  "Св Архангел Михаил",
+  'Св Вукашин Клепачки',
+  'Св Јован Крститељ',
+  'Св Великомученик Димитрије',
+  'Св Кнез Лазар',
+  'Мајка Божија - Дечанска',
+  'Икона Мајке Божије',
+  'Св Муч Јустин Философ',
+  'Св Нектарије Егински',
+  'Св Архангел Михаил',
 ];
 
 const textFooter = [
-  "21x30cm",
-  "30x40cm",
-  "18x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "30x40cm",
-  "26x61cm",
+  '21x30cm',
+  '30x40cm',
+  '18x40cm',
+  '30x40cm',
+  '30x40cm',
+  '30x40cm',
+  '30x40cm',
+  '30x40cm',
+  '26x61cm',
 ];
 
 export default class Galerija extends React.Component {
@@ -136,33 +134,33 @@ export default class Galerija extends React.Component {
       <div className="mainGalerija">
         <h1 className="text-middle mt-4">Галерија</h1>
         <GalerijaPrvaStrana />
-        <GalerijaDrugaStrana/>
-        <GalerijaTrecaStrana/>
-        <GalerijaCetvrtaStrana/>
-        <GalerijaPetaStrana/>
-        <GalerijaSestaStrana/>
-          <Footer></Footer>
+        <GalerijaDrugaStrana />
+        <GalerijaTrecaStrana />
+        <GalerijaCetvrtaStrana />
+        <GalerijaPetaStrana />
+        <GalerijaSestaStrana />
+        <Footer></Footer>
 
-          {isOpen && (
-            <Lightbox
-              mainSrc={images[photoIndex]}
-              imageTitle={textHeader[photoIndex]}
-              imageCaption={textFooter[photoIndex]}
-              nextSrc={images[(photoIndex + 1) % images.length]}
-              prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-              onCloseRequest={() => this.setState({ isOpen: false })}
-              onMovePrevRequest={() =>
-                this.setState({
-                  photoIndex: (photoIndex + images.length - 1) % images.length,
-                })
-              }
-              onMoveNextRequest={() =>
-                this.setState({
-                  photoIndex: (photoIndex + 1) % images.length,
-                })
-              }
-            />
-          )}
+        {isOpen && (
+          <Lightbox
+            mainSrc={images[photoIndex]}
+            imageTitle={textHeader[photoIndex]}
+            imageCaption={textFooter[photoIndex]}
+            nextSrc={images[(photoIndex + 1) % images.length]}
+            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+            onCloseRequest={() => this.setState({ isOpen: false })}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + images.length - 1) % images.length,
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + 1) % images.length,
+              })
+            }
+          />
+        )}
       </div>
     );
   }

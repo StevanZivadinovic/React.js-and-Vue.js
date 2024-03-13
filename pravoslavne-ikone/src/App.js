@@ -1,33 +1,30 @@
-import React, { useState, useRef, useEffect } from "react";
 import 'react-image-lightbox/style.css';
-import "./App.css";
-import Navbar from "./components/navbar";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./components/Home";
+import './App.css';
+import Navbar from './components/navbar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/Home';
 import Ikonopisac from './components/ikonopisac';
 import Galerija from './components/galerija';
-import Kontakt from './components/kontakt'
+import Kontakt from './components/kontakt';
 function App() {
-const [state, setState] = useState({
-  childData1: '',
-  childData2: '',
- 
-});
-var a;
-
-
   return (
     <div className="App">
       <header className="App-header">
         <Router>
           <Navbar></Navbar>
-          <Route path="/" exact ><Home/></Route>
-          <Route path="/ikonopisac" exact ><Ikonopisac/></Route>
-          <Route path="/galerija" exact ><Galerija/></Route>
-         <Route path="/kontakt" exact ><Kontakt/></Route>
-         
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/ikonopisac" exact>
+            <Ikonopisac />
+          </Route>
+          <Route path="/galerija" exact>
+            <Galerija />
+          </Route>
+          <Route path="/kontakt" exact>
+            <Kontakt />
+          </Route>
         </Router>
-       
       </header>
     </div>
   );

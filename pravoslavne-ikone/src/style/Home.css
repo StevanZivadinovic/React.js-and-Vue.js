@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap');
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: "Crimson Text", serif;
+  box-sizing: border-box;
+  font-family: 'Crimson Text', serif;
 }
 
 html {
@@ -18,7 +18,7 @@ html {
 
 .main .uvod {
   width: 100%;
-  background-image: url("./../assets/pozadina-home.jpg");
+  background-image: url('./../assets/pozadina-home.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,11 +32,11 @@ html {
   opacity: 1 !important;
   color: black;
   font-weight: 200;
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
 }
 
 .main .uvod .podtekst {
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   color: black;
 }
 
@@ -47,7 +47,7 @@ html {
   display: flex;
   background-color: rgba(50, 50, 50, 0.3) !important;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   color: #323232;
 }
 
@@ -63,10 +63,10 @@ html {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   font-size: 30px;
 }
 
@@ -80,7 +80,7 @@ html {
   border-bottom: 1px solid black;
   font-weight: 800;
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 #vizantijskiStil {
@@ -89,7 +89,7 @@ html {
 }
 
 #vizantijskiStil h2 {
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
 }
 
 #vizantijskiStil p {
@@ -103,8 +103,8 @@ html {
   display: flex;
   margin-top: 30px;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 #vizantijskiStil .text p {
@@ -114,7 +114,7 @@ html {
 }
 
 #daska {
-  background-image: url("./../assets/textura2.jpg");
+  background-image: url('./../assets/textura2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -122,7 +122,7 @@ html {
 #daska h2 {
   color: white;
   font-weight: 100;
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   margin-bottom: 2rem;
 }
 
@@ -131,7 +131,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 #daska .textDaska #slikaDaska {
@@ -141,35 +141,37 @@ html {
 
 #daska .textDaska #slikaDaska:hover {
   -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
   cursor: pointer;
   -webkit-transition: -webkit-transform 1.5s;
   transition: -webkit-transform 1.5s;
   transition: transform 1.5s;
-  transition: transform 1.5s, -webkit-transform 1.5s;
+  transition:
+    transform 1.5s,
+    -webkit-transform 1.5s;
 }
 
 #daska p {
   width: 90%;
-  margin: 2rem auto .5rem auto;
+  margin: 2rem auto 0.5rem auto;
   padding-bottom: 2rem;
   font-size: 1.5rem;
   font-family: 'Cormorant', serif;
 }
 
 #tehnika {
-  background-image: url("./../assets/textura2.jpg");
+  background-image: url('./../assets/textura2.jpg');
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 #tehnika h2 {
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   margin-bottom: 2rem;
   padding-top: 2rem;
 }
@@ -179,7 +181,7 @@ html {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 #tehnika .slikeTehnika #tehnika1 {
@@ -190,12 +192,14 @@ html {
 
 #tehnika .slikeTehnika #tehnika1:hover {
   -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
   cursor: pointer;
   -webkit-transition: -webkit-transform 1.5s;
   transition: -webkit-transform 1.5s;
   transition: transform 1.5s;
-  transition: transform 1.5s, -webkit-transform 1.5s;
+  transition:
+    transform 1.5s,
+    -webkit-transform 1.5s;
 }
 
 #tehnika p {
@@ -208,7 +212,13 @@ html {
 
 .kontakt {
   /* width: 100%; */
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(10%, #1c1b1b),
+    to(#d85656)
+  );
   background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
   border-radius: 5px;
   font-size: 16px;
@@ -231,10 +241,10 @@ html {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     width: 100%;
     margin-top: 30px;
     background-color: rgba(245, 231, 231, 0.3);
@@ -266,11 +276,11 @@ html {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: none;
-        -ms-flex-pack: none;
-            justify-content: none;
+    -ms-flex-pack: none;
+    justify-content: none;
   }
   #vizantijskiStil .text p {
     text-align: justify;
@@ -293,20 +303,20 @@ html {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     margin: 0 auto;
     width: 90%;
     -ms-flex-item-align: center;
-        align-self: center;
+    align-self: center;
   }
   #daska .textDaska #slikaDaska {
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -ms-grid-row-align: center;
+    align-self: center;
   }
   #tehnika {
-    margin-top: .3rem;
+    margin-top: 0.3rem;
   }
   #tehnika h2 {
     padding-top: 1rem;
@@ -317,20 +327,26 @@ html {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
   #tehnika .lastPasus {
     margin-top: 1rem;
     font-size: 1rem;
   }
   .kontakt {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1b1b), to(#d85656));
+    background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(10%, #1c1b1b),
+      to(#d85656)
+    );
     background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
     border-radius: 5px;
     font-size: 16px;

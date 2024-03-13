@@ -1,5 +1,5 @@
 :root {
-  --primary:#fff;
+  --primary: #fff;
   /*sa ove dve crtice -- se formira neki tvoj izmisljeni stil, koji da bi se kasnije
     upotrebi se unosi sa var() funkcijom*/
 }
