@@ -10,48 +10,48 @@ import ikona16 from './../assets/ikona16.png';
 import ikona17 from './../assets/ikona17.png';
 import ikona18 from './../assets/ikona18.png';
 import Lightbox from 'react-image-lightbox';
-import i18next from 'i18next';
-const images = [
-  ikona10,
-  ikona11,
-  ikona12,
-  ikona13,
-  ikona14,
-  ikona15,
-  ikona16,
-  ikona17,
-  ikona18,
-];
 
-const textHeader = [
-  i18next.t('sv_arhandjel_gavril_beli_andjeo'),
-  i18next.t('sv_velikomucenik_georgije'),
-  i18next.t('sv_jovan_krstitelj'),
-  i18next.t('sv_apostol_marko'),
-  i18next.t('presveta_trojica'),
-  i18next.t('sv_maksim_ispovednik'),
-  i18next.t('sv_josif_isihasta'),
-  i18next.t('sv_heruvima_sveta_petka'),
-  i18next.t('sv_vasilije_ostroski'),
-];
 
-const textFooter = [
-  '21x30cm',
-  '30x40cm',
-  '30x40cm',
-  '30x40cm',
-  '30x40cm',
-  '18x24cm',
-  '15x20cm',
-  '30x40cm',
-  '20x30cm',
-];
 
 export const GalerijaDrugaStrana = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-
+  const images = [
+    ikona10,
+    ikona11,
+    ikona12,
+    ikona13,
+    ikona14,
+    ikona15,
+    ikona16,
+    ikona17,
+    ikona18,
+  ];
+  
+  const textHeader = [
+    t('sv_arhandjel_gavril_beli_andjeo'),
+    t('sv_velikomucenik_georgije'),
+    t('sv_jovan_krstitelj'),
+    t('sv_apostol_marko'),
+    t('presveta_trojica'),
+    t('sv_maksim_ispovednik'),
+    t('sv_josif_isihasta'),
+    t('sv_heruvima_sveta_petka'),
+    t('sv_vasilije_ostroski'),
+  ];
+  
+  const textFooter = [
+    '21x30cm',
+    '30x40cm',
+    '30x40cm',
+    '30x40cm',
+    '30x40cm',
+    '18x24cm',
+    '15x20cm',
+    '30x40cm',
+    '20x30cm',
+  ];
   return (
     <div>
       <div className="row1">
@@ -206,3 +206,4 @@ export const GalerijaDrugaStrana = () => {
     </div>
   );
 };
+export default GalerijaDrugaStrana;

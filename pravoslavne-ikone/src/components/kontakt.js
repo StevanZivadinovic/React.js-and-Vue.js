@@ -8,8 +8,10 @@ import {
   ValidationInputTextareaTrue,
   ValidationInputTextareaFalse,
 } from './../actions/validationInputTextarea';
+import { useTranslation } from 'react-i18next';
 
 function Kontakt() {
+  const { t } = useTranslation();
   const [status, setStatus] = useState({
     textarea: false,
     phone: false,
@@ -30,11 +32,11 @@ function Kontakt() {
   };
 
   function onClickHandle() {
-    alert('Порука је послата!');
+    alert(t('poruka_je_poslata'));
   }
 
   function onClickHandle1() {
-    alert('Емаил је неисправан!');
+    alert(t('email_je_neispravan'));
   }
 
   function sendEmail(e) {
@@ -49,7 +51,7 @@ function Kontakt() {
       )
       .then(
         () => {
-          alert('Ваш email је послат!');
+          alert(t('poruka_je_poslata'));
           setStatus({
             ...status,
             textarea: false,
@@ -79,7 +81,7 @@ function Kontakt() {
 
       e.target.setCustomValidity('');
     } else {
-      e.target.setCustomValidity('Порука је празна');
+      e.target.setCustomValidity(t('poruka_je_prazna'));
 
       e.target.style.borderColor = 'red';
 
@@ -95,7 +97,7 @@ function Kontakt() {
       e.target.style.borderColor = 'blue';
       e.target.setCustomValidity('');
     } else {
-      e.target.setCustomValidity('Молимо Вас не користите словне карактере.');
+      e.target.setCustomValidity(t('ne_koristite_slovne_karaktere_msg'));
 
       setStatus({ ...status, phone: true });
       e.target.style.borderColor = 'red';
@@ -115,7 +117,7 @@ function Kontakt() {
       e.target.setCustomValidity('');
     } else {
       e.target.setCustomValidity(
-        'Молимо Вас не користите бројеве или специјалне карактере.'
+        t('ne_koristite_brojeve_specijalne_karaktere')
       );
       setStatus({ ...status, validationInput: false });
       e.target.style.borderColor = 'red';
@@ -153,7 +155,7 @@ function Kontakt() {
       labelPosition('110', 'none');
       e.target.setCustomValidity('');
     } else {
-      e.target.setCustomValidity('Е-маил је неисправан');
+      e.target.setCustomValidity(t('email_je_neispravan'));
 
       setStatus({ ...status, validationEmail: false });
       e.target.style.borderColor = 'red';
@@ -179,44 +181,44 @@ function Kontakt() {
         }
       >
         <div className="title">
-          <h1>Контактирајте нас!</h1>
+          <h1>{t('kontaktirajte_nas')}</h1>
         </div>
         <div className="contact-form">
           <div className="input-fields">
-            <label htmlFor="from_name">Неисправан унос</label>
+            <label htmlFor="from_name">{t('neispravan_unos')}</label>
             <input
               onKeyUp={validationInputName}
               type="text"
               className="input"
-              placeholder="Име"
+              placeholder={t('ime')}
               name="from_name"
               required
             ></input>
-            <label htmlFor="email">Неисправан унос</label>
+            <label htmlFor="email">{t('neispravan_unos')}</label>
             <input
               onKeyUp={validationEmail1}
               name="email"
               id="email"
               type="email"
               className="input"
-              placeholder="Mаил адреса"
+              placeholder={t('email_adresa')}
               required
             ></input>
-            <label htmlFor="phone">Неисправан унос</label>
+            <label htmlFor="phone">{t('neispravan_unos')}</label>
             <input
               onKeyUp={validationInputPhone}
               type="text"
               className="input"
-              placeholder="Телефон"
+              placeholder={t('telefon')}
               name="phone"
               required
             ></input>
-            <label htmlFor="subject">Неисправан унос</label>
+            <label htmlFor="subject">{t('neispravan_unos')}</label>
             <input
               onKeyUp={validationInputSubject1}
               type="text"
               className="input"
-              placeholder="Тема"
+              placeholder={t('tema')}
               name="subject"
               required
             ></input>
@@ -224,7 +226,7 @@ function Kontakt() {
           <div className="msg">
             <textarea
               onKeyUp={validationInputTextarea}
-              placeholder="Порука"
+              placeholder={t('poruka')}
               name="message"
             ></textarea>
             <input
@@ -239,7 +241,7 @@ function Kontakt() {
               }
               type="submit"
               className="btn"
-              value="Пошаљи"
+              value={t('posalji')}
               required
             ></input>
           </div>

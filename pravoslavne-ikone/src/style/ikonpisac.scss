@@ -4,6 +4,12 @@
   top: 0;
   position: fixed;
 }
+.languageSelect{
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  width: 100px;
+}
 .mainM {
   background-image: none;
   height: 110vh;
@@ -49,7 +55,9 @@
     padding: 0;
     box-sizing: border-box;
   }
-
+  .languageSelect{
+    width: auto;
+  }
   .mainM {
     width: 100%;
     height: 100%;

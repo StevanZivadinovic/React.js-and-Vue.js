@@ -10,47 +10,48 @@ import ikona26 from './../assets/ikona26.png';
 import ikona27 from './../assets/ikona27.png';
 import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
-const images = [
-  ikona19,
-  ikona20,
-  ikona21,
-  ikona22,
-  ikona23,
-  ikona24,
-  ikona25,
-  ikona26,
-  ikona27,
-];
 
-const textHeader = [
-  i18next.t('gospod_isus_hristos'),
-  i18next.t('sv_simeon_novi_bogoslov'),
-  i18next.t('sv_georgije_palama'),
-  i18next.t('majka_bozija_atonska'),
-  i18next.t('sv_arhangel_mihail'),
-  i18next.t('sv_arhangel_rafail'),
-  i18next.t('sv_arhangel_varahil'),
-  i18next.t('sv_arhangel_uril'),
-  i18next.t('sv_arhangel_salatil'),
-];
-
-const textFooter = [
-  '18x40cm',
-  '15x20cm',
-  '15x20cm',
-  '25х50cm',
-  '18x40cm',
-  '18x40cm',
-  '18x40cm',
-  '18x40cm',
-  '18x40cm',
-];
 
 export const GalerijaTrecaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();
+
+  const images = [
+    ikona19,
+    ikona20,
+    ikona21,
+    ikona22,
+    ikona23,
+    ikona24,
+    ikona25,
+    ikona26,
+    ikona27,
+  ];
+  
+  const textHeader = [
+    t('gospod_isus_hristos'),
+    t('sv_simeon_novi_bogoslov'),
+    t('sv_georgije_palama'),
+    t('majka_bozija_atonska'),
+    t('sv_arhangel_mihail'),
+    t('sv_arhangel_rafail'),
+    t('sv_arhangel_varahil'),
+    t('sv_arhangel_uril'),
+    t('sv_arhangel_salatil'),
+  ];
+  
+  const textFooter = [
+    '18x40cm',
+    '15x20cm',
+    '15x20cm',
+    '25х50cm',
+    '18x40cm',
+    '18x40cm',
+    '18x40cm',
+    '18x40cm',
+    '18x40cm',
+  ];
   return (
     <div>
       <div className="row1">
@@ -205,3 +206,5 @@ export const GalerijaTrecaStrana = () => {
     </div>
   );
 };
+
+export default GalerijaTrecaStrana;

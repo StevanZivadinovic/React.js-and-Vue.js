@@ -6,32 +6,33 @@ import daska2 from './../assets/daska2.jpg';
 import zlatni_listici from './../assets/zlatni_listici.jpg';
 import pigment from './../assets/pigment.jpg';
 import Footer from './footer';
-
+import { useTranslation } from 'react-i18next';
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div className="main">
       <div className="uvod">
         {' '}
-        <h1>Израда Православних икона</h1>
-        <p className="podtekst">-по наруџбини-</p>
+        <h1>{t('izrada_pravoslavnih_ikona')}</h1>
+        <p className="podtekst">-{t('po_narudzbini')}-</p>
         <div className="opis">
           <div className="liste">
             <ul className="lista">
               <li>
-                <a href="#vizantijskiStil">Византијски стил</a>
+                <a href="#vizantijskiStil">{t('vizantijski_stil')}</a>
               </li>
               <li>
-                <a href="#daska">Традиционално обрађена липова даска</a>
+                <a href="#daska">{t('tradicionalno_obradjena_lipova_daska')}</a>
               </li>
             </ul>
           </div>
           <div className="liste">
             <ul className="lista">
               <li>
-                <a href="#tehnika">Техника израде - јајчана темпера</a>
+                <a href="#tehnika">{t('tehnika_izrade_jajcana_tempera')}</a>
               </li>
               <li>
-                <a href="#tehnika">Израда икона са златом или шлаг металом</a>
+                <a href="#tehnika">{t('izrada_ikona_sa_zlatom_ili_slag_metalom')}</a>
               </li>
             </ul>
           </div>
@@ -40,73 +41,39 @@ export default function Home() {
 
       <div className="mainNovi">
         <div id="vizantijskiStil">
-          <h2>Византијски стил</h2>
+          <h2>{t('vizantijski_stil')}</h2>
           <div className="text">
             <p>
-              Иконописање је део нашег православног богослужења, управо као што
-              је то и византијска музика и Божанска реч проповеди. Оно је
-              уметност радости и наде. Из својих дубина учи нас покајању и
-              послушању, подвигу и смирењу. Византисјко иконописање је уметност
-              која је свој процват доживела у Византији са појавом тихографије
-              (фрескописања), мозаика, миниатура и икона. У првим апостолским
-              временима хришћани су користили сликање и украшавање из
-              богослужбених разлога.
+              {t('vizantijski_stil_prvi_deo')}
             </p>
 
             <p>
-              Током трећег века, када је ишчезао страх од идолопоклонства,
-              хришћани су почели да осликавају ликове Христа, Богородице и
-              Апостола. Касније су наставили са приказом догађаја из Старог и
-              Новог завета. Седмим Васељенским Сабором пре свега, дефинисана је
-              теологија иконе. Иконописање није остављено на слободу и вољу
-              сликарима, него је стављенo под надзор Цркве. Развој монашког духа
-              у доба Палеолога формира садржај и данашњег иконописања.
-              Иконописање поприма приповедачки карактер, док композиције садрже
-              велики број ликова. У данашње време, оно што знамо о Византијском
-              иконописању, знамо пре свега из икона сачуваних након пада
-              Византије 1453. године, а које се налазе широм Православних
-              земаља.
+              {t('vizantijski_stil_drugi_deo')}
             </p>
           </div>
         </div>
         <div id="daska">
-          <h2>Традиционално обрађена липова даска</h2>
+          <h2>{t('tradicionalno_obradjena_lipova_daska')}</h2>
           <div className="textDaska">
             <img alt="" id="slikaDaska" src={daska}></img>
             <img alt="" id="slikaDaska" src={daska1}></img>
             <img alt="" id="slikaDaska" src={daska2}></img>
           </div>
           <p>
-            Даска се израђује из делова са кушацима. Дебљина даске је 3cm. Са
-            предње стране даска има препаратуру, израђену oд једног слоја газе и
-            више слојева препаратуре.
+            {t('daska_opis')}
           </p>
         </div>
         <div id="tehnika">
-          <h2>Техника израде</h2>
+          <h2>{t('tehnika_izrade')}</h2>
           <div className="slikeTehnika">
             <img alt="" id="tehnika1" src={pigment}></img>
 
             <img alt="" id="tehnika1" src={zlatni_listici}></img>
           </div>
           <p className="lastPasus">
-            За сликање се користе прашкасти пигменти који се растварају
-            емулзијом жуманцета и сирћета. Позадина иконе облепљује се златним
-            листићима (24 карата), шлаг металом или осликава бојом по жељи.
+            {t('pigmenti_zlato_opis')}
           </p>
         </div>
-        {/* <div className="kontakt">
-          <p>gagaikone@live.com</p>
-          <p>061/321-60-87</p>
-          <p>
-            <a
-              target="_blank"
-              href="https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453"
-            >
-              <img id="fb" src={fb}></img>
-            </a>
-          </p>
-        </div> */}
       </div>
       <Footer></Footer>
     </div>

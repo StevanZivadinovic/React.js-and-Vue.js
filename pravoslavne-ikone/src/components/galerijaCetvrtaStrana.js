@@ -10,46 +10,49 @@ import ikona35 from './../assets/ikona35.jpg';
 import ikona36 from './../assets/ikona36.jpg';
 import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
-const images = [
-  ikona28,
-  ikona29,
-  ikona30,
-  ikona31,
-  ikona32,
-  ikona33,
-  ikona34,
-  ikona35,
-  ikona36,
-];
 
-const textHeader = [
-  'Часни крст',
-  'Св Архангел Михаил',
-  'Св Сава',
-  'Св Великомученик Димитрије',
-  'Св Пророк Илија',
-  'Св Василије Острошки',
-  'Св Јован Крститељ',
-  'Св Петка',
-  'Св Великомученик Георгије',
-];
 
-const textFooter = [
-  '21x29cm',
-  '21x30cm',
-  '21x30cm',
-  '21х30cm',
-  '21x30cm',
-  '21x30cm',
-  '21x30cm',
-  '21x30cm',
-  '21x30cm',
-];
 
 export const GalerijaCetvrtaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();
+
+  const images = [
+    ikona28,
+    ikona29,
+    ikona30,
+    ikona31,
+    ikona32,
+    ikona33,
+    ikona34,
+    ikona35,
+    ikona36,
+  ];
+  
+  const textHeader = [
+    t('casni_krst'),
+    t('sv_arhangel_mihail'),
+    t('sv_sava'),
+    t('sv_velikomucenik_dimitrije'),
+    t('sv_prorok_ilija'),
+    t('sv_vasilije_ostroski'),
+    t('sv_jovan_krstitelj'),
+    t('sv_prepodobna_mati_paraskeva'),
+    t('sv_velikomucenik_georgije'),
+  ];
+  
+  const textFooter = [
+    '21x29cm',
+    '21x30cm',
+    '21x30cm',
+    '21х30cm',
+    '21x30cm',
+    '21x30cm',
+    '21x30cm',
+    '21x30cm',
+    '21x30cm',
+  ];
   return (
     <div>
       <div className="row1">
@@ -64,7 +67,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(0);
               }}
             />
-            <p className="title"> Часни крст</p>
+            <p className="title">{t('casni_krst')}</p>
             <p className="dimension">{t('dimenzije')} 21х29cm</p>
           </div>
 
@@ -78,7 +81,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(1);
               }}
             />
-            <p className="title">Св Архангел Михаил</p>
+            <p className="title">{t('sv_arhangel_mihail')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
 
@@ -92,7 +95,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(2);
               }}
             />
-            <p className="title">Св Сава</p>
+            <p className="title">{t('sv_sava')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
         </div>
@@ -108,7 +111,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(3);
               }}
             />
-            <p className="title">Св Великомученик Димитрије</p>
+            <p className="title">{t('sv_velikomucenik_dimitrije')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
 
@@ -122,7 +125,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(4);
               }}
             />
-            <p className="title">Св Пророк Илија</p>
+            <p className="title">{t('sv_prorok_ilija')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
 
@@ -136,7 +139,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(5);
               }}
             />
-            <p className="title">Св Василије Острошки</p>
+            <p className="title">{t('sv_vasilije_ostroski')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
         </div>
@@ -152,7 +155,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(6);
               }}
             />
-            <p className="title">Св Јован Крститељ</p>
+            <p className="title">{t('sv_jovan_krstitelj')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
 
@@ -166,7 +169,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(7);
               }}
             />
-            <p className="title">Св Петка</p>
+            <p className="title">{t('sv_prepodobna_mati_paraskeva')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
 
@@ -180,7 +183,7 @@ export const GalerijaCetvrtaStrana = () => {
                 setPhotoIndex(8);
               }}
             />
-            <p className="title">Св Великомученик Георгије</p>
+            <p className="title">{t('sv_velikomucenik_georgije')}</p>
             <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
         </div>
@@ -204,3 +207,5 @@ export const GalerijaCetvrtaStrana = () => {
     </div>
   );
 };
+
+export default GalerijaCetvrtaStrana;

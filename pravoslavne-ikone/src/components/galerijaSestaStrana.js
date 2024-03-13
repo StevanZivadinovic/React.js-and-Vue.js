@@ -7,20 +7,20 @@ import ikona52 from './../assets/ikona52.png';
 import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
 
-const images = [ikona48, ikona49, ikona50, ikona51, ikona52];
-const textHeader = [
-  'Св Ксенија Петроградска',
-  'Св Архангел Михаил',
-  'Житије Св Илије',
-  'Св Преподобна Мати Параскева',
-  'Св Великомученик Кнез Лазар',
-];
-const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm'];
-
 export const GalerijaSestaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();
+
+  const images = [ikona48, ikona49, ikona50, ikona51, ikona52];
+  const textHeader = [
+    t('sv_ksenija_petrogradska'),
+    t('sv_arhangel_mihail'),
+    t('zitije_svetog_proroka_ilije'),
+    t('sv_prepodobna_mati_paraskeva'),
+    t('sv_velikomucenik_knez_lazar'),
+  ];
+  const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm'];
   return (
     <div>
       <div className="row1">
@@ -35,7 +35,7 @@ export const GalerijaSestaStrana = () => {
                 setPhotoIndex(0);
               }}
             />
-            <p className="title"> Св Ксенија Петроградска</p>
+            <p className="title">{t('sv_ksenija_petrogradska')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
@@ -49,7 +49,7 @@ export const GalerijaSestaStrana = () => {
                 setPhotoIndex(1);
               }}
             />
-            <p className="title"> Св Архангел Михаил</p>
+            <p className="title">{t('sv_arhangel_mihail')}</p>
             <p className="dimension">{t('dimenzije')} 25х50cm</p>
           </div>
           <div className="sektor">
@@ -62,7 +62,7 @@ export const GalerijaSestaStrana = () => {
                 setPhotoIndex(2);
               }}
             />
-            <p className="title"> Житије Св Илије</p>
+            <p className="title">{t('zitije_svetog_proroka_ilije')}</p>
             <p className="dimension">{t('dimenzije')} 45х60cm</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export const GalerijaSestaStrana = () => {
                 setPhotoIndex(3);
               }}
             />
-            <p className="title">Св Преподобна Мати Параскева</p>
+            <p className="title">{t('sv_prepodobna_mati_paraskeva')}</p>
             <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
           <div className="sektor">
@@ -90,7 +90,7 @@ export const GalerijaSestaStrana = () => {
                 setPhotoIndex(4);
               }}
             />
-            <p className="title">Св Великомученик Кнез Лазар</p>
+            <p className="title">{t('sv_velikomucenik_knez_lazar')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
         </div>

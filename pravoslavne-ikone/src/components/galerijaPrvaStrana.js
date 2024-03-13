@@ -10,49 +10,47 @@ import ikona8 from './../assets/ikona8.png';
 import ikona9 from './../assets/ikona9.png';
 import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
-
-const images = [
-  ikona1,
-  ikona2,
-  ikona3,
-  ikona4,
-  ikona5,
-  ikona6,
-  ikona7,
-  ikona8,
-  ikona9,
-];
-
-const textHeader = [
-  i18next.t('sv_vukasin_klepacki'),
-  i18next.t('sv_jovan_krstitelj'),
-  i18next.t('sv_velikomucenik_dimitrije'),
-  i18next.t('sv_knez_lazar'),
-  i18next.t('majka_bozija_decanska'),
-  i18next.t('majka_bozija'),
-  i18next.t('sv_mucenik_justin_filosof'),
-  i18next.t('sv_nektarije_eginski'),
-  i18next.t('sv_arhangel_mihail'),
-];
-
-const textFooter = [
-  '21x30cm',
-  '30x40cm',
-  '18x40cm',
-  '30x40cm',
-  '30x40cm',
-  '30x40cm',
-  '30x40cm',
-  '30x40cm',
-  '26x61cm',
-];
 
 export const GalerijaPrvaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();
 
+  const images = [
+    ikona1,
+    ikona2,
+    ikona3,
+    ikona4,
+    ikona5,
+    ikona6,
+    ikona7,
+    ikona8,
+    ikona9,
+  ];
+  
+  const textHeader = [
+    t('sv_vukasin_klepacki'),
+    t('sv_jovan_krstitelj'),
+    t('sv_velikomucenik_dimitrije'),
+    t('sv_velikomucenik_knez_lazar'),
+    t('majka_bozija_decanska'),
+    t('majka_bozija'),
+    t('sv_mucenik_justin_filosof'),
+    t('sv_nektarije_eginski'),
+    t('sv_arhangel_mihail'),
+  ];
+  
+  const textFooter = [
+    '21x30cm',
+    '30x40cm',
+    '18x40cm',
+    '30x40cm',
+    '30x40cm',
+    '30x40cm',
+    '30x40cm',
+    '30x40cm',
+    '26x61cm',
+  ];
   return (
     <div>
       <div className="row1">
@@ -111,7 +109,7 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(3);
               }}
             />
-            <p className="title">{t('sv_knez_lazar')}</p>
+            <p className="title">{t('sv_velikomucenik_knez_lazar')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
@@ -207,3 +205,4 @@ export const GalerijaPrvaStrana = () => {
     </div>
   );
 };
+export default GalerijaPrvaStrana;
