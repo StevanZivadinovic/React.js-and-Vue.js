@@ -20,7 +20,7 @@ const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm'];
 export const GalerijaSestaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-  const {t}=useTranslation()
+  const { t } = useTranslation();
   return (
     <div>
       <div className="row1">

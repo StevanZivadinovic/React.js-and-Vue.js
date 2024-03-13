@@ -10,6 +10,7 @@ import ikona16 from './../assets/ikona16.png';
 import ikona17 from './../assets/ikona17.png';
 import ikona18 from './../assets/ikona18.png';
 import Lightbox from 'react-image-lightbox';
+import i18next from 'i18next';
 const images = [
   ikona10,
   ikona11,
@@ -23,15 +24,15 @@ const images = [
 ];
 
 const textHeader = [
-  'Св Арханђел Гаврил - Бели Анђео',
-  'Св Великомученик Георгије',
-  'Св Јован Крститељ',
-  'Св Апостол Марко',
-  'Пресвете Тројица',
-  'Св Максим Исповедник',
-  'Св Јосиф Исихаста',
-  'Св Херувима и Св Петка',
-  'Св Василије Острошки',
+  i18next.t('sv_arhandjel_gavril_beli_andjeo'),
+  i18next.t('sv_velikomucenik_georgije'),
+  i18next.t('sv_jovan_krstitelj'),
+  i18next.t('sv_apostol_marko'),
+  i18next.t('presveta_trojica'),
+  i18next.t('sv_maksim_ispovednik'),
+  i18next.t('sv_josif_isihasta'),
+  i18next.t('sv_heruvima_sveta_petka'),
+  i18next.t('sv_vasilije_ostroski'),
 ];
 
 const textFooter = [
@@ -65,7 +66,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(0);
               }}
             />
-            <p className="title"> Св Арханђел Гаврил - Бели Анђео</p>
+            <p className="title">{t('sv_arhandjel_gavril_beli_andjeo')}</p>
             <p className="dimension">{t('dimenzije')} 21x30cm</p>
           </div>
 
@@ -79,7 +80,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(1);
               }}
             />
-            <p className="title">Св Великомученик Георгије</p>
+            <p className="title">{t('sv_velikomucenik_georgije')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
@@ -93,7 +94,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(2);
               }}
             />
-            <p className="title">Св Јован Крститељ</p>
+            <p className="title">{t('sv_jovan_krstitelj')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
         </div>
@@ -109,7 +110,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(3);
               }}
             />
-            <p className="title">Св Апостол Марко</p>
+            <p className="title">{t('sv_apostol_marko')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
@@ -123,7 +124,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(4);
               }}
             />
-            <p className="title"> Пресвета Тројица</p>
+            <p className="title">{t('presveta_trojica')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
@@ -137,7 +138,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(5);
               }}
             />
-            <p className="title">Св Максим Исповедник</p>
+            <p className="title">{t('sv_maksim_ispovednik')}</p>
             <p className="dimension">{t('dimenzije')} 18х24cm</p>
           </div>
         </div>
@@ -153,7 +154,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(6);
               }}
             />
-            <p className="title">Св Јосиф Исихаста</p>
+            <p className="title">{t('sv_josif_isihasta')}</p>
             <p className="dimension">{t('dimenzije')} 15х20cm</p>
           </div>
 
@@ -167,7 +168,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(7);
               }}
             />
-            <p className="title">Св Херувима и Св Петка</p>
+            <p className="title">{t('sv_heruvima_sveta_petka')}</p>
             <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
@@ -181,7 +182,7 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(8);
               }}
             />
-            <p className="title">Св Василије Острошки</p>
+            <p className="title">{t('sv_vasilije_ostroski')}</p>
             <p className="dimension">{t('dimenzije')} 20х30cm</p>
           </div>
         </div>

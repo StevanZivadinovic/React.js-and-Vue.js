@@ -10,6 +10,7 @@ import ikona26 from './../assets/ikona26.png';
 import ikona27 from './../assets/ikona27.png';
 import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 const images = [
   ikona19,
   ikona20,
@@ -23,15 +24,15 @@ const images = [
 ];
 
 const textHeader = [
-  'Господ Исус Христос',
-  'Св Симеон Нови Богослов',
-  'Св Григорије Палама',
-  'Мајка Божија Атонска',
-  'Св Архангел Михаил',
-  'Св Архангел Рафаил',
-  'Св Архангел Варахил',
-  'Св Архангел Урил',
-  'Св Архангел Салатил',
+  i18next.t('gospod_isus_hristos'),
+  i18next.t('sv_simeon_novi_bogoslov'),
+  i18next.t('sv_georgije_palama'),
+  i18next.t('majka_bozija_atonska'),
+  i18next.t('sv_arhangel_mihail'),
+  i18next.t('sv_arhangel_rafail'),
+  i18next.t('sv_arhangel_varahil'),
+  i18next.t('sv_arhangel_uril'),
+  i18next.t('sv_arhangel_salatil'),
 ];
 
 const textFooter = [
@@ -64,7 +65,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(0);
               }}
             />
-            <p className="title"> Господ Исус Христос</p>
+            <p className="title">{t('gospod_isus_hristos')}</p>
             <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
 
@@ -78,7 +79,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(1);
               }}
             />
-            <p className="title">Св Симеон Нови Богослов</p>
+            <p className="title">{t('sv_simeon_novi_bogoslov')}</p>
             <p className="dimension">{t('dimenzije')} 15х20cm</p>
           </div>
 
@@ -92,7 +93,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(2);
               }}
             />
-            <p className="title">Св Григорије Палама</p>
+            <p className="title">{t('sv_georgije_palama')}</p>
             <p className="dimension">{t('dimenzije')} 15х20cm</p>
           </div>
         </div>
@@ -108,7 +109,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(3);
               }}
             />
-            <p className="title">Икона Мајке Божије Атонске</p>
+            <p className="title">{t('majka_bozija_atonska')}</p>
             <p className="dimension">{t('dimenzije')} 25х50cm</p>
           </div>
 
@@ -122,7 +123,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(4);
               }}
             />
-            <p className="title">Икона Св Архангела Михаила</p>
+            <p className="title">{t('sv_arhangel_mihail')}</p>
             <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
 
@@ -136,7 +137,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(5);
               }}
             />
-            <p className="title">Икона Св Архангела Рафаила</p>
+            <p className="title">{t('sv_arhangel_rafail')}</p>
             <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
         </div>
@@ -152,7 +153,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(6);
               }}
             />
-            <p className="title">Св Архангела Варахила</p>
+            <p className="title">{t('sv_arhangel_varahil')}</p>
             <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
 
@@ -166,7 +167,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(7);
               }}
             />
-            <p className="title">Св Архангел Урил</p>
+            <p className="title">{t('sv_arhangel_uril')}</p>
             <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
 
@@ -180,7 +181,7 @@ export const GalerijaTrecaStrana = () => {
                 setPhotoIndex(8);
               }}
             />
-            <p className="title">Св Архангел Салатил</p>
+            <p className="title">{t('sv_arhangel_salatil')}</p>
             <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
         </div>
