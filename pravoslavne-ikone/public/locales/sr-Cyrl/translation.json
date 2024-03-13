@@ -1,4 +1,13 @@
 {
-  "dim_21_30": "Димензије 21х30cm",
-  "dim_30_40": "Димензије 21х30cm"
+  "dimenzije": "димензије",
+  "sv_vukasin_klepacki":"Св Вукашин Клепачки",
+  "sv_jovan_krstitelj":"Св Јован Крститељ",
+  "sv_velikomucenik_dimitrije":"Св Великомученик Димитрије",
+  "sv_knez_lazar":"Св Кнез Лазар",
+  "majka_bozija_decanska":"Мајка Божија - Дечанска",
+  "majka_bozija":"Мајка Божија",
+  "sv_mucenik_justin_filosof":"Св Муч Јустин Философ",
+  "sv_nektarije_eginski":"Св Нектарије Егински",
+  "sv_arhangel_mihail":"Св Архангел Михаил"
+ 
 }

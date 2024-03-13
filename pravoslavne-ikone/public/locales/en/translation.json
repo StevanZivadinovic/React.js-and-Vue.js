@@ -1,4 +1,12 @@
 {
-  "dim_21_30": "Dimensions 21х30cm",
-  "dim_30_40": "Dimensions 21х30cm"
+  "dimenzije": "dimensions",
+  "sv_vukasin_klepacki":" Saint Vukashin of Klepci",
+  "sv_jovan_krstitelj":"Saint John the Baptist",
+  "sv_velikomucenik_dimitrije":" Saint Great Martyr Dimitrije",
+  "sv_knez_lazar":"Saint Prince Lazar",
+  "majka_bozija_decanska":"Mother of God - Decani",
+  "majka_bozija":"Mother of God",
+  "sv_mucenik_justin_filosof":"Saint Martyr Justin the Philosopher",
+  "sv_nektarije_eginski":"Saint Nektarios of Egina",
+  "sv_arhangel_mihail":" Saint Archangel Michael"
 }

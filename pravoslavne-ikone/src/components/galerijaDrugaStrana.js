@@ -27,7 +27,7 @@ const textHeader = [
   'Св Великомученик Георгије',
   'Св Јован Крститељ',
   'Св Апостол Марко',
-  'Икона Пресвете Тројице',
+  'Пресвете Тројица',
   'Св Максим Исповедник',
   'Св Јосиф Исихаста',
   'Св Херувима и Св Петка',
@@ -66,7 +66,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title"> Св Арханђел Гаврил - Бели Анђео</p>
-            <p className="dimension">{t('dim_21_30')}</p>
+            <p className="dimension">{t('dimenzije')} 21x30cm</p>
           </div>
 
           <div className="sektor">
@@ -80,7 +80,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title">Св Великомученик Георгије</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -94,7 +94,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title">Св Јован Крститељ</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
         </div>
 
@@ -110,7 +110,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title">Св Апостол Марко</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -123,8 +123,8 @@ export const GalerijaDrugaStrana = () => {
                 setPhotoIndex(4);
               }}
             />
-            <p className="title">Икона Пресвете Тројице</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="title"> Пресвета Тројица</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -138,7 +138,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title">Св Максим Исповедник</p>
-            <p className="dimension">Димензије 18х24cm</p>
+            <p className="dimension">{t('dimenzije')} 18х24cm</p>
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title">Св Јосиф Исихаста</p>
-            <p className="dimension">Димензије 15х20cm</p>
+            <p className="dimension">{t('dimenzije')} 15х20cm</p>
           </div>
 
           <div className="sektor">
@@ -168,7 +168,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title">Св Херувима и Св Петка</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -182,7 +182,7 @@ export const GalerijaDrugaStrana = () => {
               }}
             />
             <p className="title">Св Василије Острошки</p>
-            <p className="dimension">Димензије 20х30cm</p>
+            <p className="dimension">{t('dimenzije')} 20х30cm</p>
           </div>
         </div>
       </div>
@@ -193,16 +193,12 @@ export const GalerijaDrugaStrana = () => {
           imageCaption={textFooter[photoIndex]}
           nextSrc={images[(photoIndex + 1) % images.length]}
           prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-          onCloseRequest={() => this.setState({ isOpen: false })}
+          onCloseRequest={() => setIsOpen(false)}
           onMovePrevRequest={() =>
-            this.setState({
-              photoIndex: (photoIndex + images.length - 1) % images.length,
-            })
+            setPhotoIndex((photoIndex + images.length - 1) % images.length)
           }
           onMoveNextRequest={() =>
-            this.setState({
-              photoIndex: (photoIndex + 1) % images.length,
-            })
+            setPhotoIndex((photoIndex + 1) % images.length)
           }
         />
       )}

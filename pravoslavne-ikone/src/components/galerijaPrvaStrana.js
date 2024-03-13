@@ -9,6 +9,8 @@ import ikona7 from './../assets/ikona7.png';
 import ikona8 from './../assets/ikona8.png';
 import ikona9 from './../assets/ikona9.png';
 import Lightbox from 'react-image-lightbox';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 const images = [
   ikona1,
@@ -23,15 +25,15 @@ const images = [
 ];
 
 const textHeader = [
-  'Св Вукашин Клепачки',
-  'Св Јован Крститељ',
-  'Св Великомученик Димитрије',
-  'Св Кнез Лазар',
-  'Мајка Божија - Дечанска',
-  'Икона Мајке Божије',
-  'Св Муч Јустин Философ',
-  'Св Нектарије Егински',
-  'Св Архангел Михаил',
+  i18next.t('sv_vukasin_klepacki'),
+  i18next.t('sv_jovan_krstitelj'),
+  i18next.t('sv_velikomucenik_dimitrije'),
+  i18next.t('sv_knez_lazar'),
+  i18next.t('majka_bozija_decanska'),
+  i18next.t('majka_bozija'),
+  i18next.t('sv_mucenik_justin_filosof'),
+  i18next.t('sv_nektarije_eginski'),
+  i18next.t('sv_arhangel_mihail'),
 ];
 
 const textFooter = [
@@ -49,6 +51,7 @@ const textFooter = [
 export const GalerijaPrvaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const {t}=useTranslation()
 
   return (
     <div>
@@ -64,8 +67,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(0);
               }}
             />
-            <p className="title"> Св Вукашин Клепачки</p>
-            <p className="dimension">Димензије 21х30cm</p>
+            <p className="title"> {t('sv_vukasin_klepacki')}</p>
+            <p className="dimension">{t('dimenzije')} 21х30cm</p>
           </div>
 
           <div className="sektor">
@@ -78,8 +81,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(1);
               }}
             />
-            <p className="title">Св Јован Крститељ</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="title">{t('sv_jovan_krstitelj')}</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -92,8 +95,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(2);
               }}
             />
-            <p className="title">Св Великомученик Димитрије</p>
-            <p className="dimension">Димензије 18х40cm</p>
+            <p className="title">{t('sv_velikomucenik_dimitrije')}</p>
+            <p className="dimension">{t('dimenzije')} 18х40cm</p>
           </div>
         </div>
 
@@ -108,8 +111,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(3);
               }}
             />
-            <p className="title">Св Кнез Лазар</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="title">{t('sv_knez_lazar')}</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -122,8 +125,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(4);
               }}
             />
-            <p className="title">Мајка Божија - Дечанска</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="title">{t('majka_bozija_decanska')}</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -136,8 +139,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(5);
               }}
             />
-            <p className="title">Икона Мајке Божије</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="title">{t('majka_bozija')}</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
         </div>
 
@@ -152,8 +155,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(6);
               }}
             />
-            <p className="title">Св Муч Јустин Философ</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="title">{t('sv_mucenik_justin_filosof')}</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -166,8 +169,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(7);
               }}
             />
-            <p className="title">Св Нектарије Егински</p>
-            <p className="dimension">Димензије 30х40cm</p>
+            <p className="title">{t('sv_nektarije_eginski')}</p>
+            <p className="dimension">{t('dimenzije')} 30х40cm</p>
           </div>
 
           <div className="sektor">
@@ -180,8 +183,8 @@ export const GalerijaPrvaStrana = () => {
                 setPhotoIndex(8);
               }}
             />
-            <p className="title">Св Архангел Михаил</p>
-            <p className="dimension">Димензије 26х61cm</p>
+            <p className="title">{t('sv_arhangel_mihail')}</p>
+            <p className="dimension">{t('dimenzije')} 26х61cm</p>
           </div>
         </div>
       </div>
