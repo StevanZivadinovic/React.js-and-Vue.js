@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ValidationSignUp from '../signupValidation';
+import axios from 'axios';
 
 export default function Signup() {
+    const navigate = useNavigate()
   const [values, setValues]=useState({
     name:'',
     email:'',
@@ -15,12 +17,18 @@ const [errors, setErrors]=useState({
 })
 const handleInput = (event)=>{
     setValues(prev=>({...prev, [event.target.name]:[event.target.value]}))
-    console.log(values)
 }
 const handleSubmit = (event)=>{
     event.preventDefault();
     setErrors(ValidationSignUp(values))
-    console.log(errors)
+    if(errors.name === '' && errors.email==='' && errors.password === ''){
+        axios.post('http://localhost:8081/signup_zahtev', values)
+        .then((res)=>{
+            navigate('/')
+            console.log(res)})
+        .catch(err=>{console.log(err)})
+
+    }
 }
   return (
     <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>

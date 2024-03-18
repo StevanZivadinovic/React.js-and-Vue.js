@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ValidationLogin from '../loginValidation';
+import axios from 'axios';
 
 export default function Login() {
+    const navigate = useNavigate()
     const [values, setValues]=useState({
         email:'',
         password:''
@@ -17,6 +19,19 @@ export default function Login() {
     const handleSubmit = (event)=>{
         event.preventDefault();
         setErrors(ValidationLogin(values))
+        if(errors.email==='' && errors.password === ''){
+            axios.post('http://localhost:8081/login_zahtev', values)
+            .then((res)=>{
+                if(res.data==='Success'){
+                    navigate('/home')
+                }else{
+                    alert('Email or password is wrong')
+                }
+                console.log(res)
+            })
+            .catch(err=>{console.log(err)})
+    
+        }
     }
   return (
     <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
