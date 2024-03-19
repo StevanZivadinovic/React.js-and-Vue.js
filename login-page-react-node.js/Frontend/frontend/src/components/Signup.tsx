@@ -28,8 +28,9 @@ export default function Signup() {
       axios
         .post("http://localhost:8081/signup_zahtev", values)
         .then((res) => {
+          sessionStorage.setItem("token1",res.data.userID);
           navigate("/");
-          console.log(res);
+          console.log(res.data); // Check the response data here
         })
         .catch((err) => {
           console.log(err);

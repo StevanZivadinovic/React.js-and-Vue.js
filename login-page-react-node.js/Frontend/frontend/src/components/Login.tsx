@@ -22,7 +22,8 @@ export default function Login() {
         if(errors.email==='' && errors.password === ''){
             axios.post('http://localhost:8081/login_zahtev', values)
             .then((res)=>{
-                if(res.data==='Success'){
+                if(res){
+                    sessionStorage.setItem("token2",res?.data[0]?.id);
                     navigate('/home')
                 }else{
                     alert('Email or password is wrong')
