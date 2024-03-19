@@ -6,7 +6,7 @@ import axios from "axios";
       .then(response => {
         console.log(response)
         const checkIfUserLogedIn = response?.data[0]?.id===sessionStorage.getItem('token2');
-        setIsLoggedIn(true);
+        setIsLoggedIn(checkIfUserLogedIn);
         setLoading(false);
       })
       .catch(error => {
