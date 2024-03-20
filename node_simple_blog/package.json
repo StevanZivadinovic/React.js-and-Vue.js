@@ -1,0 +1,19 @@
+{
+  "name": "node_simple_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "files.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.0",
+    "lodash": "^4.17.21"
+  }
+}
