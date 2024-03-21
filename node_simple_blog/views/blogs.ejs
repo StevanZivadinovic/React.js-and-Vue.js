@@ -3,5 +3,31 @@
 <body>
     <%- include("./partials/nav.ejs") %>
     <H2><%= title %></H2>
+
+    <!-- Loop through the array of RowDataPacket objects -->
+    <% if (blogs.length > 0) { %>
+        <% blogs.forEach(blog => { %>
+            <div class="blog" onclick="getBlogData('<%= blog.id %>')">
+                <h3 class="title"><%= blog.title %></h3>
+                <p class="snippet"><%= blog.snippet %></p>
+                <p class="body"><%= blog.blog_body %></p>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>There are no blogs to display...</p>
+    <% } %>
+    <%- include("./partials/footer.ejs") %>
+    <script>
+        const getBlogData = (id)=>{
+        fetch('/delete_blog', {
+        method: 'DELETE',
+        body: JSON.stringify(id)
+      }).then((data)=>{
+
+      }).catch((err)=>{
+
+      })
+        }
+    </script>
 </body>
 </html>

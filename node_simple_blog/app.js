@@ -16,13 +16,34 @@ app.use(express.json());
 //     console.log('every time this middleware renders');
 //     next()//ako ne stavis next() ne cita kod dalje, blokira refresh
 // })
-
+const generateSessionId = require('./functions/generateIDForLogedUsers.js');
 const db = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'',
     database:'blogs'
 })
+
+
+app.post('/signup_zahtev',(req, res)=>{ 
+    const sql = 'INSERT INTO blogovi (`id`,`title`, `snippet`, `blog_body`) VALUES (?)';
+   const ID = generateSessionId()
+    const values = [
+        ID,
+        req.body.title,
+        req.body.snippet,
+        req.body.blog_body
+    ]
+   
+    db.query(sql, [values], (err, data)=>{
+        if(err){
+            console.log(err)
+            return res.send('Error')
+        }
+        res.send(data);
+    })
+})
+
 
 
 app.get('/',(req, res)=>{
@@ -32,8 +53,14 @@ app.get('/blogs/create', (req, res) => {
     res.render('create', { title: 'Create a new blog' });
   });
 app.get('/blogs',(req, res)=>{
-    const blogs=[]
-    res.render('blogs',{title:"All blogs", blogs})
+    const sql = 'SELECT * FROM blogovi'
+    db.query(sql, (err, data)=>{
+        if(err){
+            console.log(err)
+        }
+        const blogs=data;
+        res.render('blogs',{title:"All blogs", blogs})
+    })
  })
 app.get('/about',(req, res)=>{
     res.render('about', {title:'About'})
