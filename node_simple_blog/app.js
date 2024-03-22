@@ -1,77 +1,74 @@
-const express = require('express');
-const mysql = require('mysql');
-const app=express();
+const express = require("express");
+const mysql = require("mysql");
+const app = express();
 app.listen(3000);
 
-
 //register new engine
-app.set('view engine','ejs');
-
-
+app.set("view engine", "ejs");
 
 //middlewares
-app.use(express.static('public'));
+app.use(express.static("public"));
 app.use(express.json());
 // app.use((req, res, next)=>{
 //     console.log('every time this middleware renders');
 //     next()//ako ne stavis next() ne cita kod dalje, blokira refresh
 // })
-const generateSessionId = require('./functions/generateIDForLogedUsers.js');
+const generateSessionId = require("./functions/generateIDForLogedUsers.js");
 const db = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'blogs'
-})
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "blogs",
+});
 
+app.post("/signup_zahtev", (req, res) => {
+  const sql =
+    "INSERT INTO blogovi (`id`,`title`, `snippet`, `blog_body`) VALUES (?)";
+  const ID = generateSessionId();
+  const values = [ID, req.body.title, req.body.snippet, req.body.blog_body];
 
-app.post('/signup_zahtev',(req, res)=>{ 
-    const sql = 'INSERT INTO blogovi (`id`,`title`, `snippet`, `blog_body`) VALUES (?)';
-   const ID = generateSessionId()
-    const values = [
-        ID,
-        req.body.title,
-        req.body.snippet,
-        req.body.blog_body
-    ]
-   
-    db.query(sql, [values], (err, data)=>{
-        if(err){
-            console.log(err)
-            return res.send('Error')
-        }
-        res.send(data);
-    })
-})
-
-
-
-app.get('/',(req, res)=>{
-   res.redirect('/blogs')
-})
-app.get('/blogs/create', (req, res) => {
-    res.render('create', { title: 'Create a new blog' });
+  db.query(sql, [values], (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.send("Error");
+    }
+    res.send(data);
   });
-app.get('/blogs',(req, res)=>{
-    const sql = 'SELECT * FROM blogovi'
-    db.query(sql, (err, data)=>{
-        if(err){
-            console.log(err)
-        }
-        const blogs=data;
-        res.render('blogs',{title:"All blogs", blogs})
-    })
- })
-app.get('/about',(req, res)=>{
-    res.render('about', {title:'About'})
-})
+});
+
+app.get("/", (req, res) => {
+  res.redirect("/blogs");
+});
+app.get("/blogs/create", (req, res) => {
+  res.render("create", { title: "Create a new blog" });
+});
+app.get("/blogs", (req, res) => {
+  const sql = "SELECT * FROM blogovi";
+  db.query(sql, (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+    const blogs = data;
+    res.render("blogs", { title: "All blogs", blogs });
+  });
+});
+app.get("/about", (req, res) => {
+  res.render("about", { title: "About" });
+});
+
+app.delete("/delete_blog", (req, res) => {
+  const sql = "DELETE FROM blogovi WHERE id = ?";
+  const id = req.body.id;
+  console.log(id);
+  db.query(sql, [id], (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: "Error deleting blog" });
+    }
+    res.json({ success: true });
+  });
+});
 
 //middlewares
-app.use((req, res)=>{
-    res.status(404).render('404',{title:"Page not exist!"})
-})
-
-
-
-
-
+app.use((req, res) => {
+  res.status(404).render("404", { title: "Page not exist!" });
+});
