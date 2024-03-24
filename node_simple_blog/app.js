@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql = require("mysql");
 const app = express();
+const blogRouter = require('./routes/blogsRoutes.js')
 app.listen(3000);
 
 //register new engine
@@ -39,19 +40,6 @@ app.post("/signup_zahtev", (req, res) => {
 app.get("/", (req, res) => {
   res.redirect("/blogs");
 });
-app.get("/blogs/create", (req, res) => {
-  res.render("create", { title: "Create a new blog" });
-});
-app.get("/blogs", (req, res) => {
-  const sql = "SELECT * FROM blogovi";
-  db.query(sql, (err, data) => {
-    if (err) {
-      console.log(err);
-    }
-    const blogs = data;
-    res.render("blogs", { title: "All blogs", blogs });
-  });
-});
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
@@ -69,6 +57,12 @@ app.delete("/delete_blog", (req, res) => {
 });
 
 //middlewares
+app.use((req, res, next) => {
+  req.db = db;
+  next();
+});
+app.use(blogRouter)
 app.use((req, res) => {
   res.status(404).render("404", { title: "Page not exist!" });
 });
+
