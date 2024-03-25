@@ -44,18 +44,6 @@ app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
 
-app.delete("/delete_blog", (req, res) => {
-  const sql = "DELETE FROM blogovi WHERE id = ?";
-  const id = req.body.id;
-  console.log(id);
-  db.query(sql, [id], (err, data) => {
-    if (err) {
-      return res.status(500).json({ error: "Error deleting blog" });
-    }
-    res.json({ success: true });
-  });
-});
-
 //middlewares
 app.use((req, res, next) => {
   req.db = db;
