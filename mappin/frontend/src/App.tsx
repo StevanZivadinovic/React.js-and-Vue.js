@@ -8,7 +8,7 @@ function App() {
   const [points, setPoints]=useState([])
 
   useEffect(() => {
-      fetch('http://localhost:8800/api/pins/get_pins')
+      fetch('api/pins/get_pins')
       .then((data)=>{
         return data.json()
       })
