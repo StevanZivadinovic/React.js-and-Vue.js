@@ -16,12 +16,11 @@ pinsRoutes.post('/create',(req, res)=>{
 //get all pins
 
 pinsRoutes.get('/get_pins',(req, res)=>{
-    const allPins = Pin.find()
-    allPins
+   Pin.find()
     .then((data)=>{ 
         res.status(200).send(data)
     }).catch((err)=>{
-        res.status(500).json(err);
+        res.status(500).json({ error: 'Failed to retrieve pins' ,err});
     })
 })
 

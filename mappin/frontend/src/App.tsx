@@ -17,6 +17,7 @@ function App() {
         setPoints(data)
       })
       .catch((err)=>{
+        console.log(err)
         throw err;
       })
   }, [])
