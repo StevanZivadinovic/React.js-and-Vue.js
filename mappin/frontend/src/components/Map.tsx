@@ -7,6 +7,7 @@ import {
 } from "../functions/markerFunctions.ts";
 import { ClickedMarkerSetter } from "./subComponents/MarkerSetter.tsx";
 import AddNewMarker from "./subComponents/AddNewMarker.tsx";
+import RegisterForm from "./Register.tsx";
 
 type Center = [number, number];
 const Map = ({ points }) => {
@@ -28,13 +29,14 @@ const Map = ({ points }) => {
   }, [points]);
 
   return (
+    <>
+      <RegisterForm/>
     <MapContainer
       className="mapStyle"
       center={center}
       zoom={5}
       scrollWheelZoom={true}
     >
-    
       <ClickedMarkerSetter
         indexOfClickedMarker={indexOfClickedMarker}
         pointsArray={pointsArray}
@@ -88,7 +90,9 @@ const Map = ({ points }) => {
           </Marker>
         </div>
       ))}
+      
     </MapContainer>
+      </>
   );
 };
 

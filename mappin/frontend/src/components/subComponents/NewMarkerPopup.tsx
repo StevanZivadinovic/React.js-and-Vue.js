@@ -1,9 +1,7 @@
 import React from "react";
 import {
-  handleDescriptionChange,
-  handleRatingChange,
+  handleInputChange,
   handleSubmit,
-  handleTitleChange,
 } from "../../functions/markerFunctions.ts";
 const NewMarkerPopup = ({
   newMarkerDataRef,
@@ -38,7 +36,7 @@ const NewMarkerPopup = ({
         id="title"
         defaultValue={newMarkerDataRef.current.title}
         onChange={(e) => {
-          handleTitleChange(e, titleRef, newMarkerDataRef);
+          handleInputChange(e, titleRef, newMarkerDataRef, 'title');
         }}
       />
       <label htmlFor="desc">Description:</label>
@@ -48,7 +46,7 @@ const NewMarkerPopup = ({
         id="desc"
         defaultValue={newMarkerDataRef.current.desc}
         onChange={(e) => {
-          handleDescriptionChange(e, descriptionRef, newMarkerDataRef);
+          handleInputChange(e, descriptionRef, newMarkerDataRef,'desc');
         }}
       />
       <label htmlFor="rating">Rating:</label>
@@ -56,9 +54,9 @@ const NewMarkerPopup = ({
         ref={ratingRef}
         type="number"
         id="rating"
-        defaultValue={newMarkerDataRef.current.rating.toString()} // Convert number to string
+        defaultValue={newMarkerDataRef.current.rating.toString()} 
         onChange={(e) => {
-          handleRatingChange(e, ratingRef, newMarkerDataRef);
+          handleInputChange(e, ratingRef, newMarkerDataRef,'rating');
         }}
       />
       <button type="submit">Submit</button>

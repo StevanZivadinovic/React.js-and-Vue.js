@@ -82,31 +82,38 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
   
 };
 
+export const handleSubmitRegister = (e, newUser, setErrRegistered, setSuccessRegistered)=>{
+  e.preventDefault()
+  console.log(e, JSON.stringify(newUser.current))
+  fetch('/api/users/register_new_user',{
+    method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser.current),
+  })
+  .then((res)=>{
+    if(res.ok){
+      console.log('User registered', res)
+      setErrRegistered(false)
+      setSuccessRegistered(true)
+    }else{
+      setErrRegistered(true)
+      setSuccessRegistered(false)
+      throw new Error("Registration faild");
+    }
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+}
 
-export const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>, titleRef, newMarkerDataRef) => {
-  if(titleRef.current){
-    newMarkerDataRef.current = {
-      ...newMarkerDataRef.current,
-      title: e.target.value, 
+export const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, inputFieldRef, newObjectRef, field) => {
+  if(inputFieldRef.current){
+    newObjectRef.current = {
+      ...newObjectRef.current,
+      [field]: e.target.value, 
      
     };
   }
-};
-export const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>, descriptionRef, newMarkerDataRef) => {
-  if(descriptionRef.current){
-    newMarkerDataRef.current = {
-      ...newMarkerDataRef.current,
-      desc: e.target.value, 
-     
-    };
-  }
-    
-};
-export const handleRatingChange = (e: React.ChangeEvent<HTMLInputElement>, ratingRef, newMarkerDataRef) => {
-  if(ratingRef.current){
-    newMarkerDataRef.current = {
-      ...newMarkerDataRef.current,
-      rating:parseInt(e.target.value),
-     
-    };}
 };
