@@ -34,17 +34,18 @@ const Map = ({ points }) => {
       zoom={5}
       scrollWheelZoom={true}
     >
-      <AddNewMarker
-        pointsArray={pointsArray}
-        setIndexOfClickedMarker={setIndexOfClickedMarker}
-        setPointsArray={setPointsArray}
-        popupOpen={popupOpen}
-        setPopupOpen={setPopupOpen}
-      />
+    
       <ClickedMarkerSetter
         indexOfClickedMarker={indexOfClickedMarker}
         pointsArray={pointsArray}
       />
+        <AddNewMarker
+         pointsArray={pointsArray}
+         setIndexOfClickedMarker={setIndexOfClickedMarker}
+         setPointsArray={setPointsArray}
+         popupOpen={popupOpen}
+         setPopupOpen={setPopupOpen}
+       />
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -68,6 +69,7 @@ const Map = ({ points }) => {
               },
             }}
           >
+             
             <Popup>
               <div className="card">
                 <label htmlFor="">Place</label>

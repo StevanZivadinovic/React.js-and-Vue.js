@@ -13,7 +13,6 @@ function App() {
         return data.json()
       })
       .then(data=>{
-        console.log(data)
         setPoints(data)
       })
       .catch((err)=>{

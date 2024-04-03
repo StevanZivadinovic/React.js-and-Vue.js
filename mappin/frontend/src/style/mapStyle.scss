@@ -27,5 +27,17 @@
             color: gold;
         }
     }
+
     
+}
+.leaflet-popup{
+    .leaflet-popup-content-wrapper{
+        .leaflet-popup-content{
+            .newMarkerForm{
+                display: flex;
+                flex-direction: column;
+                color: tomato;
+            }
+        }
+    }
 }
