@@ -1,41 +1,69 @@
 import React from "react";
-const newMarkerPopup = ({ newMarkerData, handleSubmit, setNewMarkerData }) => {
+import {
+  handleDescriptionChange,
+  handleRatingChange,
+  handleSubmit,
+  handleTitleChange,
+} from "../../functions/markerFunctions.ts";
+const NewMarkerPopup = ({
+  newMarkerDataRef,
+  pointsArray,
+  setIndexOfClickedMarker,
+  setPointsArray,
+  setPopupOpen,
+  titleRef,
+  descriptionRef,
+  ratingRef
+}) => {
   return (
-    <form onSubmit={handleSubmit} key="form" className="newMarkerForm">
+    <form
+      onSubmit={(e) =>
+        handleSubmit(
+          e,
+          newMarkerDataRef,
+          pointsArray,
+          setIndexOfClickedMarker,
+          setPointsArray,
+          setPopupOpen
+        )
+      }
+      key="form"
+      className="newMarkerForm"
+    >
       <label htmlFor="title">Title:</label>
       <input
+        ref={titleRef}
         placeholder="Add title"
         type="text"
         id="title"
-        value={newMarkerData.title}
-        onChange={(e) =>
-          setNewMarkerData({ ...newMarkerData, title: e.target.value })
-        }
+        defaultValue={newMarkerDataRef.current.title}
+        onChange={(e) => {
+          handleTitleChange(e, titleRef, newMarkerDataRef);
+        }}
       />
       <label htmlFor="desc">Description:</label>
       <textarea
+        ref={descriptionRef}
         placeholder="Add description"
         id="desc"
-        value={newMarkerData.desc}
-        onChange={(e) =>
-          setNewMarkerData({ ...newMarkerData, desc: e.target.value })
-        }
+        defaultValue={newMarkerDataRef.current.desc}
+        onChange={(e) => {
+          handleDescriptionChange(e, descriptionRef, newMarkerDataRef);
+        }}
       />
       <label htmlFor="rating">Rating:</label>
       <input
+        ref={ratingRef}
         type="number"
         id="rating"
-        value={newMarkerData.rating}
-        onChange={(e) =>
-          setNewMarkerData({
-            ...newMarkerData,
-            rating: parseInt(e.target.value),
-          })
-        }
+        defaultValue={newMarkerDataRef.current.rating.toString()} // Convert number to string
+        onChange={(e) => {
+          handleRatingChange(e, ratingRef, newMarkerDataRef);
+        }}
       />
       <button type="submit">Submit</button>
     </form>
   );
 };
 
-export default newMarkerPopup;
+export default NewMarkerPopup;
