@@ -1,5 +1,5 @@
 import { clickedIcon, defaultIcon } from "../consts/mapMarkerConsts.ts";
-
+import React from "react";
 
 export const markerIconSetFunction = (point) => {
   if (point.clicked) {
@@ -82,31 +82,43 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
   
 };
 
-export const handleSubmitRegister = (e, newUser, setErrRegistered, setSuccessRegistered)=>{
-  e.preventDefault()
-  console.log(e, JSON.stringify(newUser.current))
-  fetch('/api/users/register_new_user',{
+export const handleSubmitRegister = (e, newUser, setErrRegistered, setSuccessRegistered) => {
+  e.preventDefault();
+  const { username, email, password } = newUser.current;
+  const newUserObject = {
+    username,
+    email,
+    password
+  };
+
+  fetch('/api/users/register_new_user', {
     method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser.current),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newUserObject),
   })
-  .then((res)=>{
-    if(res.ok){
-      console.log('User registered', res)
-      setErrRegistered(false)
+  .then((res) => {
+    if (res.ok) {
+      alert("User is registered!");
       setSuccessRegistered(true)
-    }else{
-      setErrRegistered(true)
-      setSuccessRegistered(false)
-      throw new Error("Registration faild");
+      setErrRegistered({display:false, msg:''});
+    } else {
+      return res.json();
     }
   })
-  .catch((err)=>{
-    console.log(err)
+  .then((data)=>{
+    if(data?.error){
+      setSuccessRegistered(false)
+      setErrRegistered({display:true, msg:data?.error});
+    }
   })
-}
+  .catch((err) => {
+    setErrRegistered({dispay:true, msg:err});
+  });
+};
+
+
 
 export const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, inputFieldRef, newObjectRef, field) => {
   if(inputFieldRef.current){

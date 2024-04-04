@@ -1,24 +1,37 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   handleInputChange,
   handleSubmitRegister,
 } from "../functions/markerFunctions.ts";
+import Navbar from "./subComponents/Navbar.tsx";
 
 const RegisterForm = () => {
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-     const [errRegistered, setErrRegistered] = useState(false)
+     const [errRegistered, setErrRegistered] = useState({display:false, msg:''})
      const [successRegistered, setSuccessRegistered] = useState(false)
+     const [displayForm, setDisplayForm] = useState(false)
+
 
   const newUser = useRef({
     username: "",
     email: "",
     password: "",
   });
+  useEffect(() => {
+    if(successRegistered){
+      setTimeout(() => {
+        setDisplayForm(false)
+      }, 1000);
+    }
+  }, [successRegistered])
+  
 
   return (
-    <div className="registerFormContainer">
+  <>
+  <Navbar/>
+  { displayForm && <div className="registerFormContainer">
       <form
         action=""
         className="registerForm"
@@ -67,10 +80,12 @@ const RegisterForm = () => {
           />
         </div>
         <button className="submitRegisterButton">Register</button>
-        {errRegistered && <p className="errMsgRegister"><strong>Error, something unexpected heppen, please check email or username!</strong></p>}
-        {successRegistered && <p className="successMsgRegister"><strong>You succesfully registered!</strong></p>}
+        {errRegistered?.display && <p className="errMsgRegister"><strong>{errRegistered?.msg}</strong></p>}
+        {successRegistered && <p className="successMsgRegister"><strong>New user registered!</strong></p>}
       </form>
-    </div>
+    </div>}
+  </>
+   
   );
 };
 

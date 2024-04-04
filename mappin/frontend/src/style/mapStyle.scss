@@ -1,3 +1,5 @@
+@import url('./navbar.scss');
+
 .mapStyle {
   position: relative;
   width: 100%;
@@ -102,4 +104,14 @@
       cursor: pointer;
     }
   }
+  .errMsgRegister{
+    color: rgb(247, 251, 3);
+    text-decoration: underline;
+  }
+  .successMsgRegister{
+    color: green ;
+    text-align: center;
+  }
 }
+
+
