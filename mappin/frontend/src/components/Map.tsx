@@ -8,6 +8,9 @@ import {
 import { ClickedMarkerSetter } from "./subComponents/MarkerSetter.tsx";
 import AddNewMarker from "./subComponents/AddNewMarker.tsx";
 import RegisterForm from "./Register.tsx";
+import LoginForm from "./Login.tsx";
+import Navbar from "./subComponents/Navbar.tsx";
+import { getTimePassedSinceCreation } from "../functions/globalFunc.ts";
 
 type Center = [number, number];
 const Map = ({ points }) => {
@@ -17,6 +20,11 @@ const Map = ({ points }) => {
     Number(localStorage.getItem("lastClickedMarker"))
   );
   const [popupOpen, setPopupOpen] = useState(false);
+  const [displayRegisterForm, setDisplayRegisterForm] = useState(false);
+  const [displayLoginForm, setDisplayLoginForm] = useState(false);
+  const [loggedUser, setLoggedUser] = useState(
+    localStorage.getItem("loggedAndRegistredUser")
+  );
 
   useEffect(() => {
     setClickedMarkerFunc(
@@ -24,75 +32,95 @@ const Map = ({ points }) => {
       pointsArray,
       setPointsArray,
       setIndexOfClickedMarker,
-      points
+      points,
+      
     );
   }, [points]);
-
   return (
     <>
-      <RegisterForm/>
-    <MapContainer
-      className="mapStyle"
-      center={center}
-      zoom={5}
-      scrollWheelZoom={true}
-    >
-      <ClickedMarkerSetter
-        indexOfClickedMarker={indexOfClickedMarker}
-        pointsArray={pointsArray}
+      <Navbar
+        setDisplayRegisterForm={setDisplayRegisterForm}
+        setDisplayLoginForm={setDisplayLoginForm}
+        setLoggedUser={setLoggedUser}
+        setPopupOpen={setPopupOpen}
       />
-        <AddNewMarker
-         pointsArray={pointsArray}
-         setIndexOfClickedMarker={setIndexOfClickedMarker}
-         setPointsArray={setPointsArray}
-         popupOpen={popupOpen}
-         setPopupOpen={setPopupOpen}
-       />
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      <LoginForm
+        displayLoginForm={displayLoginForm}
+        setDisplayLoginForm={setDisplayLoginForm}
+        setLoggedUser={setLoggedUser}
+        setPopupOpen={setPopupOpen}
+        setDisplayRegisterForm={setDisplayRegisterForm}
       />
-      {pointsArray.map((point, i) => (
-        <div className="" key={i}>
-          <Marker
-            position={[point?.lat, point?.long]}
-            icon={markerIconSetFunction(point)}
-            eventHandlers={{
-              click: () => {
-                setClickedMarkerFunc(
-                  i,
-                  pointsArray,
-                  setPointsArray,
-                  setIndexOfClickedMarker,
-                  points
-                );
-                localStorage.setItem("lastClickedMarker", String(i));
-                setPopupOpen(false)
-              },
-            }}
-          >
-             
-            <Popup>
-              <div className="card">
-                <label htmlFor="">Place</label>
-                <h4 className="place">{point?.title}</h4>
-                <label htmlFor="">Rewiew</label>
-                <p className="desc">{point?.desc}!</p>
-                <label>Rating</label>
-                <div className="stars">
-                  <Star numberOfStars={point?.rating} />
+      <RegisterForm
+        displayRegisterForm={displayRegisterForm}
+        setDisplayRegisterForm={setDisplayRegisterForm}
+        setLoggedUser={setLoggedUser}
+        setDisplayLoginForm={setDisplayLoginForm}
+      />
+      <MapContainer
+        className="mapStyle"
+        center={center}
+        zoom={5}
+        scrollWheelZoom={true}
+      >
+        <ClickedMarkerSetter
+          indexOfClickedMarker={indexOfClickedMarker}
+          pointsArray={pointsArray}
+        />
+       <AddNewMarker
+          pointsArray={pointsArray}
+          setIndexOfClickedMarker={setIndexOfClickedMarker}
+          setPointsArray={setPointsArray}
+          popupOpen={popupOpen}
+          setPopupOpen={setPopupOpen}
+          loggedUser={loggedUser}
+          setLoggedUser={setLoggedUser}
+          setDisplayLoginForm={setDisplayLoginForm}
+        />
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {pointsArray.map((point, i) => (
+          <div className="" key={i}>
+            <Marker
+              position={[point?.lat, point?.long]}
+              icon={markerIconSetFunction(point)}
+              eventHandlers={{
+                click: () => {
+                  setClickedMarkerFunc(
+                    i,
+                    pointsArray,
+                    setPointsArray,
+                    setIndexOfClickedMarker,
+                    points,
+                    
+                  );
+                  localStorage.setItem("lastClickedMarker", String(i));
+                  setPopupOpen(false);
+                },
+              }}
+            >
+              <Popup>
+                <div className="card">
+                  <label htmlFor="">Place</label>
+                  <h4 className="place">{point?.title}</h4>
+                  <label htmlFor="">Rewiew</label>
+                  <p className="desc">{point?.desc}!</p>
+                  <label>Rating</label>
+                  <div className="stars">
+                    <Star numberOfStars={point?.rating} />
+                  </div>
+                  <label htmlFor="">Information</label>
+                  <span className="username">{point?.username}</span>
+                  <span className="date">{getTimePassedSinceCreation(new Date(point.createdAt))}</span>
                 </div>
-                <label htmlFor="">Information</label>
-                <span className="username">stevan_94</span>
-                <span className="date">1 hour ago</span>
-              </div>
-            </Popup>
-          </Marker>
-        </div>
-      ))}
-      
-    </MapContainer>
-      </>
+              </Popup>
+            </Marker>
+          </div>
+        ))}
+      </MapContainer>
+    </>
   );
 };
 

@@ -3,26 +3,23 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import {
   handleInputChange,
 } from "../functions/markerFunctions.ts";
-import { handleSubmitRegister } from "../functions/usersFunctions.ts";
+import { handleSubmitLogin } from "../functions/usersFunctions.ts";
 
-const RegisterForm = ({displayRegisterForm, setDisplayRegisterForm, setLoggedUser,setDisplayLoginForm}) => {
+const LoginForm = ({displayLoginForm, setDisplayLoginForm,setLoggedUser,setPopupOpen,setDisplayRegisterForm}) => {
   const usernameRef = useRef(null);
-  const emailRef = useRef(null);
   const passwordRef = useRef(null);
      const [errRegistered, setErrRegistered] = useState({display:false, msg:''})
      const [successRegistered, setSuccessRegistered] = useState(false)
-     
 
 
-  const newUser = useRef({
+  const loggedUser = useRef({
     username: "",
-    email: "",
     password: "",
   });
   useEffect(() => {
     if(successRegistered){
       setTimeout(() => {
-        setDisplayRegisterForm(false)
+        setDisplayLoginForm(false)
         setSuccessRegistered(false)
       }, 1000);
     }
@@ -31,19 +28,19 @@ const RegisterForm = ({displayRegisterForm, setDisplayRegisterForm, setLoggedUse
 
   return (
   <>
-  { displayRegisterForm && <div className="registerFormContainer">
+  { displayLoginForm && <div className="registerFormContainer">
       <form
         action=""
         className="registerForm"
         onSubmit={(e) => {
-          handleSubmitRegister(e, newUser,setErrRegistered, setSuccessRegistered, setLoggedUser);
+            handleSubmitLogin(e, loggedUser,setErrRegistered, setSuccessRegistered,setLoggedUser, setPopupOpen);
         }}
       >
-        <div className="cancelBtn" onClick={()=>{setDisplayRegisterForm(false)}}>
+        <div className="cancelBtn" onClick={()=>{setDisplayLoginForm(false)}}>
           <CancelIcon/>
         </div>
         <div className="logo">
-          <img src="/img/point_orange.png" alt="logo image" />
+          <img src="/img/point_orange.png" alt="logo" />
           <span>Travel Map</span>
         </div>
         <div className="username">
@@ -54,19 +51,7 @@ const RegisterForm = ({displayRegisterForm, setDisplayRegisterForm, setLoggedUse
             name="username"
             placeholder="Type your username.."
             onChange={(e) => {
-              handleInputChange(e, usernameRef, newUser, "username");
-            }}
-          />
-        </div>
-        <div className="email">
-          <input
-            required
-            ref={emailRef}
-            type="email"
-            name="email"
-            placeholder="Type your email.."
-            onChange={(e) => {
-              handleInputChange(e, emailRef, newUser, "email");
+              handleInputChange(e, usernameRef, loggedUser, "username");
             }}
           />
         </div>
@@ -78,14 +63,14 @@ const RegisterForm = ({displayRegisterForm, setDisplayRegisterForm, setLoggedUse
             name="password"
             placeholder="Type your password.."
             onChange={(e) => {
-              handleInputChange(e, passwordRef, newUser, "password");
+              handleInputChange(e, passwordRef, loggedUser, "password");
             }}
           />
         </div>
-        <button className="submitRegisterButton">Register</button>
-        <p className="linkToLogin">Already have account? <span onClick={()=>{setDisplayLoginForm(true);setDisplayRegisterForm(false)}}>Log in</span> </p>
+        <button className="submitRegisterButton">Login</button>
+        <p className="linkToSignin">Don't have account? <span onClick={()=>{setDisplayLoginForm(false);setDisplayRegisterForm(true)}}>Sign in</span> </p>
         {errRegistered?.display && <p className="errMsgRegister"><strong>{errRegistered?.msg}</strong></p>}
-        {successRegistered && <p className="successMsgRegister"><strong>New user registered!</strong></p>}
+        {successRegistered && <p className="successMsgRegister"><strong>You are logged in now!</strong></p>}
       </form>
     </div>}
   </>
@@ -93,4 +78,4 @@ const RegisterForm = ({displayRegisterForm, setDisplayRegisterForm, setLoggedUse
   );
 };
 
-export default RegisterForm;
+export default LoginForm;

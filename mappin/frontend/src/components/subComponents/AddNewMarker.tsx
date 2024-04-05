@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, {useRef, useState } from "react";
 import { Popup, useMap, useMapEvent } from "react-leaflet";
 import NewMarkerPopup from "./NewMarkerPopup.tsx";
 
@@ -8,10 +8,15 @@ const AddNewMarker = ({
   setPointsArray,
   popupOpen,
   setPopupOpen,
+  loggedUser,
+  setLoggedUser,
+  setDisplayLoginForm
 }) => {
   const titleRef = useRef<HTMLInputElement>(null);
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
   const ratingRef = useRef<HTMLInputElement>(null);
+  const [closed, setClosed]=useState(true)
+
   const newMarkerDataRef = useRef<{
     lat: number | null;
     long: number | null;
@@ -23,24 +28,35 @@ const AddNewMarker = ({
     long: null,
     title: "",
     desc: "",
-    rating: 5, // Default rating
+    rating: 5, 
+  });
+const map = useMap()
+useMapEvent("click", (e) => {
+   if(loggedUser){
+     const { lat, lng } = e.latlng;
+     newMarkerDataRef.current = {
+       ...newMarkerDataRef.current,
+       lat,
+       long: lng,
+     };
+     if(closed){
+       setPopupOpen(true);
+       setClosed(false);
+     }
+   }else{
+    alert('Please loged in or register!')
+    setDisplayLoginForm(true);
+   }
+    
+  
   });
 
-  const map = useMap();
-
-  useMapEvent("click", (e) => {
-    const { lat, lng } = e.latlng;
-    newMarkerDataRef.current = {
-      ...newMarkerDataRef.current,
-      lat,
-      long: lng,
-    };
-    setPopupOpen(true);
+  useMapEvent("popupclose", () => {
+    setClosed(true);
   });
-
   return popupOpen ? (
     <Popup
-      position={[newMarkerDataRef.current.lat, newMarkerDataRef.current.long]}
+      position={[newMarkerDataRef?.current?.lat, newMarkerDataRef?.current?.long]}
     >
       <NewMarkerPopup
         newMarkerDataRef={newMarkerDataRef}
@@ -51,9 +67,11 @@ const AddNewMarker = ({
         titleRef={titleRef}
         descriptionRef={descriptionRef}
         ratingRef={ratingRef}
+        loggedUser={loggedUser}
+        setLoggedUser={setLoggedUser}
       />
     </Popup>
-  ) : null;
+  ) : null
 };
 
 export default React.memo(AddNewMarker);

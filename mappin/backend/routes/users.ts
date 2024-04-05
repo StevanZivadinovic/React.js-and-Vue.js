@@ -20,8 +20,6 @@ usersRoutes.post('/register_new_user', async (req, res)=>{
         password:hashedPassword,
     }) 
     await newUser.save();
-
-    console.log('New user registered:', newUser);
     
     // Send a response back to the frontend
     return res.status(200).json({ message: 'User registered successfully' });
@@ -33,18 +31,23 @@ usersRoutes.post('/register_new_user', async (req, res)=>{
 })
 
 usersRoutes.post('/login', (req, res)=>{
-    User.findOne({username:req.body.username})
-    .then((data)=>{
-        const validPassword = bcrypt.compare(
-            req.body.password,
-            data.password
-        )
-        !validPassword && res.status(400).json('Wrong username or password');
-        res.status(200).json(data);
-    }).catch((err)=>{
-        res.status(400).json(err);
-    })
-})  
+  User.findOne({username:req.body.username})
+  .then((data)=>{
+      if (!data) {
+          return res.status(400).json({ error: 'User not found!' });
+      }
+      const validPassword = bcrypt.compareSync(
+          req.body.password,
+          data.password
+      );
+      if (!validPassword) {
+          return res.status(400).json({ error: 'Wrong username or password!' });
+      }
+      res.status(200).json(data);
+  }).catch((err)=>{
+      res.status(500).json({ error: 'Internal server error' });
+  });
+});
 
 module.exports = usersRoutes;
 

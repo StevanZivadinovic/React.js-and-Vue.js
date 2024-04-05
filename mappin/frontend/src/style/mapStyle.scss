@@ -55,6 +55,13 @@
   min-width: 100px;
 }
 .registerForm {
+  position: relative;
+  .cancelBtn{
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    cursor: pointer;
+  }
   .logo {
     text-align: center;
     margin-bottom: 1rem;
@@ -111,6 +118,18 @@
   .successMsgRegister{
     color: green ;
     text-align: center;
+  }
+  .linkToSignin, .linkToLogin{
+    font-size: 10px;
+    text-align: right;
+    margin-top: 8px;
+    span{
+      font-weight: 600;
+      cursor: pointer;
+      &:hover{
+        color:orange ;
+      }
+    }
   }
 }
 

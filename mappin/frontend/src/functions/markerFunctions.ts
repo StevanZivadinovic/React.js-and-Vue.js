@@ -14,13 +14,16 @@ export function setClickedMarkerFunc(
   pointsArray,
   setPointsArray: React.Dispatch<React.SetStateAction<any[]>>,
   setIndexOfClickedMarker: React.Dispatch<React.SetStateAction<number>>,
-  points
+  points,
+
 ) {
   setIndexOfClickedMarker(i)
   const updatedPointsArray = pointsArray?.map((p, index) => {
     if (index === i) {
+      
       return { ...p, clicked: true };
     } else {
+      
       return { ...p, clicked: false };
     }
   });
@@ -33,17 +36,18 @@ export function setClickedMarkerFunc(
 }
 
 
-export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen) => {
+export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen,loggedUser, setLoggedUser) => {
   e.preventDefault();
   const { lat, long, title, desc, rating } = newMarkerDataRef.current;
   const newPoint = {
-    username: "mile mitic", // Example username
+    username: loggedUser,
     lat,
     long,
     title,
     desc,
     rating,
     clicked: true,
+    createdAt:new Date()
   };
 
   const updatedPointsArray = pointsArray.map((point) => ({
@@ -65,6 +69,7 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
     if (!response.ok) {
       throw new Error("Failed to add marker");
     }
+    setLoggedUser(loggedUser)
     newMarkerDataRef.current ={
       lat: null,
       long: null,
@@ -79,46 +84,9 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
 
   // Close the popup after submission
   setPopupOpen(false);
+
   
 };
-
-export const handleSubmitRegister = (e, newUser, setErrRegistered, setSuccessRegistered) => {
-  e.preventDefault();
-  const { username, email, password } = newUser.current;
-  const newUserObject = {
-    username,
-    email,
-    password
-  };
-
-  fetch('/api/users/register_new_user', {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newUserObject),
-  })
-  .then((res) => {
-    if (res.ok) {
-      alert("User is registered!");
-      setSuccessRegistered(true)
-      setErrRegistered({display:false, msg:''});
-    } else {
-      return res.json();
-    }
-  })
-  .then((data)=>{
-    if(data?.error){
-      setSuccessRegistered(false)
-      setErrRegistered({display:true, msg:data?.error});
-    }
-  })
-  .catch((err) => {
-    setErrRegistered({dispay:true, msg:err});
-  });
-};
-
-
 
 export const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, inputFieldRef, newObjectRef, field) => {
   if(inputFieldRef.current){
