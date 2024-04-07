@@ -1,10 +1,13 @@
-import { clickedIcon, defaultIcon } from "../consts/mapMarkerConsts.ts";
+import { clickedIcon, defaultIcon, loggedInUserPoints } from "../consts/mapMarkerConsts.ts";
 import React from "react";
 
-export const markerIconSetFunction = (point) => {
+export const markerIconSetFunction = (point, loggedUser) => {
   if (point.clicked) {
     return clickedIcon;
-  } else {
+  } else if(loggedUser===point.username){
+    return loggedInUserPoints;
+  }
+  else{
     return defaultIcon;
   }
 };

@@ -85,7 +85,7 @@ const Map = ({ points }) => {
           <div className="" key={i}>
             <Marker
               position={[point?.lat, point?.long]}
-              icon={markerIconSetFunction(point)}
+              icon={markerIconSetFunction(point,loggedUser)}
               eventHandlers={{
                 click: () => {
                   setClickedMarkerFunc(
