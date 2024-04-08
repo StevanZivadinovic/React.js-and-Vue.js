@@ -1,7 +1,9 @@
 
 const usersRoutes = require('express').Router();
-const User = require('./../models/User.ts');
+const { handleErrors } = require('../hlperFunctions/helperFunctions.js');
+const User = require('../models/User.ts');
 const bcrypt = require('bcrypt')
+
 
 usersRoutes.post('/register_new_user', async (req, res)=>{
     try{
@@ -24,8 +26,9 @@ usersRoutes.post('/register_new_user', async (req, res)=>{
     // Send a response back to the frontend
     return res.status(200).json({ message: 'User registered successfully' });
   } catch (err) {
-    console.error('Error registering user:', err);
-    return res.status(400).json({ error: 'Error register, already user with that email or username' });
+
+    const errors =  handleErrors(err);
+    return res.status(400).json(errors);
   }
 
 })

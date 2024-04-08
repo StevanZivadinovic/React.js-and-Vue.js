@@ -1,27 +1,35 @@
 const mongoose = require('mongoose');
+const {isEmail}=require('validator')
 
 const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      require: true,
-      min: 3,
-      max: 20,
+      required: [true, 'Please enter username!'],
+      minlength: [3, 'Username is minimum 3 characters!'],
+      maxlength: [20,'Max length is 50 characters!'],
       unique: true,
     },
     email: {
       type: String,
-      require: true,
-      max: 50,
+      required: [true, 'Please enter email!'],
+      maxlength: [20,'Max length is 50 characters!'],
       unique: true,
+      lowercase:true,
+      validate:[isEmail,'Please enter valid email!']
     },
     password: {
       type: String,
-      require: true, 
-      min: 6,
+      required: [true, 'Please enter password!'], 
+      minlength: [6, 'Password is minimum 6 characters!'],
     },
   },
   { timestamps: true }
 );
+
+UserSchema.pre('save',(next)=>{
+
+  next();
+})
 
 module.exports = mongoose.model("User", UserSchema);

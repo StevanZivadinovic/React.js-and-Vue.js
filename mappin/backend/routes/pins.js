@@ -1,6 +1,6 @@
 const express = require('express');
 const pinsRoutes = express.Router();
-const Pin = require('./../models/Pin.ts')
+const Pin = require('../models/Pin.ts')
 
 //create pin
 pinsRoutes.post('/create',(req, res)=>{

@@ -21,24 +21,24 @@ export const handleSubmitRegister = (
     body: JSON.stringify(newUserObject),
   })
     .then((res) => {
+      console.log(res.ok);
+      
       if (res.ok) {
-        alert("User is registered!");
+        console.log(res.status);
         setSuccessRegistered(true);
-        setErrRegistered({ display: false, msg: "" });
+        setErrRegistered({ display: false, msg: ''});
         localStorage.setItem("loggedAndRegistredUser", email);
         setLoggedUser(email)
+        alert("User is registered!");
       } else {
         return res.json();
       }
     })
-    .then((data) => {
-      if (data?.error) {
-        setSuccessRegistered(false);
-        setErrRegistered({ display: true, msg: data?.error });
-      }
+    .then((errMessages) => {
+        setErrRegistered({ display: true, msg: errMessages });
     })
-    .catch((err) => {
-      setErrRegistered({ dispay: true, msg: err });
+    .catch((errMessages) => {
+      setErrRegistered({ dispay: true, msg: errMessages });
     });
 };
 
