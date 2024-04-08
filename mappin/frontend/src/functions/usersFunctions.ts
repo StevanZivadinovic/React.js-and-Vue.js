@@ -20,9 +20,7 @@ export const handleSubmitRegister = (
     },
     body: JSON.stringify(newUserObject),
   })
-    .then((res) => {
-      console.log(res.ok);
-      
+    .then((res) => {    
       if (res.ok) {
         console.log(res.status);
         setSuccessRegistered(true);
