@@ -3,7 +3,7 @@ export const handleSubmitRegister = (
   newUser,
   setErrRegistered,
   setSuccessRegistered,
-  setLoggedUser
+  setLoggedUserEmail
 ) => {
   e.preventDefault();
   const { username, email, password } = newUser.current;
@@ -20,43 +20,53 @@ export const handleSubmitRegister = (
     },
     body: JSON.stringify(newUserObject),
   })
-    .then((res) => {    
+    .then((res) => {
+      console.log(res);
       if (res.ok) {
-        console.log(res.status);
-        setSuccessRegistered(true);
-        setErrRegistered({ display: false, msg: ''});
-        localStorage.setItem("loggedAndRegistredUser", email);
-        setLoggedUser(email)
-        alert("User is registered!");
+        return res.json();
       } else {
         return res.json();
       }
     })
-    .then((errMessages) => {
-        setErrRegistered({ display: true, msg: errMessages });
+    .then((data) => {
+      console.log(data)
+      if (data.user) {
+        console.log(data)
+        setSuccessRegistered(data.loggedIn);
+        setErrRegistered({ display: false, msg: "" });
+        setLoggedUserEmail(data.userData.email);
+        alert("User is registered!");
+      } else {
+        setErrRegistered({ display: true, msg: data });
+      }
     })
     .catch((errMessages) => {
       setErrRegistered({ dispay: true, msg: errMessages });
     });
 };
 
-export const handleLogout = (setDisplayBtns,setLoggedUser, setPopupOpen) => {
-  if(window.confirm('Are you sure you want to logout?')){
-    localStorage.removeItem("loggedAndRegistredUser");
-    setDisplayBtns(false);
-    setLoggedUser('')
-    setPopupOpen(false);
+export const handleLogout = (setDisplayBtns, setIsUserLoggedIn, setPopupOpen) => {
+  if (window.confirm("Are you sure you want to logout?")) {
+    fetch("/api/users/logout")
+      .then((data) => {
+        setDisplayBtns(false);
+        setPopupOpen(false);
+        setIsUserLoggedIn(false);
+        alert("User is logged out!");
+      })
+      .catch((err) => {
+        console.log(err, "eror");
+      });
   }
 };
 
 export const handleSubmitLogin = (
   e,
   loggedUser,
-  setErrRegistered,
-  setSuccessRegistered,
-  setLoggedUser,
-  setPopupOpen,
-  
+  setErrLoggin,
+  setIsUserLoggedIn,
+  setLoggedUserEmail,
+  setPopupOpen
 ) => {
   e.preventDefault();
   const { username, password } = loggedUser.current;
@@ -72,24 +82,23 @@ export const handleSubmitLogin = (
     },
     body: JSON.stringify(loggedUserObject),
   })
-  .then((res) => {
-    if (!res.ok) {
+    .then((res) => {
+      if (!res.ok) {
         return res.json();
-    }
-    return res.json();
-  })
-  .then((data) => {
-    if(data.error){
-      setErrRegistered({display:true, msg:data.error})
-    }else{
-      setErrRegistered({display:false, msg:''})
-      setSuccessRegistered(true)
-      localStorage.setItem("loggedAndRegistredUser", data.email);
-      setLoggedUser(data.email)
-      setPopupOpen(false);
-  }
-})
-.catch((err) => {
-    console.error(err); 
-});
+      }
+      return res.json();
+    })
+    .then((data) => {
+      if (!data.user) {
+        setErrLoggin({ display: true, msg: data });
+      } else {
+        setErrLoggin({ display: false, msg: "" });
+        setIsUserLoggedIn(data.loggedIn);
+        setLoggedUserEmail(data.userData.email);
+        setPopupOpen(false);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };

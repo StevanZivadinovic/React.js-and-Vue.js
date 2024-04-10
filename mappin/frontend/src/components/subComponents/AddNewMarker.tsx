@@ -8,9 +8,10 @@ const AddNewMarker = ({
   setPointsArray,
   popupOpen,
   setPopupOpen,
-  loggedUser,
-  setLoggedUser,
-  setDisplayLoginForm
+  loggedUserEmail,
+  setLoggedUserEmail,
+  setDisplayLoginForm,
+  isUserLoggedIn
 }) => {
   const titleRef = useRef<HTMLInputElement>(null);
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
@@ -32,7 +33,7 @@ const AddNewMarker = ({
   });
 const map = useMap()
 useMapEvent("click", (e) => {
-   if(loggedUser){
+   if(isUserLoggedIn){
      const { lat, lng } = e.latlng;
      newMarkerDataRef.current = {
        ...newMarkerDataRef.current,
@@ -67,8 +68,8 @@ useMapEvent("click", (e) => {
         titleRef={titleRef}
         descriptionRef={descriptionRef}
         ratingRef={ratingRef}
-        loggedUser={loggedUser}
-        setLoggedUser={setLoggedUser}
+        loggedUserEmail={loggedUserEmail}
+        setLoggedUserEmail={setLoggedUserEmail}
       />
     </Popup>
   ) : null

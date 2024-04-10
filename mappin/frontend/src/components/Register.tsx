@@ -6,8 +6,10 @@ import { handleSubmitRegister } from "../functions/usersFunctions.ts";
 const RegisterForm = ({
   displayRegisterForm,
   setDisplayRegisterForm,
-  setLoggedUser,
+  setLoggedUserEmail,
   setDisplayLoginForm,
+  isUserLoggedIn, 
+  setIsUserLoggedIn
 }) => {
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
@@ -16,7 +18,7 @@ const RegisterForm = ({
     display: false,
     msg: { email: '', username: '', password: '', bigError:'' },
   });
-  const [successRegistered, setSuccessRegistered] = useState(false);
+ 
 
   const newUser = useRef({
     username: '',
@@ -25,14 +27,13 @@ const RegisterForm = ({
   });
   useEffect(() => {
     let timeout;
-    if (successRegistered) {
+    if (isUserLoggedIn) {
       timeout = setTimeout(() => {
         setDisplayRegisterForm(false);
-        setSuccessRegistered(false);
       }, 2000);
     }
     return () => clearTimeout(timeout);
-  }, [successRegistered]);
+  }, [isUserLoggedIn]);
   return (
     <>
       {displayRegisterForm && (
@@ -45,8 +46,8 @@ const RegisterForm = ({
                 e,
                 newUser,
                 setErrRegistered,
-                setSuccessRegistered,
-                setLoggedUser
+                setIsUserLoggedIn,
+                setLoggedUserEmail
               );
             }}
           >
@@ -131,7 +132,7 @@ const RegisterForm = ({
                   <strong>{errRegistered?.msg?.bigError}</strong>
                 </p>
               )}
-            {successRegistered && (
+            {isUserLoggedIn && (
               <p className="successMsgRegister">
                 <strong>New user registered!</strong>
               </p>

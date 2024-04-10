@@ -8,13 +8,13 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Please enter username!'],
       minlength: [3, 'Username is minimum 3 characters!'],
-      maxlength: [20,'Max length is 50 characters!'],
+      maxlength: [50,'Max length is 50 characters!'],
       unique: true,
     },
     email: {
       type: String,
       required: [true, 'Please enter email!'],
-      maxlength: [20,'Max length is 50 characters!'],
+      maxlength: [50,'Max length is 50 characters!'],
       unique: true,
       lowercase:true,
       validate:[isEmail,'Please enter valid email!']

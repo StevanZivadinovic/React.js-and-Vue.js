@@ -22,9 +22,8 @@ const Map = ({ points }) => {
   const [popupOpen, setPopupOpen] = useState(false);
   const [displayRegisterForm, setDisplayRegisterForm] = useState(false);
   const [displayLoginForm, setDisplayLoginForm] = useState(false);
-  const [loggedUser, setLoggedUser] = useState(
-    localStorage.getItem("loggedAndRegistredUser")
-  );
+  const [loggedUserEmail, setLoggedUserEmail] = useState('');
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
     setClickedMarkerFunc(
@@ -41,21 +40,26 @@ const Map = ({ points }) => {
       <Navbar
         setDisplayRegisterForm={setDisplayRegisterForm}
         setDisplayLoginForm={setDisplayLoginForm}
-        setLoggedUser={setLoggedUser}
+        setIsUserLoggedIn={setIsUserLoggedIn}
+        isUserLoggedIn={isUserLoggedIn}
         setPopupOpen={setPopupOpen}
       />
       <LoginForm
         displayLoginForm={displayLoginForm}
         setDisplayLoginForm={setDisplayLoginForm}
-        setLoggedUser={setLoggedUser}
+        setLoggedUserEmail={setLoggedUserEmail}
         setPopupOpen={setPopupOpen}
         setDisplayRegisterForm={setDisplayRegisterForm}
+        isUserLoggedIn={isUserLoggedIn}
+        setIsUserLoggedIn={setIsUserLoggedIn}
       />
       <RegisterForm
         displayRegisterForm={displayRegisterForm}
         setDisplayRegisterForm={setDisplayRegisterForm}
-        setLoggedUser={setLoggedUser}
+        setLoggedUserEmail={setLoggedUserEmail}
         setDisplayLoginForm={setDisplayLoginForm}
+        isUserLoggedIn={isUserLoggedIn}
+        setIsUserLoggedIn={setIsUserLoggedIn}
       />
       <MapContainer
         className="mapStyle"
@@ -73,9 +77,10 @@ const Map = ({ points }) => {
           setPointsArray={setPointsArray}
           popupOpen={popupOpen}
           setPopupOpen={setPopupOpen}
-          loggedUser={loggedUser}
-          setLoggedUser={setLoggedUser}
+          loggedUserEmail={loggedUserEmail}
+          setLoggedUserEmail={setLoggedUserEmail}
           setDisplayLoginForm={setDisplayLoginForm}
+          isUserLoggedIn={isUserLoggedIn}
         />
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -85,7 +90,7 @@ const Map = ({ points }) => {
           <div className="" key={i}>
             <Marker
               position={[point?.lat, point?.long]}
-              icon={markerIconSetFunction(point,loggedUser)}
+              icon={markerIconSetFunction(point,loggedUserEmail)}
               eventHandlers={{
                 click: () => {
                   setClickedMarkerFunc(

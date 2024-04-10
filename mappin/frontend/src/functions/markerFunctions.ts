@@ -39,11 +39,11 @@ export function setClickedMarkerFunc(
 }
 
 
-export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen,loggedUser, setLoggedUser) => {
+export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen,loggedUserEmail, setLoggedUserEmail) => {
   e.preventDefault();
   const { lat, long, title, desc, rating } = newMarkerDataRef.current;
   const newPoint = {
-    username: loggedUser,
+    username: loggedUserEmail,
     lat,
     long,
     title,
@@ -72,7 +72,7 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
     if (!response.ok) {
       throw new Error("Failed to add marker");
     }
-    setLoggedUser(loggedUser)
+    setLoggedUserEmail(loggedUserEmail)
     newMarkerDataRef.current ={
       lat: null,
       long: null,

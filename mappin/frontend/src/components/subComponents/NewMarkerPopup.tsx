@@ -12,8 +12,8 @@ const NewMarkerPopup = ({
   titleRef,
   descriptionRef,
   ratingRef,
-  loggedUser,
-  setLoggedUser
+  loggedUserEmail,
+  setLoggedUserEmail
 }) => {
   return (
     <form
@@ -25,8 +25,8 @@ const NewMarkerPopup = ({
           setIndexOfClickedMarker,
           setPointsArray,
           setPopupOpen,
-          loggedUser,
-          setLoggedUser
+          loggedUserEmail,
+          setLoggedUserEmail
         )
       }
       key="form"
