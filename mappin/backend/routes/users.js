@@ -17,7 +17,6 @@ const createToken = (id)=>{
 
 usersRoutes.post('/register_new_user',checkUser, async (req, res)=>{
   try{
-      console.log(req.body, 'haj')
  // Check if a user with the requested email already exists
  const existingUser = await User.findOne({username:req.body.username, email: req.body.email });
  if (existingUser) {
