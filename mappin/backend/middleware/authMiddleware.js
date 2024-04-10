@@ -25,18 +25,15 @@ const checkUser = (req, res, next) => {
   if (token) {
     jwt.verify(token, 'sycret text of mine', async (err, decodedToken) => {
       if (err) {
-        console.log(err)
         res.user = null;
         next();
       } else {
-        console.log(decodedToken)
         let user = await User.findById(decodedToken.id);
         res.user = user;
         next();
       }
     });
   } else {
-    console.log(res)
     res.user = null;
     next();
   }
