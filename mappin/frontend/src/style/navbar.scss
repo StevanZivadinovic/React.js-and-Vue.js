@@ -5,6 +5,17 @@
         z-index: 1000;
         right: 0;
         padding: .3rem;
+        div.username{
+            align-self: center;
+            display: flex;
+            height: 100%;
+            margin-right: 2rem;
+            font-style: italic;
+            span{
+                display: inline-block;
+                margin-right: .3rem;
+            }
+        }
         .unregistered_user_btn{
             .registerBtn{
                 background-color: green;

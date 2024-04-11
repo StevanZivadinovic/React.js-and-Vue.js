@@ -13,7 +13,7 @@ import Navbar from "./subComponents/Navbar.tsx";
 import { getTimePassedSinceCreation } from "../functions/globalFunc.ts";
 
 type Center = [number, number];
-const Map = ({ points }) => {
+const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,initialLoggedUserEmail,setLoggedUserUsername }) => {
   const [center] = useState<Center>([40.155, 22.404]);
   const [pointsArray, setPointsArray] = useState(points);
   const [indexOfClickedMarker, setIndexOfClickedMarker] = useState<number>(
@@ -22,8 +22,13 @@ const Map = ({ points }) => {
   const [popupOpen, setPopupOpen] = useState(false);
   const [displayRegisterForm, setDisplayRegisterForm] = useState(false);
   const [displayLoginForm, setDisplayLoginForm] = useState(false);
-  const [loggedUserEmail, setLoggedUserEmail] = useState('');
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [loggedUserEmail, setLoggedUserEmail] = useState(initialLoggedUserEmail);
+  
+  useEffect(() => {
+    setLoggedUserEmail(initialLoggedUserEmail);
+  }, [initialLoggedUserEmail]);
+
+  
 
   useEffect(() => {
     setClickedMarkerFunc(
@@ -43,6 +48,9 @@ const Map = ({ points }) => {
         setIsUserLoggedIn={setIsUserLoggedIn}
         isUserLoggedIn={isUserLoggedIn}
         setPopupOpen={setPopupOpen}
+        loggedUserUsername={loggedUserUsername}
+        setLoggedUserUsername={setLoggedUserUsername}
+        setLoggedUserEmail={setLoggedUserEmail}
       />
       <LoginForm
         displayLoginForm={displayLoginForm}
@@ -52,6 +60,7 @@ const Map = ({ points }) => {
         setDisplayRegisterForm={setDisplayRegisterForm}
         isUserLoggedIn={isUserLoggedIn}
         setIsUserLoggedIn={setIsUserLoggedIn}
+        setLoggedUserUsername={setLoggedUserUsername}
       />
       <RegisterForm
         displayRegisterForm={displayRegisterForm}
@@ -60,6 +69,7 @@ const Map = ({ points }) => {
         setDisplayLoginForm={setDisplayLoginForm}
         isUserLoggedIn={isUserLoggedIn}
         setIsUserLoggedIn={setIsUserLoggedIn}
+        setLoggedUserUsername={setLoggedUserUsername}
       />
       <MapContainer
         className="mapStyle"

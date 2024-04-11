@@ -9,7 +9,8 @@ const RegisterForm = ({
   setLoggedUserEmail,
   setDisplayLoginForm,
   isUserLoggedIn, 
-  setIsUserLoggedIn
+  setIsUserLoggedIn,
+  setLoggedUserUsername
 }) => {
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
@@ -47,7 +48,8 @@ const RegisterForm = ({
                 newUser,
                 setErrRegistered,
                 setIsUserLoggedIn,
-                setLoggedUserEmail
+                setLoggedUserEmail,
+                setLoggedUserUsername
               );
             }}
           >

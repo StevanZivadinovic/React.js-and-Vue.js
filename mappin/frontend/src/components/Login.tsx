@@ -11,6 +11,8 @@ const LoginForm = ({
   setDisplayRegisterForm,
   isUserLoggedIn,
   setIsUserLoggedIn,
+  setLoggedUserUsername
+  
 }) => {
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
@@ -44,7 +46,8 @@ const LoginForm = ({
                 setErrLoggin,
                 setIsUserLoggedIn,
                 setLoggedUserEmail,
-                setPopupOpen
+                setPopupOpen,
+                setLoggedUserUsername
               );
             }}
           >

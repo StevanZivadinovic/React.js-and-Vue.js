@@ -3,7 +3,8 @@ export const handleSubmitRegister = (
   newUser,
   setErrRegistered,
   setSuccessRegistered,
-  setLoggedUserEmail
+  setLoggedUserEmail,
+  setLoggedUserUsername
 ) => {
   e.preventDefault();
   const { username, email, password } = newUser.current;
@@ -21,7 +22,6 @@ export const handleSubmitRegister = (
     body: JSON.stringify(newUserObject),
   })
     .then((res) => {
-      console.log(res);
       if (res.ok) {
         return res.json();
       } else {
@@ -29,12 +29,11 @@ export const handleSubmitRegister = (
       }
     })
     .then((data) => {
-      console.log(data)
       if (data.user) {
-        console.log(data)
         setSuccessRegistered(data.loggedIn);
         setErrRegistered({ display: false, msg: "" });
         setLoggedUserEmail(data.userData.email);
+        setLoggedUserUsername(data.userData.username)
         alert("User is registered!");
       } else {
         setErrRegistered({ display: true, msg: data });
@@ -45,13 +44,18 @@ export const handleSubmitRegister = (
     });
 };
 
-export const handleLogout = (setDisplayBtns, setIsUserLoggedIn, setPopupOpen) => {
+export const handleLogout = (setDisplayBtns, setIsUserLoggedIn, setPopupOpen,setLoggedUserUsername, setLoggedUserEmail) => {
   if (window.confirm("Are you sure you want to logout?")) {
     fetch("/api/users/logout")
       .then((data) => {
+        return data.json()
+      })
+      .then((data)=>{
         setDisplayBtns(false);
         setPopupOpen(false);
         setIsUserLoggedIn(false);
+        setLoggedUserUsername(data.user)
+        setLoggedUserEmail('')
         alert("User is logged out!");
       })
       .catch((err) => {
@@ -66,7 +70,8 @@ export const handleSubmitLogin = (
   setErrLoggin,
   setIsUserLoggedIn,
   setLoggedUserEmail,
-  setPopupOpen
+  setPopupOpen,
+  setLoggedUserUsername
 ) => {
   e.preventDefault();
   const { username, password } = loggedUser.current;
@@ -96,6 +101,7 @@ export const handleSubmitLogin = (
         setIsUserLoggedIn(data.loggedIn);
         setLoggedUserEmail(data.userData.email);
         setPopupOpen(false);
+        setLoggedUserUsername(data.userData.username)
       }
     })
     .catch((err) => {

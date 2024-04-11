@@ -1,7 +1,7 @@
 
 const usersRoutes = require('express').Router();
 const { handleErrors } = require('../hlperFunctions/helperFunctions.js');
-const { checkUser } = require('../middleware/authMiddleware.js');
+const { requireAuth } = require('../middleware/authMiddleware.js');
 const User = require('../models/User.ts');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -15,7 +15,7 @@ const createToken = (id)=>{
   return jwt.sign({id}, 'sycret text of mine',{expiresIn:maxAge})
 }
 
-usersRoutes.post('/register_new_user',checkUser, async (req, res)=>{
+usersRoutes.post('/register_new_user', async (req, res)=>{
   try{
  // Check if a user with the requested email already exists
  const existingUser = await User.findOne({username:req.body.username, email: req.body.email });
@@ -40,7 +40,7 @@ usersRoutes.post('/register_new_user',checkUser, async (req, res)=>{
 
 })
 
-usersRoutes.post('/login',checkUser, (req, res)=>{
+usersRoutes.post('/login', (req, res)=>{
   User.findOne({username:req.body.username})
   .then((data)=>{
       if (!data) {
@@ -66,7 +66,16 @@ usersRoutes.post('/login',checkUser, (req, res)=>{
 
 usersRoutes.get('/logout',(req,res)=>{
   res.clearCookie('jwt', { httpOnly: true, maxAge: 0 });
-  res.status(200).json({ message: 'User logged out successfully'});
+  res.status(200).json({ message: 'User logged out successfully', user:null});
+});
+
+usersRoutes.get('/',requireAuth,(req,res)=>{
+  if(res.loggedIn){
+    res.status(200).json({ message: 'User logged out successfully', loggedIn:res.loggedIn, user:res.user});
+
+  }else{
+    res.status(400).json({ message: 'User is not logged in',loggedIn:res.loggedIn, user:res.user});
+  }
 });
 
 module.exports = usersRoutes;
