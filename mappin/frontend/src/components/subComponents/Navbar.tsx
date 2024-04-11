@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { handleLogout } from "../../functions/usersFunctions.ts";
+import { Link } from "react-router-dom";
 
 interface NavbarType{
   setDisplayRegisterForm:Dispatch<SetStateAction<boolean>>,
@@ -31,6 +32,7 @@ const [displayBtns, setDisplayBtns] = useState(false)
         <button onClick={()=>{setDisplayLoginForm(true);setDisplayRegisterForm(false);}} className="loginBtn">Login</button>
       </div>}
       {displayBtns && <div className="registered_user_btn">
+        <Link className="tableLink" to='table_of_users'>Users</Link>
         <button className="logoutBtn" onClick={()=>{handleLogout(setDisplayBtns,setIsUserLoggedIn, setPopupOpen,setLoggedUserUsername,setLoggedUserEmail)}}>Logout</button>
       </div>}
     </div>

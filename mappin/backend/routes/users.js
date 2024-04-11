@@ -74,7 +74,7 @@ usersRoutes.get('/',requireAuth,(req,res)=>{
     res.status(200).json({ message: 'User logged out successfully', loggedIn:res.loggedIn, user:res.user});
 
   }else{
-    res.status(400).json({ message: 'User is not logged in',loggedIn:res.loggedIn, user:res.user});
+    res.status(200).json({ message: 'User is not logged in',loggedIn:res.loggedIn, user:res.user});
   }
 });
 

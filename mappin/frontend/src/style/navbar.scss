@@ -27,6 +27,17 @@
         .registered_user_btn{
             .logoutBtn{
                 background-color: tomato;
+                font-size: .8rem;
+            }
+            .tableLink{
+                text-decoration: none;
+                background-color: rgb(246, 71, 255);
+                padding: .5rem 1rem;
+                border-radius: .5rem;
+                margin-right: .2rem;
+                font-size: .8rem;
+                cursor: pointer;
+                color: black;
             }
         }
         button{
