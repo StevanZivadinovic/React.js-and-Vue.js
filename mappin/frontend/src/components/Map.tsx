@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Star from "./subComponents/Star.tsx";
 import {
+  deletePoint,
   markerIconSetFunction,
   setClickedMarkerFunc,
 } from "../functions/markerFunctions.ts";
@@ -130,6 +131,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
                   <label htmlFor="">Information</label>
                   <span className="username">{point?.username}</span>
                   <span className="date">{getTimePassedSinceCreation(new Date(point.createdAt))}</span>
+                  <button onClick={(e)=>{deletePoint(e, point._id)}} className="btnDelete">Delete!</button>
                 </div>
               </Popup>
             </Marker>

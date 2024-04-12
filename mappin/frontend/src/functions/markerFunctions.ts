@@ -107,11 +107,26 @@ export const getAllPins = (setPoints)=>{
     return data.json();
   })
   .then((data) => {
-    console.log(data);
     setPoints(data);
   })
   .catch((err) => {
     console.log(err);
     throw err;
   });
+}
+export const deletePoint = (e,id)=>{
+  if(window.confirm("Are you sure you want to delete point?")){
+    console.log(`api/pins/delete_pin/${id}`)
+
+    fetch(`api/pins/delete_pin/${id}`, {
+      method: 'DELETE' 
+    })
+    .then((data)=>{
+      console.log(data, 'point deleted')
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+ 
 }

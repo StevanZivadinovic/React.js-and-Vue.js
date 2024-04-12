@@ -12,6 +12,20 @@ pinsRoutes.post('/create',(req, res)=>{
     res.status(500).json(err);
 })
 }) 
+// Delete pin
+pinsRoutes.delete('/delete_pin/:pinId', async (req, res) => {
+  try {
+      const pinId = req.params.pinId;
+      const deletedPin = await Pin.findByIdAndDelete(pinId);
+      if (!deletedPin) {
+          return res.status(404).json({ message: 'Pin not found' });
+      }
+      res.status(200).json({ message: 'Pin deleted successfully', deletedPin });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 //get all pins
 

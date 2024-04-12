@@ -10,7 +10,7 @@
 .card {
   z-index: 100;
   width: 250px;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,6 +28,17 @@
   .stars {
     .star {
       color: gold;
+    }
+  }
+  .btnDelete{
+    margin-top: 1rem;
+    border:none;
+    border-radius: .5rem;
+    offset: none;
+    background-color: tomato;
+    cursor: pointer;
+    &:hover{
+      background-color: rgb(225, 45, 13);
     }
   }
 }
