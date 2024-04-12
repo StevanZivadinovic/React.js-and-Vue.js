@@ -91,6 +91,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
           setLoggedUserEmail={setLoggedUserEmail}
           setDisplayLoginForm={setDisplayLoginForm}
           isUserLoggedIn={isUserLoggedIn}
+          loggedUserUsername={loggedUserUsername}
         />
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -100,7 +101,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
           <div className="" key={i}>
             <Marker
               position={[point?.lat, point?.long]}
-              icon={markerIconSetFunction(point,loggedUserEmail)}
+              icon={markerIconSetFunction(point,loggedUserUsername)}
               eventHandlers={{
                 click: () => {
                   setClickedMarkerFunc(

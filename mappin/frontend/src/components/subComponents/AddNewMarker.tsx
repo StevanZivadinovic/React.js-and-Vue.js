@@ -11,7 +11,8 @@ const AddNewMarker = ({
   loggedUserEmail,
   setLoggedUserEmail,
   setDisplayLoginForm,
-  isUserLoggedIn
+  isUserLoggedIn,
+  loggedUserUsername
 }) => {
   const titleRef = useRef<HTMLInputElement>(null);
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
@@ -70,6 +71,7 @@ useMapEvent("click", (e) => {
         ratingRef={ratingRef}
         loggedUserEmail={loggedUserEmail}
         setLoggedUserEmail={setLoggedUserEmail}
+        loggedUserUsername={loggedUserUsername}
       />
     </Popup>
   ) : null

@@ -39,11 +39,11 @@ export function setClickedMarkerFunc(
 }
 
 
-export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen,loggedUserEmail, setLoggedUserEmail) => {
+export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen,loggedUserEmail, setLoggedUserEmail,loggedUserUsername) => {
   e.preventDefault();
   const { lat, long, title, desc, rating } = newMarkerDataRef.current;
   const newPoint = {
-    username: loggedUserEmail,
+    username: loggedUserUsername,
     lat,
     long,
     title,
@@ -100,3 +100,18 @@ export const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTe
     };
   }
 };
+
+export const getAllPins = (setPoints)=>{
+  fetch("api/pins/get_pins")
+  .then((data) => {
+    return data.json();
+  })
+  .then((data) => {
+    console.log(data);
+    setPoints(data);
+  })
+  .catch((err) => {
+    console.log(err);
+    throw err;
+  });
+}

@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getPinsPerUser } from '../functions/userTableFunctions.ts'
+import { Link } from 'react-router-dom'
 
+interface pinsObjectType{
+_id:string,
+pinsCount:number
+}
 const TableOFUsers = () => {
-    const users=['asfadfdsf','sdfsdfsd','sdfsdfsd']
+const [usersPins, setUsersPins]=useState<pinsObjectType[]>([])
+    useEffect(() => {
+         getPinsPerUser(setUsersPins)
+    }, [])
   return (
     <div className='tableOfUsers'>
+        <div className="backArrow">
+        <Link className="tableLink" to='/'><img src="./img/arrow_left.png" alt="" /></Link>
+            
+        </div>
         <ul>
             <div className="header">
                 <p className="">User</p>
                 <p className="">Number of points</p>
             </div>
-                
-            
             {
-                users.map(user=>{
+                usersPins.map((user,i)=>{
                     return (
-                        <li>
-                            <div className="">{user}</div>
-                            <div className="">30</div>
+                        <li key={i}>
+                            <div className="">{user._id}</div>
+                            <div className="">{user.pinsCount}</div>
                         </li>
 
                     )

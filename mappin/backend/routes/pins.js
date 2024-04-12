@@ -24,7 +24,7 @@ pinsRoutes.get('/get_pins',(req, res)=>{
     })
 })
 // API endpoint to get the number of pins for each user
-pinsRoutes.get('/pins-per-user', async (req, res) => {
+pinsRoutes.get('/pins_per_user', async (req, res) => {
     try {
       const pinsPerUser = await Pin.aggregate([
         {
@@ -32,10 +32,12 @@ pinsRoutes.get('/pins-per-user', async (req, res) => {
             _id: '$username', 
             pinsCount: { $sum: 1 }
           }
+        },
+        {
+          $sort: { pinsCount: -1 }
         }
       ]);
-  
-      res.json(pinsPerUser);
+      res.status(200).json(pinsPerUser);
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal server error' });

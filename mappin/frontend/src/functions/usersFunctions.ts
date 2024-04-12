@@ -108,3 +108,21 @@ export const handleSubmitLogin = (
       console.log(err);
     });
 };
+
+
+export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setInitialLoggedUserEmail)=>{
+  fetch("/api/users/")
+  .then((data) => {
+    return data.json();
+  })
+  .then((data) => {
+    if (data.user !== null) {
+      setIsUserLoggedIn(data.loggedIn);
+      setLoggedUserUsername(data.user.username);
+      setInitialLoggedUserEmail(data.user.email);
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
