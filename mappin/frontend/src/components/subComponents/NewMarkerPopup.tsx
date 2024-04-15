@@ -14,7 +14,7 @@ const NewMarkerPopup = ({
   ratingRef,
   loggedUserEmail,
   setLoggedUserEmail,
-  loggedUserUsername
+  loggedUserUsername,
 }) => {
   return (
     <form
@@ -28,7 +28,7 @@ const NewMarkerPopup = ({
           setPopupOpen,
           loggedUserEmail,
           setLoggedUserEmail,
-          loggedUserUsername
+          loggedUserUsername,
         )
       }
       key="form"
@@ -60,6 +60,7 @@ const NewMarkerPopup = ({
         ref={ratingRef}
         type="number"
         id="rating"
+        max={5}
         defaultValue={newMarkerDataRef.current.rating.toString()} 
         onChange={(e) => {
           handleInputChange(e, ratingRef, newMarkerDataRef,'rating');

@@ -11,9 +11,10 @@ interface NavbarType{
   loggedUserUsername:string
   setLoggedUserUsername:Dispatch<SetStateAction<string>>
   setLoggedUserEmail:Dispatch<SetStateAction<string>>
+  acceptedCookies:boolean
 
 }
-const Navbar = ({ setDisplayRegisterForm, setDisplayLoginForm,setIsUserLoggedIn,isUserLoggedIn, setPopupOpen, loggedUserUsername,setLoggedUserUsername,setLoggedUserEmail }:NavbarType) => {
+const Navbar = ({ setDisplayRegisterForm, setDisplayLoginForm,setIsUserLoggedIn,isUserLoggedIn, setPopupOpen, loggedUserUsername,setLoggedUserUsername,setLoggedUserEmail,acceptedCookies }:NavbarType) => {
 const [displayBtns, setDisplayBtns] = useState(false)
 
     useEffect(() => {
@@ -23,13 +24,14 @@ const [displayBtns, setDisplayBtns] = useState(false)
         setDisplayBtns(false)
      }
     }, [isUserLoggedIn])
-    
+    const isLoggedStyle = loggedUserUsername ? 'userLogged':'userNotLogged';
+    const isCookieAccepted =acceptedCookies  ?'userLoggedBtnStyle':'userNotLoggedBtnStyle'
   return (
-    <div className="navbar">
+    <div className={`navbar ${isLoggedStyle}`}>
       {isUserLoggedIn && <div className="username"><span>User: </span> {loggedUserUsername}</div>}
       {!displayBtns && <div className="unregistered_user_btn">
-        <button onClick={()=>{setDisplayRegisterForm(true);setDisplayLoginForm(false)}} className="registerBtn">Register</button>
-        <button onClick={()=>{setDisplayLoginForm(true);setDisplayRegisterForm(false);}} className="loginBtn">Login</button>
+        <button disabled={!acceptedCookies} onClick={()=>{setDisplayRegisterForm(true);setDisplayLoginForm(false)}} className={`registerBtn ${isCookieAccepted}`}>Register</button>
+        <button disabled={!acceptedCookies} onClick={()=>{setDisplayLoginForm(true);setDisplayRegisterForm(false);}} className={`loginBtn ${isCookieAccepted}`}>Login</button>
       </div>}
       {displayBtns && <div className="registered_user_btn">
         <Link className="tableLink" to='table_of_users'>Users</Link>

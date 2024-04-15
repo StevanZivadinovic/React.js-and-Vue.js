@@ -14,7 +14,17 @@ import Navbar from "./subComponents/Navbar.tsx";
 import { getTimePassedSinceCreation } from "../functions/globalFunc.ts";
 
 type Center = [number, number];
-const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,initialLoggedUserEmail,setLoggedUserUsername }) => {
+const Map = ({
+  points,
+  isUserLoggedIn,
+  setIsUserLoggedIn,
+  loggedUserUsername,
+  initialLoggedUserEmail,
+  setLoggedUserUsername,
+  pointDeleted,
+  setPointDeleted,
+  acceptedCookies,
+}) => {
   const [center] = useState<Center>([40.155, 22.404]);
   const [pointsArray, setPointsArray] = useState(points);
   const [indexOfClickedMarker, setIndexOfClickedMarker] = useState<number>(
@@ -23,13 +33,13 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
   const [popupOpen, setPopupOpen] = useState(false);
   const [displayRegisterForm, setDisplayRegisterForm] = useState(false);
   const [displayLoginForm, setDisplayLoginForm] = useState(false);
-  const [loggedUserEmail, setLoggedUserEmail] = useState(initialLoggedUserEmail);
-  
+  const [loggedUserEmail, setLoggedUserEmail] = useState(
+    initialLoggedUserEmail
+  );
+
   useEffect(() => {
     setLoggedUserEmail(initialLoggedUserEmail);
   }, [initialLoggedUserEmail]);
-
-  
 
   useEffect(() => {
     setClickedMarkerFunc(
@@ -37,10 +47,14 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
       pointsArray,
       setPointsArray,
       setIndexOfClickedMarker,
-      points,
-      
+      points
     );
   }, [points]);
+  useEffect(() => {
+    if (pointDeleted) {
+      setPointsArray(pointsArray.filter((point) => point._id !== pointDeleted));
+    }
+  }, [pointDeleted]);
   return (
     <>
       <Navbar
@@ -52,6 +66,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
         loggedUserUsername={loggedUserUsername}
         setLoggedUserUsername={setLoggedUserUsername}
         setLoggedUserEmail={setLoggedUserEmail}
+        acceptedCookies={acceptedCookies}
       />
       <LoginForm
         displayLoginForm={displayLoginForm}
@@ -82,7 +97,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
           indexOfClickedMarker={indexOfClickedMarker}
           pointsArray={pointsArray}
         />
-       <AddNewMarker
+        <AddNewMarker
           pointsArray={pointsArray}
           setIndexOfClickedMarker={setIndexOfClickedMarker}
           setPointsArray={setPointsArray}
@@ -93,6 +108,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
           setDisplayLoginForm={setDisplayLoginForm}
           isUserLoggedIn={isUserLoggedIn}
           loggedUserUsername={loggedUserUsername}
+          acceptedCookies={acceptedCookies}
         />
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -102,7 +118,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
           <div className="" key={i}>
             <Marker
               position={[point?.lat, point?.long]}
-              icon={markerIconSetFunction(point,loggedUserUsername)}
+              icon={markerIconSetFunction(point, loggedUserUsername)}
               eventHandlers={{
                 click: () => {
                   setClickedMarkerFunc(
@@ -110,8 +126,7 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
                     pointsArray,
                     setPointsArray,
                     setIndexOfClickedMarker,
-                    points,
-                    
+                    points
                   );
                   localStorage.setItem("lastClickedMarker", String(i));
                   setPopupOpen(false);
@@ -130,8 +145,18 @@ const Map = ({ points,isUserLoggedIn, setIsUserLoggedIn, loggedUserUsername,init
                   </div>
                   <label htmlFor="">Information</label>
                   <span className="username">{point?.username}</span>
-                  <span className="date">{getTimePassedSinceCreation(new Date(point.createdAt))}</span>
-                  <button onClick={(e)=>{deletePoint(e, point._id)}} className="btnDelete">Delete!</button>
+                  <span className="date">
+                    {getTimePassedSinceCreation(new Date(point.createdAt))}
+                  </span>
+                  {acceptedCookies && <button
+                    
+                    onClick={(e) => {
+                      deletePoint(e, point._id, setPointDeleted, point);
+                    }}
+                    className="btnDelete"
+                  >
+                    Delete!
+                  </button>}
                 </div>
               </Popup>
             </Marker>

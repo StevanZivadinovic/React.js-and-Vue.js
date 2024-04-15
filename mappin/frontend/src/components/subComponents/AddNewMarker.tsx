@@ -12,7 +12,8 @@ const AddNewMarker = ({
   setLoggedUserEmail,
   setDisplayLoginForm,
   isUserLoggedIn,
-  loggedUserUsername
+  loggedUserUsername,
+  acceptedCookies
 }) => {
   const titleRef = useRef<HTMLInputElement>(null);
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
@@ -34,21 +35,24 @@ const AddNewMarker = ({
   });
 const map = useMap()
 useMapEvent("click", (e) => {
-   if(isUserLoggedIn){
-     const { lat, lng } = e.latlng;
-     newMarkerDataRef.current = {
-       ...newMarkerDataRef.current,
-       lat,
-       long: lng,
-     };
-     if(closed){
-       setPopupOpen(true);
-       setClosed(false);
-     }
-   }else{
-    alert('Please loged in or register!')
-    setDisplayLoginForm(true);
-   }
+  if(acceptedCookies){
+    if(isUserLoggedIn){
+      const { lat, lng } = e.latlng;
+      newMarkerDataRef.current = {
+        ...newMarkerDataRef.current,
+        lat,
+        long: lng,
+      };
+      if(closed){
+        setPopupOpen(true);
+        setClosed(false);
+      }
+    }else{
+     alert('Please loged in or register!')
+     setDisplayLoginForm(true);
+    }
+  }
+   
     
   
   });

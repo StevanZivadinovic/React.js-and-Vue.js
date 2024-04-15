@@ -110,7 +110,7 @@ export const handleSubmitLogin = (
 };
 
 
-export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setInitialLoggedUserEmail)=>{
+export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setInitialLoggedUserEmail, setAcceptedCookies)=>{
   fetch("/api/users/")
   .then((data) => {
     return data.json();
@@ -120,6 +120,7 @@ export const getLoggedUserFunc=(setIsUserLoggedIn,setLoggedUserUsername,setIniti
       setIsUserLoggedIn(data.loggedIn);
       setLoggedUserUsername(data.user.username);
       setInitialLoggedUserEmail(data.user.email);
+      setAcceptedCookies(data.loggedIn)
     }
   })
   .catch((err) => {

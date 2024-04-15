@@ -39,7 +39,7 @@ export function setClickedMarkerFunc(
 }
 
 
-export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen,loggedUserEmail, setLoggedUserEmail,loggedUserUsername) => {
+export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfClickedMarker, setPointsArray, setPopupOpen, loggedUserEmail, setLoggedUserEmail, loggedUserUsername) => {
   e.preventDefault();
   const { lat, long, title, desc, rating } = newMarkerDataRef.current;
   const newPoint = {
@@ -50,7 +50,7 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
     desc,
     rating,
     clicked: true,
-    createdAt:new Date()
+    createdAt: new Date(),
   };
 
   const updatedPointsArray = pointsArray.map((point) => ({
@@ -59,7 +59,6 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
   }));
   setIndexOfClickedMarker(pointsArray.length);
   localStorage.setItem("lastClickedMarker", String(pointsArray.length));
-  setPointsArray([...updatedPointsArray, newPoint]);
 
   try {
     const response = await fetch("/api/pins/create", {
@@ -72,24 +71,29 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
     if (!response.ok) {
       throw new Error("Failed to add marker");
     }
-    setLoggedUserEmail(loggedUserEmail)
-    newMarkerDataRef.current ={
+    const responseData = await response.json();
+
+    const updatedNewPoint = {
+      ...newPoint,
+      _id: responseData._id, 
+    };
+    setPointsArray([...updatedPointsArray, updatedNewPoint]);
+    newMarkerDataRef.current = {
       lat: null,
       long: null,
       title: "",
       desc: "",
       rating: 5,
     };
+
+    setPopupOpen(false);
+
     console.log("Marker added successfully");
   } catch (error) {
     console.error("Error adding marker:", error);
   }
-
-  // Close the popup after submission
-  setPopupOpen(false);
-
-  
 };
+
 
 export const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, inputFieldRef, newObjectRef, field) => {
   if(inputFieldRef.current){
@@ -114,19 +118,24 @@ export const getAllPins = (setPoints)=>{
     throw err;
   });
 }
-export const deletePoint = (e,id)=>{
+export const deletePoint = (e,id, setPointDeleted, point)=>{
   if(window.confirm("Are you sure you want to delete point?")){
-    console.log(`api/pins/delete_pin/${id}`)
-
     fetch(`api/pins/delete_pin/${id}`, {
       method: 'DELETE' 
     })
     .then((data)=>{
-      console.log(data, 'point deleted')
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+      if(data.ok){
+      setPointDeleted(id);
+      alert('Point deleted!')
+    }else{
+      alert('Error delete point!')
+    }
+  })
+  .catch((err)=>{
+    console.log(err)
+  })
+
+
   }
  
 }

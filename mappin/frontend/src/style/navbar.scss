@@ -5,6 +5,7 @@
         z-index: 1000;
         right: 0;
         padding: .3rem;
+        padding-left: 3rem;
         div.username{
             align-self: center;
             display: flex;
@@ -18,20 +19,20 @@
         }
         .unregistered_user_btn{
             .registerBtn{
-                background-color: green;
+                background-color:  #2E8B57;
             }
             .loginBtn{
-                background-color: rgb(0, 195, 255);
+                background-color: #4682B4;
             }
         }
         .registered_user_btn{
             .logoutBtn{
-                background-color: tomato;
+                background-color: #F5DEB3;
                 font-size: .8rem;
             }
             .tableLink{
                 text-decoration: none;
-                background-color: rgb(246, 71, 255);
+                background-color: #8B4513;
                 padding: .5rem 1rem;
                 border-radius: .5rem;
                 margin-right: .2rem;
@@ -47,4 +48,18 @@
             margin-right: .2rem;
             cursor: pointer;
         }
+    }
+
+    .userNotLogged{
+        background: linear-gradient(to right, transparent 0%, #F5DEB3  20%, #F5DEB3  100%, transparent 100%);
+    }
+    .userLogged{
+        background: linear-gradient(to right, transparent 0%, tomato  20%, tomato  100%, transparent 100%);
+    }
+
+    .userLoggedBtnStyle{
+        cursor: pointer !important;
+    }
+    .userNotLoggedBtnStyle{
+        cursor: not-allowed !important;
     }

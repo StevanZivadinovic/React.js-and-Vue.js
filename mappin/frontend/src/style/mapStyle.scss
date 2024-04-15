@@ -1,5 +1,7 @@
 @import url('./navbar.scss');
-
+.App{
+  position: relative;
+}
 .mapStyle {
   position: relative;
   width: 100%;
@@ -46,6 +48,7 @@
   .leaflet-popup-content-wrapper {
     .leaflet-popup-content {
       .newMarkerForm {
+
         display: flex;
         flex-direction: column;
         color: tomato;

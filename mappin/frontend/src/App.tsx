@@ -8,20 +8,26 @@ import TableOFUsers from "./components/TableOFUsers.tsx";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { getAllPins } from "./functions/markerFunctions.ts";
 import { getLoggedUserFunc } from "./functions/usersFunctions.ts";
+import CookieNotification from "./components/CookieNotification.tsx";
 function App() {
   const [points, setPoints] = useState([]);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [loggedUserUsername, setLoggedUserUsername] = useState("");
   const [initialLoggedUserEmail, setInitialLoggedUserEmail] = useState("");
+  const [pointDeleted, setPointDeleted]=useState('');
+  const [acceptedCookies, setAcceptedCookies] = useState(false);
   let location = useLocation();
 
   useEffect(() => {
     getAllPins(setPoints)
-    getLoggedUserFunc(setIsUserLoggedIn,setLoggedUserUsername,setInitialLoggedUserEmail)
- 
-  }, [location.pathname]);
+    getLoggedUserFunc(setIsUserLoggedIn,setLoggedUserUsername,setInitialLoggedUserEmail, setAcceptedCookies)
+  }, [location.pathname,pointDeleted]);
   return (
     <div className="App">
+       <CookieNotification
+       acceptedCookies={acceptedCookies}
+       setAcceptedCookies={setAcceptedCookies}
+       />
       <Routes>
         <Route
           path="/"
@@ -35,11 +41,16 @@ function App() {
                 initialLoggedUserEmail ? initialLoggedUserEmail : ""
               }
               setLoggedUserUsername={setLoggedUserUsername}
+              pointDeleted={pointDeleted}
+              setPointDeleted={setPointDeleted}
+              acceptedCookies={acceptedCookies}
+
             />
           }
         />
         <Route path="/table_of_users" element={<TableOFUsers />} />
         <Route path="*" element={<>Does not exist!</>} />
+      
       </Routes>
     </div>
   );
