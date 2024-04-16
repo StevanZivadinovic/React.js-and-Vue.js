@@ -5,8 +5,25 @@ const dotenv = require('dotenv')
 const pinsRoutes = require('./routes/pins.js')
 const usersRoutes = require('./routes/users.js')
 const cookieParser = require('cookie-parser');
+const i18next = require('i18next');
+const i18nextMiddleware = require('i18next-http-middleware');
+const Backend = require('i18next-fs-backend'); // File system backend
 const { checkUser } = require('./middleware/authMiddleware.js');
+const languageRoutes = require('./routes/language.js');
 const app=express();
+i18next
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    fallbackLng: 'sr-Cyrl', // Default language
+    // preload: ['sr-Cyrl','en'], // Preload languages
+    // ns: ['translation'], // Specify namespaces
+    // defaultNS: 'translation', // Default namespace
+    backend: {
+      loadPath: './locales/{{lng}}/{{ns}}.json'
+    },
+  });
+app.use(i18nextMiddleware.handle(i18next));
 app.use(cookieParser());
 app.use(cors());
 dotenv.config();
@@ -18,5 +35,6 @@ mongoose.connect(process.env.MONGO_URL)
     console.log(err ,'err');
 })
 
+app.use('/',languageRoutes)
 app.use('/api/pins',pinsRoutes)
 app.use('/api/users',checkUser,usersRoutes)

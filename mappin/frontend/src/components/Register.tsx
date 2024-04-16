@@ -138,7 +138,7 @@ const RegisterForm = ({
               )}
             {isUserLoggedIn && (
               <p className="successMsgRegister">
-                <strong>New user registered!</strong>
+                <strong>{capitalizeFirstLetter(t('new_user_registered'))}</strong>
               </p>
             )}
           </form>

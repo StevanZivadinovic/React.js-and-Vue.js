@@ -1,4 +1,5 @@
 import { changeLanguage } from "i18next";
+import { setLanguageOnBackend } from "./languageFunc.ts";
 
 export function getTimePassedSinceCreation(creationTime) {
   const currentTime = new Date();
@@ -55,4 +56,5 @@ export const capitalizeEveryFirstLetter = (str: string): string => {
 export const handleLanguage = (e)=>{
   changeLanguage(e.target.value)
   localStorage.setItem('i18nextLng',e.target.value)
+  setLanguageOnBackend(e.target.value)
 }

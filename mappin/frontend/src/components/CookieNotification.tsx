@@ -1,8 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { capitalizeEveryFirstLetter } from '../functions/globalFunc.ts';
 
 const CookieNotification = ({acceptedCookies, setAcceptedCookies}) => {
   
-
+const {t}=useTranslation()
   const handleAcceptCookies = () => {
     setAcceptedCookies(true);
   };
@@ -15,16 +17,14 @@ const CookieNotification = ({acceptedCookies, setAcceptedCookies}) => {
     return (
       <div className="cookie-notification">
         <p>
-          We use cookies, including JWT tokens, to enhance your experience and ensure the security of our website.
-          These cookies are essential for features like user authentication, allowing you to access personalized content and services.
+          {t('cookie_first_part')}
         </p>
         <p>
-          By continuing to use our website, you consent to the use of these cookies for authentication purposes.
-          You can manage your cookie preferences at any time through your browser settings.
+          {t('cookie_second_part')}
         </p>
         <div className="cookie-notification-buttons">
-          <button onClick={handleAcceptCookies}>Accept Cookies</button>
-          <button onClick={handleManagePreferences}>Manage Preferences</button>
+          <button onClick={handleAcceptCookies}>{capitalizeEveryFirstLetter(t('accept_cookies'))}</button>
+          <button onClick={handleManagePreferences}>{capitalizeEveryFirstLetter(t('manage_preferences'))}</button>
         </div>
       </div>
     );

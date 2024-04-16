@@ -1,14 +1,14 @@
- const handleErrors = (err) => {
+ const handleErrors = (err,t) => {
     let error={email:'',username:'', password:'', bigError:''}
 
-    if(err.message==='User not found!'){
-      error.bigError='User not found!'
+    if(err.message===t('user_not_found')){
+      error.bigError=t('user_not_found')
     }
-    if(err.message==='Wrong username or password!'){
-      error.bigError='Wrong username or password!'
+    if(err.message===t('wrong_username_or_password')){
+      error.bigError=t('wrong_username_or_password')
     }
-    if(err.code===11000 || err.message==='Already in use!'){
-      error.bigError="User already exist!"
+    if(err.code===11000 || err.message===t('already_in_use')){
+      error.bigError=t('user_already_exist')
     }
     if (err?.message.includes('User validation failed')) {
       Object.values(err?.errors).forEach(({properties}) => {

@@ -19,9 +19,9 @@ pinsRoutes.delete('/delete_pin/:pinId', async (req, res) => {
       const pinId = req.params.pinId;
       const deletedPin = await Pin.findByIdAndDelete(pinId);
       if (!deletedPin) {
-          return res.status(404).json({ message: 'Pin not found' });
+          return res.status(404).json({ message: req.t('Pin not found') });
       }
-      res.status(200).json({ message: 'Pin deleted successfully', deletedPin });
+      res.status(200).json({ message: req.t('pin_deleted_successfully'), deletedPin });
   } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal server error' });
@@ -35,7 +35,7 @@ pinsRoutes.get('/get_pins',(req, res)=>{
     .then((data)=>{ 
         res.status(200).send(data)
     }).catch((err)=>{
-        res.status(500).json({ error: 'Failed to retrieve pins' ,err});
+        res.status(500).json({ error: req.t('Failed to retrieve pins') ,err});
     })
 })
 // API endpoint to get the number of pins for each user

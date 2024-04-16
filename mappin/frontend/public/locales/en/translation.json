@@ -22,5 +22,11 @@
     "you_are_logged_in_now":"You are logged in now!",
     "type_your_email":"type your email..",
     "already_have_account":"already have account?",
-    "number_of_points":"number of points"
+    "number_of_points":"number of points",
+    "new_user_registered":"new user registered!",
+    "cookie_first_part":"We use cookies, including JWT tokens, to enhance your experience and ensure the security of our website. These cookies are essential for features like user authentication, allowing you to access personalized content and services.",
+    "cookie_second_part":"By continuing to use our website, you consent to the use of these cookies for authentication purposes. You can manage your cookie preferences at any time through your browser settings.",
+    "accept_cookies":"accept cookies",
+    "manage_preferences":"manage preferences",
+    "please_log_in_or_register_msg":"please log in or register!"
 }

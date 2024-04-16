@@ -1,6 +1,8 @@
 import React, {useRef, useState } from "react";
 import { Popup, useMap, useMapEvent } from "react-leaflet";
 import NewMarkerPopup from "./NewMarkerPopup.tsx";
+import { capitalizeFirstLetter } from "../../functions/globalFunc.ts";
+import { useTranslation } from "react-i18next";
 
 const AddNewMarker = ({
   pointsArray,
@@ -19,7 +21,7 @@ const AddNewMarker = ({
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
   const ratingRef = useRef<HTMLInputElement>(null);
   const [closed, setClosed]=useState(true)
-
+  const {t}=useTranslation()
   const newMarkerDataRef = useRef<{
     lat: number | null;
     long: number | null;
@@ -48,7 +50,7 @@ useMapEvent("click", (e) => {
         setClosed(false);
       }
     }else{
-     alert('Please loged in or register!')
+     alert(capitalizeFirstLetter(t('please_log_in_or_register_msg')))
      setDisplayLoginForm(true);
     }
   }
