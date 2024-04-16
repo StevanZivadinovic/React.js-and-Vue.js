@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import Map from "./components/Map.tsx";
 import React, { useEffect, useState } from "react";
 import TableOFUsers from "./components/TableOFUsers.tsx";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, redirect, Navigate } from "react-router-dom";
 import { getAllPins } from "./functions/markerFunctions.ts";
 import { getLoggedUserFunc } from "./functions/usersFunctions.ts";
 import CookieNotification from "./components/CookieNotification.tsx";
@@ -48,7 +48,10 @@ function App() {
             />
           }
         />
-        <Route path="/table_of_users" element={<TableOFUsers />} />
+       <Route
+          path="/table_of_users"
+          element={isUserLoggedIn ? <TableOFUsers /> : <Navigate to="/" />}
+        />
         <Route path="*" element={<>Does not exist!</>} />
       
       </Routes>

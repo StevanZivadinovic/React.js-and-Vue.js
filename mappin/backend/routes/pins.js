@@ -1,6 +1,7 @@
 const express = require('express');
 const pinsRoutes = express.Router();
-const Pin = require('../models/Pin.ts')
+const Pin = require('../models/Pin.ts');
+const { requireAuth } = require('../middleware/authMiddleware.js');
 
 //create pin
 pinsRoutes.post('/create',(req, res)=>{
@@ -38,9 +39,9 @@ pinsRoutes.get('/get_pins',(req, res)=>{
     })
 })
 // API endpoint to get the number of pins for each user
-pinsRoutes.get('/pins_per_user', async (req, res) => {
-    try {
-      const pinsPerUser = await Pin.aggregate([
+pinsRoutes.get('/pins_per_user',requireAuth, async (req, res) => {
+  try {
+    const pinsPerUser = await Pin.aggregate([
         {
           $group: {
             _id: '$username', 
@@ -51,7 +52,7 @@ pinsRoutes.get('/pins_per_user', async (req, res) => {
           $sort: { pinsCount: -1 }
         }
       ]);
-      res.status(200).json(pinsPerUser);
+      res.status(200).json({pinsPerUser, isLoggedIn:res.loggedIn});
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal server error' });
