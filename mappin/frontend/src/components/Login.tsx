@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import CancelIcon from "@mui/icons-material/Cancel";
 import { handleInputChange } from "../functions/markerFunctions.ts";
 import { handleSubmitLogin } from "../functions/usersFunctions.ts";
+import { capitalizeFirstLetter } from "../functions/globalFunc.ts";
 
 const LoginForm = ({
   displayLoginForm,
@@ -24,6 +26,7 @@ const LoginForm = ({
     username: "",
     password: "",
   });
+  const {t}=useTranslation()
   useEffect(() => {
     if (isUserLoggedIn) {
       setTimeout(() => {
@@ -69,7 +72,7 @@ const LoginForm = ({
                 ref={usernameRef}
                 type="text"
                 name="username"
-                placeholder="Type your username.."
+                placeholder={capitalizeFirstLetter(t('type_your_username'))}
                 onChange={(e) => {
                   handleInputChange(e, usernameRef, loggedUser, "username");
                 }}
@@ -86,7 +89,7 @@ const LoginForm = ({
                 ref={passwordRef}
                 type="password"
                 name="password"
-                placeholder="Type your password.."
+                placeholder={capitalizeFirstLetter(t('type_your_password'))}
                 onChange={(e) => {
                   handleInputChange(e, passwordRef, loggedUser, "password");
                 }}
@@ -97,16 +100,16 @@ const LoginForm = ({
                 </p>
               )}
             </div>
-            <button className="submitRegisterButton">Login</button>
+            <button className="submitRegisterButton">{capitalizeFirstLetter(t('login'))}</button>
             <p className="linkToSignin">
-              Don't have account?{" "}
+            {capitalizeFirstLetter(t('dont_have_account'))}{" "}
               <span
                 onClick={() => {
                   setDisplayLoginForm(false);
                   setDisplayRegisterForm(true);
                 }}
               >
-                Sign in
+                {capitalizeFirstLetter(t('sign_in'))}
               </span>{" "}
             </p>
             {errLogin?.display && (
@@ -116,7 +119,7 @@ const LoginForm = ({
             )}
             {isUserLoggedIn && (
               <p className="successMsgRegister">
-                <strong>You are logged in now!</strong>
+                <strong>{capitalizeFirstLetter(t('you_are_logged_in_now'))}</strong>
               </p>
             )}
           </form>

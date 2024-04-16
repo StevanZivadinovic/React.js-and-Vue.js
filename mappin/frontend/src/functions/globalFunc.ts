@@ -1,3 +1,5 @@
+import { changeLanguage } from "i18next";
+
 export function getTimePassedSinceCreation(creationTime) {
   const currentTime = new Date();
 
@@ -22,9 +24,35 @@ export function getTimePassedSinceCreation(creationTime) {
   }
 }
 
-export function setCookie(cname:string, cvalue:string | number, exdays:number) {
+export function setCookie(
+  cname: string,
+  cvalue: string | number,
+  exdays: number
+) {
   const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+export const capitalizeFirstLetter = (str: string): string => {
+  if (!str) return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+export const capitalizeAllLetters = (str: string): string => {
+  if (!str) return str;
+  return str.toUpperCase();
+};
+
+export const capitalizeEveryFirstLetter = (str: string): string => {
+  if (!str) return str;
+  const words = str.split(/\s+/);
+  const capitalizedWords = words.map((word) => capitalizeFirstLetter(word));
+  return capitalizedWords.join(" ");
+};
+
+export const handleLanguage = (e)=>{
+  changeLanguage(e.target.value)
+  localStorage.setItem('i18nextLng',e.target.value)
 }

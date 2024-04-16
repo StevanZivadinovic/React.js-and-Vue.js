@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { handleInputChange } from "../functions/markerFunctions.ts";
 import { handleSubmitRegister } from "../functions/usersFunctions.ts";
+import { capitalizeFirstLetter } from "../functions/globalFunc.ts";
+import { useTranslation } from "react-i18next";
 
 const RegisterForm = ({
   displayRegisterForm,
@@ -19,7 +21,7 @@ const RegisterForm = ({
     display: false,
     msg: { email: '', username: '', password: '', bigError:'' },
   });
- 
+  const {t}=useTranslation()
 
   const newUser = useRef({
     username: '',
@@ -71,7 +73,7 @@ const RegisterForm = ({
                 ref={usernameRef}
                 type="text"
                 name="username"
-                placeholder="Type your username.."
+                placeholder={capitalizeFirstLetter(t('type_your_username'))}
                 onChange={(e) => {
                   handleInputChange(e, usernameRef, newUser, "username");
                 }}
@@ -89,7 +91,7 @@ const RegisterForm = ({
                 ref={emailRef}
                 type="email"
                 name="email"
-                placeholder="Type your email.."
+                placeholder={capitalizeFirstLetter(t('type_your_email'))}
                 onChange={(e) => {
                   handleInputChange(e, emailRef, newUser, "email");
                 }}
@@ -106,7 +108,7 @@ const RegisterForm = ({
                 ref={passwordRef}
                 type="password"
                 name="password"
-                placeholder="Type your password.."
+                placeholder={capitalizeFirstLetter(t('type_your_password'))}
                 onChange={(e) => {
                   handleInputChange(e, passwordRef, newUser, "password");
                 }}
@@ -117,16 +119,16 @@ const RegisterForm = ({
                 </p>
               )}
             </div>
-            <button className="submitRegisterButton">Register</button>
+            <button className="submitRegisterButton">{capitalizeFirstLetter(t('register'))}</button>
             <p className="linkToLogin">
-              Already have account?{" "}
+            {capitalizeFirstLetter(t('already_have_account'))}{" "}
               <span
                 onClick={() => {
                   setDisplayLoginForm(true);
                   setDisplayRegisterForm(false);
                 }}
               >
-                Log in
+                {capitalizeFirstLetter(t('login'))}
               </span>{" "}
             </p>
             {errRegistered?.display && (

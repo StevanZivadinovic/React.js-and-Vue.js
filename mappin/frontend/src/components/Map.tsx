@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import Star from "./subComponents/Star.tsx";
+import React, { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import Star from './subComponents/Star.tsx';
 import {
   deletePoint,
   markerIconSetFunction,
   setClickedMarkerFunc,
-} from "../functions/markerFunctions.ts";
-import { ClickedMarkerSetter } from "./subComponents/MarkerSetter.tsx";
-import AddNewMarker from "./subComponents/AddNewMarker.tsx";
-import RegisterForm from "./Register.tsx";
-import LoginForm from "./Login.tsx";
-import Navbar from "./subComponents/Navbar.tsx";
-import { getTimePassedSinceCreation } from "../functions/globalFunc.ts";
+} from '../functions/markerFunctions.ts';
+import { ClickedMarkerSetter } from './subComponents/MarkerSetter.tsx';
+import AddNewMarker from './subComponents/AddNewMarker.tsx';
+import RegisterForm from './Register.tsx';
+import LoginForm from './Login.tsx';
+import Navbar from './subComponents/Navbar.tsx';
+import {
+  capitalizeFirstLetter,
+  getTimePassedSinceCreation,
+} from '../functions/globalFunc.ts';
+import { useTranslation } from 'react-i18next';
 
 type Center = [number, number];
 const Map = ({
@@ -28,7 +32,7 @@ const Map = ({
   const [center] = useState<Center>([40.155, 22.404]);
   const [pointsArray, setPointsArray] = useState(points);
   const [indexOfClickedMarker, setIndexOfClickedMarker] = useState<number>(
-    Number(localStorage.getItem("lastClickedMarker"))
+    Number(localStorage.getItem('lastClickedMarker'))
   );
   const [popupOpen, setPopupOpen] = useState(false);
   const [displayRegisterForm, setDisplayRegisterForm] = useState(false);
@@ -36,6 +40,7 @@ const Map = ({
   const [loggedUserEmail, setLoggedUserEmail] = useState(
     initialLoggedUserEmail
   );
+  const { t } = useTranslation();
 
   useEffect(() => {
     setLoggedUserEmail(initialLoggedUserEmail);
@@ -128,35 +133,36 @@ const Map = ({
                     setIndexOfClickedMarker,
                     points
                   );
-                  localStorage.setItem("lastClickedMarker", String(i));
+                  localStorage.setItem('lastClickedMarker', String(i));
                   setPopupOpen(false);
                 },
               }}
             >
               <Popup>
                 <div className="card">
-                  <label htmlFor="">Place</label>
+                  <label htmlFor="">{capitalizeFirstLetter(t('place'))}</label>
                   <h4 className="place">{point?.title}</h4>
-                  <label htmlFor="">Rewiew</label>
+                  <label htmlFor="">{capitalizeFirstLetter(t('rewiew'))}</label>
                   <p className="desc">{point?.desc}!</p>
-                  <label>Rating</label>
+                  <label>{capitalizeFirstLetter(t('rating'))}</label>
                   <div className="stars">
                     <Star numberOfStars={point?.rating} />
                   </div>
-                  <label htmlFor="">Information</label>
-                  <span className="username">{point?.username}</span>
+                  <label htmlFor="">{capitalizeFirstLetter(t('information'))}</label>
+                  <span className="username">{t('user')}: {point?.username}</span>
                   <span className="date">
                     {getTimePassedSinceCreation(new Date(point.createdAt))}
                   </span>
-                  {acceptedCookies && <button
-                    
-                    onClick={(e) => {
-                      deletePoint(e, point._id, setPointDeleted, point);
-                    }}
-                    className="btnDelete"
-                  >
-                    Delete!
-                  </button>}
+                  {acceptedCookies && isUserLoggedIn && (
+                    <button
+                      onClick={(e) => {
+                        deletePoint(e, point._id, setPointDeleted, point);
+                      }}
+                      className="btnDelete"
+                    >
+                      {capitalizeFirstLetter(t('delete'))}
+                    </button>
+                  )}
                 </div>
               </Popup>
             </Marker>

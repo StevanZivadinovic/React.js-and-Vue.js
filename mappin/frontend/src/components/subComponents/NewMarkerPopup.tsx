@@ -3,6 +3,8 @@ import {
   handleInputChange,
   handleSubmit,
 } from "../../functions/markerFunctions.ts";
+import { useTranslation } from "react-i18next";
+import { capitalizeFirstLetter } from "../../functions/globalFunc.ts";
 const NewMarkerPopup = ({
   newMarkerDataRef,
   pointsArray,
@@ -16,6 +18,7 @@ const NewMarkerPopup = ({
   setLoggedUserEmail,
   loggedUserUsername,
 }) => {
+  const {t}=useTranslation()
   return (
     <form
       onSubmit={(e) =>
@@ -34,10 +37,10 @@ const NewMarkerPopup = ({
       key="form"
       className="newMarkerForm"
     >
-      <label htmlFor="title">Title:</label>
+      <label htmlFor="title">{capitalizeFirstLetter(t('title'))}:</label>
       <input
         ref={titleRef}
-        placeholder="Add title"
+        placeholder={capitalizeFirstLetter(t('add_title'))}
         type="text"
         id="title"
         defaultValue={newMarkerDataRef.current.title}
@@ -45,17 +48,17 @@ const NewMarkerPopup = ({
           handleInputChange(e, titleRef, newMarkerDataRef, 'title');
         }}
       />
-      <label htmlFor="desc">Description:</label>
+      <label htmlFor="desc">{capitalizeFirstLetter(t('description'))}:</label>
       <textarea
         ref={descriptionRef}
-        placeholder="Add description"
+        placeholder={capitalizeFirstLetter(t('add_description'))}
         id="desc"
         defaultValue={newMarkerDataRef.current.desc}
         onChange={(e) => {
           handleInputChange(e, descriptionRef, newMarkerDataRef,'desc');
         }}
       />
-      <label htmlFor="rating">Rating:</label>
+      <label htmlFor="rating">{capitalizeFirstLetter(t('rating'))}:</label>
       <input
         ref={ratingRef}
         type="number"
@@ -66,7 +69,7 @@ const NewMarkerPopup = ({
           handleInputChange(e, ratingRef, newMarkerDataRef,'rating');
         }}
       />
-      <button type="submit">Submit</button>
+      <button type="submit">{capitalizeFirstLetter(t('submit_point'))}</button>
     </form>
   );
 };

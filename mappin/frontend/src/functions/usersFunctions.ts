@@ -1,3 +1,5 @@
+import { capitalizeFirstLetter } from "./globalFunc.ts";
+
 export const handleSubmitRegister = (
   e,
   newUser,
@@ -44,8 +46,8 @@ export const handleSubmitRegister = (
     });
 };
 
-export const handleLogout = (setDisplayBtns, setIsUserLoggedIn, setPopupOpen,setLoggedUserUsername, setLoggedUserEmail) => {
-  if (window.confirm("Are you sure you want to logout?")) {
+export const handleLogout = (setDisplayBtns, setIsUserLoggedIn, setPopupOpen,setLoggedUserUsername, setLoggedUserEmail,t) => {
+  if (window.confirm(capitalizeFirstLetter(t('logout_msg')))) {
     fetch("/api/users/logout")
       .then((data) => {
         return data.json()
