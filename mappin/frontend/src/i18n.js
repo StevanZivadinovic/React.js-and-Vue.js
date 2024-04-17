@@ -20,9 +20,9 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    fallbackLng: 'sr-Cyrl',
+    fallbackLng: 'sr',
     debug: true,
-    supportedLngs: ['sr-Cyrl', 'en'], // Specify supported languages  
+    supportedLngs: ['sr', 'en'], // Specify supported languages  
     detection: {
       order: ['localStorage', 'navigator'], // Prioritize local storage over browser detection
       caches: ['localStorage'], // Only use cached language if it's in the list of supported languages

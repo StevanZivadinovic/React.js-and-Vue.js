@@ -29,7 +29,7 @@ const Navbar = ({
   const [displayBtns, setDisplayBtns] = useState(false);
   const [defaultLanguage, setDefaultLanguage] = useState<string>(() => {
     const storedLanguage = localStorage.getItem('i18nextLng');
-    return storedLanguage ? storedLanguage : 'sr-Cyrl';
+    return storedLanguage ? storedLanguage : 'sr';
   });
   const { t } = useTranslation();
   useEffect(() => {
@@ -105,7 +105,7 @@ const Navbar = ({
         onChange={(e) => handleLanguage(e.target.value)}
         defaultValue={defaultLanguage}
       >
-        <option value="sr-Cyrl">Српски</option>
+        <option value="sr">Српски</option>
         <option value="en">English</option>
       </select>
     </div>

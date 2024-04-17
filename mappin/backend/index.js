@@ -17,13 +17,11 @@ i18next
   .use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
   .init({
-    fallbackLng: 'sr-Cyrl', // Default language
-    // preload: ['sr-Cyrl','en'], // Preload languages
-    ns: ['translation'], // Specify namespaces
-    // defaultNS: 'translation', // Default namespace
-    supportedLngs: ['sr-Cyrl', 'en'], // Supported languages
+    fallbackLng: 'sr', 
     backend: {
-      loadPath: './locales/{{lng}}/{{ns}}.json',
+      loadPath:(lng)=>{
+        return './locales/{{lng}}/translation.json'
+      } 
     },
   },(err,t)=>{
     if(err){
