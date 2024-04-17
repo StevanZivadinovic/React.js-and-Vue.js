@@ -32,7 +32,11 @@ i18next
   });
 app.use(i18nextMiddleware.handle(i18next));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+  origin:'react-js-and-vue-js-api.vercel.app',
+  methods:['POST', "GET"],
+  credentials:true
+}));
 dotenv.config();
 app.use(express.json())
 mongoose.connect(process.env.MONGO_URL)
