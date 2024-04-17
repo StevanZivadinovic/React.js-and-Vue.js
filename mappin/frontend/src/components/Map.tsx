@@ -156,7 +156,7 @@ const Map = ({
                   {acceptedCookies && isUserLoggedIn && (
                     <button
                       onClick={(e) => {
-                        deletePoint(e, point._id, setPointDeleted, point);
+                        deletePoint(e, point._id, setPointDeleted,t);
                       }}
                       className="btnDelete"
                     >

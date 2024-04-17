@@ -33,6 +33,10 @@ const Navbar = ({
   });
   const { t } = useTranslation();
   useEffect(() => {
+    handleLanguage(defaultLanguage)
+  }, [])
+  
+  useEffect(() => {
     if (isUserLoggedIn) {
       setDisplayBtns(true);
     } else {
@@ -98,7 +102,7 @@ const Navbar = ({
       )}
       <select
         className="absolute languageSelect"
-        onChange={(e) => handleLanguage(e)}
+        onChange={(e) => handleLanguage(e.target.value)}
         defaultValue={defaultLanguage}
       >
         <option value="sr-Cyrl">Српски</option>

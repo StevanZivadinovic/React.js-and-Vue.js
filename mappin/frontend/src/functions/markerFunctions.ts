@@ -87,8 +87,6 @@ export const handleSubmit = async (e, newMarkerDataRef, pointsArray, setIndexOfC
     };
 
     setPopupOpen(false);
-
-    console.log("Marker added successfully");
   } catch (error) {
     console.error("Error adding marker:", error);
   }
@@ -118,7 +116,7 @@ export const getAllPins = (setPoints)=>{
     throw err;
   });
 }
-export const deletePoint = (e,id, setPointDeleted, point)=>{
+export const deletePoint = (e,id, setPointDeleted,t)=>{
   if(window.confirm("Are you sure you want to delete point?")){
     fetch(`api/pins/delete_pin/${id}`, {
       method: 'DELETE' 
@@ -126,9 +124,9 @@ export const deletePoint = (e,id, setPointDeleted, point)=>{
     .then((data)=>{
       if(data.ok){
       setPointDeleted(id);
-      alert('Point deleted!')
+      alert(t('point_delted'))
     }else{
-      alert('Error delete point!')
+      alert(t('error_delete_point'))
     }
   })
   .catch((err)=>{

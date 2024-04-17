@@ -28,5 +28,7 @@
     "cookie_second_part":"By continuing to use our website, you consent to the use of these cookies for authentication purposes. You can manage your cookie preferences at any time through your browser settings.",
     "accept_cookies":"accept cookies",
     "manage_preferences":"manage preferences",
-    "please_log_in_or_register_msg":"please log in or register!"
+    "please_log_in_or_register_msg":"please log in or register!",
+    "point_delted":"Point deleted!",
+    "error_delete_point":"Error delete point!"
 }

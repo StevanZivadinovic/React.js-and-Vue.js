@@ -53,8 +53,8 @@ export const capitalizeEveryFirstLetter = (str: string): string => {
   return capitalizedWords.join(" ");
 };
 
-export const handleLanguage = (e)=>{
-  changeLanguage(e.target.value)
-  localStorage.setItem('i18nextLng',e.target.value)
-  setLanguageOnBackend(e.target.value)
+export const handleLanguage = (language:string)=>{
+  changeLanguage(language)
+  localStorage.setItem('i18nextLng',language)
+  setLanguageOnBackend(language)
 }
