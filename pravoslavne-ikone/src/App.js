@@ -6,7 +6,13 @@ import Home from './components/Home';
 import Ikonopisac from './components/ikonopisac';
 import Galerija from './components/galerija';
 import Kontakt from './components/kontakt';
+import React from 'react'
+import { AdvancedImage } from '@cloudinary/react';
+
+
+
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">

@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
-import ikona1 from './../assets/ikona1.png';
-import ikona2 from './../assets/ikona2.png';
-import ikona3 from './../assets/ikona3.png';
-import ikona4 from './../assets/ikona4.png';
-import ikona5 from './../assets/ikona5.png';
-import ikona6 from './../assets/ikona6.png';
-import ikona7 from './../assets/ikona7.png';
-import ikona8 from './../assets/ikona8.png';
-import ikona9 from './../assets/ikona9.png';
 import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
+import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 
 export const GalerijaPrvaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,19 +9,19 @@ export const GalerijaPrvaStrana = () => {
   const { t } = useTranslation();
 
   const images = [
-    ikona1,
-    ikona2,
-    ikona3,
-    ikona4,
-    ikona5,
-    ikona6,
-    ikona7,
-    ikona8,
-    ikona9,
+    imagesCloudinaryHosted[0].imgURL,
+    imagesCloudinaryHosted[1].imgURL,
+    imagesCloudinaryHosted[2].imgURL,
+    imagesCloudinaryHosted[3].imgURL,
+    imagesCloudinaryHosted[4].imgURL,
+    imagesCloudinaryHosted[5].imgURL,
+    imagesCloudinaryHosted[6].imgURL,
+    imagesCloudinaryHosted[7].imgURL,
+    imagesCloudinaryHosted[8].imgURL,
   ];
   
   const textHeader = [
-    t('sv_vukasin_klepacki'),
+    // t('sv_vukasin_klepacki'),
     t('sv_jovan_krstitelj'),
     t('sv_velikomucenik_dimitrije'),
     t('sv_velikomucenik_knez_lazar'),
@@ -56,10 +48,10 @@ export const GalerijaPrvaStrana = () => {
       <div className="row1">
         <div className="col1">
           <div className="sektor">
-            <img
+          <img
               alt=""
               className="slika"
-              src={ikona1}
+              src={imagesCloudinaryHosted[0].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(0);
@@ -73,7 +65,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona2}
+              src={imagesCloudinaryHosted[1].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(1);
@@ -87,7 +79,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona3}
+              src={imagesCloudinaryHosted[2].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(2);
@@ -103,7 +95,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona4}
+              src={imagesCloudinaryHosted[3].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(3);
@@ -117,7 +109,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona5}
+              src={imagesCloudinaryHosted[4].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(4);
@@ -131,7 +123,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona6}
+              src={imagesCloudinaryHosted[5].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(5);
@@ -147,7 +139,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona7}
+              src={imagesCloudinaryHosted[6].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(6);
@@ -161,7 +153,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona8}
+              src={imagesCloudinaryHosted[7].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(7);
@@ -175,7 +167,7 @@ export const GalerijaPrvaStrana = () => {
             <img
               alt=""
               className="slika"
-              src={ikona9}
+              src={imagesCloudinaryHosted[8].imgURL}
               onClick={() => {
                 setIsOpen(true);
                 setPhotoIndex(8);
