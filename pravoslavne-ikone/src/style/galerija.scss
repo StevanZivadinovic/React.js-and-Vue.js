@@ -35,14 +35,17 @@ img:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
 }
 .sektor p {
   background-color: white;
   font-size: 18px;
   color: grey;
   width: 300px;
-  margin-left: 20px;
  
+}
+.lazyLoadClass{
+  margin-bottom: -1rem;
 }
 .title {
   font-family: 'Pacifico', cursive;
@@ -78,7 +81,8 @@ img:hover {
     font-size: 16px;
   }
   .row1 {
-    display: block;
+    display: flex;
+    flex-direction: column;
     float: left;
     width: 100%;
     margin-bottom: 8rem;

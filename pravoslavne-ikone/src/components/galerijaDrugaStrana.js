@@ -4,8 +4,6 @@ import Lightbox from 'react-image-lightbox';
 import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 import LazyLoad from 'react-lazyload';
 
-
-
 export const GalerijaDrugaStrana = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +18,8 @@ export const GalerijaDrugaStrana = () => {
     imagesCloudinaryHosted[15],
     imagesCloudinaryHosted[16],
     imagesCloudinaryHosted[17],
-  ]
-  
+  ];
+
   const textHeader = [
     t('sv_arhandjel_gavril_beli_andjeo'),
     t('sv_velikomucenik_georgije'),
@@ -33,7 +31,7 @@ export const GalerijaDrugaStrana = () => {
     t('sv_heruvima_sveta_petka'),
     t('sv_vasilije_ostroski'),
   ];
-  
+
   const textFooter = [
     '21x30cm',
     '30x40cm',
@@ -46,29 +44,31 @@ export const GalerijaDrugaStrana = () => {
     '20x30cm',
   ];
   return (
-   
     <div>
-    <div className="row1">
-      {images.map((image, index) => (
-        <div className="col1" key={index}>
-          <div className="sektor">
-            <LazyLoad height={200} offset={100}>
-              <img
-                alt=""
-                className="slika"
-                src={image}
-                onClick={() => {
-                  setIsOpen(true);
-                  setPhotoIndex(index);
-                }}
-              />
-            </LazyLoad>
-            <p className="title">{textHeader[index]}</p>
-            <p className="dimension">{t('dimenzije')} {textFooter[index]}</p>
+      <div className="row1">
+        {images.map((image, index) => (
+          <div className="col1" key={index}>
+            <div className="sektor">
+              <LazyLoad height={200} offset={100} className='lazyLoadClass'>
+                <img
+                  alt=""
+                  className="slika"
+                  width={200}
+                  src={image}
+                  onClick={() => {
+                    setIsOpen(true);
+                    setPhotoIndex(index);
+                  }}
+                />
+              </LazyLoad>
+              <p className="title">{textHeader[index]}</p>
+              <p className="dimension">
+                {t('dimenzije')} {textFooter[index]}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
       {isOpen && (
         <Lightbox
           mainSrc={images[photoIndex]}

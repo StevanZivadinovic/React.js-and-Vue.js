@@ -50,10 +50,11 @@ export const GalerijaPrvaStrana = () => {
       <div className="row1">
         {images.map((image, index) => (
             <div className="sektor" key={index}>
-              <LazyLoad height={200} offset={100}>
+              <LazyLoad height={200} offset={100} className='lazyLoadClass'>
                 <img
                   alt=""
                   className="slika"
+                  width={200}
                   src={image}
                   onClick={() => {
                     setIsOpen(true);
