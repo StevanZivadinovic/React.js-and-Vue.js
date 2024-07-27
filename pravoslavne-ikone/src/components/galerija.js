@@ -8,6 +8,7 @@ import GalerijaCetvrtaStrana from './galerijaCetvrtaStrana';
 import GalerijaPetaStrana from './galerijaPetaStrana';
 import GalerijaSestaStrana from './galerijaSestaStrana';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 
 export const Galerija = () => {
   const { t } = useTranslation();
@@ -49,6 +50,17 @@ export const Galerija = () => {
 
   return (
     <div className="mainGalerija">
+      <Helmet>
+        <title>Galerija - Pravoslavne ikone - Nis</title>
+        <meta
+          name="description"
+          content="Galerija ikona pravoslavnih, Svetitelji"
+        />
+        <meta
+          name="keywords"
+          content="galerija, pravoslavne ikone gallery, Serbian icons, Srbija ikone sa blagoslovom"
+        />
+      </Helmet>
       <h1 className="text-middle mt-4">{t('galerija')}</h1>
       {renderPage()}
       <div className="pagination">

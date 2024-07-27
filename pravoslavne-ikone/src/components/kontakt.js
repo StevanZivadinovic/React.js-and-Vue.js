@@ -9,6 +9,7 @@ import {
   ValidationInputTextareaFalse,
 } from './../actions/validationInputTextarea';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 
 function Kontakt() {
   const { t } = useTranslation();
@@ -166,6 +167,11 @@ function Kontakt() {
 
   return (
     <div className="main3">
+      <Helmet>
+        <title>Kontakt - Pravoslavne ikone - Nis</title>
+        <meta name="description" content="Kontaktirajte nas za vise informacija u vezi ikona" />
+        <meta name="keywords" content="kontakt, pravoslavne ikone, Serbian icons" />
+      </Helmet>
       <form
         className="wrapper"
         onSubmit={

@@ -26,7 +26,7 @@ export default function Navbar() {
             {t('pravoslavne_ikone_nis')}
           </Link>
           <div>
-            <img alt="" id="krst" src={krst}></img>
+            <img alt="pravoslavni krst" id="krst" src={krst}></img>
           </div>
           </div>
 

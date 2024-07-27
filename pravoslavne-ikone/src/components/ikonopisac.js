@@ -3,13 +3,19 @@ import './../style/ikonpisac.scss';
 import majka from './../assets/majka.jpg';
 import Footer from './footer';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 
 export default function Ikonopisac() {
   const { t } = useTranslation();
   return (
     <div className="mainM">
+      <Helmet>
+        <title>Ikonopisac - Pravoslavne ikone - Nis</title>
+        <meta name="description" content="Biografija ikonipisca sa blagoslovom, Dragana Zivadinovic" />
+        <meta name="keywords" content="ikonopisac, pravoslavne ikone, Serbian icon painter" />
+      </Helmet>
       <div className="main1">
-        <img alt="" id="majka" src={majka}></img>
+        <img alt="ikonopisac, biografija" id="majka" src={majka}></img>
         <div className="textIkonopisac">
           <p>
             {t('o_ikonopiscu_deo_prvi')}

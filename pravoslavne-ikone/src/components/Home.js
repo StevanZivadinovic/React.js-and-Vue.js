@@ -55,9 +55,9 @@ export default function Home() {
         <div id="daska">
           <h2>{t('tradicionalno_obradjena_lipova_daska')}</h2>
           <div className="textDaska">
-            <img alt="" id="slikaDaska" src={daska}></img>
-            <img alt="" id="slikaDaska" src={daska1}></img>
-            <img alt="" id="slikaDaska" src={daska2}></img>
+            <img alt="daska, materijal, ikonopis" id="slikaDaska" src={daska}></img>
+            <img alt="daska, materijal,ikonopis" id="slikaDaska" src={daska1}></img>
+            <img alt="daska, materijal,ikonopis" id="slikaDaska" src={daska2}></img>
           </div>
           <p>
             {t('daska_opis')}
@@ -66,9 +66,9 @@ export default function Home() {
         <div id="tehnika">
           <h2>{t('tehnika_izrade')}</h2>
           <div className="slikeTehnika">
-            <img alt="" id="tehnika1" src={pigment}></img>
+            <img alt="tehnika, jajcana tempera, ikonopis" id="tehnika1" src={pigment}></img>
 
-            <img alt="" id="tehnika1" src={zlatni_listici}></img>
+            <img alt="tehnika, jajcana tempera, ikonopis" id="tehnika1" src={zlatni_listici}></img>
           </div>
           <p className="lastPasus">
             {t('pigmenti_zlato_opis')}
