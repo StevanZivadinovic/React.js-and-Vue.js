@@ -13,31 +13,10 @@ h1 {
 }
 
 .row1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
-}
-
-.col1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 10px;
-}
-
-.row1 {
-  width: 80%;
+  flex-wrap: wrap;
+  width: 70%;
   margin: 0 auto;
   margin-bottom: 10rem;
 }
@@ -58,26 +37,26 @@ img:hover {
 }
 
 .sektor {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .sektor p {
-  /* background-image: url('./textura2.jpg'); */
   background-color: white;
   font-size: 18px;
   color: grey;
   width: 300px;
-  margin-left: 20px;
+}
+
+.lazyLoadClass {
+  margin-bottom: -1rem;
 }
 
 .title {
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   text-decoration: underline;
 }
 
@@ -93,16 +72,15 @@ img:hover {
 
 .contactDetails1 {
   width: 100%;
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(10%, #1c1b1b),
-    to(#d85656)
-  );
-  background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+  background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
   border-radius: 5px;
   font-size: 20px !important;
+}
+
+.paginationBtns {
+  padding: 1rem;
+  margin-bottom: 10rem;
+  margin-top: -5rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -111,36 +89,20 @@ img:hover {
   }
   .contactDetails1 {
     width: 100%;
-    background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(10%, #1c1b1b),
-      to(#d85656)
-    );
-    background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+    background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
     border-radius: 5px;
     font-size: 16px;
   }
   .row1 {
-    display: block;
+    display: flex;
+    flex-direction: column;
     float: left;
     width: 100%;
     margin-bottom: 8rem;
-  }
-  .col1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
   }
   .mainGalerija {
     width: 100%;
     position: relative;
     height: 100%;
   }
-}
-/*# sourceMappingURL=galerija.css.map */
+}/*# sourceMappingURL=galerija.css.map */

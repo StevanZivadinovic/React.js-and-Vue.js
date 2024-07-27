@@ -1,7 +1,6 @@
 :root {
-  --primary: #fff;
-  /*sa ove dve crtice -- se formira neki tvoj izmisljeni stil, koji da bi se kasnije
-    upotrebi se unosi sa var() funkcijom*/
+  --primary: #fff; /*sa ove dve crtice -- se formira neki tvoj izmisljeni stil, koji da bi se kasnije
+upotrebi se unosi sa var() funkcijom*/
 }
 
 .btn {
@@ -23,7 +22,6 @@
   color: #fff;
   padding: 8px 20px;
   border: 1px solid var(--primary);
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
@@ -41,7 +39,5 @@
 .btn--large:hover {
   background: #fff;
   color: #242424;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-}
-/*# sourceMappingURL=button.css.map */
+}/*# sourceMappingURL=button.css.map */

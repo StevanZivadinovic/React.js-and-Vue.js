@@ -1,50 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap");
 .navbar {
   top: 0;
   position: fixed;
 }
 
+.languageSelect {
+  position: absolute;
+  top: 80px;
+  right: 0px;
+  width: 100px;
+}
+
 .mainM {
   background-image: none;
   height: 110vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
   margin-bottom: 100px;
   margin-top: 100px;
 }
-
 .mainM .main1 {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
 }
-
 .mainM .main1 .textIkonopisac {
   margin-top: 100px;
   width: 500px;
 }
-
 .mainM .main1 .textIkonopisac p {
-  font-family: 'Cormorant', serif;
+  font-family: "Cormorant", serif;
   padding-top: 10px;
   text-align: justify;
 }
 
 #majka {
   width: 400px;
-  -webkit-transform: scale(0.8);
   transform: scale(0.8);
   margin-left: 10px;
   border-radius: 30px;
@@ -52,14 +45,7 @@
 
 .contactDetails1 {
   width: 100%;
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(10%, #1c1b1b),
-    to(#d85656)
-  );
-  background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+  background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
   border-radius: 5px;
   font-size: 20px !important;
   position: fixed;
@@ -70,8 +56,10 @@
   * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+  }
+  .languageSelect {
+    width: auto;
   }
   .mainM {
     width: 100%;
@@ -80,29 +68,14 @@
   .mainM .main1 {
     width: 100%;
     color: grey;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
     justify-content: space-around;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
   .mainM .main1 .textIkonopisac {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     margin-top: -10px;
     margin-bottom: 10px;
@@ -115,16 +88,8 @@
   }
   .contactDetails1 {
     width: 100%;
-    background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(10%, #1c1b1b),
-      to(#d85656)
-    );
-    background: linear-gradient(0deg, #1c1b1b 10%, #d85656 100%);
+    background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
     border-radius: 5px;
     font-size: 16px;
   }
-}
-/*# sourceMappingURL=ikonpisac.css.map */
+}/*# sourceMappingURL=ikonpisac.css.map */
