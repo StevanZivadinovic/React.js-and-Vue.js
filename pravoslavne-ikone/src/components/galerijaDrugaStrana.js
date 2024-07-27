@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import ikona10 from './../assets/ikona10.png';
-import ikona11 from './../assets/ikona11.png';
-import ikona12 from './../assets/ikona12.png';
-import ikona13 from './../assets/ikona13.png';
-import ikona14 from './../assets/ikona14.png';
-import ikona15 from './../assets/ikona15.png';
-import ikona16 from './../assets/ikona16.png';
-import ikona17 from './../assets/ikona17.png';
-import ikona18 from './../assets/ikona18.png';
 import Lightbox from 'react-image-lightbox';
+import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
+import LazyLoad from 'react-lazyload';
 
 
 
@@ -18,16 +11,16 @@ export const GalerijaDrugaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const images = [
-    ikona10,
-    ikona11,
-    ikona12,
-    ikona13,
-    ikona14,
-    ikona15,
-    ikona16,
-    ikona17,
-    ikona18,
-  ];
+    imagesCloudinaryHosted[9],
+    imagesCloudinaryHosted[10],
+    imagesCloudinaryHosted[11],
+    imagesCloudinaryHosted[12],
+    imagesCloudinaryHosted[13],
+    imagesCloudinaryHosted[14],
+    imagesCloudinaryHosted[15],
+    imagesCloudinaryHosted[16],
+    imagesCloudinaryHosted[17],
+  ]
   
   const textHeader = [
     t('sv_arhandjel_gavril_beli_andjeo'),
@@ -53,140 +46,29 @@ export const GalerijaDrugaStrana = () => {
     '20x30cm',
   ];
   return (
+   
     <div>
-      <div className="row1">
-        <div className="col1">
+    <div className="row1">
+      {images.map((image, index) => (
+        <div className="col1" key={index}>
           <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona10}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(0);
-              }}
-            />
-            <p className="title">{t('sv_arhandjel_gavril_beli_andjeo')}</p>
-            <p className="dimension">{t('dimenzije')} 21x30cm</p>
-          </div>
-
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona11}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(1);
-              }}
-            />
-            <p className="title">{t('sv_velikomucenik_georgije')}</p>
-            <p className="dimension">{t('dimenzije')} 30х40cm</p>
-          </div>
-
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona12}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(2);
-              }}
-            />
-            <p className="title">{t('sv_jovan_krstitelj')}</p>
-            <p className="dimension">{t('dimenzije')} 30х40cm</p>
+            <LazyLoad height={200} offset={100}>
+              <img
+                alt=""
+                className="slika"
+                src={image}
+                onClick={() => {
+                  setIsOpen(true);
+                  setPhotoIndex(index);
+                }}
+              />
+            </LazyLoad>
+            <p className="title">{textHeader[index]}</p>
+            <p className="dimension">{t('dimenzije')} {textFooter[index]}</p>
           </div>
         </div>
-
-        <div className="col1">
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona13}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(3);
-              }}
-            />
-            <p className="title">{t('sv_apostol_marko')}</p>
-            <p className="dimension">{t('dimenzije')} 30х40cm</p>
-          </div>
-
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona14}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(4);
-              }}
-            />
-            <p className="title">{t('presveta_trojica')}</p>
-            <p className="dimension">{t('dimenzije')} 30х40cm</p>
-          </div>
-
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona15}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(5);
-              }}
-            />
-            <p className="title">{t('sv_maksim_ispovednik')}</p>
-            <p className="dimension">{t('dimenzije')} 18х24cm</p>
-          </div>
-        </div>
-
-        <div className="col1">
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona16}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(6);
-              }}
-            />
-            <p className="title">{t('sv_josif_isihasta')}</p>
-            <p className="dimension">{t('dimenzije')} 15х20cm</p>
-          </div>
-
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona17}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(7);
-              }}
-            />
-            <p className="title">{t('sv_heruvima_sveta_petka')}</p>
-            <p className="dimension">{t('dimenzije')} 30х40cm</p>
-          </div>
-
-          <div className="sektor">
-            <img
-              alt=""
-              className="slika"
-              src={ikona18}
-              onClick={() => {
-                setIsOpen(true);
-                setPhotoIndex(8);
-              }}
-            />
-            <p className="title">{t('sv_vasilije_ostroski')}</p>
-            <p className="dimension">{t('dimenzije')} 20х30cm</p>
-          </div>
-        </div>
-      </div>
+      ))}
+    </div>
       {isOpen && (
         <Lightbox
           mainSrc={images[photoIndex]}
