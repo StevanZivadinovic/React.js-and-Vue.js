@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-import ikona48 from './../assets/ikona48.png';
-import ikona49 from './../assets/ikona49.png';
-import ikona50 from './../assets/ikona50.png';
-import ikona51 from './../assets/ikona51.png';
-import ikona52 from './../assets/ikona52.png';
 import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazyload';
@@ -35,7 +30,7 @@ export const GalerijaSestaStrana = () => {
         {images.map((image, index) => (
           <div className="col1" key={index}>
             <div className="sektor">
-              <LazyLoad height={200} offset={100} className='lazyLoadClass'>
+              <LazyLoad height={200} offset={100} className="lazyLoadClass">
                 <img
                   alt=""
                   className="slika"
