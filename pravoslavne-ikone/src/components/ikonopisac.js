@@ -12,7 +12,7 @@ export default function Ikonopisac() {
       <Helmet>
         <title>Ikonopisac - Pravoslavne ikone - Nis</title>
         <meta name="description" content="Biografija ikonipisca sa blagoslovom, Dragana Zivadinovic" />
-        <meta name="keywords" content="ikonopisac, pravoslavne ikone, Serbian icon painter" />
+        <meta name="keywords" content="ikonopisac, pravoslavne ikone" />
       </Helmet>
       <div className="main1">
         <img alt="ikonopisac, biografija" id="majka" src={majka}></img>

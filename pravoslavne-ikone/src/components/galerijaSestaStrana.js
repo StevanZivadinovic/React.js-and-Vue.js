@@ -32,7 +32,7 @@ export const GalerijaSestaStrana = () => {
             <div className="sektor">
               <LazyLoad height={200} offset={100} className="lazyLoadClass">
                 <img
-                  alt={`Orthodox icons from Nis ${'ikona, prodaja, svetitelji, praznici'}`}
+                  alt={`ikona`}
                   className="slika"
                   width={200}
                   src={image}

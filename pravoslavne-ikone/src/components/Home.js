@@ -7,10 +7,22 @@ import zlatni_listici from './../assets/zlatni_listici.jpg';
 import pigment from './../assets/pigment.jpg';
 import Footer from './footer';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 export default function Home() {
   const { t } = useTranslation();
   return (
     <div className="main">
+      <Helmet>
+        <title>Ikonopisac - Pravoslavne ikone - Nis</title>
+        <meta 
+          name="description" 
+          content="Izrada pravoslavnih ikona koristeći tradicionalnu tehniku jajčane tempere i zlatne listiće. Kontaktirajte nas za personalizovane ikone." 
+        />
+        <meta 
+          name="keywords" 
+          content="ikonopisac, pravoslavne ikone, pravoslavne ikone prodaja, jajčana tempera, zlatni listići, izrada ikona" 
+        />
+      </Helmet>
       <div className="uvod">
         {' '}
         <h1>{t('izrada_pravoslavnih_ikona')}</h1>
