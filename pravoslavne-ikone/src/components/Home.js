@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="main">
       <Helmet>
-        <title>Иконописац - Православне иконе - Ниш</title>
+        <title>Почетна - Православне иконе - Ниш</title>
         <meta 
           name="description" 
           content="Израда православних икона користећи традиционалну технику јајчане темпере и златне листиће. Контактирајте нас за персонализоване иконе." 
