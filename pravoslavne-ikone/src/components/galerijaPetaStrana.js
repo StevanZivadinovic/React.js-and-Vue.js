@@ -52,7 +52,7 @@ export const GalerijaPetaStrana = () => {
           <div className="sektor">
             <LazyLoad height={200} offset={100} className='lazyLoadClass'>
               <img
-                alt={`ikona`}
+                alt={`икона`}
                 className="slika"
                 src={image}
                 width={200}
@@ -62,8 +62,8 @@ export const GalerijaPetaStrana = () => {
                 }}
               />
             </LazyLoad>
-            <p className="title">{textHeader[index]}</p>
-            <p className="dimension">
+            <p lang='sr-Cyrl'  className="title">{textHeader[index]}</p>
+            <p lang='sr-Cyrl' className="dimension">
               {t('dimenzije')} {textFooter[index]}
             </p>
           </div>

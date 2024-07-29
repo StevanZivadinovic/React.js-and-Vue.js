@@ -13,38 +13,38 @@ export default function Home() {
   return (
     <div className="main">
       <Helmet>
-        <title>Ikonopisac - Pravoslavne ikone - Nis</title>
+        <title>Иконописац - Православне иконе - Ниш</title>
         <meta 
           name="description" 
-          content="Izrada pravoslavnih ikona koristeći tradicionalnu tehniku jajčane tempere i zlatne listiće. Kontaktirajte nas za personalizovane ikone." 
+          content="Израда православних икона користећи традиционалну технику јајчане темпере и златне листиће. Контактирајте нас за персонализоване иконе." 
         />
         <meta 
           name="keywords" 
-          content="ikonopisac, pravoslavne ikone, pravoslavne ikone prodaja, jajčana tempera, zlatni listići, izrada ikona" 
+          content="иконописац, православне иконе, православне иконе продаја, јајчана темпера, златни листићи, израда икона" 
         />
       </Helmet>
       <div className="uvod">
         {' '}
-        <h1>{t('izrada_pravoslavnih_ikona')}</h1>
-        <p className="podtekst">-{t('po_narudzbini')}-</p>
+        <h1 lang='sr-Cyrl'>{t('izrada_pravoslavnih_ikona')}</h1>
+        <p lang='sr-Cyrl' className="podtekst">-{t('po_narudzbini')}-</p>
         <div className="opis">
           <div className="liste">
             <ul className="lista">
               <li>
-                <a href="#vizantijskiStil">{t('vizantijski_stil')}</a>
+                <a lang='sr-Cyrl' href="#vizantijskiStil">{t('vizantijski_stil')}</a>
               </li>
               <li>
-                <a href="#daska">{t('tradicionalno_obradjena_lipova_daska')}</a>
+                <a lang='sr-Cyrl' href="#daska">{t('tradicionalno_obradjena_lipova_daska')}</a>
               </li>
             </ul>
           </div>
           <div className="liste">
             <ul className="lista">
               <li>
-                <a href="#tehnika">{t('tehnika_izrade_jajcana_tempera')}</a>
+                <a lang='sr-Cyrl' href="#tehnika">{t('tehnika_izrade_jajcana_tempera')}</a>
               </li>
               <li>
-                <a href="#tehnika">{t('izrada_ikona_sa_zlatom_ili_slag_metalom')}</a>
+                <a lang='sr-Cyrl' href="#tehnika">{t('izrada_ikona_sa_zlatom_ili_slag_metalom')}</a>
               </li>
             </ul>
           </div>
@@ -55,17 +55,17 @@ export default function Home() {
         <div id="vizantijskiStil">
           <h2>{t('vizantijski_stil')}</h2>
           <div className="text">
-            <p>
+            <p lang='sr-Cyrl'>
               {t('vizantijski_stil_prvi_deo')}
             </p>
 
-            <p>
+            <p lang='sr-Cyrl'>
               {t('vizantijski_stil_drugi_deo')}
             </p>
           </div>
         </div>
         <div id="daska">
-          <h2>{t('tradicionalno_obradjena_lipova_daska')}</h2>
+          <h2 lang='sr-Cyrl'>{t('tradicionalno_obradjena_lipova_daska')}</h2>
           <div className="textDaska">
             <img alt="daska, materijal, ikonopis" id="slikaDaska" src={daska}></img>
             <img alt="daska, materijal,ikonopis" id="slikaDaska" src={daska1}></img>
@@ -76,13 +76,13 @@ export default function Home() {
           </p>
         </div>
         <div id="tehnika">
-          <h2>{t('tehnika_izrade')}</h2>
+          <h2 lang='sr-Cyrl'>{t('tehnika_izrade')}</h2>
           <div className="slikeTehnika">
             <img alt="tehnika, jajcana tempera, ikonopis" id="tehnika1" src={pigment}></img>
 
             <img alt="tehnika, jajcana tempera, ikonopis" id="tehnika1" src={zlatni_listici}></img>
           </div>
-          <p className="lastPasus">
+          <p lang='sr-Cyrl' className="lastPasus">
             {t('pigmenti_zlato_opis')}
           </p>
         </div>

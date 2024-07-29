@@ -168,9 +168,9 @@ function Kontakt() {
   return (
     <div className="main3">
       <Helmet>
-        <title>Kontakt - Pravoslavne ikone - Nis</title>
-        <meta name="description" content="Kontaktirajte nas za vise informacija u vezi ikona" />
-        <meta name="keywords" content="kontakt, pravoslavne ikone, Serbian icons" />
+        <title>Контакт - Православне иконе - Ниш</title>
+        <meta name="description" content="Контактирајте нас за више детаља" />
+        <meta name="keywords" content="контакт, православне иконе, емаил" />
       </Helmet>
       <form
         className="wrapper"
@@ -187,11 +187,11 @@ function Kontakt() {
         }
       >
         <div className="title">
-          <h1>{t('kontaktirajte_nas')}</h1>
+          <h1 lang='sr-Cyrl'>{t('kontaktirajte_nas')}</h1>
         </div>
         <div className="contact-form">
           <div className="input-fields">
-            <label htmlFor="from_name">{t('neispravan_unos')}</label>
+            <label lang='sr-Cyrl' htmlFor="from_name">{t('neispravan_unos')}</label>
             <input
               onKeyUp={validationInputName}
               type="text"

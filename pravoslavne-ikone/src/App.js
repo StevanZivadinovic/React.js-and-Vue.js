@@ -18,10 +18,10 @@ function App() {
       <header className="App-header">
         <Router>
         <Helmet>
-            <title>Pravoslavne ikone - Nis</title>
-            <meta name="description" content="Naslovna, pravoslavne ikone nis, srbija ikone prodaja, ikone sa blagoslovom" />
-            <meta name="keywords" content="pravoslavne ikone, pravoslavne ikone nis, pravoslavne ikone prodaja, srbija ikone prodaja, ikone sa blagoslovom prodaja" />
-            <meta name="author" content="Dragana Zivadinovic" />
+            <title>Православне иконе - Ниш</title>
+            <meta name="description" content="Насловна, православне иконе ниш, србија иконе продаја, иконе са благословом" />
+            <meta name="keywords" content="православне иконе, православне иконе ниш, православне иконе продаја, србија иконе продаја, иконе са благословом продаја" />
+            <meta name="author" content="Драгана Живадиновић" />
           </Helmet>
           <Navbar></Navbar>
           <Route path="/" exact>

@@ -10,20 +10,20 @@ export default function Ikonopisac() {
   return (
     <div className="mainM">
       <Helmet>
-        <title>Ikonopisac - Pravoslavne ikone - Nis</title>
-        <meta name="description" content="Biografija ikonipisca sa blagoslovom, Dragana Zivadinovic" />
-        <meta name="keywords" content="ikonopisac, pravoslavne ikone" />
+        <title>Иконописац - Православне иконе - Ниш</title>
+        <meta name="description" content="Биографија иконописца са благословом, Драгана Живадиновић" />
+        <meta name="keywords" content="иконописац, православне иконе, православне иконе продаја, православне иконе ниш" />
       </Helmet>
       <div className="main1">
-        <img alt="ikonopisac, biografija" id="majka" src={majka}></img>
-        <div className="textIkonopisac">
-          <p>
+        <img alt="иконописац, биографија" id="majka" src={majka}></img>
+        <div lang='sr-Cyrl' className="textIkonopisac">
+          <p lang='sr-Cyrl'>
             {t('o_ikonopiscu_deo_prvi')}
           </p>
-          <p>
+          <p lang='sr-Cyrl'>
             {t('o_ikonopiscu_deo_drugi')}
           </p>{' '}
-          <p>
+          <p lang='sr-Cyrl'>
             {t('o_ikonopiscu_deo_treci')}
           </p>
         </div>

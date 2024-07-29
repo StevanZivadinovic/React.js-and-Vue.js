@@ -51,14 +51,14 @@ export const Galerija = () => {
   return (
     <div className="mainGalerija">
       <Helmet>
-        <title>Galerija - Pravoslavne ikone - Nis</title>
+        <title>Галерија - Православне иконе - Ниш</title>
         <meta
           name="description"
-          content="Galerija ikona pravoslavnih, Svetitelji"
+          content="Галерија православних икона, Светитељи, Композиције, Диптих, Триптих"
         />
         <meta
           name="keywords"
-          content="galerija, pravoslavne ikone gallery, Serbian icons, Srbija ikone sa blagoslovom"
+          content="галерија, православне иконе са благословом"
         />
       </Helmet>
       <h1 className="text-middle mt-4">{t('galerija')}</h1>
