@@ -39,6 +39,18 @@
           }
         }
       }
+      .kupujemProdajemLink{
+        margin: 0px !important;
+        font-size: 2rem;
+        color: white;
+        transition: 0.5s all ease;
+        &:hover {
+          cursor: pointer;
+          color: rgb(216, 86, 86);
+          border-radius: 20px;
+          transform: scale(1.5);
+        }
+      }
     }
   }
 }

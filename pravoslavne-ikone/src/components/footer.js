@@ -26,6 +26,15 @@ export default function Footer() {
             >
               <i className="fab fa-instagram"></i>
             </a>
+            <a
+              className=""
+              target="_blank"
+              href="https://bit.ly/3SrMmqE"
+              rel="noreferrer"
+              title="Pratite nas na KupujemProdajem"
+            >
+              <img className='kupujemProdajemLink' src="./kp.svg" width={50} height={30} alt="kupujem prodajem ikonica"/>
+            </a>
           </div>
         </div>
       </nav>
