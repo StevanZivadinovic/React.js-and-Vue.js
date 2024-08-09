@@ -10,7 +10,7 @@ export default function Ikonopisac() {
   return (
     <div className="mainM">
       <Helmet>
-        <title>Иконописац - Православне иконе - Ниш</title>
+        <title>Ikonopisac - Pravoslavne ikone - Nis</title>
         <meta name="description" content="Биографија иконописца са благословом, Драгана Живадиновић" />
         <meta name="keywords" content="иконописац, православне иконе, православне иконе продаја, православне иконе ниш" />
       </Helmet>

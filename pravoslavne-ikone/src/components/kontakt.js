@@ -168,7 +168,7 @@ function Kontakt() {
   return (
     <div className="main3">
       <Helmet>
-        <title>Контакт - Православне иконе - Ниш</title>
+        <title>Kontakt - Pravoslavne ikone - Nis</title>
         <meta name="description" content="Контактирајте нас за више детаља" />
         <meta name="keywords" content="контакт, православне иконе, емаил" />
       </Helmet>

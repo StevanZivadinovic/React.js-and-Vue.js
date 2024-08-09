@@ -51,7 +51,7 @@ export const Galerija = () => {
   return (
     <div className="mainGalerija">
       <Helmet>
-        <title>Галерија - Православне иконе - Ниш</title>
+        <title>Galerija - Pravoslavne ikone - Nis</title>
         <meta
           name="description"
           content="Галерија православних икона, Светитељи, Композиције, Диптих, Триптих"
