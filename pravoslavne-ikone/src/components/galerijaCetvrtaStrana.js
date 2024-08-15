@@ -55,7 +55,7 @@ export const GalerijaCetvrtaStrana = () => {
             <div className="sektor">
               <LazyLoad height={200} offset={100} className='lazyLoadClass'>
                 <img
-                  alt={`икона`}
+                  alt={`икона pravoslavne ikone`}
                   className="slika"
                   width={200}
                   src={image}
