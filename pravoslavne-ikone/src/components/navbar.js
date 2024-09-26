@@ -15,19 +15,22 @@ export default function Navbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  
+  const options = [
+    { key: 1, text: 'sr-Cyrl', value: 'sr-Cyrl' },
+    { key: 2, text: 'en', value: 'en' },
+  ];
 
   return (
     <>
       <nav className="navbar relative">
         <div className="navbar-container">
           <div className="navbar-logo">
-          <Link to="/" className='navbar-logo-text' onClick={closeMobileMenu}>
-            {t('pravoslavne_ikone_nis')}
-          </Link>
-          <div>
-            <img alt="krst" id="krst" src={krst}></img>
-          </div>
+            <Link to="/" className="navbar-logo-text" onClick={closeMobileMenu}>
+              {t('pravoslavne_ikone_nis')}
+            </Link>
+            <div>
+              <img alt="krst" id="krst" src={krst}></img>
+            </div>
           </div>
 
           <div className="menu-icon" onClick={handleClick}>
@@ -68,15 +71,14 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-            <select
-            className='absolute languageSelect'
-            onChange={(e) => changeLanguage(e.target.value)}
-            defaultValue={localStorage.getItem('i18nextLng')}
-          >
-            <option value="sr-Cyrl">Српски</option>
-            <option value="en">English</option>
-            </select>
-            
+        <select
+         onChange={(e) => changeLanguage(e.target.value)}
+         defaultValue={localStorage.getItem('i18nextLng')}
+         className="absolute languageSelect"
+        >
+          <option value="sr-Cyrl">Српски</option>
+          <option value="en">English</option>
+        </select>
       </nav>
     </>
   );

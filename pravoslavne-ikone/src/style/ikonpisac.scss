@@ -5,11 +5,29 @@
   position: fixed;
 }
 .languageSelect{
-  position: absolute;
-  top: 80px;
-  right: 0px;
-  width: 100px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  width: auto;
+  background-color: transparent;
+  color: white;
+  border:0px;
+  offset: 0px;
+  padding: 2px 4px;
+  &:hover{
+    cursor: pointer;
+  }
+  option{
+    background-color: rgb(216, 86, 86);
+    border: 0px;
+  }
+  &:focus{
+    border:0px;
+  offset: 0px;
+  }
 }
+
 .mainM {
   background-image: none;
   height: 110vh;
@@ -56,7 +74,11 @@
     box-sizing: border-box;
   }
   .languageSelect{
+    position: absolute;
     width: auto;
+    top: 60px;
+    right: 12px;
+
   }
   .mainM {
     width: 100%;
