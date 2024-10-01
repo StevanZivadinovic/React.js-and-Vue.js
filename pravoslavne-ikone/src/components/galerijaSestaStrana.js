@@ -15,6 +15,12 @@ export const GalerijaSestaStrana = () => {
     imagesCloudinaryHosted[45],
     imagesCloudinaryHosted[46],
     imagesCloudinaryHosted[47],
+    imagesCloudinaryHosted[48],
+    imagesCloudinaryHosted[49],
+    imagesCloudinaryHosted[50],
+
+
+
   ];
   const textHeader = [
     t('sv_ksenija_petrogradska'),
@@ -22,8 +28,13 @@ export const GalerijaSestaStrana = () => {
     t('zitije_svetog_proroka_ilije'),
     t('sv_prepodobna_mati_paraskeva'),
     t('sv_velikomucenik_knez_lazar'),
+    t('gospod_isus_hristos'),
+    t('sv_arhangel_mihail'),
+    t('sv_arhangel_mihail'),
+
+
   ];
-  const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm'];
+  const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm','30x40cm','30x40cm','30x40cm'];
   return (
     <div>
       <div className="row1">

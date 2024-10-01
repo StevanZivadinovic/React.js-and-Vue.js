@@ -48,6 +48,9 @@ const imageCludinaryFolderPaths = [
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1722019339/Pravoslavne%20ikone/ikona50_t987mt.jpg',
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1722019342/Pravoslavne%20ikone/ikona51_v1hwpo.png',
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1722019343/Pravoslavne%20ikone/ikona52_aenysw.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1727789782/ikona53_yjmewz.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1727789680/ikona54_byzi8v.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1727785913/ikona55_pvphgg.png'
 
 
 ];
