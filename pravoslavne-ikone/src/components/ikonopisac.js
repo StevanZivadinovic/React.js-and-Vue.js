@@ -1,6 +1,6 @@
 import React from 'react';
 import './../style/ikonpisac.scss';
-import majka from './../assets/majka.jpg';
+import ikonopisac from './../assets/ikonopisac.jpg';
 import Footer from './footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
@@ -15,7 +15,7 @@ export default function Ikonopisac() {
         <meta name="keywords" content="иконописац, православне иконе, православне иконе продаја, православне иконе ниш" />
       </Helmet>
       <div className="main1">
-        <img alt="иконописац, биографија" id="majka" src={majka}></img>
+        <img alt="иконописац, биографија" id="ikonopisac" src={ikonopisac}></img>
         <div lang='sr-Cyrl' className="textIkonopisac">
           <p lang='sr-Cyrl'>
             {t('o_ikonopiscu_deo_prvi')}
