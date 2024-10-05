@@ -65,11 +65,11 @@ function Kontakt() {
         (error) => {
           console.log(error.text);
         }
-      ); //ova funkcija je kopirana sa njihovog sajta
+      ); 
 
     e.target.reset();
   }
-  //npm install emailjs-com --save, ovo mora da se instalira da bi EmailJS dodatak radio
+  //npm install emailjs-com --save
 
   let validationInputTextarea = (e) => {
     var pattern =
@@ -170,7 +170,7 @@ function Kontakt() {
       <Helmet>
         <title>Kontakt - Pravoslavne ikone - Nis</title>
         <meta name="description" content="Контактирајте нас за више детаља" />
-        <meta name="keywords" content="контакт, православне иконе, емаил" />
+        <meta name="keywords" content="контакт, православне иконе, емаил, prodaja" />
       </Helmet>
       <form
         className="wrapper"
