@@ -6,7 +6,7 @@ import LazyLoad from 'react-lazyload';
 import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 
 
-export const GalerijaTrecaStrana = () => {
+const GalerijaTrecaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();

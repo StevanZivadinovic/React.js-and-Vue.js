@@ -6,7 +6,7 @@ import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 
 
 
-export const GalerijaCetvrtaStrana = () => {
+const GalerijaCetvrtaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();

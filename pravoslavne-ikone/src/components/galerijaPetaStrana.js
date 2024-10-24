@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazyload';
 import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 import ikona43 from './../assets/ikona43.png';
 
-export const GalerijaPetaStrana = () => {
+const GalerijaPetaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();

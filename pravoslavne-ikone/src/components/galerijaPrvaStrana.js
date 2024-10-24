@@ -3,8 +3,7 @@ import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazyload';
 import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
-
-export const GalerijaPrvaStrana = () => {
+ const GalerijaPrvaStrana = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const { t } = useTranslation();

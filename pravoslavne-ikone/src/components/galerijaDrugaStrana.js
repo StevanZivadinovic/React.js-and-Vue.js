@@ -4,7 +4,7 @@ import Lightbox from 'react-image-lightbox';
 import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 import LazyLoad from 'react-lazyload';
 
-export const GalerijaDrugaStrana = () => {
+const GalerijaDrugaStrana = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
