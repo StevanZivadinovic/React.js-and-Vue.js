@@ -9,11 +9,13 @@ import GalerijaPetaStrana from './galerijaPetaStrana';
 import GalerijaSestaStrana from './galerijaSestaStrana';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
+import GalerijaSedmaStrana from './galerijaSedmaStrana';
+import GalerijaOsmaStrana from './galerijaOsmaStrana';
 
 export const Galerija = () => {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 6;
+  const totalPages = 8;
   const renderPage = () => {
     switch (currentPage) {
       case 1:
@@ -28,6 +30,10 @@ export const Galerija = () => {
         return <GalerijaPetaStrana />;
       case 6:
         return <GalerijaSestaStrana />;
+      case 7:
+        return <GalerijaSedmaStrana />;
+        case 8:
+        return <GalerijaOsmaStrana />;
       default:
         return <GalerijaPrvaStrana />;
     }

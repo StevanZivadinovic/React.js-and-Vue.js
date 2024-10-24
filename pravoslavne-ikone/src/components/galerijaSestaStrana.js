@@ -18,6 +18,7 @@ export const GalerijaSestaStrana = () => {
     imagesCloudinaryHosted[48],
     imagesCloudinaryHosted[49],
     imagesCloudinaryHosted[50],
+    imagesCloudinaryHosted[51],
 
 
 
@@ -31,10 +32,11 @@ export const GalerijaSestaStrana = () => {
     t('gospod_isus_hristos'),
     t('sv_arhangel_mihail'),
     t('sv_arhangel_mihail'),
+    t('majka_bozija')
 
 
   ];
-  const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm','30x40cm','30x40cm','30x40cm'];
+  const textFooter = ['30x40cm', '25x50cm', '45х60cm', '18x40cm', '30x40cm','30x40cm','30x40cm','30x40cm', '21x30cm'];
   return (
     <div>
       <div className="row1">

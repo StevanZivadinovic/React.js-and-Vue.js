@@ -70,6 +70,11 @@
   "telefon":"Phone",
   "tema":"Subject",
   "poruka":"Message",
-  "posalji":"Send"
+  "posalji":"Send",
+  "sv_ravnoapostolna_marija_magdalina":"St. Equal-to-the-Apostles Mary Magdalene",
+  "sv_apostoli_petar_i_pavle":"St. Apostles Peter and Paul",
+  "sv_apostol_pavle":"St. Apostle Paul",
+  "sv_prepodobna_mati_paraskeva_srbska":"St. Venerable Mother Paraskeva of Serbia",
+  "sv_pravedni_melhisedek":"St. Righteous Melchizedek"
 
 }
