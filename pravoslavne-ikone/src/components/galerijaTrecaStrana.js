@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ikona19 from './../assets/ikona19.png';
-import Lightbox from 'react-image-lightbox';
 import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazyload';
 import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
+import PageGalleryLightbox from '../helperComponents/pageGalleryLightbox';
 
 
 const GalerijaTrecaStrana = () => {
@@ -73,22 +73,15 @@ const GalerijaTrecaStrana = () => {
           </div>
         ))}
       </div>
-      {isOpen && (
-        <Lightbox
-          mainSrc={images[photoIndex]}
-          imageTitle={textHeader[photoIndex]}
-          imageCaption={textFooter[photoIndex]}
-          nextSrc={images[(photoIndex + 1) % images.length]}
-          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-          onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % images.length)
-          }
-        />
-      )}
+      <PageGalleryLightbox
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        images={images}
+        textHeader={textHeader}
+        textFooter={textFooter}
+        photoIndex={photoIndex}
+        setPhotoIndex={setPhotoIndex}
+      />
     </div>
   );
 };
