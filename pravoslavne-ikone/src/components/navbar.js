@@ -15,10 +15,6 @@ export default function Navbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  const options = [
-    { key: 1, text: 'sr-Cyrl', value: 'sr-Cyrl' },
-    { key: 2, text: 'en', value: 'en' },
-  ];
 
   return (
     <>
