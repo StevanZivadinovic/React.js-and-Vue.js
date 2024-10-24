@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ikona19 from './../assets/ikona19.png';
 import { useTranslation } from 'react-i18next';
-import LazyLoad from 'react-lazyload';
 import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 import PageGalleryLightbox from '../helperComponents/pageGalleryLightbox';
+import PageGalleryImages from '../helperComponents/pageGalleryImages';
 
 
 const GalerijaTrecaStrana = () => {
@@ -49,30 +49,13 @@ const GalerijaTrecaStrana = () => {
   ];
   return (
     <div>
-      <div className="row1">
-        {images.map((image, index) => (
-          <div className="col1" key={index}>
-            <div className="sektor">
-              <LazyLoad height={200} offset={100} className='lazyLoadClass'>
-                <img
-                  alt={`икона pravoslavne ikone`}
-                  className="slika"
-                  width={200}
-                  src={image}
-                  onClick={() => {
-                    setIsOpen(true);
-                    setPhotoIndex(index);
-                  }}
-                />
-              </LazyLoad>
-              <p lang='sr-Cyrl' className="title">{textHeader[index]}</p>
-              <p lang='sr-Cyrl' className="dimension">
-                {t('dimenzije')} {textFooter[index]}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+       <PageGalleryImages
+        images={images}
+        textHeader={textHeader}
+        textFooter={textFooter}
+        setIsOpen={setIsOpen}
+        setPhotoIndex={setPhotoIndex}
+      />
       <PageGalleryLightbox
         isOpen={isOpen}
         setIsOpen={setIsOpen}
