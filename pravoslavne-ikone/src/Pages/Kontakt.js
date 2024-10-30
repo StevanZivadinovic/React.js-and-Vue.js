@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import Footer from './footer';
+import Footer from '../components/footer';
 import './../style/kontakt.scss';
 import { connect } from 'react-redux';
-import { wholeStateToFalse } from './../actions/wholeStateToFalse';
+import { wholeStateToFalse } from '../actions/wholeStateToFalse';
 import {
   ValidationInputTextareaTrue,
   ValidationInputTextareaFalse,
-} from './../actions/validationInputTextarea';
+} from '../actions/validationInputTextarea';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 

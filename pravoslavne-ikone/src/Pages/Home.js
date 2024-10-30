@@ -5,7 +5,7 @@ import daska1 from './../assets/daska1.jpg';
 import daska2 from './../assets/daska2.jpg';
 import zlatni_listici from './../assets/zlatni_listici.jpg';
 import pigment from './../assets/pigment.jpg';
-import Footer from './footer';
+import Footer from '../components/footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 export default function Home() {

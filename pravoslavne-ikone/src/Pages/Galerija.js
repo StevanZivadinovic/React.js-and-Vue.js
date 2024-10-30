@@ -1,41 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import './../style/galerija.scss';
-import Footer from './footer';
-import GalerijaPrvaStrana from './galerijaPrvaStrana';
-import GalerijaDrugaStrana from './galerijaDrugaStrana';
-import GalerijaTrecaStrana from './galerijaTrecaStrana';
-import GalerijaCetvrtaStrana from './galerijaCetvrtaStrana';
-import GalerijaPetaStrana from './galerijaPetaStrana';
-import GalerijaSestaStrana from './galerijaSestaStrana';
+import Footer from '../components/footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import GalerijaSedmaStrana from './galerijaSedmaStrana';
-import GalerijaOsmaStrana from './galerijaOsmaStrana';
+import { usePageData } from '../consts/imageConstsByPage';
+import Page from '../components/page';
 
 export const Galerija = () => {
   const { t } = useTranslation();
+  const {
+    pageOneData,
+    pageTwoData,
+    pageThreeData,
+    pageFourData,
+    pageFiveData,
+    pageSixData,
+    pageSevenData,
+    pageEightData
+  } = usePageData();
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 8;
   const renderPage = () => {
     switch (currentPage) {
       case 1:
-        return <GalerijaPrvaStrana />;
+        return <Page content={pageOneData} />;
       case 2:
-        return <GalerijaDrugaStrana />;
+        return <Page content={pageTwoData} />;
       case 3:
-        return <GalerijaTrecaStrana />;
+        return <Page content={pageThreeData} />;
       case 4:
-        return <GalerijaCetvrtaStrana />;
+        return <Page content={pageFourData} />;
       case 5:
-        return <GalerijaPetaStrana />;
+        return <Page content={pageFiveData} />;
       case 6:
-        return <GalerijaSestaStrana />;
+        return <Page content={pageSixData} />;
       case 7:
-        return <GalerijaSedmaStrana />;
-        case 8:
-        return <GalerijaOsmaStrana />;
+        return <Page content={pageSevenData} />;
+      case 8:
+        return <Page content={pageEightData} />;
       default:
-        return <GalerijaPrvaStrana />;
+        return <Page content={pageOneData} />;
     }
   };
 
@@ -67,7 +71,9 @@ export const Galerija = () => {
           content="галерија, православне иконе са благословом"
         />
       </Helmet>
-      <h1 className="text-middle mt-4">{t('galerija')}</h1>
+      <h1 content="galerija, naslov, title" className="text-middle mt-4">
+        {t('galerija')}
+      </h1>
       {renderPage()}
       <div className="pagination">
         {[...Array(totalPages).keys()].map((number) => (

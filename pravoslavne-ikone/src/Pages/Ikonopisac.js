@@ -1,7 +1,7 @@
 import React from 'react';
 import './../style/ikonpisac.scss';
 import ikonopisac from './../assets/ikonopisac.jpg';
-import Footer from './footer';
+import Footer from '../components/footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 

@@ -2,12 +2,12 @@ import 'react-image-lightbox/style.css';
 import './App.css';
 import Navbar from './components/navbar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Ikonopisac from './components/ikonopisac';
-import Galerija from './components/galerija';
-import Kontakt from './components/kontakt';
+import Ikonopisac from './Pages/Ikonopisac';
+import Kontakt from './Pages/Kontakt';
 import React from 'react'
 import { Helmet } from 'react-helmet';
+import Home from './Pages/Home';
+import Galerija from './Pages/Galerija';
 
 
 
