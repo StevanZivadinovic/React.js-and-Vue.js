@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { imagesCloudinaryHosted } from './imagesCloudinaryHosted';
-import ikona19 from './../assets/ikona19.png';
-import ikona43 from './../assets/ikona43.png';
 
 export const usePageData = () => {
   const { t } = useTranslation();
@@ -82,7 +80,6 @@ export const usePageData = () => {
   };
   const pageThreeData = {
     images: [
-      ikona19,
       imagesCloudinaryHosted[18],
       imagesCloudinaryHosted[19],
       imagesCloudinaryHosted[20],
@@ -91,6 +88,8 @@ export const usePageData = () => {
       imagesCloudinaryHosted[23],
       imagesCloudinaryHosted[24],
       imagesCloudinaryHosted[25],
+      imagesCloudinaryHosted[26],
+
     ],
 
     textHeader: [
@@ -119,7 +118,6 @@ export const usePageData = () => {
   };
   const pageFourData = {
     images: [
-      imagesCloudinaryHosted[26],
       imagesCloudinaryHosted[27],
       imagesCloudinaryHosted[28],
       imagesCloudinaryHosted[29],
@@ -128,6 +126,7 @@ export const usePageData = () => {
       imagesCloudinaryHosted[32],
       imagesCloudinaryHosted[33],
       imagesCloudinaryHosted[34],
+      imagesCloudinaryHosted[35],
     ],
 
     textHeader: [
@@ -157,15 +156,15 @@ export const usePageData = () => {
 
   const pageFiveData = {
     images: [
-      imagesCloudinaryHosted[35],
       imagesCloudinaryHosted[36],
       imagesCloudinaryHosted[37],
       imagesCloudinaryHosted[38],
       imagesCloudinaryHosted[39],
       imagesCloudinaryHosted[40],
-      ikona43,
       imagesCloudinaryHosted[41],
       imagesCloudinaryHosted[42],
+      imagesCloudinaryHosted[43],
+      imagesCloudinaryHosted[44],
     ],
 
     textHeader: [
@@ -195,8 +194,6 @@ export const usePageData = () => {
 
   const pageSixData = {
     images: [
-      imagesCloudinaryHosted[43],
-      imagesCloudinaryHosted[44],
       imagesCloudinaryHosted[45],
       imagesCloudinaryHosted[46],
       imagesCloudinaryHosted[47],
@@ -204,6 +201,8 @@ export const usePageData = () => {
       imagesCloudinaryHosted[49],
       imagesCloudinaryHosted[50],
       imagesCloudinaryHosted[51],
+      imagesCloudinaryHosted[52],
+      imagesCloudinaryHosted[53],
     ],
     textHeader: [
       t('sv_ksenija_petrogradska'),
@@ -231,8 +230,6 @@ export const usePageData = () => {
 
   const pageSevenData = {
     images :[
-        imagesCloudinaryHosted[52],
-        imagesCloudinaryHosted[53],
         imagesCloudinaryHosted[54],
         imagesCloudinaryHosted[55],
         imagesCloudinaryHosted[56],
@@ -240,6 +237,8 @@ export const usePageData = () => {
         imagesCloudinaryHosted[58],
         imagesCloudinaryHosted[59],
         imagesCloudinaryHosted[60],
+        imagesCloudinaryHosted[61],
+        imagesCloudinaryHosted[62],
       ],
     
        textHeader :[
@@ -269,8 +268,8 @@ export const usePageData = () => {
   }
   const pageEightData = {
      images : [
-        imagesCloudinaryHosted[61],
-        imagesCloudinaryHosted[62],
+        imagesCloudinaryHosted[63],
+        imagesCloudinaryHosted[64],
       ],
     
        textHeader : [
