@@ -10,39 +10,50 @@ import {
 } from '../actions/validationInputTextarea';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-
+import { VALIDATION_PATTERNS } from '../consts/validationPatterns';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 function Kontakt() {
   const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({
-    textarea: false,
+    name: false,
     phone: false,
-    validationInput: false,
-    validationEmail: false,
-    validationInputSubject: false,
+    email: false,
+    subject: false,
+    textarea: false,
   });
-
-  let labelPosition = (position, display) => {
-    let label = document.querySelector('label');
-    label.style.position = 'absolute';
-    label.style.top = `${position}px`;
-    label.style.right = '0px';
-    label.style.fontSize = '14px';
-    label.style.display = `${display}`;
-    label.style.color = 'red';
-    label.style.opacity = 1;
+  const updateStatus = (field, isValid) => {
+    setStatus((prev) => ({ ...prev, [field]: isValid }));
+  };
+  const labelPosition = (position, display) => {
+    const label = document.querySelector('label');
+    if (label) {
+      label.style.position = 'absolute';
+      label.style.top = `${position}px`;
+      label.style.right = '0px';
+      label.style.fontSize = '14px';
+      label.style.display = display;
+      label.style.color = 'red';
+      label.style.opacity = 1;
+    }
+  };
+  const validateInput = (e, type, position, errorMessage) => {
+    const value = e.target.value;
+    const isValid = VALIDATION_PATTERNS[type].test(value);
+    e.target.style.borderColor = isValid ? 'blue' : 'red';
+    e.target.setCustomValidity(isValid ? '' : errorMessage);
+    updateStatus(type, isValid);
+    labelPosition(position, isValid ? 'none' : 'inline');
   };
 
-  function onClickHandle() {
-    alert(t('poruka_je_poslata'));
-  }
-
-  function onClickHandle1() {
+  function onClickHandleError() {
     alert(t('email_je_neispravan'));
   }
 
-  function sendEmail(e) {
+  const sendEmail = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     emailjs
       .sendForm(
         'service_fyy4nvv',
@@ -50,118 +61,40 @@ function Kontakt() {
         e.target,
         'user_iDF7GBVBepZlv2bZg187d'
       )
-      .then(
-        () => {
-          alert(t('poruka_je_poslata'));
-          setStatus({
-            ...status,
-            textarea: false,
-            phone: false,
-            validationInput: false,
-            validationEmail: false,
-            validationInputSubject: false,
-          });
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      ); 
-
-    e.target.reset();
-  }
-  //npm install emailjs-com --save
-
-  let validationInputTextarea = (e) => {
-    var pattern =
-      /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
-    let a = pattern.test(e.target.value);
-
-    if (a) {
-      e.target.style.borderColor = 'blue';
-      setStatus({ ...status, textarea: true });
-
-      e.target.setCustomValidity('');
-    } else {
-      e.target.setCustomValidity(t('poruka_je_prazna'));
-
-      e.target.style.borderColor = 'red';
-
-      setStatus({ ...status, textarea: false });
-    }
-  };
-  let validationInputPhone = (e) => {
-    var pattern = /^[\s0-9-]+$/;
-    let a = pattern.test(e.target.value);
-
-    if (a) {
-      setStatus({ ...status, phone: true });
-      e.target.style.borderColor = 'blue';
-      e.target.setCustomValidity('');
-    } else {
-      e.target.setCustomValidity(t('ne_koristite_slovne_karaktere_msg'));
-
-      setStatus({ ...status, phone: true });
-      e.target.style.borderColor = 'red';
-      labelPosition('170');
-    }
+      .then(() => {
+        alert(t('poruka_je_poslata'));
+        setStatus({
+          name: false,
+          phone: false,
+          email: false,
+          subject: false,
+          textarea: false,
+        });
+        e.target.reset();
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error?.text);
+        onClickHandleError();
+      });
   };
 
-  let validationInputName = (e) => {
-    var pattern =
-      /^[\s-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ža-ž:/.!?]+$/;
-    let a = pattern.test(e.target.value);
-
-    if (a) {
-      setStatus({ ...status, validationInput: true });
-      e.target.style.borderColor = 'blue';
-      labelPosition('0', 'none');
-      e.target.setCustomValidity('');
-    } else {
-      e.target.setCustomValidity(
-        t('ne_koristite_brojeve_specijalne_karaktere')
-      );
-      setStatus({ ...status, validationInput: false });
-      e.target.style.borderColor = 'red';
-
-      labelPosition('50', 'inline');
-    }
+  const isFormValid = () => {
+    return (
+      status?.name &&
+      status?.phone &&
+      status?.email &&
+      status?.subject &&
+      status?.textarea
+    );
   };
 
-  let validationInputSubject1 = (e) => {
-    var pattern =
-      /^[\s0-9-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ša-š:/.!?]+$/;
-    let a = pattern.test(e.target.value);
-
-    if (a) {
-      setStatus({ ...status, validationInputSubject: true });
-      e.target.style.borderColor = 'blue';
-      labelPosition('0', 'none');
-      e.target.setCustomValidity('');
+  const handleSubmit = (e) => {
+    if (isFormValid()) {
+      return sendEmail(e);
     } else {
-      setStatus({ ...status, validationInputSubject: false });
-      e.target.style.borderColor = 'red';
-      labelPosition('230', 'inline');
-    }
-  };
-
-  let validationEmail1 = (e) => {
-    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    let a = pattern.test(e.target.value);
-
-    if (a) {
-      e.target.style.borderColor = 'blue';
-      setStatus({ ...status, validationEmail: true });
-      document.querySelector('input[type="submit"]').disabled = false;
-
-      labelPosition('110', 'none');
-      e.target.setCustomValidity('');
-    } else {
-      e.target.setCustomValidity(t('email_je_neispravan'));
-
-      setStatus({ ...status, validationEmail: false });
-      e.target.style.borderColor = 'red';
-      document.querySelector('input[type="submit"]').disabled = true;
-      labelPosition('110', 'inline');
+      e.preventDefault();
     }
   };
 
@@ -170,30 +103,29 @@ function Kontakt() {
       <Helmet>
         <title>Kontakt - Pravoslavne ikone - Nis</title>
         <meta name="description" content="Контактирајте нас за више детаља" />
-        <meta name="keywords" content="контакт, православне иконе, емаил, prodaja" />
+        <meta
+          name="keywords"
+          content="контакт, православне иконе, емаил, prodaja"
+        />
       </Helmet>
       <form
         className="wrapper"
-        onSubmit={
-          status.validationInputSubject &&
-          status.textarea &&
-          status.phone &&
-          status.validationInput &&
-          status.validationEmail
-            ? sendEmail
-            : (e) => {
-                e.preventDefault();
-              }
-        }
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
       >
         <div className="title">
-          <h1 lang='sr-Cyrl'>{t('kontaktirajte_nas')}</h1>
+          <h1 lang="sr-Cyrl">{t('kontaktirajte_nas')}</h1>
         </div>
         <div className="contact-form">
           <div className="input-fields">
-            <label lang='sr-Cyrl' htmlFor="from_name">{t('neispravan_unos')}</label>
+            <label lang="sr-Cyrl" htmlFor="from_name">
+              {t('neispravan_unos')}
+            </label>
             <input
-              onKeyUp={validationInputName}
+              onChange={(e) => {
+                validateInput(e, 'name', 45, 'Pogresno ime');
+              }}
               type="text"
               className="input"
               placeholder={t('ime')}
@@ -202,7 +134,9 @@ function Kontakt() {
             ></input>
             <label htmlFor="email">{t('neispravan_unos')}</label>
             <input
-              onKeyUp={validationEmail1}
+              onChange={(e) => {
+                validateInput(e, 'email', 105, 'Pogresan email');
+              }}
               name="email"
               id="email"
               type="email"
@@ -212,7 +146,9 @@ function Kontakt() {
             ></input>
             <label htmlFor="phone">{t('neispravan_unos')}</label>
             <input
-              onKeyUp={validationInputPhone}
+              onChange={(e) => {
+                validateInput(e, 'phone', 165, 'Pogresan broj');
+              }}
               type="text"
               className="input"
               placeholder={t('telefon')}
@@ -221,7 +157,9 @@ function Kontakt() {
             ></input>
             <label htmlFor="subject">{t('neispravan_unos')}</label>
             <input
-              onKeyUp={validationInputSubject1}
+              onChange={(e) => {
+                validateInput(e, 'subject', 225, 'Pogresan subject');
+              }}
               type="text"
               className="input"
               placeholder={t('tema')}
@@ -231,25 +169,19 @@ function Kontakt() {
           </div>
           <div className="msg">
             <textarea
-              onKeyUp={validationInputTextarea}
+              onChange={(e) => {
+                validateInput(e, 'textarea', 15, 'Pogresan text');
+              }}
               placeholder={t('poruka')}
               name="message"
             ></textarea>
-            <input
-              onClick={
-                status.validationInputSubject &&
-                status.textarea &&
-                status.phone &&
-                status.validationInput &&
-                status.validationEmail
-                  ? onClickHandle
-                  : onClickHandle1
-              }
-              type="submit"
-              className="btn"
-              value={t('posalji')}
-              required
-            ></input>
+            <button type="submit" className="btn" disabled={loading}>
+              {loading ? (
+                <FontAwesomeIcon icon={faSpinner} spin />
+              ) : (
+                t('posalji')
+              )}
+            </button>
           </div>
         </div>
       </form>

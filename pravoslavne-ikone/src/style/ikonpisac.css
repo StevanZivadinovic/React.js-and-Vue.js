@@ -5,10 +5,27 @@
 }
 
 .languageSelect {
-  position: absolute;
-  top: 80px;
-  right: 0px;
-  width: 100px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  width: auto;
+  background-color: transparent;
+  color: white;
+  border: 0px;
+  offset: 0px;
+  padding: 2px 4px;
+}
+.languageSelect:hover {
+  cursor: pointer;
+}
+.languageSelect option {
+  background-color: rgb(216, 86, 86);
+  border: 0px;
+}
+.languageSelect:focus {
+  border: 0px;
+  offset: 0px;
 }
 
 .mainM {
@@ -59,7 +76,10 @@
     box-sizing: border-box;
   }
   .languageSelect {
+    position: absolute;
     width: auto;
+    top: 60px;
+    right: 12px;
   }
   .mainM {
     width: 100%;
