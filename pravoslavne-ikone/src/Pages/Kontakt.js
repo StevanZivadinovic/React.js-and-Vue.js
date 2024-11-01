@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import Footer from '../components/footer';
 import './../style/kontakt.scss';
 import { connect } from 'react-redux';
@@ -10,9 +9,10 @@ import {
 } from '../actions/validationInputTextarea';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import { errorMessages, VALIDATION_PATTERNS } from '../consts/validationPatterns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { handlePreventPaste, handleSubmit, validateInput } from '../helperFunctions/contactHelperFunctions';
+import { VALIDATION_PATTERNS } from '../consts/validationPatterns';
 function Kontakt() {
   const { t, i18n } = useTranslation();
   const [loading, setLoading] = useState(false);
@@ -23,76 +23,7 @@ function Kontakt() {
     subject: false,
     textarea: false,
   });
-  const updateStatus = (field, isValid) => {
-    setStatus((prev) => ({ ...prev, [field]: isValid }));
-  };
-  const validateInput = (e, type,language) => {
-    const value = e.target.value;
-    const isValid = VALIDATION_PATTERNS[type].test(value);
-    e.target.style.borderColor = isValid ? 'blue' : 'red';
-    e.target.setCustomValidity(isValid ? '' : errorMessages[type][language]);
-    updateStatus(type, isValid);
-  };
-
-  function onClickHandleError() {
-    alert(t('email_je_neispravan'));
-  }
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    emailjs
-      .sendForm(
-        'service_fyy4nvv',
-        'template_pasc3rj',
-        e.target,
-        'user_iDF7GBVBepZlv2bZg187d'
-      )
-      .then(() => {
-        alert(t('poruka_je_poslata'));
-        setStatus({
-          name: false,
-          phone: false,
-          email: false,
-          subject: false,
-          textarea: false,
-        });
-        e.target.reset();
-        setLoading(false);
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.log(error?.text);
-        onClickHandleError();
-      });
-  };
-
-  const isFormValid = () => {
-    return (
-      status?.name &&
-      status?.phone &&
-      status?.email &&
-      status?.subject &&
-      status?.textarea
-    );
-  };
-
-  const handleSubmit = (e) => {
-    if (isFormValid()) {
-      return sendEmail(e);
-    } else {
-      e.preventDefault();
-    }
-  };
-
-  const handlePreventPaste = (e,regexPattern)=>{
-    const pastedData = e.clipboardData.getData('Text');
-    const regex =regexPattern;
-  if (!regex.test(pastedData)) {
-    e.preventDefault(); 
-    alert('Pasted data is not allowed'); 
-  }
-  }
+ 
 
   return (
     <div className="main3">
@@ -107,7 +38,7 @@ function Kontakt() {
       <form
         className="wrapper"
         onSubmit={(e) => {
-          handleSubmit(e);
+          handleSubmit(e,t,status,setLoading,setStatus);
         }}
       >
         <div className="title">
@@ -117,9 +48,9 @@ function Kontakt() {
           <div className="input-fields">
             <input
               onChange={(e) => {
-                validateInput(e, 'name', i18n.language);
+                validateInput(e, 'name', i18n.language,setStatus);
               }}
-              onInput={(e) => validateInput(e, 'name', i18n.language)}
+              onInput={(e) => validateInput(e, 'name', i18n.language,setStatus)}
               onPaste={(e)=>{handlePreventPaste(e, VALIDATION_PATTERNS?.name)}}
               type="text"
               className="input"
@@ -130,9 +61,9 @@ function Kontakt() {
             ></input>
             <input
               onChange={(e) => {
-                validateInput(e, 'email', i18n.language);
+                validateInput(e, 'email', i18n.language,setStatus);
               }}
-              onInput={(e) => validateInput(e, 'email', i18n.language)}  
+              onInput={(e) => validateInput(e, 'email', i18n.language,setStatus)}  
               onPaste={(e)=>{handlePreventPaste(e, VALIDATION_PATTERNS?.email)}}            
               name="email"
               id="email"
@@ -144,9 +75,9 @@ function Kontakt() {
             ></input>
             <input
               onChange={(e) => {
-                validateInput(e, 'phone', i18n.language);
+                validateInput(e, 'phone', i18n.language,setStatus);
               }}
-              onInput={(e) => validateInput(e, 'phone', i18n.language)}
+              onInput={(e) => validateInput(e, 'phone', i18n.language,setStatus)}
               onPaste={(e)=>{handlePreventPaste(e, VALIDATION_PATTERNS?.phone)}}
               type="text"
               className="input"
@@ -157,7 +88,7 @@ function Kontakt() {
             ></input>
             <input
               onChange={(e) => {
-                validateInput(e, 'subject', i18n.language);
+                validateInput(e, 'subject', i18n.language,setStatus);
               }}
               type="text"
               className="input"
@@ -170,7 +101,7 @@ function Kontakt() {
           
             <textarea
               onChange={(e) => {
-                validateInput(e, 'textarea', i18n.language);
+                validateInput(e, 'textarea', i18n.language,setStatus);
               }}
               placeholder={t('poruka')}
               name="message"
