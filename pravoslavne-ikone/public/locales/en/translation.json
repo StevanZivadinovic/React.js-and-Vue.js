@@ -59,7 +59,7 @@
   "o_ikonopiscu_deo_drugi":"Her interest in icon painting began during her high school days. She seriously dedicated herself to iconography at the beginning of 2003. Since then, she has painted more than 500 icons, which are located throughout Serbia and the Serbian diaspora.",
   "o_ikonopiscu_deo_treci":"She works with the blessing of her spiritual father. She is a mother of four children. She lives and works in Nis.",
   "kontaktirajte_nas":"Get in Touch!",
-  "kontaktirajte_nas_sub":"За сва питања и недоумице јавите се путем електронске поште, телефоном или преко друштвених мрежа!",
+  "kontaktirajte_nas_sub":"For any questions or uncertainties, please contact us via email, phone, or through social media!",
   "poruka_je_poslata":"Message sent!",
   "email_je_neispravan":"Email is invalid!",
   "poruka_je_prazna":"Message is empty!",
@@ -68,14 +68,16 @@
   "neispravan_unos":"Invalid input",
   "ime":"Name",
   "email_adresa":"Email address",
+  "address":"Аddress",
   "telefon":"Phone",
   "tema":"Subject",
-  "poruka":"Message",
+  "poruka":"Type your message...",
   "posalji":"Send",
   "sv_ravnoapostolna_marija_magdalina":"St. Equal-to-the-Apostles Mary Magdalene",
   "sv_apostoli_petar_i_pavle":"St. Apostles Peter and Paul",
   "sv_apostol_pavle":"St. Apostle Paul",
   "sv_prepodobna_mati_paraskeva_srbska":"St. Venerable Mother Paraskeva of Serbia",
-  "sv_pravedni_melhisedek":"St. Righteous Melchizedek"
+  "sv_pravedni_melhisedek":"St. Righteous Melchizedek",
+  "nis":"Nis"
 
 }

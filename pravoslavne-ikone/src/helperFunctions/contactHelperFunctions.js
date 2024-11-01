@@ -8,7 +8,7 @@ export const updateStatus = (field, isValid,setStatus) => {
 export const validateInput = (e, type,language,setStatus) => {
     const value = e.target.value;
     const isValid = VALIDATION_PATTERNS[type].test(value);
-    e.target.style.borderColor = isValid ? 'blue' : 'red';
+    e.target.style.borderColor = isValid ? '' : 'red';
     e.target.setCustomValidity(isValid ? '' : errorMessages[type][language]);
     updateStatus(type, isValid,setStatus);
   };

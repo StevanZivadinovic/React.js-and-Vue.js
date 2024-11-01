@@ -68,13 +68,15 @@
   "neispravan_unos":"Неисправан унос",
   "ime":"Име",
   "email_adresa":"E-маил адреса",
+  "address":"Адреса",
   "telefon":"Телефон",
   "tema":"Тема",
-  "poruka":"Порука",
+  "poruka":"Упишите своју поруку..",
   "posalji":"Пошаљи",
   "sv_ravnoapostolna_marija_magdalina":"Св Равноапостолна Марија Магдалина",
   "sv_apostoli_petar_i_pavle":"Св Апостоли Петар и Павле",
   "sv_apostol_pavle":"Св Апостол Павле",
   "sv_prepodobna_mati_paraskeva_srbska":"Св Преподобна Мати Параскева Србска",
-  "sv_pravedni_melhisedek":"Св Праведни Мелхиседек"
+  "sv_pravedni_melhisedek":"Св Праведни Мелхиседек",
+  "nis":"Ниш"
 }

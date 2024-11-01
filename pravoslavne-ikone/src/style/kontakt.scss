@@ -6,10 +6,6 @@ html {
 label {
   display: none;
 }
-
-.input:invalid {
-  border-color: red;
-}
 .input:focus {
   outline: none;
 }
@@ -82,10 +78,10 @@ label {
   margin-bottom: 25px;
   margin-top: 0px;
   padding-top: 0px;
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 .wrapper .mainContactTitle h1{
-  font-size: 20px;
+  font-size: 2rem;
 
 }
 
@@ -116,11 +112,17 @@ label {
     
     .fontAwesomeIcon{
       margin-right: 1rem;
+      width: 2rem;
     }
     .contactData{
       text-align: left;
+      .contactDataTitle{
+        font-weight: bold;
+        color: #a4372f;
+      }
       .contactDataContent{
         font-size: 1.2rem;
+        
         
       }
     }
@@ -137,6 +139,11 @@ label {
   color: #fff;
   width: 100%;
   z-index: 100;
+}
+
+textarea:focus{
+  outline: none;
+  
 }
 
 .msg textarea {

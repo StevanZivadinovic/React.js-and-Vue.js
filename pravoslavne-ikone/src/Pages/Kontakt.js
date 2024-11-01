@@ -17,16 +17,16 @@ import {
   validateInput,
 } from '../helperFunctions/contactHelperFunctions';
 import { VALIDATION_PATTERNS } from '../consts/validationPatterns';
-import { contactData } from '../consts/contactPageConsts';
+import { useContactData } from '../hooks/useContactDataHook';
 function Kontakt() {
   const { t, i18n } = useTranslation();
   const [loading, setLoading] = useState(false);
+  const {contactData}=useContactData()
   const [status, setStatus] = useState({
     name: false,
     email: false,
     textarea: false,
   });
-
   return (
     <div className="main3">
       {/* <div className='mainBackground'></div> */}
