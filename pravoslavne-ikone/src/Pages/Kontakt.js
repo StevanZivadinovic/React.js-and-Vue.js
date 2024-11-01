@@ -10,11 +10,11 @@ import {
 } from '../actions/validationInputTextarea';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import { VALIDATION_PATTERNS } from '../consts/validationPatterns';
+import { errorMessages, VALIDATION_PATTERNS } from '../consts/validationPatterns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 function Kontakt() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({
     name: false,
@@ -26,25 +26,12 @@ function Kontakt() {
   const updateStatus = (field, isValid) => {
     setStatus((prev) => ({ ...prev, [field]: isValid }));
   };
-  const labelPosition = (position, display) => {
-    const label = document.querySelector('label');
-    if (label) {
-      label.style.position = 'absolute';
-      label.style.top = `${position}px`;
-      label.style.right = '0px';
-      label.style.fontSize = '14px';
-      label.style.display = display;
-      label.style.color = 'red';
-      label.style.opacity = 1;
-    }
-  };
-  const validateInput = (e, type, position, errorMessage) => {
+  const validateInput = (e, type,language) => {
     const value = e.target.value;
     const isValid = VALIDATION_PATTERNS[type].test(value);
     e.target.style.borderColor = isValid ? 'blue' : 'red';
-    e.target.setCustomValidity(isValid ? '' : errorMessage);
+    e.target.setCustomValidity(isValid ? '' : errorMessages[type][language]);
     updateStatus(type, isValid);
-    labelPosition(position, isValid ? 'none' : 'inline');
   };
 
   function onClickHandleError() {
@@ -98,6 +85,15 @@ function Kontakt() {
     }
   };
 
+  const handlePreventPaste = (e,regexPattern)=>{
+    const pastedData = e.clipboardData.getData('Text');
+    const regex =regexPattern;
+  if (!regex.test(pastedData)) {
+    e.preventDefault(); 
+    alert('Pasted data is not allowed'); 
+  }
+  }
+
   return (
     <div className="main3">
       <Helmet>
@@ -119,46 +115,49 @@ function Kontakt() {
         </div>
         <div className="contact-form">
           <div className="input-fields">
-            <label lang="sr-Cyrl" htmlFor="from_name">
-              {t('neispravan_unos')}
-            </label>
             <input
               onChange={(e) => {
-                validateInput(e, 'name', 45, 'Pogresno ime');
+                validateInput(e, 'name', i18n.language);
               }}
+              onInput={(e) => validateInput(e, 'name', i18n.language)}
+              onPaste={(e)=>{handlePreventPaste(e, VALIDATION_PATTERNS?.name)}}
               type="text"
               className="input"
               placeholder={t('ime')}
               name="from_name"
               required
+              autoComplete="name"
             ></input>
-            <label htmlFor="email">{t('neispravan_unos')}</label>
             <input
               onChange={(e) => {
-                validateInput(e, 'email', 105, 'Pogresan email');
+                validateInput(e, 'email', i18n.language);
               }}
+              onInput={(e) => validateInput(e, 'email', i18n.language)}  
+              onPaste={(e)=>{handlePreventPaste(e, VALIDATION_PATTERNS?.email)}}            
               name="email"
               id="email"
               type="email"
               className="input"
               placeholder={t('email_adresa')}
               required
+              autoComplete="email"
             ></input>
-            <label htmlFor="phone">{t('neispravan_unos')}</label>
             <input
               onChange={(e) => {
-                validateInput(e, 'phone', 165, 'Pogresan broj');
+                validateInput(e, 'phone', i18n.language);
               }}
+              onInput={(e) => validateInput(e, 'phone', i18n.language)}
+              onPaste={(e)=>{handlePreventPaste(e, VALIDATION_PATTERNS?.phone)}}
               type="text"
               className="input"
               placeholder={t('telefon')}
               name="phone"
               required
+              autoComplete="tel"
             ></input>
-            <label htmlFor="subject">{t('neispravan_unos')}</label>
             <input
               onChange={(e) => {
-                validateInput(e, 'subject', 225, 'Pogresan subject');
+                validateInput(e, 'subject', i18n.language);
               }}
               type="text"
               className="input"
@@ -168,9 +167,10 @@ function Kontakt() {
             ></input>
           </div>
           <div className="msg">
+          
             <textarea
               onChange={(e) => {
-                validateInput(e, 'textarea', 15, 'Pogresan text');
+                validateInput(e, 'textarea', i18n.language);
               }}
               placeholder={t('poruka')}
               name="message"
