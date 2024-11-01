@@ -31,9 +31,7 @@ export const validateInput = (e, type,language,setStatus) => {
         alert(t('poruka_je_poslata'));
         setStatus({
           name: false,
-          phone: false,
           email: false,
-          subject: false,
           textarea: false,
         });
         e.target.reset();
@@ -49,9 +47,7 @@ export const validateInput = (e, type,language,setStatus) => {
   export  const isFormValid = (status) => {
     return (
       status?.name &&
-      status?.phone &&
       status?.email &&
-      status?.subject &&
       status?.textarea
     );
   };

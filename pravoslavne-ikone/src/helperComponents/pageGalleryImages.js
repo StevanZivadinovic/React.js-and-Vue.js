@@ -21,7 +21,7 @@ const PageGalleryImages = ({images, textHeader, textFooter, setIsOpen, setPhotoI
                   }}
                 />
               </LazyLoad>
-              <p lang='sr-Cyrl' className="title">{textHeader[index]}</p>
+              <p lang='sr-Cyrl' className="titleGalerija">{textHeader[index]}</p>
               <p lang='sr-Cyrl' className="dimension">
                 {t('dimenzije')} {textFooter[index]}
               </p>

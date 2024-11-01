@@ -23,30 +23,37 @@ label {
   display: flex;
 }
 .main3 {
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
+  background-image: url('./../../src/assets/ikona43.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .wrapper {
   align-self: center;
-  width: 60%;
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.7);
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-
   position: relative;
   display: flex;
-  height: 50vh;
-
   flex-direction: column;
-  margin-top: 50px;
   z-index: 100;
+  .wrapper_content{
+    display: flex;
+    width:100%;
+    justify-content: center;
+  }
 }
 
 .contactDetails {
@@ -59,17 +66,33 @@ label {
   left: 0;
 }
 
-.wrapper .title h1 {
-  color: #c5ecfd;
+.wrapper {
+  flex-direction: column;
+  justify-content: center;
+  .wrapper .mainContactTitle{
+    padding-bottom: 3rem;
+  }
+}
+
+.wrapper .mainContactTitle h1,.wrapper .mainContactTitle h3 {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   margin-bottom: 25px;
   margin-top: 0px;
   padding-top: 0px;
+  font-size: 16px;
+}
+.wrapper .mainContactTitle h1{
+  font-size: 20px;
+
 }
 
 .contact-form {
   display: flex;
   z-index: 100;
+  width: 30%;
 }
 
 .input-fields {
@@ -80,20 +103,38 @@ label {
   position: relative;
 }
 
-.input-fields,
-.msg {
-  width: 48%;
+.input-fields {
+  width: 100%;
   z-index: 100;
+}
+.contactData_main{
+  width: 30%;
+  .contactData_wrapper{
+    display: flex;
+    padding-bottom: 2rem;
+    align-items: center;
+    
+    .fontAwesomeIcon{
+      margin-right: 1rem;
+    }
+    .contactData{
+      text-align: left;
+      .contactDataContent{
+        font-size: 1.2rem;
+        
+      }
+    }
+  }
 }
 
 .input-fields .input,
-.msg textarea {
+ textarea {
   margin: 10px 0;
-  background: transparent;
+  background: transparent !important;
   border: 0px;
-  border-bottom: 2px solid #c5ecfd;
+  border-bottom: 2px solid #fff;
   padding: 10px;
-  color: #c5ecfd;
+  color: #fff;
   width: 100%;
   z-index: 100;
 }
@@ -104,19 +145,19 @@ label {
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #c5ecfd;
+  color: #fff;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #c5ecfd;
+  color: #fff;
 }
 :-ms-input-placeholder {
   /* IE 10+ */
-  color: #c5ecfd;
+  color: #fff;
 }
 
 .btn {
-  background: #39b7dd;
+  background: #842d25;
   text-align: center;
   padding: 15px;
   border-radius: 5px;
@@ -124,6 +165,13 @@ label {
   cursor: pointer;
   text-transform: uppercase;
   width: 100%;
+  font-weight: 700;
+  outline: none;
+  offset: none;
+  border: none;
+  &:hover{
+    background: #571b16;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -151,5 +199,21 @@ label {
 
   .active {
     display: flex;
+  }
+  .wrapper_content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .contactData_main{
+      width: 80%;
+      .contactData_wrapper{
+        justify-content: center;
+
+      }
+    }
+
+    .contact-form{
+      width: 80%;
+    }
   }
 }
