@@ -9,29 +9,34 @@ html {
   scroll-behavior: smooth;
 }
 .main {
-  width: 90%;
-  margin-bottom: 100px;
+  width: 100%;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
   .uvod {
-    width: 100%;
+    width: 90%;
     background-image: url('./../assets/pozadina-home.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 80px;
     background-position: 50% 15%;
 
     h1 {
       z-index: 100;
-      padding-top: 70px;
+      padding-top: 30px;
       opacity: 1 !important;
       color: black;
       font-weight: 200;
+      font-size: 3.5rem;
       font-family: 'Pacifico', cursive;
     }
 
     .podtekst {
       font-family: 'Pacifico', cursive;
       color: black;
+      font-size: 2rem;
     }
     .opis {
       margin-top: 40px;
@@ -53,7 +58,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 30px;
+  font-size: 2rem;
   a {
     text-decoration: none;
     color: black;
@@ -68,10 +73,11 @@ html {
 }
 
 #vizantijskiStil {
-  margin-top: 0px;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   h2 {
     font-family: 'Pacifico', cursive;
+    font-size: 2.7rem;
   }
   p {
     text-align: justify;
@@ -94,11 +100,14 @@ html {
   background-image: url('./../assets/textura2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  width: 90%;
+  margin: 0 auto;
   h2 {
     color: white;
     font-weight: 100;
     font-family: 'Pacifico', cursive;
     margin-bottom: 2rem;
+    font-size: 2.7rem;
   }
   .textDaska {
     display: flex;
@@ -126,17 +135,20 @@ html {
   background-image: url('./../assets/textura2.jpg');
   display: flex;
   flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
   h2 {
     font-family: 'Pacifico', cursive;
     margin-bottom: 2rem;
     padding-top: 2rem;
+    font-size: 2.7rem;
   }
   .slikeTehnika {
     display: flex;
     justify-content: space-around;
-    #tehnika1 {
+    .tehnika1 {
       width: 20rem;
-      height: 20rem;
+      height: auto;
       border-radius: 50px;
       &:hover {
         transform: scale(1.5);
@@ -154,23 +166,23 @@ html {
   }
 }
 
-.kontakt {
-  background: linear-gradient(0deg, rgb(28, 27, 27) 10%, rgb(216, 86, 86) 100%);
-  border-radius: 5px;
-  font-size: 16px;
-  font-size: 20px !important;
-}
-
 @media screen and (max-width: 920px) {
-  .main {
-    width: 100%;
-  }
   img {
     max-width: 60%;
   }
-
+  .main {
+    width: 100%;
+  
   .uvod {
     height: 100vh;
+    width: 100%;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    .podtekst{
+      font-size: 1.2rem;
+    }
     .opis {
       display: flex;
       flex-direction: column;
@@ -203,6 +215,10 @@ html {
   #vizantijskiStil {
     margin-top: 50px;
     height: 100%;
+    width: 100%;
+    h2 {
+      font-size: 1.8rem;
+    }
     .text {
       display: flex;
       flex-direction: column;
@@ -216,12 +232,14 @@ html {
 
   #daska {
     height: 100%;
+    width: 100%;
     p {
       margin: 0 auto;
       text-align: center;
       font-size: 1rem;
     }
     h2 {
+      font-size: 1.8rem;
       padding-top: 2rem;
     }
     .textDaska {
@@ -238,8 +256,10 @@ html {
 
   #tehnika {
     margin-top: 0.3rem;
+    width: 100%;
     h2 {
       padding-top: 1rem;
+      font-size: 1.8rem;
     }
     .slikeTehnika {
       display: flex;
@@ -263,4 +283,5 @@ html {
     font-size: 16px;
     display: block;
   }
+}
 }

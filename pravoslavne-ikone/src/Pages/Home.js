@@ -5,7 +5,6 @@ import daska1 from './../assets/daska1.jpg';
 import daska2 from './../assets/daska2.jpg';
 import zlatni_listici from './../assets/zlatni_listici.jpg';
 import pigment from './../assets/pigment.jpg';
-import Footer from '../components/footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 export default function Home() {
@@ -78,16 +77,15 @@ export default function Home() {
         <div id="tehnika">
           <h2 lang='sr-Cyrl'>{t('tehnika_izrade')}</h2>
           <div className="slikeTehnika">
-            <img alt="tehnika, jajcana tempera, ikonopis" id="tehnika1" src={pigment}></img>
+            <img alt="tehnika, jajcana tempera, ikonopis" className="tehnika1" src={pigment}></img>
 
-            <img alt="tehnika, jajcana tempera, ikonopis" id="tehnika1" src={zlatni_listici}></img>
+            <img alt="tehnika, jajcana tempera, ikonopis" className="tehnika1" src={zlatni_listici}></img>
           </div>
           <p lang='sr-Cyrl' className="lastPasus">
             {t('pigmenti_zlato_opis')}
           </p>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 }

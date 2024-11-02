@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Footer from '../components/footer';
 import './../style/kontakt.scss';
 import { connect } from 'react-redux';
 import { wholeStateToFalse } from '../actions/wholeStateToFalse';
@@ -29,7 +28,6 @@ function Kontakt() {
   });
   return (
     <div className="main3">
-      {/* <div className='mainBackground'></div> */}
       <Helmet>
         <title>Kontakt - Pravoslavne ikone - Nis</title>
         <meta name="description" content="Контактирајте нас за више детаља" />
@@ -41,7 +39,8 @@ function Kontakt() {
       <div className="wrapper">
         <div className="mainContactTitle">
           <h1 lang="sr-Cyrl">{t('kontaktirajte_nas')}</h1>
-          <h3>{t('kontaktirajte_nas_sub')}</h3>
+          <div className='subline'></div>
+          {/* <h3 className='podnaslov'>{t('kontaktirajte_nas_sub')}</h3> */}
         </div>
         <div className='wrapper_content'>
           
@@ -121,8 +120,10 @@ function Kontakt() {
             </div>
           </form>
         </div>
+        <h3 className='podnaslov'>{t('kontaktirajte_nas_sub')}</h3>
+
       </div>
-      <Footer></Footer>
+      
     </div>
   );
 }

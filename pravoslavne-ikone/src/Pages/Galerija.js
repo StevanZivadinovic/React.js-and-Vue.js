@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './../style/galerija.scss';
-import Footer from '../components/footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import { usePageData } from '../consts/imageConstsByPage';
@@ -71,7 +70,7 @@ export const Galerija = () => {
           content="галерија, православне иконе са благословом"
         />
       </Helmet>
-      <h1 content="galerija, naslov, title" className="text-middle mt-4">
+      <h1 content="galerija, naslov, title" className="text-middle">
         {t('galerija')}
       </h1>
       {renderPage()}
@@ -86,8 +85,6 @@ export const Galerija = () => {
           </button>
         ))}
       </div>
-
-      <Footer></Footer>
     </div>
   );
 };

@@ -8,11 +8,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import Home from './Pages/Home';
 import Galerija from './Pages/Galerija';
+import Footer from './components/footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <Router>
           <Helmet>
             <title>Православне иконе - Ниш</title>
@@ -27,8 +27,8 @@ function App() {
             <Route path="/galerija" element={<Galerija />} />
             <Route path="/kontakt" element={<Kontakt />} />
           </Routes>
+          <Footer/>
         </Router>
-      </header>
     </div>
   );
 }
