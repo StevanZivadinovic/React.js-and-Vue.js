@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './../style/navbar.scss';
 import krst from './../assets/krst_beli.png';
-// Za slike sa font awesoma, uzimas cdn kod sa njihovog sajta koji se nalazi na tvom profilu,
-//i kopiras ga u index.html, u public folderu!!!!!!!!!!!!!!!!!
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -115,29 +113,6 @@ export default function Navbar() {
                 />
               </li>
             </ul>
-       
-       
-         {/* <select
-          onChange={(e) => changeLanguage(e.target.value)}
-          defaultValue={localStorage.getItem('i18nextLng')}
-          className="absolute languageSelect"
-        >
-          <option value="sr-Cyrl"> <img
-                  style={{ margin: '0px', cursor: 'pointer' }}
-                  width="24"
-                  height="24"
-                  src="https://img.icons8.com/color/48/sernia-circular.png"
-                  alt="Serbian"
-                /></option>
-          <option value="en"><img
-                  style={{ margin: '0px', cursor: 'pointer' }}
-                  width="24"
-                  height="24"
-                  src="https://img.icons8.com/color/48/great-britain-circular.png"
-                  alt="English"
-                /></option>
-        </select> */}
-        
       </nav>
     </>
   );
