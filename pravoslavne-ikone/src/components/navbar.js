@@ -14,10 +14,7 @@ export default function Navbar() {
   const { t } = useTranslation();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => {
-    console.log(click);
-    setClick(false);
-  };
+  const closeMobileMenu = () => setClick(false);
   return (
     <>
       <nav className="navbar relative">
