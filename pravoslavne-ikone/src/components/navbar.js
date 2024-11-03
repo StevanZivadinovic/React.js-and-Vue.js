@@ -14,8 +14,10 @@ export default function Navbar() {
   const { t } = useTranslation();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
+  const closeMobileMenu = () => {
+    console.log(click);
+    setClick(false);
+  };
   return (
     <>
       <nav className="navbar relative">
@@ -30,47 +32,52 @@ export default function Navbar() {
           </div>
 
           <div className="menu-icon" onClick={handleClick}>
-            <FontAwesomeIcon icon={click ? faTimes : faBars} />
+            <FontAwesomeIcon icon={faBars} />
           </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                {t('pocetna')}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/ikonopisac"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                {t('o_ikonopiscu')}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/galerija"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                {t('galerija')}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/kontakt"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                {t('kontakt')}
-              </Link>
-            </li>
-          </ul>
+          <div className={!click ? 'sideBarWrapper' : 'sideBarWrapper active'}>
+            <div className="menu-icon-side-navbar" onClick={closeMobileMenu}>
+              <FontAwesomeIcon icon={faTimes} />
+            </div>
+            <ul className="navmenuList">
+              <li className="nav-item">
+                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                  {t('pocetna')}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/ikonopisac"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  {t('o_ikonopiscu')}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/galerija"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  {t('galerija')}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/kontakt"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  {t('kontakt')}
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
         <select
-         onChange={(e) => changeLanguage(e.target.value)}
-         defaultValue={localStorage.getItem('i18nextLng')}
-         className="absolute languageSelect"
+          onChange={(e) => changeLanguage(e.target.value)}
+          defaultValue={localStorage.getItem('i18nextLng')}
+          className="absolute languageSelect"
         >
           <option value="sr-Cyrl">Српски</option>
           <option value="en">English</option>
