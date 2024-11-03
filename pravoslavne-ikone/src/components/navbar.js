@@ -5,7 +5,7 @@ import krst from './../assets/krst_beli.png';
 // Za slike sa font awesoma, uzimas cdn kod sa njihovog sajta koji se nalazi na tvom profilu,
 //i kopiras ga u index.html, u public folderu!!!!!!!!!!!!!!!!!
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { changeLanguage } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -32,6 +32,29 @@ export default function Navbar() {
             <FontAwesomeIcon icon={faBars} />
           </div>
           <div className={!click ? 'sideBarWrapper' : 'sideBarWrapper active'}>
+            <div className='menu-language-side-bar'>
+            <ul className="language-select-ul-navbar">
+              <li onClick={() => changeLanguage('sr-Cyrl')}>
+                <img
+                  style={{ margin: '0px', cursor: 'pointer' }}
+                  width="40"
+                  height=""
+                  src="https://img.icons8.com/color/48/sernia-circular.png"
+                  alt="Serbian"
+                />
+              </li>
+              <li><span>|</span></li>
+              <li onClick={() => changeLanguage('en')}>
+                <img
+                  style={{ margin: '0px', cursor: 'pointer' }}
+                  width="40"
+                  height=""
+                  src="https://img.icons8.com/color/48/great-britain-circular.png"
+                  alt="English"
+                />
+              </li>
+            </ul>
+            </div>
             <div className="menu-icon-side-navbar" onClick={closeMobileMenu}>
               <FontAwesomeIcon icon={faTimes} />
             </div>
@@ -71,14 +94,50 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
-        <select
+        <ul className="language-select-ul">
+              <li onClick={() => changeLanguage('sr-Cyrl')}>
+                <img
+                  style={{ margin: '0px', cursor: 'pointer' }}
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/color/48/sernia-circular.png"
+                  alt="Serbian"
+                />
+              </li>
+              <li><span>|</span></li>
+              <li onClick={() => changeLanguage('en')}>
+                <img
+                  style={{ margin: '0px', cursor: 'pointer' }}
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/color/48/great-britain-circular.png"
+                  alt="English"
+                />
+              </li>
+            </ul>
+       
+       
+         {/* <select
           onChange={(e) => changeLanguage(e.target.value)}
           defaultValue={localStorage.getItem('i18nextLng')}
           className="absolute languageSelect"
         >
-          <option value="sr-Cyrl">Српски</option>
-          <option value="en">English</option>
-        </select>
+          <option value="sr-Cyrl"> <img
+                  style={{ margin: '0px', cursor: 'pointer' }}
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/color/48/sernia-circular.png"
+                  alt="Serbian"
+                /></option>
+          <option value="en"><img
+                  style={{ margin: '0px', cursor: 'pointer' }}
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/color/48/great-britain-circular.png"
+                  alt="English"
+                /></option>
+        </select> */}
+        
       </nav>
     </>
   );
