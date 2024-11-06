@@ -1,8 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom'
+import { sideBarNavListType } from '../types/types';
 
-export const SideBarNavList = ({closeMobileMenu}) => {
+export const SideBarNavList = ({closeMobileMenu}:sideBarNavListType) => {
     const { t } = useTranslation();
   return (
     <ul className="navmenuList">

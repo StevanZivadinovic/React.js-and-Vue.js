@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './../style/galerija.scss';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
@@ -42,13 +42,13 @@ export const Galerija = () => {
     }
   };
 
-  const paginate = (pageNumber) => {
+  const paginate = (pageNumber:number) => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
-    const handleContextMenu = (e) => {
+    const handleContextMenu = (e: { preventDefault: () => void; }) => {
       e.preventDefault();
     };
     document.addEventListener('contextmenu', handleContextMenu);

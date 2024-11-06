@@ -1,7 +1,8 @@
 import { changeLanguage } from 'i18next'
-import React from 'react'
+import { languageNavType } from '../types/types'
 
-export const LanguageNav = ({cssClass, width}) => {
+
+export const LanguageNav = ({cssClass, width}:languageNavType) => {
   return (
     <ul className={cssClass}>
     <li onClick={() => changeLanguage('sr-Cyrl')}>

@@ -1,10 +1,10 @@
-export const VALIDATION_PATTERNS = {
+export const VALIDATION_PATTERNS: Record<'name' | 'email' | 'textarea', RegExp> = {
     name: /^[\s-,.AБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШабвгдђежзијклљмнњопрстћуфхцчџшA-Za-zA-Ža-ž:/.!?]+$/,
     email: /^[^ ]+@[^ ]+\.[a-z]{2,3}$/,
     textarea:   /^(?=.*\S)[\s\S]*$/
   };
 
-  export const errorMessages = {
+  export const errorMessages: any = {
     name: {
       en: "Please enter a valid name. Only letters and spaces are allowed.",
       'sr-Cyrl': "Молимо вас да унесете важеће име. Дозвољена су само слова и размак."

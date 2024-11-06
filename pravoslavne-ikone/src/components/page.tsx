@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import  {useState } from 'react';
 import PageGalleryLightbox from '../helperComponents/pageGalleryLightbox';
 import PageGalleryImages from '../helperComponents/pageGalleryImages';
+import { contentOfGalleryPageType } from '../types/types';
 
 
-const Page = ({content}) => {
+const Page = ({content}:contentOfGalleryPageType) => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 

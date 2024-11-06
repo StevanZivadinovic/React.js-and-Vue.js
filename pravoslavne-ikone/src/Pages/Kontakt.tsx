@@ -40,12 +40,11 @@ function Kontakt() {
         <div className="mainContactTitle">
           <h1 lang="sr-Cyrl">{t('kontaktirajte_nas')}</h1>
           <div className='subline'></div>
-          {/* <h3 className='podnaslov'>{t('kontaktirajte_nas_sub')}</h3> */}
         </div>
         <div className='wrapper_content'>
           
             <div className="contactData_main">
-              {contactData?.map((a, i) => {
+              {contactData?.map((a:any, i:number) => {
                 return (
                   <div className="contactData_wrapper" key={i}>
                     <FontAwesomeIcon
@@ -69,13 +68,13 @@ function Kontakt() {
           >
             <div className="input-fields">
               <input
-                onChange={(e) => {
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   validateInput(e, 'name', i18n.language, setStatus);
                 }}
-                onInput={(e) =>
+                onInput={(e: React.ChangeEvent<HTMLInputElement>) =>
                   validateInput(e, 'name', i18n.language, setStatus)
                 }
-                onPaste={(e) => {
+                onPaste={(e: React.ClipboardEvent<HTMLInputElement>) => {
                   handlePreventPaste(e, VALIDATION_PATTERNS?.name);
                 }}
                 type="text"
@@ -89,7 +88,7 @@ function Kontakt() {
                 onChange={(e) => {
                   validateInput(e, 'email', i18n.language, setStatus);
                 }}
-                onInput={(e) =>
+                onInput={(e:React.ChangeEvent<HTMLInputElement>) =>
                   validateInput(e, 'email', i18n.language, setStatus)
                 }
                 onPaste={(e) => {
@@ -128,11 +127,11 @@ function Kontakt() {
   );
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: { status: any; }) => {
   return { statusIzReduxa: state.status };
 };
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch: (arg0: any) => void) => {
   return {
     setWholeStatusToFalse: () => {
       dispatch(wholeStateToFalse());

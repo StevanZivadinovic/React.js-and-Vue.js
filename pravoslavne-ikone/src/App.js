@@ -1,13 +1,13 @@
 import 'react-image-lightbox/style.css';
 import './App.css';
 import Navbar from './components/navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes
-import Ikonopisac from './Pages/Ikonopisac';
-import Kontakt from './Pages/Kontakt';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Ikonopisac from './Pages/Ikonopisac.tsx';
+import Kontakt from './Pages/Kontakt.tsx';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Home from './Pages/Home';
-import Galerija from './Pages/Galerija';
+import Home from './Pages/Home.tsx';
+import Galerija from './Pages/Galerija.tsx';
 import Footer from './components/footer';
 
 function App() {

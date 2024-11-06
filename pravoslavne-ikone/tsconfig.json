@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "noEmitOnError": true,   // This will stop emitting JavaScript if there are TypeScript errors
+    "target": "ESNext",                    // Modern JavaScript version
+    "module": "ESNext",                    // Use ES Modules
+    "moduleResolution": "node",            // Resolve modules like Node.js
+    "jsx": "react-jsx",                    // Enable JSX support for React 17+ (use "react" for older versions)
+    "strict": true,                        // Enable strict type checking
+    "esModuleInterop": true,               // Allow default imports from non-ES modules
+    "skipLibCheck": true,                  // Skip type checking for declaration files
+    "forceConsistentCasingInFileNames": true, // Ensure case-sensitivity in file names
+    "noImplicitAny": true,                 // No implicit 'any' types
+    "strictNullChecks": true,              // Enforce null/undefined checks
+    "allowJs": false,                       // Allow JavaScript files (if you need them in the project)
+    "resolveJsonModule": true,             // Allow importing `.json` files
+    "isolatedModules": true,               // Ensure each file can be transpiled independently
+    "skipDefaultLibCheck": true,            // Skip checking of default lib files (useful for large projects)
+    "typeRoots": ["node_modules/@types", "src/types"] //looks for custom made types in src/types folder
+  },
+  "include": [
+    "src/**/*"                             // Include all files in the src directory
+  ],
+  "exclude": [
+    "node_modules",                        // Exclude the node_modules directory
+    "build",                               // Exclude build output (if applicable)
+    "dist"
+  ]
+}

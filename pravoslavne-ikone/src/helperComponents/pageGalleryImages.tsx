@@ -1,8 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazyload';
+import { pageGalleryLight } from '../types/types';
 
-const PageGalleryImages = ({images, textHeader, textFooter, setIsOpen, setPhotoIndex }) => {
+const PageGalleryImages = ({images, textHeader, textFooter, setIsOpen, setPhotoIndex }:pageGalleryLight) => {
     const { t } = useTranslation();
   return (
     <div className="row1">
