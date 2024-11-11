@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
+    fontFamily: {
+      'cormorant':['Cormorant']
+    },
     screens: {
       'mobile': {'max': '639px'},  // => @media (max-width: 639px) { ... }
       'tablet': {'max': '1023px'}, // => @media (max-width: 1023px) { ... }
