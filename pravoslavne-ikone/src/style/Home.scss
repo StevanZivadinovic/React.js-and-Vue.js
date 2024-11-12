@@ -1,98 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Crimson Text', serif;
-}
-html {
-  scroll-behavior: smooth;
-}
-.main {
-  width: 100%;
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
+
+
+.mainHome {
   .uvod {
-    width: 90%;
     background-image: url('./../assets/pozadina-home.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 15%;
-
-    h1 {
-      z-index: 100;
-      padding-top: 30px;
-      opacity: 1 !important;
-      color: black;
-      font-weight: 200;
-      font-size: 3.5rem;
-      font-family: 'Pacifico', cursive;
-    }
-
-    .podtekst {
-      font-family: 'Pacifico', cursive;
-      color: black;
-      font-size: 2rem;
-    }
-    .opis {
-      margin-top: 40px;
-      display: flex;
-      background-color: rgba(50, 50, 50, 0.3) !important;
-      justify-content: space-around;
-      color: rgb(50, 50, 50);
-
-      .liste {
-        color: black;
-      }
-    }
-  }
-}
-
-.lista li {
-  list-style-type: none;
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  font-size: 2rem;
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: 800;
-
-    &:hover {
-      border-bottom: 1px solid black;
-      font-weight: 800;
-      transform: scale(1.1);
-    }
-  }
-}
-
-#vizantijskiStil {
-  width: 90%;
-  margin: 0 auto;
-  h2 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2.7rem;
-  }
-  p {
-    text-align: justify;
-    font-family: 'Cormorant', serif;
-  }
-  .text {
-    display: flex;
-    margin-top: 30px;
-    justify-content: space-between;
-
-    p {
-      text-align: left;
-      margin: 30px;
-      font-size: 1.5rem;
-    }
   }
 }
 
@@ -170,7 +80,7 @@ html {
   img {
     max-width: 60%;
   }
-  .main {
+  .mainHome {
     width: 100%;
   
   .uvod {

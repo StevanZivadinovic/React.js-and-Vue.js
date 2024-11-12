@@ -5,7 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'cormorant':['Cormorant']
+      'cormorant':['Cormorant'],
+      'pacifico':['Pacifico']
     },
     screens: {
       'mobile': {'max': '639px'},  // => @media (max-width: 639px) { ... }
