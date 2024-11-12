@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet';
 export default function Home() {
   const { t } = useTranslation();
   return (
-    <div className="mainHome w-full bg-[#282c34] flex flex-col justify-center items-center">
+    <div className="mainHome mobile:w-full w-full bg-[#282c34] flex flex-col justify-center items-center">
       <Helmet>
         <title>Pocetna - Pravoslavne ikone - Nis</title>
         <meta
@@ -22,36 +22,36 @@ export default function Home() {
           content="иконописац, православне иконе, православне иконе продаја, јајчана темпера, златни листићи, израда икона"
         />
       </Helmet>
-      <div className="uvod w-[90%] bg-cover bg-no-repeat bg-[50%_15%]">
+      <div className="uvod mobile:h-[100vh] mobile:w-full w-[90%] bg-cover bg-no-repeat bg-[50%_15%]">
         {' '}
-        <h1 className='z-100 pt-[30px] !opacity-100 text-black font-extralight text-[3.5rem] font-pacifico' lang="sr-Cyrl">{t('izrada_pravoslavnih_ikona')}</h1>
-        <p lang="sr-Cyrl" className="podtekst font-pacifico text-black text-[2rem]">
+        <h1 className='mobile:text-[2.5rem] z-100 pt-[30px] !opacity-100 text-black font-extralight text-[3.5rem] font-pacifico' lang="sr-Cyrl">{t('izrada_pravoslavnih_ikona')}</h1>
+        <p lang="sr-Cyrl" className="mobile:text-[1.2rem] mob font-pacifico text-black text-[2rem]">
           -{t('po_narudzbini')}-
         </p>
-        <div className="opis mt-[40px] flex !bg-[#3232324d] justify-around text-[#323232]">
+        <div className="opis mobile:flex mobile:flex-col mobile:flex-wrap mobile:w-full mobile:mt-[30px] mobile:bg-[#f5e7e74d] mt-[40px] flex !bg-[#3232324d] justify-around text-[#323232] pb-[1rem]">
           <div className="liste text-black">
-            <ul className="lista">
-              <li className='list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
-                <a className='hover:border-0 hover:border-b-[1px] hover:border-solid hover:border-black hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#vizantijskiStil">
+            <ul className="lista mobile:pt-0">
+              <li className='mobile:m-0 mobile:p-0 mobile:text-[18px]  list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
+                <a className='mobile:p-[10px_0] hover:text-white hover:decoration-transparent hover:bg-[#1f1d1d75] hover:cursor-pointer  hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#vizantijskiStil">
                   {t('vizantijski_stil')}
                 </a>
               </li>
-              <li className='list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
-                <a className='hover:border-0 hover:border-b-[1px] hover:border-solid hover:border-black hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#daska">
+              <li className='mobile:m-0 mobile:p-0 mobile:text-[18px] list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
+                <a className='mobile:p-[10px_0] hover:text-white hover:decoration-transparent hover:bg-[#1f1d1d75] hover:cursor-pointer  hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#daska">
                   {t('tradicionalno_obradjena_lipova_daska')}
                 </a>
               </li>
             </ul>
           </div>
-          <div className="liste">
-            <ul className="lista">
-              <li className='list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
-                <a className='hover:border-0 hover:border-b-[1px] hover:border-solid hover:border-black hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#tehnika">
+          <div className="liste text-black">
+            <ul className="lista mobile:pt-0">
+              <li className='mobile:m-0 mobile:p-0 mobile:text-[18px] list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
+                <a className='mobile:p-[10px_0] hover:text-white  hover:decoration-transparent hover:bg-[#1f1d1d75] hover:cursor-pointer  hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#tehnika">
                   {t('tehnika_izrade_jajcana_tempera')}
                 </a>
               </li>
-              <li className='list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
-                <a className='hover:border-0 hover:border-b-[1px] hover:border-solid hover:border-black hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#tehnika">
+              <li className='mobile:m-0 mobile:p-0 mobile:text-[18px] list-style-none pt-[30px] flex flex-col justify-around text-[2rem]'>
+                <a className='mobile:p-[10px_0] hover:text-white  hover:font-bold hover:scale-110 transform transition-transform decoration-transparent font-extrabold text-black' lang="sr-Cyrl" href="#tehnika">
                   {t('izrada_ikona_sa_zlatom_ili_slag_metalom')}
                 </a>
               </li>
@@ -61,51 +61,54 @@ export default function Home() {
       </div>
 
       <div className="">
-        <div id="vizantijskiStil" className='w-[90%] my-0 mx-auto'>
-          <h2 className='font-pacifico text-[2.7rem]'>{t('vizantijski_stil')}</h2>
-          <div className="text flex mt-[30px] justify-between">
-            <p className='text-justify font-cormorant m-[30px] text-[1.5rem]' lang="sr-Cyrl">{t('vizantijski_stil_prvi_deo')}</p>
+        <div id="vizantijskiStil" className='w-[90%] my-0 mx-auto mobile:mt-[50px] mobile:h-[100%] mobile:w-full'>
+          <h2 className='mobile:text-[1.8rem] font-pacifico text-[2.7rem]'>{t('vizantijski_stil')}</h2>
+          <div className="text mobile:flex-col flex mt-[30px] justify-between">
+            <p className='mobile:text-[1rem] text-justify font-cormorant m-[30px] text-[1.5rem]' lang="sr-Cyrl">{t('vizantijski_stil_prvi_deo')}</p>
 
-            <p className='text-justify font-cormorant m-[30px] text-[1.5rem]' lang="sr-Cyrl">{t('vizantijski_stil_drugi_deo')}</p>
+            <p className='mobile:text-[1rem] text-justify font-cormorant m-[30px] text-[1.5rem]' lang="sr-Cyrl">{t('vizantijski_stil_drugi_deo')}</p>
           </div>
         </div>
-        <div id="daska">
-          <h2 lang="sr-Cyrl">{t('tradicionalno_obradjena_lipova_daska')}</h2>
-          <div className="textDaska">
+        <div id="daska" className='mobile:h-[100%] mobile:w-full bg-no-repeat bg-cover w-[90%] m-[0_auto]'>
+          <h2 className='mobile:text-[1.8rem] mobile:pt-[2rem] text-white font-thin font-pacifico mb-[2rem] text-[2.7rem]' lang="sr-Cyrl">{t('tradicionalno_obradjena_lipova_daska')}</h2>
+          <div className="textDaska flex justify-around mobile:flex-col mobile:m-[0_auto] mobile:w-[90%]">
             <img
               alt="daska, materijal, ikonopis"
               id="slikaDaska"
+              className='mobile:self-center w-[300px] rounded-[30px] hover:z-[110]   hover:scale-150 transform duration-[1.2s] max-w-[60%]'
               src={daska}
             ></img>
             <img
               alt="daska, materijal,ikonopis"
               id="slikaDaska"
+              className='mobile:self-center w-[300px] rounded-[30px] hover:z-[110]   hover:scale-150 transform duration-[1.2s] max-w-[60%]'
               src={daska1}
             ></img>
             <img
               alt="daska, materijal,ikonopis"
               id="slikaDaska"
+              className='mobile:self-center w-[300px] rounded-[30px] hover:z-[110]   hover:scale-150 transform duration-[1.2s] max-w-[60%]'
               src={daska2}
             ></img>
           </div>
-          <p>{t('daska_opis')}</p>
+          <p className='mobile:m-[0_auto] mobile:text-center mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem] font-cormorant'>{t('daska_opis')}</p>
         </div>
-        <div id="tehnika">
-          <h2 lang="sr-Cyrl">{t('tehnika_izrade')}</h2>
-          <div className="slikeTehnika">
+        <div id="tehnika" className='flex flex-col w-[90%] m-[0_auto] mobile:w-full mobile:mt-[0.3rem]'>
+          <h2 className='mobile:pt-[1rem] mobile:text-[1.8rem] font-pacifico mb-[2rem] pt-[2rem] text-[2.7rem]' lang="sr-Cyrl">{t('tehnika_izrade')}</h2>
+          <div className="slikeTehnika flex justify-around mobile:flex-col mobile:justify-around mobile:items-center">
             <img
               alt="tehnika, jajcana tempera, ikonopis"
-              className="tehnika1"
+              className="tehnika1 w-[20rem] h-auto rounded-[50px] hover:z-[110] hover:scale-150 transform duration-[1.2s] max-w-[60%]"
               src={pigment}
             ></img>
 
             <img
               alt="tehnika, jajcana tempera, ikonopis"
-              className="tehnika1"
+              className="tehnika1 w-[20rem] h-auto rounded-[50px] hover:z-[110] hover:scale-150 transform duration-[1.2s] max-w-[60%]"
               src={zlatni_listici}
             ></img>
           </div>
-          <p lang="sr-Cyrl" className="lastPasus">
+          <p lang="sr-Cyrl" className="mobile:mt-[1rem] mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem] font-cormorant">
             {t('pigmenti_zlato_opis')}
           </p>
         </div>
