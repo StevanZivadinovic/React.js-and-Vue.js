@@ -6,14 +6,14 @@ import { pageGalleryLight } from '../types/types';
 const PageGalleryImages = ({images, textHeader, textFooter, setIsOpen, setPhotoIndex }:pageGalleryLight) => {
     const { t } = useTranslation();
   return (
-    <div className="row1">
+    <div className="mobile:flex-col mobile:w-full mobile:mb-[8rem] flex justify-around flex-wrap w-[70%] m-[0_auto] mb-[10rem]">
         {images.map((image, index) => (
-          <div className="col1" key={index}>
-            <div className="sektor">
-              <LazyLoad height={200} offset={100} className='lazyLoadClass'>
+          <div className="" key={index}>
+            <div className="flex flex-col justify-center items-center mb-[2rem]">
+              <LazyLoad height={200} offset={100} className='-mb-[1rem]'>
                 <img
                   alt={`икона pravoslavne ikone`}
-                  className="slika"
+                  className="mobile:m-[2rem_auto_0_auto] hover:cursor-pointer w-[300px] mobile:w-[60%] m-[10px_20px] rounded-t-[5px]"
                   width={200}
                   src={image}
                   onClick={() => {
@@ -22,8 +22,8 @@ const PageGalleryImages = ({images, textHeader, textFooter, setIsOpen, setPhotoI
                   }}
                 />
               </LazyLoad>
-              <p lang='sr-Cyrl' className="titleGalerija">{textHeader[index]}</p>
-              <p lang='sr-Cyrl' className="dimension">
+              <p lang='sr-Cyrl' className="underline font-pacifico w-[300px] bg-white text-[18px] text-[#808080]">{textHeader[index]}</p>
+              <p lang='sr-Cyrl' className="w-[300px] bg-white text-[18px] text-[#808080] rounded-b-[0.5rem]">
                 {t('dimenzije')} {textFooter[index]}
               </p>
             </div>
