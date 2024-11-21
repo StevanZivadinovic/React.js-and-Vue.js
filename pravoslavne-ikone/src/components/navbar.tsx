@@ -16,8 +16,9 @@ export default function Navbar() {
   const closeMobileMenu = () => setClick(false);
   return (
     <>
-      <nav className="navbar relative">
-        <div className="navbar-container">
+      <nav className="navbar bg-gradient-to-b from-customRed to-customGray h-[80px] flex justify-center items-center
+      text-[1.2rem] w-full sticky top-0 z-[101]">
+        <div className="navbar-container flex justify-center items-center h-[80px]">
           <div className="navbar-logo">
             <Link to="/" className="navbar-logo-text" onClick={closeMobileMenu}>
               {t('pravoslavne_ikone_nis')}

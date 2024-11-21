@@ -106,7 +106,8 @@ export default function Home() {
               src={daska2}
             ></img>
           </div>
-          <p className="mobile:m-[0_auto] mobile:text-center mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem] font-cormorant">
+          <p className="mobile:m-[0_auto] mobile:text-justify mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem]
+           font-cormorant">
             {t('daska_opis')}
           </p>
         </div>
@@ -135,7 +136,7 @@ export default function Home() {
           </div>
           <p
             lang="sr-Cyrl"
-            className="mobile:mt-[1rem] mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem] font-cormorant"
+            className="mobile:mt-[1rem] mobile:text-justify mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem] font-cormorant"
           >
             {t('pigmenti_zlato_opis')}
           </p>

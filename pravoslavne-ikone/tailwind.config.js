@@ -4,6 +4,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}", 
   ],
   theme: {
+
     fontFamily: {
       'cormorant':['Cormorant'],
       'pacifico':['Pacifico']
@@ -15,6 +16,10 @@ module.exports = {
       'desktop': {'max': '1535px'}, // => @media (max-width: 1535px) { ... }
     },
     extend: {
+      colors: {
+        customGray: 'rgb(28, 27, 27)',
+        customRed: 'rgb(216, 86, 86)',
+      },
       backgroundImage:{
       }
     },
