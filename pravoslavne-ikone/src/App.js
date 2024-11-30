@@ -1,5 +1,4 @@
 import 'react-image-lightbox/style.css';
-import './App.css';
 import Navbar from './components/navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Ikonopisac from './Pages/Ikonopisac.tsx';
@@ -12,7 +11,7 @@ import Footer from './components/footer';
 
 function App() {
   return (
-    <div className="App">
+    <div>
         <Router>
           <Helmet>
             <title>Православне иконе - Ниш</title>

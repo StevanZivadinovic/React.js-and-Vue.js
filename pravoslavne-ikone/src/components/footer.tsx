@@ -2,7 +2,7 @@
 export default function Footer() {
   return (
     <>
-      <nav className="bg-gradient-to-t from-customRed to-customGray h-[100px] flex justify-around items-center 
+      <nav className="bg-gradient-to-t from-customRed to-customGray h-[100px] flex justify-around items-center text-center
       text-[1.2rem] " lang="sr">
         <div className="footer-container flex justify-between items-center h-[80px]">
           <div className="contact">

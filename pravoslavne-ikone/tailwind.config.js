@@ -21,6 +21,8 @@ module.exports = {
         customRed: 'rgb(216, 86, 86)',
       },
       backgroundImage:{
+        'kontaktBg':"url(/src/assets/ikona43.png)",
+        'uvodHomeBg':"url('/src/assets/pozadina-home.jpg')",
       }
     },
   },

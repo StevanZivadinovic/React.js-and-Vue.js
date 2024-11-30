@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './../style/kontakt.scss';
 import { connect } from 'react-redux';
 import { wholeStateToFalse } from '../actions/wholeStateToFalse';
 import {
@@ -27,7 +26,7 @@ function Kontakt() {
     textarea: false,
   });
   return (
-    <div className="kontaktMain bg-center bg-no-repeat bg-cover">
+    <div className="bg-kontaktBg bg-center bg-no-repeat bg-cover">
       <Helmet>
         <title>Kontakt - Pravoslavne ikone - Nis</title>
         <meta name="description" content="Контактирајте нас за више детаља" />
@@ -37,7 +36,7 @@ function Kontakt() {
         />
       </Helmet>
       <div className="mobile:h-auto mobile:w-full self-center w-full min-h-screen mx-auto bg-black bg-opacity-70 p-8 shadow-lg relative flex flex-col items-center justify-center">
-        <div className="mainContactTitle pb-[1rem] h-auto mb-[2rem]">
+        <div className="text-center pb-[1rem] h-auto mb-[2rem]">
           <h1 lang="sr-Cyrl" className="mobile:text-[1.7rem] mobile:mb-[2rem] w-full mx-0 text-center mt-0 pt-0  mb-[0.5rem] text-[2.5rem]">
             {t('kontaktirajte_nas')}
           </h1>

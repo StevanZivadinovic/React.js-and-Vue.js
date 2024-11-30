@@ -1,4 +1,3 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazyload';
 import { pageGalleryLight } from '../types/types';
@@ -10,7 +9,7 @@ const PageGalleryImages = ({images, textHeader, textFooter, setIsOpen, setPhotoI
         {images.map((image, index) => (
           <div className="" key={index}>
             <div className="flex flex-col justify-center items-center mb-[2rem]">
-              <LazyLoad height={200} offset={100} className='-mb-[1rem]'>
+              <LazyLoad height={200} offset={100} className='-mb-[1rem] flex justify-center'>
                 <img
                   alt={`икона pravoslavne ikone`}
                   className="mobile:m-[2rem_auto_0_auto] hover:cursor-pointer w-[300px] mobile:w-[60%] m-[10px_20px] rounded-t-[5px]"
@@ -22,8 +21,8 @@ const PageGalleryImages = ({images, textHeader, textFooter, setIsOpen, setPhotoI
                   }}
                 />
               </LazyLoad>
-              <p lang='sr-Cyrl' className="underline font-pacifico w-[300px] bg-white text-[18px] text-[#808080]">{textHeader[index]}</p>
-              <p lang='sr-Cyrl' className="w-[300px] bg-white text-[18px] text-[#808080] rounded-b-[0.5rem]">
+              <p lang='sr-Cyrl' className="underline font-pacifico w-[300px] bg-white text-[18px] text-[#808080] text-center">{textHeader[index]}</p>
+              <p lang='sr-Cyrl' className="w-[300px] bg-white text-[18px] text-[#808080] rounded-b-[0.5rem] text-center">
                 {t('dimenzije')} {textFooter[index]}
               </p>
             </div>

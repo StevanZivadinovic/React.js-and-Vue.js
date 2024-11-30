@@ -25,7 +25,7 @@ export default function Ikonopisac() {
         onContextMenu={preventRightClick}
         alt="иконописац, биографија"
         id="ikonopisac"
-        className="w-auto h-[60vh] max-w-[100%] !cursor-default mobile:h-[40vh] "
+        className="w-auto h-[60vh] max-w-[100%] !cursor-default mobile:h-[40vh] rounded-md"
         src={ikonopisac}
       />
       <div

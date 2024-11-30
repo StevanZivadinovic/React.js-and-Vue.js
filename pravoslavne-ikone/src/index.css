@@ -11,4 +11,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Crimson Text', serif;
+    color: white;
   }
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #fff;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #fff;
+  }
+  

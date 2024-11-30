@@ -69,14 +69,14 @@ export const Galerija = () => {
           content="галерија, православне иконе са благословом"
         />
       </Helmet>
-      <h1 content="galerija, naslov, title" className="mobile:text-[2.5rem] text-middle text-[3.5rem]">
+      <h1 content="galerija, naslov, title" className="mobile:text-[2.5rem] text-middle text-[3.5rem] text-center">
         {t('galerija')}
       </h1>
       {renderPage()}
-      <div className="">
+      <div className="text-center">
         {[...Array(totalPages).keys()].map((number) => (
           <button
-            className="p-[1rem] mb-[10rem] -mt-[5rem]"
+            className="p-[1rem] mb-[10rem] -mt-[5rem] text-[#808080] cursor-pointer"
             key={number}
             onClick={() => paginate(number + 1)}
           >
