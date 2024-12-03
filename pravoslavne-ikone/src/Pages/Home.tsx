@@ -1,8 +1,8 @@
-import daska from './../assets/daska.jpg';
-import daska1 from './../assets/daska1.jpg';
-import daska2 from './../assets/daska2.jpg';
-import zlatni_listici from './../assets/zlatni_listici.jpg';
-import pigment from './../assets/pigment.jpg';
+import daska from './../assets/daska.png';
+import daska1 from './../assets/daska1.png';
+import daska2 from './../assets/daska2.png';
+import zlatni_listici from './../assets/zlato_2.png';
+import pigment from './../assets/pigment1.png';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import { navList } from '../consts/global';
