@@ -1,10 +1,4 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { wholeStateToFalse } from '../actions/wholeStateToFalse';
-import {
-  ValidationInputTextareaTrue,
-  ValidationInputTextareaFalse,
-} from '../actions/validationInputTextarea';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -123,22 +117,4 @@ function Kontakt() {
   );
 }
 
-let mapStateToProps = (state: { status: any }) => {
-  return { statusIzReduxa: state.status };
-};
-
-let mapDispatchToProps = (dispatch: (arg0: any) => void) => {
-  return {
-    setWholeStatusToFalse: () => {
-      dispatch(wholeStateToFalse());
-    },
-    actionValidationInputTextareaTrue1: () => {
-      dispatch(ValidationInputTextareaTrue());
-    },
-    ValidationInputTextareaFalse1: () => {
-      dispatch(ValidationInputTextareaFalse());
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Kontakt);
+export default Kontakt;
