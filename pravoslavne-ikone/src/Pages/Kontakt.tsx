@@ -47,7 +47,7 @@ function Kontakt() {
             {contactData?.map((a: any, i: number) => {
               return (
                 <div className="mobile:w-[80%] mobile:justify-between mobile:pb-[1rem] flex pb-[2rem] items-center" key={i}>
-                  <FontAwesomeIcon icon={a?.icon} className="mobile:text-[1.5rem] mr-[1rem] w-[3rem] text-[1.7rem]" />
+                  <FontAwesomeIcon icon={a?.icon} className="mobile:text-[1.5rem] mobile:mr-0 mr-[1rem] w-[3rem] text-[1.7rem] mobile:text-left mobile:min-w-[30%]" />
                   <div className="text-left mobile:w-full">
                     <p className="mobile:text-[1.3rem] font-bold text-[1.5rem] text-[#a4372f]">{a?.title}</p>
                     <p className="text-[1.2rem]">{a?.content}</p>
