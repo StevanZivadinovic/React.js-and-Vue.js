@@ -35,7 +35,6 @@
     "react-router-sitemap-generator": "^0.0.8",
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
-    "sass": "^1.80.5",
     "save-dev": "^0.0.1-security"
   },
   "scripts": {
