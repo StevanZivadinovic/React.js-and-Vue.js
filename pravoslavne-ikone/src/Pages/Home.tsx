@@ -78,6 +78,7 @@ export default function Home() {
           </div>
         </div>
         <div
+        id='daska'
           className="mobile:h-[100%] mobile:w-full bg-no-repeat bg-cover w-[90%] m-[0_auto]"
         >
           <h2
