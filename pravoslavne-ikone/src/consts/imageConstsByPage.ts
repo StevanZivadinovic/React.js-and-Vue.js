@@ -271,18 +271,34 @@ export const usePageData = () => {
         imagesCloudinaryHosted[63],
         imagesCloudinaryHosted[64],
         imagesCloudinaryHosted[65],
+        imagesCloudinaryHosted[66],
+        imagesCloudinaryHosted[67],
+        imagesCloudinaryHosted[68],
+        imagesCloudinaryHosted[69],
+
+
+
+
       ],
     
        textHeader : [
         t('sv_arhangel_mihail'),
         t('sv_jovan_krstitelj'),
         t('gospod_isus_hristos'),
+        t('presveta_bogorodica'),
+        t('diptih_arhangeli_salatil_mihail'),
+        t('presveta_trojica'),
+        t('sv_apostoli_petar_i_pavle')
       ],
     
        textFooter : [
         '18x40cm',
         '30x40cm',
         '30x40cm',
+        '45x60cm',
+        '2x18x40cm',
+        '30x40cm',
+        'Ø 30cm'
       ]
   }
 
