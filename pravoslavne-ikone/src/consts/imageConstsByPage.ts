@@ -289,6 +289,8 @@ export const usePageData = () => {
         t('presveta_trojica'),
         t('sv_apostoli_petar_i_pavle'),
         t('sv_jovan_krstitelj'),
+        t('sv_apostol_toma'),
+
       ],
     
        textFooter : [
