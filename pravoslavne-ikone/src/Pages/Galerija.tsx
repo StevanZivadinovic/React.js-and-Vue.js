@@ -99,13 +99,14 @@ export const Galerija = () => {
         </button>
 
         {paginationItems(currentPage, totalPages).map((item, index) => (
+         
           <button
             key={index}
             onClick={() =>
               typeof item === 'number' && paginate(item, setCurrentPage)
             }
-            className={` bg-transparent border-none mobile:p-[.8rem] p-[1rem] mb-[10rem] -mt-[5rem] text-white cursor-pointer hover:bg-red-900 hover:bg-opacity-25 rounded-sm ${currentPage === item ? 'font-bold bg-red-900' : ''}`}
-          >
+            className={` bg-transparent border-none mobile:p-[.8rem] p-[1rem] mb-[10rem] -mt-[5rem] text-white cursor-pointer hover:bg-red-900 hover:bg-opacity-25 rounded-sm ${currentPage === item ? 'font-bold !bg-red-900' : ''}`}
+          > 
             {item}
           </button>
         ))}

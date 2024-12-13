@@ -24,7 +24,7 @@ module.exports = {
         'kontaktBg':"url(/src/assets/ikona43.png)",
         'uvodHomeBg':"url('/src/assets/pozadina-home.jpg')",
       }
-    },
+    }
   },
   plugins: [],
   corePlugins: {
