@@ -71,7 +71,29 @@ const imageCludinaryFolderPaths = [
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961000/ikona_71.png',
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961000/ikona_72.png',
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961000/ikona_73.png',
-  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961001/ikona_74.png'
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961001/ikona_74.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961001/ikona_75.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961001/ikona_76.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961001/ikona_77.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961001/ikona_78.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961001/ikona_79.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961002/ikona_80.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961003/ikona_81.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961004/ikona_82.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961004/ikona_83.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961004/ikona_84.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961004/ikona_85.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961004/ikona_86.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1733961005/ikona_87.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734103692/ikona_88.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734103716/ikona_89.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734106046/ikona_90.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734106047/ikona_91.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734106048/ikona_92.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734106053/ikona_93.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734106054/ikona_94.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734106057/ikona_95.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1734106060/ikona_96.png'
 
 
 ];

@@ -3,6 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import { usePageData } from '../consts/imageConstsByPage';
 import Page from '../components/page';
+import {
+  handleNext,
+  handlePrevious,
+  paginate,
+  paginationItems,
+} from '../helperFunctions/global';
 
 export const Galerija = () => {
   const { t } = useTranslation();
@@ -14,10 +20,15 @@ export const Galerija = () => {
     pageFiveData,
     pageSixData,
     pageSevenData,
-    pageEightData
+    pageEightData,
+    pageNineData,
+    pageTenData,
+    pageElevenData
   } = usePageData();
+
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 8;
+  const totalPages = 11;
+
   const renderPage = () => {
     switch (currentPage) {
       case 1:
@@ -36,18 +47,19 @@ export const Galerija = () => {
         return <Page content={pageSevenData} />;
       case 8:
         return <Page content={pageEightData} />;
+      case 9:
+        return <Page content={pageNineData} />;
+      case 10:
+        return <Page content={pageTenData} />;
+        case 11:
+        return <Page content={pageElevenData} />;
       default:
         return <Page content={pageOneData} />;
     }
   };
 
-  const paginate = (pageNumber:number) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   useEffect(() => {
-    const handleContextMenu = (e: { preventDefault: () => void; }) => {
+    const handleContextMenu = (e: { preventDefault: () => void }) => {
       e.preventDefault();
     };
     document.addEventListener('contextmenu', handleContextMenu);
@@ -69,22 +81,45 @@ export const Galerija = () => {
           content="галерија, православне иконе са благословом"
         />
       </Helmet>
-      <h1 content="galerija, naslov, title" className="mobile:text-[2.5rem] text-middle text-[3.5rem] text-center">
+      <h1
+        content="galerija, naslov, title"
+        className="mobile:text-[2.5rem] text-middle text-[3.5rem] text-center"
+      >
         {t('galerija')}
       </h1>
       {renderPage()}
       <div className="text-center">
-        {[...Array(totalPages).keys()].map((number) => (
+        <button
+          onClick={() => {
+            handlePrevious(currentPage, setCurrentPage);
+          }}
+          className="bg-transparent border-none mobile:p-[.8rem] p-[1rem] mb-[10rem] -mt-[5rem] text-white cursor-pointer hover:bg-red-900 hover:bg-opacity-25  rounded-sm"
+        >
+          &lt;
+        </button>
+
+        {paginationItems(currentPage, totalPages).map((item, index) => (
           <button
-            className="p-[1rem] mb-[10rem] -mt-[5rem] text-[#808080] cursor-pointer"
-            key={number}
-            onClick={() => paginate(number + 1)}
+            key={index}
+            onClick={() =>
+              typeof item === 'number' && paginate(item, setCurrentPage)
+            }
+            className={` bg-transparent border-none mobile:p-[.8rem] p-[1rem] mb-[10rem] -mt-[5rem] text-white cursor-pointer hover:bg-red-900 hover:bg-opacity-25 rounded-sm ${currentPage === item ? 'font-bold bg-red-900' : ''}`}
           >
-            {number + 1}
+            {item}
           </button>
         ))}
+        <button
+          onClick={() => {
+            handleNext(currentPage, totalPages, setCurrentPage);
+          }}
+          className="bg-transparent border-none mobile:p-[.8rem] p-[1rem] mb-[10rem] -mt-[5rem] text-white cursor-pointer hover:bg-red-900 hover:bg-opacity-25 rounded-sm"
+        >
+          &gt;
+        </button>
       </div>
     </div>
   );
 };
+
 export default Galerija;

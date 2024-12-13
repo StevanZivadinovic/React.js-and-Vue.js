@@ -237,7 +237,7 @@ export const usePageData = () => {
         imagesCloudinaryHosted[58],
         imagesCloudinaryHosted[59],
         imagesCloudinaryHosted[60],
-        imagesCloudinaryHosted[61],
+        imagesCloudinaryHosted[74],
         imagesCloudinaryHosted[62],
       ],
     
@@ -249,7 +249,7 @@ export const usePageData = () => {
         t('sv_velikomucenik_georgije'),
         t('sv_nikolaj_mirlikijski'),
         t('sv_velikomucenik_dimitrije'),
-        t('sv_prepodobna_mati_paraskeva_srbska'),
+        t('sv_andjeo_cuvar'),
         t('sv_pravedni_melhisedek'),
       ],
     
@@ -305,6 +305,107 @@ export const usePageData = () => {
         '30x40cm'
       ]
   }
+  const pageNineData = {
+    images : [
+       imagesCloudinaryHosted[72],
+       imagesCloudinaryHosted[73],
+       imagesCloudinaryHosted[75],
+       imagesCloudinaryHosted[76],
+       imagesCloudinaryHosted[77],
+       imagesCloudinaryHosted[78],
+       imagesCloudinaryHosted[79],
+       imagesCloudinaryHosted[80],
+       imagesCloudinaryHosted[81],
+
+     ],
+   
+      textHeader : [
+       t('sv_arhangel_mihail'),
+       t('sv_lazar_cetvorodnevni'),
+       t('sv_velikomucenik_pantelejmon'),
+       t('sv_arhandjel_gavril_beli_andjeo'),
+       t('sv_arhangel_mihail'),
+       t('vaskrsenje_hristovo'),
+       t('sv_ksenija_rimljanka'),
+       t('diptih_sv_lazar_cetvorodnevni_sv_tavita'),
+       t('sv_simeon_bogoprimac_sv_ana')
+     ],
+   
+      textFooter : [
+       '26x36cm',
+       '15x20cm',
+       '15x20cm',
+       '30x40cm',
+       '18x40cm',
+       '42x50cm',
+       '30x40cm',
+       '2x15x20cm',
+       '15x20cm'
+     ]
+ }
+
+ const pageTenData = {
+  images : [
+     imagesCloudinaryHosted[82],
+     imagesCloudinaryHosted[83],
+     imagesCloudinaryHosted[84],
+     imagesCloudinaryHosted[85],
+     imagesCloudinaryHosted[86],
+     imagesCloudinaryHosted[87],
+     imagesCloudinaryHosted[88],
+     imagesCloudinaryHosted[89],
+     imagesCloudinaryHosted[90],
+
+
+
+   ],
+ 
+    textHeader : [
+     t('sv_nikolaj_mirlikijski'),
+     t('sv_arhangel_mihail'),
+     t('sv_jovan_krstitelj'),
+     t('presveta_bogorodica'),
+     t('sv_andjeo_cuvar'),
+     t('sv_apostol_andrej_prvozvani'),
+     t('sv_arhangel_mihail'),
+     t('sv_ksenija_petrogradska'),
+     t('sv_sava_osveceni')
+   ],
+ 
+    textFooter : [
+     '18x40cm',
+     '18x40cm',
+     '18x40cm',
+     '30x40cm',
+     '15x20cm',
+     '30x40cm',
+     '15x20cm',
+     '15x20cm',
+     '30x40cm'
+   ]
+}
+
+
+
+const pageElevenData = {
+  images : [
+     imagesCloudinaryHosted[91],
+     imagesCloudinaryHosted[92],
+     imagesCloudinaryHosted[93],
+   ],
+ 
+    textHeader : [
+     t('sv_velikomucenica_paraskeva'),
+     t('sv_prorok_isaija'),
+     t('sv_jefrem_sirin'),
+   ],
+ 
+    textFooter : [
+     '30x40cm',
+     '15x20cm',
+     '15x20cm',
+   ]
+}
 
   return {
     pageOneData,
@@ -314,6 +415,9 @@ export const usePageData = () => {
     pageFiveData,
     pageSixData,
     pageSevenData,
-    pageEightData
+    pageEightData,
+    pageNineData,
+    pageTenData,
+    pageElevenData
   };
 };
