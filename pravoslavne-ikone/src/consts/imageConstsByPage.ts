@@ -336,7 +336,7 @@ export const usePageData = () => {
        '15x20cm',
        '15x20cm',
        '30x40cm',
-       '18x40cm',
+       '26x61cm',
        '42x50cm',
        '30x40cm',
        '2x15x20cm',
@@ -373,9 +373,9 @@ export const usePageData = () => {
    ],
  
     textFooter : [
-     '18x40cm',
-     '18x40cm',
-     '18x40cm',
+     '26x61cm',
+     '26x61cm',
+     '26x61cm',
      '30x40cm',
      '15x20cm',
      '30x40cm',
