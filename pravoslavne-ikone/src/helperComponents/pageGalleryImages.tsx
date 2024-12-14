@@ -9,10 +9,13 @@ const PageGalleryImages = ({ images, textHeader, textFooter, setIsOpen, setPhoto
       {images.map((image, index) => (
         <div className="" key={index}>
           <div className="flex flex-col justify-center items-center mb-[2rem]">
-            <LazyLoad height={200} offset={100} className='-mb-[1rem] flex justify-center'>
+            <LazyLoad height={200} offset={100} className='-mb-[1rem] flex justify-center relative group'>
+            <div className="hidden absolute top-0 left-0 bottom-0 right-0 bg-opacity-50 group-hover:flex justify-center items-center">
+            <img width="48" height="48" src="https://img.icons8.com/color/48/filled-plus-2-math.png" alt="filled-plus-2-math"/>
+            </div>
               <img
                 alt={`икона pravoslavne ikone`}
-                className="mobile:m-[2rem_auto_0_auto] hover:cursor-pointer w-[300px] mobile:w-[60%] m-[10px_20px] rounded-t-[5px] max-h-[400px] object-contain"
+                className="group-hover:opacity-40 mobile:m-[2rem_auto_0_auto] hover:cursor-pointer w-[300px] mobile:w-[60%] m-[10px_20px] rounded-t-[5px] max-h-[400px] object-contain"
                 width={200}
                 src={image}
                 onClick={() => {
