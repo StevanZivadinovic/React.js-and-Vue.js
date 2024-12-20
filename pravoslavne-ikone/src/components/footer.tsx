@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import ikonicaFb from './../assets/icons8-fb-48.png';
 import ikonicaInsta from './../assets/icons8-instagram-48.png';
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <>
       <nav
@@ -14,13 +16,13 @@ export default function Footer() {
               href="mailto:gagaikone@live.com"
               className="no-underline text-white"
             >
-              <p aria-label="Email">gagaikone@live.com</p>
+              <p aria-label="Email" className='hover:text-customRed'>gagaikone@live.com</p>
             </a>
             <a href="tel:+381613216087" className="no-underline text-white">
-              <p aria-label="Phone number">061/321-60-87</p>
+              <p aria-label="Phone number" className='hover:text-customRed'>061/321-60-87</p>
             </a>
             <a
-              className="inline-block mr-[10px] "
+              className="inline-block mr-[10px]"
               target="_blank"
               href="https://www.facebook.com/Pravoslavne-ikone-Nis-1691948927791453"
               rel="noreferrer"
@@ -62,7 +64,7 @@ export default function Footer() {
                 alt="kupujem prodajem ikonica"
               />
             </a>
-          <p className='mobile:text-[1rem]'>&copy; 2024 Православне иконе - Ниш. Сва права задржана.</p>
+          <p className='mobile:text-[1rem]'>&copy; 2024 {t('autorska_prava')}</p>
           </div>
         </div>
       </nav>
