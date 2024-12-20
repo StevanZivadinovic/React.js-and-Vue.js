@@ -4,13 +4,13 @@ export default function Footer() {
   return (
     <>
       <nav
-        className="bg-gradient-to-t from-customRed to-customGray h-[100px] flex justify-around items-center text-center
-      text-[1.2rem] "
+        className="bg-gradient-to-t from-customRed to-customGray min-h-[100px] flex mobile:py-[2rem] py-[1.2rem]   justify-around items-center text-center
+      text-[1.2rem] " 
         lang="sr"
       >
-        <div className="footer-container flex justify-between items-center h-[80px]">
+        <div className="flex justify-between items-center h-[80px]">
           <div className="contact">
-            <a
+            <a     
               href="mailto:gagaikone@live.com"
               className="no-underline text-white"
             >
@@ -62,6 +62,7 @@ export default function Footer() {
                 alt="kupujem prodajem ikonica"
               />
             </a>
+          <p className='mobile:text-[1rem]'>&copy; 2024 Православне иконе - Ниш. Сва права задржана.</p>
           </div>
         </div>
       </nav>

@@ -9,7 +9,7 @@ const PageGalleryImages = ({ images, textHeader, textFooter, setIsOpen, setPhoto
       {images.map((image, index) => (
         <div className="" key={index}>
           <div className="flex flex-col justify-center items-center mb-[2rem]">
-            <LazyLoad height={200} offset={100} className='-mb-[1rem] flex justify-center relative group'>
+            <LazyLoad height={200} offset={100} className='mobile:mb-0 -mb-[0.5rem] flex justify-center relative group'>
             <div className="hidden absolute top-0 left-0 bottom-0 right-0 bg-opacity-50 group-hover:flex justify-center items-center">
             <img width="48" height="48" src="https://img.icons8.com/color/48/filled-plus-2-math.png" alt="filled-plus-2-math"/>
             </div>

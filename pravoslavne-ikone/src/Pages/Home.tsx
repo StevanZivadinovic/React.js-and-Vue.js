@@ -58,19 +58,19 @@ export default function Home() {
 
       <div className="">
         <div className="w-[90%] my-0 mx-auto mobile:mt-[50px] mobile:h-[100%] mobile:w-full">
-          <h2 className="mobile:text-[1.8rem] font-pacifico text-[2.7rem] font-thin text-center">
+          <h2 className="mobile:text-[2rem] font-pacifico text-[2.7rem] font-thin text-center">
             {t('vizantijski_stil')}
           </h2>
           <div className="text mobile:flex-col flex mt-[30px] justify-between">
             <p
-              className="mobile:text-[1rem] text-justify font-cormorant m-[30px] text-[1.5rem]"
+              className="mobile:text-[1.2rem] text-justify font-cormorant m-[30px] text-[1.5rem]"
               lang="sr-Cyrl"
             >
               {t('vizantijski_stil_prvi_deo')}
             </p>
 
             <p
-              className="mobile:text-[1rem] text-justify font-cormorant m-[30px] text-[1.5rem]"
+              className="mobile:text-[1.2rem] text-justify font-cormorant m-[30px] text-[1.5rem]"
               lang="sr-Cyrl"
             >
               {t('vizantijski_stil_drugi_deo')}
@@ -82,7 +82,7 @@ export default function Home() {
           className="mobile:h-[100%] mobile:w-full bg-no-repeat bg-cover w-[90%] m-[0_auto]"
         >
           <h2
-            className="mobile:text-[1.8rem] mobile:pt-[2rem] text-white font-thin font-pacifico mb-[2rem] text-[2.7rem] text-center"
+            className="mobile:text-[2rem] mobile:pt-[2rem] text-white font-thin font-pacifico mb-[2rem] text-[2.7rem] text-center"
             lang="sr-Cyrl"
           >
             {t('tradicionalno_obradjena_lipova_daska')}
@@ -104,7 +104,7 @@ export default function Home() {
               src={daska2}
             ></img>
           </div>
-          <p className="mobile:m-[0_auto] mobile:text-justify mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem]
+          <p className="mobile:m-[0_auto] mobile:text-justify mobile:text-[1.2rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem]
            font-cormorant">
             {t('daska_opis')}
           </p>
@@ -114,7 +114,7 @@ export default function Home() {
           className="flex flex-col w-[90%] m-[0_auto] mobile:w-full mobile:mt-[0.3rem]"
         >
           <h2
-            className="mobile:pt-[1rem] mobile:text-[1.8rem] font-thin font-pacifico mb-[2rem] pt-[2rem] text-[2.7rem] text-center"
+            className="mobile:pt-[1rem] mobile:text-[2rem] font-thin font-pacifico mb-[2rem] pt-[2rem] text-[2.7rem] text-center"
             lang="sr-Cyrl"
           >
             {t('tehnika_izrade')}
@@ -134,7 +134,7 @@ export default function Home() {
           </div>
           <p
             lang="sr-Cyrl"
-            className="mobile:mt-[1rem] mobile:text-justify mobile:text-[1rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem] font-cormorant"
+            className="mobile:mt-[1rem] mobile:text-justify mobile:text-[1.2rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem] font-cormorant"
           >
             {t('pigmenti_zlato_opis')}
           </p>

@@ -355,9 +355,7 @@ export const usePageData = () => {
      imagesCloudinaryHosted[88],
      imagesCloudinaryHosted[89],
      imagesCloudinaryHosted[90],
-
-
-
+     
    ],
  
     textHeader : [
@@ -392,18 +390,21 @@ const pageElevenData = {
      imagesCloudinaryHosted[91],
      imagesCloudinaryHosted[92],
      imagesCloudinaryHosted[93],
+     imagesCloudinaryHosted[94],
    ],
  
     textHeader : [
      t('sv_velikomucenica_paraskeva'),
      t('sv_prorok_isaija'),
      t('sv_jefrem_sirin'),
+     t('sv_nikolaj_mirlikijski')
    ],
  
     textFooter : [
      '30x40cm',
      '15x20cm',
      '15x20cm',
+     '30x40cm'
    ]
 }
 
