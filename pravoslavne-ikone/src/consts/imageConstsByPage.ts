@@ -391,20 +391,24 @@ const pageElevenData = {
      imagesCloudinaryHosted[92],
      imagesCloudinaryHosted[93],
      imagesCloudinaryHosted[94],
+     imagesCloudinaryHosted[95],
+
    ],
  
     textHeader : [
      t('sv_velikomucenica_paraskeva'),
      t('sv_prorok_isaija'),
      t('sv_jefrem_sirin'),
-     t('sv_nikolaj_mirlikijski')
+     t('sv_nikolaj_mirlikijski'),
+     t('sv_velikomucenica_varvara')
    ],
  
     textFooter : [
      '30x40cm',
      '15x20cm',
      '15x20cm',
-     '30x40cm'
+     '30x40cm',
+     '21x30cm'
    ]
 }
 
