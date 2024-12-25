@@ -41,7 +41,7 @@ export const sendEmail = (
   const form = e.target as HTMLFormElement;
   emailjs
     .sendForm(
-      'service_fyy4nvv',
+      'service_m2sqmzk',
       'template_pasc3rj',
       form,
       'user_iDF7GBVBepZlv2bZg187d'
