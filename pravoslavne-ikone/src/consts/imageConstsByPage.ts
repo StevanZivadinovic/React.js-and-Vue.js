@@ -392,6 +392,7 @@ const pageElevenData = {
      imagesCloudinaryHosted[93],
      imagesCloudinaryHosted[94],
      imagesCloudinaryHosted[95],
+     imagesCloudinaryHosted[96],
 
    ],
  
@@ -400,7 +401,8 @@ const pageElevenData = {
      t('sv_prorok_isaija'),
      t('sv_jefrem_sirin'),
      t('sv_nikolaj_mirlikijski'),
-     t('sv_velikomucenica_varvara')
+     t('sv_velikomucenica_varvara'),
+     t('rodjenje_godspoda_isusa_hrista_bozic')
    ],
  
     textFooter : [
@@ -408,7 +410,8 @@ const pageElevenData = {
      '15x20cm',
      '15x20cm',
      '30x40cm',
-     '21x30cm'
+     '21x30cm',
+     '42x50cm'
    ]
 }
 
