@@ -64,7 +64,7 @@ export default function Footer() {
                 alt="kupujem prodajem ikonica"
               />
             </a>
-          <p className='mobile:text-[1rem]'>&copy; 2024 {t('autorska_prava')}</p>
+          <p className='mobile:text-[1rem]'>&copy; 2025 {t('autorska_prava')}</p>
           </div>
         </div>
       </nav>
