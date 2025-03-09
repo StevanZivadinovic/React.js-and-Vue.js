@@ -393,6 +393,8 @@ const pageElevenData = {
      imagesCloudinaryHosted[94],
      imagesCloudinaryHosted[95],
      imagesCloudinaryHosted[96],
+     imagesCloudinaryHosted[97],
+     imagesCloudinaryHosted[98],
 
    ],
  
@@ -402,7 +404,9 @@ const pageElevenData = {
      t('sv_jefrem_sirin'),
      t('sv_nikolaj_mirlikijski'),
      t('sv_velikomucenica_varvara'),
-     t('rodjenje_godspoda_isusa_hrista_bozic')
+     t('rodjenje_godspoda_isusa_hrista_bozic'),
+     t('sv_patrijarh_srbski_pavle'),
+     t('sv_spiridon_cudotvorac_trimifuntski')
    ],
  
     textFooter : [
@@ -411,7 +415,9 @@ const pageElevenData = {
      '15x20cm',
      '30x40cm',
      '21x30cm',
-     '42x50cm'
+     '42x50cm',
+     '30x40cm',
+     '21x30cm'
    ]
 }
 
