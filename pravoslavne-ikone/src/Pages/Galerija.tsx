@@ -23,11 +23,12 @@ export const Galerija = () => {
     pageEightData,
     pageNineData,
     pageTenData,
-    pageElevenData
+    pageElevenData,
+    pageTwelveData
   } = usePageData();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 11;
+  const totalPages = 12;
 
   const renderPage = () => {
     switch (currentPage) {
@@ -53,6 +54,8 @@ export const Galerija = () => {
         return <Page content={pageTenData} />;
         case 11:
         return <Page content={pageElevenData} />;
+        case 12:
+        return <Page content={pageTwelveData} />;
       default:
         return <Page content={pageOneData} />;
     }

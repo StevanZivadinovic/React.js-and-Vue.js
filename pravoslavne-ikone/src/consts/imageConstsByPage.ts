@@ -395,6 +395,8 @@ const pageElevenData = {
      imagesCloudinaryHosted[96],
      imagesCloudinaryHosted[97],
      imagesCloudinaryHosted[98],
+     imagesCloudinaryHosted[99],
+
 
    ],
  
@@ -406,7 +408,8 @@ const pageElevenData = {
      t('sv_velikomucenica_varvara'),
      t('rodjenje_godspoda_isusa_hrista_bozic'),
      t('sv_patrijarh_srbski_pavle'),
-     t('sv_spiridon_cudotvorac_trimifuntski')
+     t('sv_spiridon_cudotvorac_trimifuntski'),
+     t('sv_sofronije_saharov')
    ],
  
     textFooter : [
@@ -417,7 +420,21 @@ const pageElevenData = {
      '21x30cm',
      '42x50cm',
      '30x40cm',
-     '21x30cm'
+     '21x30cm',
+     '30x40cm'
+   ]
+}
+
+
+const pageTwelveData = {
+  images : [
+     imagesCloudinaryHosted[100],
+   ],
+    textHeader : [
+     t('presveta_bogorodica'),
+   ],
+    textFooter : [
+     '30x40cm',
    ]
 }
 
@@ -432,6 +449,7 @@ const pageElevenData = {
     pageEightData,
     pageNineData,
     pageTenData,
-    pageElevenData
+    pageElevenData,
+    pageTwelveData
   };
 };
