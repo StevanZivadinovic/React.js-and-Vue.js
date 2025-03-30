@@ -6,6 +6,7 @@ import pigment from './../assets/pigment1.png';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import { navList } from '../consts/global';
+import { imagesCloudinaryHosted } from '../consts/imagesCloudinaryHosted';
 export default function Home() {
   const { t } = useTranslation();
   return (
@@ -109,6 +110,7 @@ export default function Home() {
             {t('daska_opis')}
           </p>
         </div>
+    
         <div
           id="tehnika"
           className="flex flex-col w-[90%] m-[0_auto] mobile:w-full mobile:mt-[0.3rem]"
@@ -139,6 +141,109 @@ export default function Home() {
             {t('pigmenti_zlato_opis')}
           </p>
         </div>
+            {/*  */}
+            <div
+        id='slavskeIkone'
+          className="mobile:h-[100%] mobile:w-full bg-no-repeat bg-cover w-[90%] m-[0_auto]"
+        >
+          <h2
+            className="mobile:text-[2rem] mobile:pt-[2rem] text-white font-thin font-pacifico mb-[2rem] text-[2.7rem] text-center"
+            lang="sr-Cyrl"
+          >
+            
+            {t('izrada_slavskih_ikona')}
+          </h2>
+          <div className="textDaska flex justify-around mobile:flex-col mobile:m-[0_auto] mobile:w-[90%]">
+            <img
+              alt="daska, materijal, ikonopis"
+              className="mobile:self-center w-[300px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[35]}
+            ></img>
+            <img
+              alt="daska, materijal,ikonopis"
+              className="mobile:self-center w-[350px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[51]}
+            ></img>
+            <img
+              alt="daska, materijal,ikonopis"
+              className="mobile:self-center w-[350px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[94]}
+            ></img>
+          </div>
+          <p className="mobile:m-[0_auto] mobile:text-justify mobile:text-[1.2rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem]
+           font-cormorant">
+            {t('izrada_slavskih_ikona_tekst')}
+          </p>
+        </div>
+        {/*  */}
+        {/*  */}
+        <div
+        id='kompozicije'
+          className="mobile:h-[100%] mobile:w-full bg-no-repeat bg-cover w-[90%] m-[0_auto]"
+        >
+          <h2
+            className="mobile:text-[2rem] mobile:pt-[2rem] text-white font-thin font-pacifico mb-[2rem] text-[2.7rem] text-center"
+            lang="sr-Cyrl"
+          >
+            {t('izrada_praznicnih_kompozicija')}
+          </h2>
+          <div className="textDaska flex justify-around mobile:flex-col mobile:m-[0_auto] mobile:w-[90%]">
+            <img
+              alt="daska, materijal, ikonopis"
+              className="mobile:self-center w-[300px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[96]}
+            ></img>
+            <img
+              alt="daska, materijal,ikonopis"
+              className="mobile:self-center w-[300px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[78]}
+            ></img>
+            <img
+              alt="daska, materijal,ikonopis"
+              className="mobile:self-center w-[300px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[47]}
+            ></img>
+          </div>
+          <p className="mobile:m-[0_auto] text-center mobile:text-justify mobile:text-[1.2rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem]
+           font-cormorant">
+            {t('izrada_praznicnih_kompozicija_tekst')}
+          </p>
+        </div>
+        {/*  */}
+         {/*  */}
+         <div
+        id='diptisi'
+          className="mobile:h-[100%] mobile:w-full bg-no-repeat bg-cover w-[90%] m-[0_auto]"
+        >
+          <h2
+            className="mobile:text-[2rem] mobile:pt-[2rem] text-white font-thin font-pacifico mb-[2rem] text-[2.7rem] text-center"
+            lang="sr-Cyrl"
+          >
+            {t('izrada_diptiha')}
+          </h2>
+          <div className="textDaska flex justify-around mobile:flex-col mobile:m-[0_auto] mobile:w-[90%]">
+            <img
+              alt="daska, materijal, ikonopis"
+              className="mobile:self-center w-[300px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[67]}
+            ></img>
+            <img
+              alt="daska, materijal,ikonopis"
+              className="mobile:self-center w-[300px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[80]}
+            ></img>
+            <img
+              alt="daska, materijal,ikonopis"
+              className="mobile:self-center w-[300px] rounded-[10px] mobile:mb-[1rem] max-w-[60%]"
+              src={imagesCloudinaryHosted[101]}
+            ></img>
+          </div>
+          <p className="mobile:m-[0_auto] text-center mobile:text-justify mobile:text-[1.2rem] w-[90%] m-[2rem_auto_0.5rem_auto] pb-[2rem] text-[1.5rem]
+           font-cormorant">
+            {t('izrada_diptiha_tekst')}
+          </p>
+        </div>
+        {/*  */}
       </div>
     </div>
   );
