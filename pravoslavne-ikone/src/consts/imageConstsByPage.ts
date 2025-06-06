@@ -429,12 +429,16 @@ const pageElevenData = {
 const pageTwelveData = {
   images : [
      imagesCloudinaryHosted[100],
+     imagesCloudinaryHosted[102],
+
    ],
     textHeader : [
      t('presveta_bogorodica'),
+     t('sv_impomonija')
    ],
     textFooter : [
      '30x40cm',
+     '26x36cm'
    ]
 }
 
