@@ -89,7 +89,6 @@ export const usePageData = () => {
       imagesCloudinaryHosted[24],
       imagesCloudinaryHosted[25],
       imagesCloudinaryHosted[26],
-
     ],
 
     textHeader: [
@@ -229,218 +228,202 @@ export const usePageData = () => {
   };
 
   const pageSevenData = {
-    images :[
-        imagesCloudinaryHosted[54],
-        imagesCloudinaryHosted[55],
-        imagesCloudinaryHosted[56],
-        imagesCloudinaryHosted[57],
-        imagesCloudinaryHosted[58],
-        imagesCloudinaryHosted[59],
-        imagesCloudinaryHosted[60],
-        imagesCloudinaryHosted[74],
-        imagesCloudinaryHosted[62],
-      ],
-    
-       textHeader :[
-        t('sv_ravnoapostolna_marija_magdalina'),
-        t('sv_apostoli_petar_i_pavle'),
-        t('sv_prepodobna_mati_paraskeva'),
-        t('sv_apostol_pavle'),
-        t('sv_velikomucenik_georgije'),
-        t('sv_nikolaj_mirlikijski'),
-        t('sv_velikomucenik_dimitrije'),
-        t('sv_andjeo_cuvar'),
-        t('sv_pravedni_melhisedek'),
-      ],
-    
-     textFooter : [
-        '18x40cm',
-        '30x40cm',
-        '30x40cm',
-        '18x24cm',
-        '21x30cm',
-        '30x40cm',
-        '23x50cm',
-        '18x40cm',
-        '23x50cm',
-      ]
+    images: [
+      imagesCloudinaryHosted[54],
+      imagesCloudinaryHosted[55],
+      imagesCloudinaryHosted[56],
+      imagesCloudinaryHosted[57],
+      imagesCloudinaryHosted[58],
+      imagesCloudinaryHosted[59],
+      imagesCloudinaryHosted[60],
+      imagesCloudinaryHosted[74],
+      imagesCloudinaryHosted[62],
+    ],
 
-  }
+    textHeader: [
+      t('sv_ravnoapostolna_marija_magdalina'),
+      t('sv_apostoli_petar_i_pavle'),
+      t('sv_prepodobna_mati_paraskeva'),
+      t('sv_apostol_pavle'),
+      t('sv_velikomucenik_georgije'),
+      t('sv_nikolaj_mirlikijski'),
+      t('sv_velikomucenik_dimitrije'),
+      t('sv_andjeo_cuvar'),
+      t('sv_pravedni_melhisedek'),
+    ],
+
+    textFooter: [
+      '18x40cm',
+      '30x40cm',
+      '30x40cm',
+      '18x24cm',
+      '21x30cm',
+      '30x40cm',
+      '23x50cm',
+      '18x40cm',
+      '23x50cm',
+    ],
+  };
   const pageEightData = {
-     images : [
-        imagesCloudinaryHosted[63],
-        imagesCloudinaryHosted[64],
-        imagesCloudinaryHosted[65],
-        imagesCloudinaryHosted[66],
-        imagesCloudinaryHosted[67],
-        imagesCloudinaryHosted[68],
-        imagesCloudinaryHosted[69],
-        imagesCloudinaryHosted[70],
-        imagesCloudinaryHosted[71]
+    images: [
+      imagesCloudinaryHosted[63],
+      imagesCloudinaryHosted[64],
+      imagesCloudinaryHosted[65],
+      imagesCloudinaryHosted[66],
+      imagesCloudinaryHosted[67],
+      imagesCloudinaryHosted[68],
+      imagesCloudinaryHosted[69],
+      imagesCloudinaryHosted[70],
+      imagesCloudinaryHosted[71],
+    ],
 
-      ],
-    
-       textHeader : [
-        t('sv_arhangel_mihail'),
-        t('sv_jovan_krstitelj'),
-        t('gospod_isus_hristos'),
-        t('presveta_bogorodica'),
-        t('diptih_arhangeli_salatil_mihail'),
-        t('presveta_trojica'),
-        t('sv_apostoli_petar_i_pavle'),
-        t('sv_jovan_krstitelj'),
-        t('sv_apostol_toma'),
+    textHeader: [
+      t('sv_arhangel_mihail'),
+      t('sv_jovan_krstitelj'),
+      t('gospod_isus_hristos'),
+      t('presveta_bogorodica'),
+      t('diptih_arhangeli_salatil_mihail'),
+      t('presveta_trojica'),
+      t('sv_apostoli_petar_i_pavle'),
+      t('sv_jovan_krstitelj'),
+      t('sv_apostol_toma'),
+    ],
 
-      ],
-    
-       textFooter : [
-        '18x40cm',
-        '30x40cm',
-        '30x40cm',
-        '45x60cm',
-        '2x18x40cm',
-        '30x40cm',
-        'Ø 30cm',
-        '30x40cm',
-        '30x40cm'
-      ]
-  }
+    textFooter: [
+      '18x40cm',
+      '30x40cm',
+      '30x40cm',
+      '45x60cm',
+      '2x18x40cm',
+      '30x40cm',
+      'Ø 30cm',
+      '30x40cm',
+      '30x40cm',
+    ],
+  };
   const pageNineData = {
-    images : [
-       imagesCloudinaryHosted[72],
-       imagesCloudinaryHosted[73],
-       imagesCloudinaryHosted[75],
-       imagesCloudinaryHosted[76],
-       imagesCloudinaryHosted[77],
-       imagesCloudinaryHosted[78],
-       imagesCloudinaryHosted[79],
-       imagesCloudinaryHosted[80],
-       imagesCloudinaryHosted[81],
+    images: [
+      imagesCloudinaryHosted[72],
+      imagesCloudinaryHosted[73],
+      imagesCloudinaryHosted[75],
+      imagesCloudinaryHosted[76],
+      imagesCloudinaryHosted[77],
+      imagesCloudinaryHosted[78],
+      imagesCloudinaryHosted[79],
+      imagesCloudinaryHosted[80],
+      imagesCloudinaryHosted[81],
+    ],
 
-     ],
-   
-      textHeader : [
-       t('sv_arhangel_mihail'),
-       t('sv_lazar_cetvorodnevni'),
-       t('sv_velikomucenik_pantelejmon'),
-       t('sv_arhandjel_gavril_beli_andjeo'),
-       t('sv_arhangel_mihail'),
-       t('vaskrsenje_hristovo'),
-       t('sv_ksenija_rimljanka'),
-       t('diptih_sv_lazar_cetvorodnevni_sv_tavita'),
-       t('sv_simeon_bogoprimac_sv_ana')
-     ],
-   
-      textFooter : [
-       '26x36cm',
-       '15x20cm',
-       '15x20cm',
-       '30x40cm',
-       '26x61cm',
-       '42x50cm',
-       '30x40cm',
-       '2x15x20cm',
-       '15x20cm'
-     ]
- }
+    textHeader: [
+      t('sv_arhangel_mihail'),
+      t('sv_lazar_cetvorodnevni'),
+      t('sv_velikomucenik_pantelejmon'),
+      t('sv_arhandjel_gavril_beli_andjeo'),
+      t('sv_arhangel_mihail'),
+      t('vaskrsenje_hristovo'),
+      t('sv_ksenija_rimljanka'),
+      t('diptih_sv_lazar_cetvorodnevni_sv_tavita'),
+      t('sv_simeon_bogoprimac_sv_ana'),
+    ],
 
- const pageTenData = {
-  images : [
-     imagesCloudinaryHosted[82],
-     imagesCloudinaryHosted[83],
-     imagesCloudinaryHosted[84],
-     imagesCloudinaryHosted[85],
-     imagesCloudinaryHosted[86],
-     imagesCloudinaryHosted[87],
-     imagesCloudinaryHosted[88],
-     imagesCloudinaryHosted[89],
-     imagesCloudinaryHosted[90],
-     
-   ],
- 
-    textHeader : [
-     t('sv_nikolaj_mirlikijski'),
-     t('sv_arhangel_mihail'),
-     t('sv_jovan_krstitelj'),
-     t('presveta_bogorodica'),
-     t('sv_andjeo_cuvar'),
-     t('sv_apostol_andrej_prvozvani'),
-     t('sv_arhangel_mihail'),
-     t('sv_ksenija_petrogradska'),
-     t('sv_sava_osveceni')
-   ],
- 
-    textFooter : [
-     '26x61cm',
-     '26x61cm',
-     '26x61cm',
-     '30x40cm',
-     '15x20cm',
-     '30x40cm',
-     '15x20cm',
-     '15x20cm',
-     '30x40cm'
-   ]
-}
+    textFooter: [
+      '26x36cm',
+      '15x20cm',
+      '15x20cm',
+      '30x40cm',
+      '26x61cm',
+      '42x50cm',
+      '30x40cm',
+      '2x15x20cm',
+      '15x20cm',
+    ],
+  };
 
+  const pageTenData = {
+    images: [
+      imagesCloudinaryHosted[82],
+      imagesCloudinaryHosted[83],
+      imagesCloudinaryHosted[84],
+      imagesCloudinaryHosted[85],
+      imagesCloudinaryHosted[86],
+      imagesCloudinaryHosted[87],
+      imagesCloudinaryHosted[88],
+      imagesCloudinaryHosted[89],
+      imagesCloudinaryHosted[90],
+    ],
 
+    textHeader: [
+      t('sv_nikolaj_mirlikijski'),
+      t('sv_arhangel_mihail'),
+      t('sv_jovan_krstitelj'),
+      t('presveta_bogorodica'),
+      t('sv_andjeo_cuvar'),
+      t('sv_apostol_andrej_prvozvani'),
+      t('sv_arhangel_mihail'),
+      t('sv_ksenija_petrogradska'),
+      t('sv_sava_osveceni'),
+    ],
 
-const pageElevenData = {
-  images : [
-     imagesCloudinaryHosted[91],
-     imagesCloudinaryHosted[92],
-     imagesCloudinaryHosted[93],
-     imagesCloudinaryHosted[94],
-     imagesCloudinaryHosted[95],
-     imagesCloudinaryHosted[96],
-     imagesCloudinaryHosted[97],
-     imagesCloudinaryHosted[98],
-     imagesCloudinaryHosted[99],
+    textFooter: [
+      '26x61cm',
+      '26x61cm',
+      '26x61cm',
+      '30x40cm',
+      '15x20cm',
+      '30x40cm',
+      '15x20cm',
+      '15x20cm',
+      '30x40cm',
+    ],
+  };
 
+  const pageElevenData = {
+    images: [
+      imagesCloudinaryHosted[91],
+      imagesCloudinaryHosted[92],
+      imagesCloudinaryHosted[93],
+      imagesCloudinaryHosted[94],
+      imagesCloudinaryHosted[95],
+      imagesCloudinaryHosted[96],
+      imagesCloudinaryHosted[97],
+      imagesCloudinaryHosted[98],
+      imagesCloudinaryHosted[99],
+    ],
 
-   ],
- 
-    textHeader : [
-     t('sv_velikomucenica_paraskeva'),
-     t('sv_prorok_isaija'),
-     t('sv_jefrem_sirin'),
-     t('sv_nikolaj_mirlikijski'),
-     t('sv_velikomucenica_varvara'),
-     t('rodjenje_godspoda_isusa_hrista_bozic'),
-     t('sv_patrijarh_srbski_pavle'),
-     t('sv_spiridon_cudotvorac_trimifuntski'),
-     t('sv_sofronije_saharov')
-   ],
- 
-    textFooter : [
-     '30x40cm',
-     '15x20cm',
-     '15x20cm',
-     '30x40cm',
-     '21x30cm',
-     '42x50cm',
-     '30x40cm',
-     '21x30cm',
-     '30x40cm'
-   ]
-}
+    textHeader: [
+      t('sv_velikomucenica_paraskeva'),
+      t('sv_prorok_isaija'),
+      t('sv_jefrem_sirin'),
+      t('sv_nikolaj_mirlikijski'),
+      t('sv_velikomucenica_varvara'),
+      t('rodjenje_godspoda_isusa_hrista_bozic'),
+      t('sv_patrijarh_srbski_pavle'),
+      t('sv_spiridon_cudotvorac_trimifuntski'),
+      t('sv_sofronije_saharov'),
+    ],
 
+    textFooter: [
+      '30x40cm',
+      '15x20cm',
+      '15x20cm',
+      '30x40cm',
+      '21x30cm',
+      '42x50cm',
+      '30x40cm',
+      '21x30cm',
+      '30x40cm',
+    ],
+  };
 
-const pageTwelveData = {
-  images : [
-     imagesCloudinaryHosted[100],
-     imagesCloudinaryHosted[102],
-
-   ],
-    textHeader : [
-     t('presveta_bogorodica'),
-     t('sv_impomonija')
-   ],
-    textFooter : [
-     '30x40cm',
-     '26x36cm'
-   ]
-}
+  const pageTwelveData = {
+    images: [
+      imagesCloudinaryHosted[100],
+      imagesCloudinaryHosted[102],
+      imagesCloudinaryHosted[103],
+    ],
+    textHeader: [t('presveta_bogorodica'), t('sv_impomonija'),t('sv_arhangel_mihail')],
+    textFooter: ['30x40cm', '26x36cm','30x40cm'],
+  };
 
   return {
     pageOneData,
@@ -454,6 +437,6 @@ const pageTwelveData = {
     pageNineData,
     pageTenData,
     pageElevenData,
-    pageTwelveData
+    pageTwelveData,
   };
 };
