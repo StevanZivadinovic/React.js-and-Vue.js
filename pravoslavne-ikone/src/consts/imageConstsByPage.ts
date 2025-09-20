@@ -420,9 +420,10 @@ export const usePageData = () => {
       imagesCloudinaryHosted[100],
       imagesCloudinaryHosted[102],
       imagesCloudinaryHosted[103],
+      imagesCloudinaryHosted[104],
     ],
-    textHeader: [t('presveta_bogorodica'), t('sv_impomonija'),t('sv_arhangel_mihail')],
-    textFooter: ['30x40cm', '26x36cm','30x40cm'],
+    textHeader: [t('presveta_bogorodica'), t('sv_impomonija'),t('sv_arhangel_mihail'),t('presveta_bogorodica_putevoditeljka'),],
+    textFooter: ['30x40cm', '26x36cm','30x40cm','30x40cm'],
   };
 
   return {
