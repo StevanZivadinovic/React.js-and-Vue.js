@@ -421,9 +421,14 @@ export const usePageData = () => {
       imagesCloudinaryHosted[102],
       imagesCloudinaryHosted[103],
       imagesCloudinaryHosted[104],
+      imagesCloudinaryHosted[105],
+      imagesCloudinaryHosted[106],
+
     ],
-    textHeader: [t('presveta_bogorodica'), t('sv_impomonija'),t('sv_arhangel_mihail'),t('presveta_bogorodica_putevoditeljka'),],
-    textFooter: ['30x40cm', '26x36cm','30x40cm','30x40cm'],
+    textHeader: [t('presveta_bogorodica'), t('sv_impomonija'),t('sv_arhangel_mihail'),t('presveta_bogorodica_putevoditeljka'),
+    t('sv_vasilije_veliki'),t('sv_ravnoapostolna_carica_jelena')
+    ],
+    textFooter: ['30x40cm', '26x36cm','30x40cm','30x40cm','21x30cm','30x40cm'],
   };
 
   return {
