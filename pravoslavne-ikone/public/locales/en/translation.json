@@ -112,7 +112,10 @@
   "sv_vasilije_veliki":"Saint Basil the Great",
   "sv_ravnoapostolna_carica_jelena":"St. Equal-to-the-Apostles Empress Helena",
   "sv_alimpije_stolpnik":"Saint Alypius the Stylite",
-  "sv_nikola_sv_pretka":"Saint Nicholas and Saint Petka"
+  "sv_nikola_sv_pretka":"Saint Nicholas and Saint Petka",
+   "sv_petka_sv_arhangel_mihail":"Saint Petka and Saint Archangel Michael",
+   "sv_nikifor_leprozni":"Saint Nikephoros the Leper",
+   "sv_apostol_luka":"Saint Luke the Apostle"
 
 
 }

@@ -434,7 +434,24 @@ export const usePageData = () => {
     ],
     textFooter: ['30x40cm', '26x36cm','30x40cm','30x40cm','21x30cm','30x40cm', '30x50cm','30x40cm','18x24cm'],
   };
+  const pageТhirteenData = {
+    images: [
+      imagesCloudinaryHosted[110],
+      imagesCloudinaryHosted[111],
+      imagesCloudinaryHosted[112],
+      imagesCloudinaryHosted[113],
+      imagesCloudinaryHosted[114],
 
+     
+
+    ],
+    textHeader: [t('sv_petka_sv_arhangel_mihail'), t('presveta_bogorodica'),t('gospod_isus_hristos'),t('sv_nikifor_leprozni'),
+      t('sv_apostol_luka')
+    ],
+    textFooter: ['18x24cm', '18x24cm','18x24cm','30x40cm', '18x24cm'],
+  };
+
+ 
   return {
     pageOneData,
     pageTwoData,
@@ -448,5 +465,8 @@ export const usePageData = () => {
     pageTenData,
     pageElevenData,
     pageTwelveData,
+    pageТhirteenData
   };
+
+  
 };
