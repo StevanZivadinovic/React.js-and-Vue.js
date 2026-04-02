@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import krst from './../assets/krst_beli.png';
+import logo from './../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -18,13 +18,13 @@ export default function Navbar() {
       <nav className="navbar bg-gradient-to-b from-customRed to-customGray h-[80px] flex justify-center items-center
       text-[1.2rem] w-full sticky top-0 z-[101]">
         <div className="mobile:w-full mobile:flex mobile:justify-between mobile:items-center flex justify-center items-center h-[80px]">
+            <img alt="krst" className='mobile:hidden w-[50px] text-white' src={logo}></img>
           <div className="mobile:text-left mobile:w-[80%] mobile:text-[20px] mobile:justify-left flex items-left">
             <Link to="/" className="mobile:text-[1.2rem] text-white justify-start self-center ml-[20px]
             cursor-pointer text-[2rem] no-underline" onClick={closeMobileMenu}>
               {t('pravoslavne_ikone_nis')}
             </Link>
             <div>
-              <img alt="krst" className='mobile:hidden w-[50px] text-white' src={krst}></img>
             </div>
           </div>
 
