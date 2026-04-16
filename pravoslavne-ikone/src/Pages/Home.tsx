@@ -36,6 +36,33 @@ export default function Home() {
         >
           -{t('po_narudzbini')}-
         </p>
+        <a
+  href="/galerija"
+  color='black'
+  className="
+    hidden mobile:flex 
+    mx-auto mt-[20px] 
+    w-[80%] text-center 
+    bg-[#d4af37] !text-black 
+    font-bold 
+    py-[12px] px-[20px] 
+    rounded-[20px] 
+    shadow-md 
+    active:scale-95 
+    transition-all duration-200
+    no-underline
+    hover:scale-105
+    align-center
+    self-center
+    justify-center
+    hover:!text-black
+    
+  "
+  lang="sr-Cyrl"
+>
+  {t('pogledaj_galeriju')} <span>{" "}</span>  <i className="fas fa-arrow-right self-center ml-1" style={{color:'black'}} aria-hidden="true"></i>
+</a>
+
         <div className="mobile:flex-col mobile:flex-wrap mobile:w-full mobile:mt-[30px] mobile:bg-[#f5e7e74d] mt-[40px] flex !bg-[#3232324d] justify-around text-[#323232]">
           <ul className="mobile:pt-0 flex mobile:flex-col flex-wrap w-[70%] mobile:w-full">
             {

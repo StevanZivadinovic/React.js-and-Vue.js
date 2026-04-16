@@ -16,7 +16,8 @@
     "resolveJsonModule": true,             // Allow importing `.json` files
     "isolatedModules": true,               // Ensure each file can be transpiled independently
     "skipDefaultLibCheck": true,            // Skip checking of default lib files (useful for large projects)
-    "typeRoots": ["node_modules/@types", "src/types"] //looks for custom made types in src/types folder
+    "typeRoots": ["node_modules/@types", "src/types"], //looks for custom made types in src/types folder,
+    "ignoreDeprecations":"6.0"          // Ignore deprecation warnings for TypeScript 6.0 and above, dodao sam jer se pojavljuju upozorenja zbog React 18 i TypeScript 5.0, a ne želim da se pojavljuju
   },
   "include": [
     "src/**/*"                             // Include all files in the src directory
