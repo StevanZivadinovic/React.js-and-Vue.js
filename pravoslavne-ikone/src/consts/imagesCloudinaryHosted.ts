@@ -114,7 +114,9 @@ const imageCludinaryFolderPaths = [
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1775135673/ikona_113.png',
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1775135674/ikona_114.png',
   'https://res.cloudinary.com/dvayrzzpb/image/upload/v1775135674/ikona_115.png',
-  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1775135674/ikona_116.png'
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1775135674/ikona_116.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1790368882/ikona_117.png',
+  'https://res.cloudinary.com/dvayrzzpb/image/upload/v1790370346/ikona_118.png'
 
   
 
